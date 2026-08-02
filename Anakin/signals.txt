@@ -1,0 +1,1 @@
+2026-08-01 00:31:52 - Signal: NO_SIGNAL\n  Price: 1.3464, 50 SMA: 1.3362, 200 SMA: nan\n  RSI: 54.23\n  UNRATE MoM: -2.33% (if available), PAYEMS MoM: 0.04% (if available)\n  Conditions: price>50SMA>200SMA: False, RSI 40-60: True, Macro gate: True\n
