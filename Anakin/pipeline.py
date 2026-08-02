@@ -5,8 +5,12 @@ from datetime import datetime
 
 # Constants
 FOREX_SYMBOL = 'GBP/USD'
-ALPHA_VANTAGE_API_KEY = 'WA0W9MPFBZVC647T'
-FRED_API_KEY = 'fc24647391d13e28311bac65c45f4181'
+# API keys loaded from vault secrets
+with open(r'C:\the force\00_Master\secrets.md', 'r') as f:
+    secrets = f.read()
+import re
+ALPHA_VANTAGE_API_KEY = re.search(r'Alpha Vantage\s+`([^`]+)`', secrets).group(1)
+FRED_API_KEY = re.search(r'FRED \(St\. Louis Fed\)\s+`([^`]+)`', secrets).group(1)
 FRED_UNRATE = 'UNRATE'
 FRED_PAYEMS = 'PAYEMS'
 SIGNALS_FILE = r'C:\The Force\Anakin\signals.txt'

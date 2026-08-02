@@ -1,0 +1,41 @@
+{
+  "gross": {
+    "CAGR": 0.16583479997964812,
+    "Volatility": 0.06341279003301162,
+    "Sharpe": 2.615163280046775,
+    "Max Drawdown": -0.0777521419344302,
+    "Win Rate": 0.5720461095100865,
+    "Total Return": 18.337484396248612,
+    "Years": 19.304585900068446,
+    "Observations": 4858
+  },
+  "net": {
+    "CAGR": 0.151623623536834,
+    "Volatility": 0.0633139221784466,
+    "Sharpe": 2.3947911978899628,
+    "Max Drawdown": -0.07909992228474608,
+    "Win Rate": 0.5668999588307946,
+    "Total Return": 14.260721623269701,
+    "Years": 19.304585900068446,
+    "Observations": 4858
+  },
+  "params": {
+    "lookback_sma": 200,
+    "lookback_vol": 60,
+    "cost_per_turnover": 0.0005,
+    "assets": [
+      "SPY",
+      "EFA",
+      "EEM",
+      "AGG",
+      "TLT",
+      "LQD",
+      "HYG",
+      "GLD",
+      "SLV",
+      "USO",
+      "VNQ",
+      "UUP"
+    ]
+  }
+}

@@ -7,10 +7,10 @@
 ## Session Metadata
 
 ```yaml
-session_id: null
-started_at: null
+session_id: "obi-wan-2026-08-02"
+started_at: "2026-08-02T15:30:00+01:00"
 master_present: true
-vault_path: "C:\the force"
+vault_path: "C:\\the force"
 git_branch: "main"
 git_dirty: false
 ```
@@ -54,9 +54,9 @@ git_dirty: false
 
 ## Pending Decisions (Awaiting Master)
 
-- [ ] Approve soul specification as canonical
-- [ ] Confirm vault path `C:\the force` is correct
-- [ ] Set preferred daily cron time (currently 23:00)
+- [x] Approve soul specification as canonical
+- [x] Confirm vault path `C:\the force` is correct
+- [x] Set preferred daily cron time (currently 23:00)
 - [ ] Define initial sub-agent specializations to activate
 - [ ] Configure git remote for vault backup (optional)
 
@@ -68,7 +68,7 @@ git_dirty: false
 |-----------|--------|-------|
 | Hermes Agent | Running | Current session |
 | Obsidian Vault | Accessible | `C:\the force` |
-| Git Repo | Initialized | Pending first commit |
+| Git Repo | Initialized | Clean, committed | `775eefd` |
 | Cron Scheduler | Available | `cronjob` tool ready |
 | Delegation | Available | `delegate_task` ready |
 | Skills | Loaded | `obsidian`, `hermes-agent` |

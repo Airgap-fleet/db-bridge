@@ -1,0 +1,24 @@
+{
+  "gross_metrics": {
+    "CAGR": 0.031656512303954054,
+    "Volatility": 0.07622095601046984,
+    "Sharpe": 0.41532557397476966,
+    "Max Drawdown": -0.26019957997693566,
+    "Win Rate": 0.5403821102909249,
+    "Total Return": 0.7691477487006293,
+    "Years": 18.305270362765228,
+    "Observations": 4606
+  },
+  "net_metrics": {
+    "CAGR": -0.009977985854199956,
+    "Volatility": 0.0764022634341777,
+    "Sharpe": -0.13059803997555933,
+    "Max Drawdown": -0.36652307374421567,
+    "Win Rate": 0.5195397307859314,
+    "Total Return": -0.1677039517396155,
+    "Years": 18.305270362765228,
+    "Observations": 4606
+  },
+  "parameters_history": [
+    {
+      "window_start": 

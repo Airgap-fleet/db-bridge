@@ -1,0 +1,46 @@
+{
+  "gross_metrics": {
+    "CAGR": 0.35881131224288754,
+    "Volatility": 0.07237672527482417,
+    "Sharpe": 4.957551075714364,
+    "Max Drawdown": -0.053360193383263345,
+    "Win Rate": 0.645944833264718,
+    "Total Return": 371.03373484440493,
+    "Years": 19.304585900068446,
+    "Observations": 4858
+  },
+  "net_metrics": {
+    "CAGR": 0.3221048545126943,
+    "Volatility": 0.07202181568288725,
+    "Sharpe": 4.472323440593683,
+    "Max Drawdown": -0.05481659783962047,
+    "Win Rate": 0.6350349938246191,
+    "Total Return": 218.27442504998174,
+    "Years": 19.304585900068446,
+    "Observations": 4858
+  },
+  "parameters": {
+    "sma_length": 50,
+    "vol_lookback": 30,
+    "max_leverage": 1.5,
+    "cost_per_turnover": 0.0005,
+    "assets": [
+      "SPY",
+      "EFA",
+      "EEM",
+      "AGG",
+      "TLT",
+      "LQD",
+      "HYG",
+      "GLD",
+      "SLV",
+      "USO",
+      "VNQ",
+      "UUP"
+    ]
+  },
+  "date_range": {
+    "start": "2007-04-11T00:00:00",
+    "end": "2026-07-31T00:00:00"
+  }
+}

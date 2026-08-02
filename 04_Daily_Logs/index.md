@@ -24,7 +24,7 @@
 
 | Date | Master Dialogue | Sub-Agent Traces | Decisions | Metrics | Vault Health | Notes |
 |------|-----------------|------------------|-----------|---------|--------------|-------|
-| 2026-08-02 | [Link](2026-08-02/master-dialogue.md) | [Link](2026-08-02/subagent-traces.md) | [Link](2026-08-02/decisions.md) | [Link](2026-08-02/metrics.md) | [Link](2026-08-02/vault-health.md) | Initialization |
+| 2026-08-02 | [[2026-08-02/master-dialogue.md]] | [[2026-08-02/subagent-traces.md]] | [[2026-08-02/decisions.md]] | [[2026-08-02/metrics.md]] | *Not run* | Initialization; vault setup; 6 sub-agent templates defined; SOUL.md tone updated |
 
 ---
 
@@ -33,6 +33,10 @@
 | Tag | Dates | Count |
 |-----|-------|-------|
 | #initialization | 2026-08-02 | 1 |
+| #vault-setup | 2026-08-02 | 1 |
+| #obi-wan-design | 2026-08-02 | 1 |
+| #cron-archive | 2026-08-02 | 1 |
+| #sub-agent-architecture | 2026-08-02 | 1 |
 
 ---
 
