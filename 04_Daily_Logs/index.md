@@ -24,13 +24,13 @@
 
 | Date | Master Dialogue | Sub-Agent Traces | Decisions | Metrics | Vault Health | Notes |
 |------|-----------------|------------------|-----------|---------|--------------|-------|
-|| 2026-08-02 | [[2026-08-02/master-dialogue.md]] | [[2026-08-02/subagent-traces.md]] | [[2026-08-02/decisions.md]] | [[2026-08-02/metrics.md]] | [[2026-08-02/vault-health.md]] | Initialization; vault setup; 6 sub-agent templates; Anakin soul spec + MCP trading; OpenRouter model filtering explained; conversation recall confirmed |
+| 2026-08-02 | [[2026-08-02/master-dialogue.md]] | [[2026-08-02/subagent-traces.md]] | [[2026-08-02/decisions.md]] | [[2026-08-02/metrics.md]] | [[2026-08-02/vault-health.md]] | Initialization; vault setup; 6 sub-agent templates; Anakin soul spec + MCP trading; OpenRouter model filtering explained; conversation recall confirmed |
 
 ---
 
 ## Tags Index
 
-|| Tag | Dates | Count ||
+| Tag | Dates | Count |
 |-----|-------|-------|
 | #initialization | 2026-08-02 | 1 |
 | #vault-setup | 2026-08-02 | 1 |
