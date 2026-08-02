@@ -9,10 +9,12 @@
 ```yaml
 session_id: "obi-wan-2026-08-02"
 started_at: "2026-08-02T15:30:00+01:00"
+ended_at: "2026-08-02T17:30:00+01:00"
 master_present: true
 vault_path: "C:\\the force"
 git_branch: "main"
 git_dirty: false
+last_commit: "9058bd9"
 ```
 
 ---
@@ -21,7 +23,9 @@ git_dirty: false
 
 | Task ID | Description | Status | Owner | Started | Vault Ref |
 |---------|-------------|--------|-------|---------|-----------|
-| — | Awaiting Master's first command | pending | Obi-Wan | — | — |
+| INIT-001 | Vault initialization & Obi-Wan design | completed | Obi-Wan | 2026-08-02 15:12 | `04_Daily_Logs/2026-08-02/` |
+| ARCH-001 | Daily conversation archive (cron) | completed | Archivist (cron) | 2026-08-02 23:00 | `04_Daily_Logs/2026-08-02/` |
+| — | Awaiting Master's first operational command | pending | Obi-Wan | — | — |
 
 ---
 
@@ -47,8 +51,9 @@ git_dirty: false
 2. Soul specification written to `C:\Users\brook\Obi-Wan_SOUL.md`
 3. Master profile and protocols created
 4. Obi-Wan identity and state files created
-4. Sub-agent registry template ready
-5. Daily log directory prepared for tonight's cron
+5. Sub-agent registry template ready
+6. Daily log directory prepared for tonight's cron
+7. **Daily archive completed** — 4 log files written, index updated, git committed (`9058bd9`)
 
 ---
 
@@ -68,10 +73,11 @@ git_dirty: false
 |-----------|--------|-------|
 | Hermes Agent | Running | Current session |
 | Obsidian Vault | Accessible | `C:\the force` |
-| Git Repo | Initialized | Clean, committed | `775eefd` |
+| Git Repo | Initialized | Clean, committed | `9058bd9` |
 | Cron Scheduler | Available | `cronjob` tool ready |
 | Delegation | Available | `delegate_task` ready |
 | Skills | Loaded | `obsidian`, `hermes-agent` |
+| Daily Archive | Complete | `04_Daily_Logs/2026-08-02/` |
 
 ---
 
@@ -81,7 +87,11 @@ git_dirty: false
 - **Identity:** `01_Obi-Wan/identity.md`
 - **Capabilities:** `01_Obi-Wan/capabilities.md`
 - **Lessons:** `01_Obi-Wan/lessons.md`
+- **State (this file):** `01_Obi-Wan/state.md`
 - **Master Profile:** `00_Master/profile.md`
 - **Protocols:** `00_Master/protocols.md`
 - **Sub-Agent Registry:** `02_Sub-Agents/registry.md`
-- **Today's Log:** `04_Daily_Logs/YYYY-MM-DD/master-dialogue.md`
+- **Today's Log:** [[04_Daily_Logs/2026-08-02/master-dialogue.md]]
+- **Today's Traces:** [[04_Daily_Logs/2026-08-02/subagent-traces.md]]
+- **Today's Decisions:** [[04_Daily_Logs/2026-08-02/decisions.md]]
+- **Today's Metrics:** [[04_Daily_Logs/2026-08-02/metrics.md]]
