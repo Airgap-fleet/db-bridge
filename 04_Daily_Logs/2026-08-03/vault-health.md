@@ -25,3 +25,12 @@ git push -u origin master
 For semantic search, consider installing:
 - **obsidian-mind** MCP server for AI-powered vault indexing
 - **Zvec** plugin for local vector embeddings
+
+## Reindex Completion - 2026-08-03 (Cron Job)
+- **Trigger**: Scheduled cron job "Vault Reindex" (03:00)
+- **Files indexed**: 38 markdown files (excluded .git, .obsidian, Chat Logs)
+- **Total content**: 15,361 words / 109,945 characters
+- **Search index written to**: `05_Skills/search-index.json`
+- **Vector embeddings**: Not generated (no local embedding model configured)
+- **Status**: ✅ Complete
+- **Duration**: <5 seconds

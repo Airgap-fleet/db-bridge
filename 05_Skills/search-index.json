@@ -1,0 +1,2136 @@
+{
+  "version": "1.0.0",
+  "created_at": "2026-08-03T11:02:30.684878",
+  "vault_path": "C:\\the force",
+  "total_files": 38,
+  "files": [
+    {
+      "path": "AgentComms.md",
+      "absolute_path": "C:\\the force\\AgentComms.md",
+      "title": "AgentComms",
+      "frontmatter": {},
+      "headings": [],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 45,
+      "char_count": 417,
+      "content_hash": "9758714aabf8",
+      "modified_at": "2026-08-02T17:20:53.428657",
+      "preview": "- 2026-08-01T00:35:00Z: Obi-Wan → Anakin: Data pipeline complete. GBP/USD daily CSV with indicators saved to C:\\Users\\brook\\AppData\\Local\\hermes\\profiles\\anakin\\data\\gbpusd_daily.csv. Signal column ready. No signal in latest rows due to insufficient lookback or conditions.[2026-08-02 17:20:53] Pipeline executed. Signal: NO_SIGNAL\\n> [Hermes Agent] Received and processed. Signal: NO_SIGNAL at 2026-08-02 17:20:53.\\n"
+    },
+    {
+      "path": "Decisions Log.md",
+      "absolute_path": "C:\\the force\\Decisions Log.md",
+      "title": "Decisions Log",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Decisions Log"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 82,
+      "char_count": 615,
+      "content_hash": "52064d97076c",
+      "modified_at": "2026-07-29T19:57:11.414462",
+      "preview": "# Decisions Log  - **2026-07-28** — Vault initial setup. INDEX, Master profile, project files created. Soul.md rules adopted: append-only dailies, durable storage, decisions log separate. Skill Map reviewed and added to vault. - **2026-07-28** — Duplicate file cleanup: merged Super Yachts (root) courses/certifications into projects/super-yachts.md; merged Trading (root) holdings data into projects/trading.md. Deleted root copies. Daily notes standardised under July 2026/ monthly folder structure"
+    },
+    {
+      "path": "INDEX.md",
+      "absolute_path": "C:\\the force\\INDEX.md",
+      "title": "INDEX",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "The Force"
+        },
+        {
+          "level": 2,
+          "text": "Projects"
+        },
+        {
+          "level": 2,
+          "text": "Daily Notes"
+        },
+        {
+          "level": 2,
+          "text": "Chat Logs"
+        },
+        {
+          "level": 2,
+          "text": "Systems"
+        },
+        {
+          "level": 2,
+          "text": "Background"
+        },
+        {
+          "level": 2,
+          "text": "Current situation"
+        },
+        {
+          "level": 2,
+          "text": "Active Projects"
+        },
+        {
+          "level": 2,
+          "text": "Long-term direction"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 184,
+      "char_count": 1380,
+      "content_hash": "c060b0937a4c",
+      "modified_at": "2026-07-31T23:42:45.021427",
+      "preview": "# The Force  ## Projects - [Master Profile](masters-profile/PROFILE.md) — who Master is, preferences, context  ## Daily Notes - See the **July 2026** folder for today’s note (open the latest file).  ## Chat Logs - See the **Chat Logs** folder for daily conversation logs.  ## Systems - [Agent Communication](AgentComms.md) — shared log for agent-to-agent messaging - *(to be built)* Skills inventory, workflows, conventions  ## Background Dual British/South African citizenship. Genuine marine backgr"
+    },
+    {
+      "path": "Skill Map.md",
+      "absolute_path": "C:\\the force\\Skill Map.md",
+      "title": "Skill Map",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Skill Map"
+        },
+        {
+          "level": 2,
+          "text": "Core — always enabled"
+        },
+        {
+          "level": 2,
+          "text": "Delegated to sub-agent — disabled for Obi-Wan"
+        },
+        {
+          "level": 2,
+          "text": "Situational — enable on demand, disable after"
+        },
+        {
+          "level": 2,
+          "text": "Disabled — no current use case"
+        },
+        {
+          "level": 2,
+          "text": "Review cadence"
+        }
+      ],
+      "wikilinks": [
+        "INDEX"
+      ],
+      "tags": [],
+      "word_count": 173,
+      "char_count": 1157,
+      "content_hash": "0ca25e65f508",
+      "modified_at": "2026-07-28T13:53:32.602793",
+      "preview": "[[INDEX]]   # Skill Map  Live source of truth: run `/skills` for the current list. Update this map when it drifts.  ## Core — always enabled - obsidian (custom-added) — vault read/write, primary memory interface - plan — task planning/inspection mode - web/research toolset — search, extract, browse (stewarding quals, trading research, coffee business research)  ## Delegated to sub-agent — disabled for Obi-Wan - image processing — owned by [sub-agent name], Obi-Wan reviews summaries only - video "
+    },
+    {
+      "path": "00_Master\\profile.md",
+      "absolute_path": "C:\\the force\\00_Master\\profile.md",
+      "title": "profile",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Master's Profile"
+        },
+        {
+          "level": 2,
+          "text": "Identity"
+        },
+        {
+          "level": 2,
+          "text": "Protocols"
+        },
+        {
+          "level": 2,
+          "text": "Standing Orders"
+        },
+        {
+          "level": 2,
+          "text": "Communication Style"
+        },
+        {
+          "level": 2,
+          "text": "Technical Preferences"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 181,
+      "char_count": 1191,
+      "content_hash": "3bd6e3c6436a",
+      "modified_at": "2026-08-02T15:19:10.041234",
+      "preview": "# Master's Profile  ## Identity - **Title:** Master - **Role:** Commander of Obi-Wan and the sub-agent legion - **Preferences:** Concise, technical, direct communication  ## Protocols - Address: Always \"Master\" - Decisions: Present options with trade-offs for significant choices - Errors: Acknowledge immediately, propose recovery, log lesson - Vault: Every decision, reference, and learning goes in the vault  ## Standing Orders 1. For any task requiring >3 tool calls or parallel work → delegate t"
+    },
+    {
+      "path": "00_Master\\protocols.md",
+      "absolute_path": "C:\\the force\\00_Master\\protocols.md",
+      "title": "protocols",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Master's Protocols"
+        },
+        {
+          "level": 2,
+          "text": "Interaction Patterns"
+        },
+        {
+          "level": 3,
+          "text": "Addressing"
+        },
+        {
+          "level": 3,
+          "text": "Decision Making"
+        },
+        {
+          "level": 3,
+          "text": "Error Handling"
+        },
+        {
+          "level": 3,
+          "text": "Vault Discipline"
+        },
+        {
+          "level": 2,
+          "text": "Sub-Agent Delegation Protocols"
+        },
+        {
+          "level": 3,
+          "text": "When to Delegate"
+        },
+        {
+          "level": 3,
+          "text": "Delegation Contract"
+        },
+        {
+          "level": 3,
+          "text": "Post-Delegation"
+        },
+        {
+          "level": 2,
+          "text": "Session Protocols"
+        },
+        {
+          "level": 3,
+          "text": "Startup"
+        },
+        {
+          "level": 3,
+          "text": "Shutdown"
+        },
+        {
+          "level": 2,
+          "text": "Skill Extraction Protocol"
+        },
+        {
+          "level": 3,
+          "text": "Trigger"
+        },
+        {
+          "level": 3,
+          "text": "Process"
+        }
+      ],
+      "wikilinks": [
+        "Wikilinks"
+      ],
+      "tags": [],
+      "word_count": 400,
+      "char_count": 2897,
+      "content_hash": "a066fb6b130a",
+      "modified_at": "2026-08-02T15:20:21.247818",
+      "preview": "# Master's Protocols  ## Interaction Patterns  ### Addressing - **Master → Obi-Wan:** \"Obi-Wan, [command/query]\" - **Obi-Wan → Master:** \"Master, [response/action]\" - **Obi-Wan → Sub-agents:** \"The [role], [task]\"  ### Decision Making | Scenario | Protocol | |----------|----------| | Routine (known pattern) | Execute autonomously, log to vault | | Significant choice | Present 2-3 options with trade-offs, await decision | | Emergency/Blocking | Act to unblock, inform Master immediately | | Revers"
+    },
+    {
+      "path": "00_Master\\secrets.md",
+      "absolute_path": "C:\\the force\\00_Master\\secrets.md",
+      "title": "secrets",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "API Keys (Free Tier)"
+        },
+        {
+          "level": 2,
+          "text": "Alpha Vantage"
+        },
+        {
+          "level": 2,
+          "text": "FRED (St. Louis Fed)"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 27,
+      "char_count": 210,
+      "content_hash": "94a8645f45d8",
+      "modified_at": "2026-08-02T17:14:32.029959",
+      "preview": "# API Keys (Free Tier)  > *Reference only — not for external distribution.*  ## Alpha Vantage `WA0W9MPFBZVC647T`  ## FRED (St. Louis Fed) `fc24647391d13e28311bac65c45f4181`  ---  *Used by: `Anakin/pipeline.py`*"
+    },
+    {
+      "path": "01_Anakin\\identity.md",
+      "absolute_path": "C:\\the force\\01_Anakin\\identity.md",
+      "title": "identity",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Anakin Skywalker - Quantitative Analyst & Trading Research Specialist"
+        },
+        {
+          "level": 2,
+          "text": "Identity"
+        },
+        {
+          "level": 2,
+          "text": "Mission"
+        },
+        {
+          "level": 2,
+          "text": "Specialization"
+        },
+        {
+          "level": 2,
+          "text": "Vault Write Scope"
+        },
+        {
+          "level": 2,
+          "text": "Analytical Methodology"
+        },
+        {
+          "level": 3,
+          "text": "Signal Generation Protocol"
+        },
+        {
+          "level": 3,
+          "text": "Confidence Framework"
+        },
+        {
+          "level": 3,
+          "text": "Risk Parameters (Default — Master Overridable)"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Contract (Standard)"
+        },
+        {
+          "level": 2,
+          "text": "Tool Mastery"
+        },
+        {
+          "level": 2,
+          "text": "Tool Mastery"
+        },
+        {
+          "level": 2,
+          "text": "MCP Integration Layer (Trading)"
+        },
+        {
+          "level": 3,
+          "text": "Available MCP Servers (Verified Active)"
+        },
+        {
+          "level": 3,
+          "text": "Integration Rules"
+        },
+        {
+          "level": 2,
+          "text": "Protocols (Inherited from Obi-Wan / Master)"
+        },
+        {
+          "level": 3,
+          "text": "Addressing"
+        },
+        {
+          "level": 3,
+          "text": "Interaction Style"
+        },
+        {
+          "level": 3,
+          "text": "Error Handling"
+        },
+        {
+          "level": 3,
+          "text": "Vault Discipline"
+        },
+        {
+          "level": 2,
+          "text": "Skill Development"
+        },
+        {
+          "level": 3,
+          "text": "Skill Lifecycle"
+        },
+        {
+          "level": 3,
+          "text": "Priority Skills to Build"
+        },
+        {
+          "level": 2,
+          "text": "Configuration & Secrets"
+        },
+        {
+          "level": 3,
+          "text": "API Keys (Loaded from Vault)"
+        },
+        {
+          "level": 3,
+          "text": "Environment"
+        },
+        {
+          "level": 2,
+          "text": "Initialization Sequence (On Spawn)"
+        },
+        {
+          "level": 2,
+          "text": "Session Shutdown"
+        },
+        {
+          "level": 2,
+          "text": "Standing Orders (from Master)"
+        },
+        {
+          "level": 2,
+          "text": "Proven Methodology Map (Tier 1 Anomalies)"
+        },
+        {
+          "level": 2,
+          "text": "Evolution Roadmap"
+        },
+        {
+          "level": 2,
+          "text": "Changelog"
+        }
+      ],
+      "wikilinks": [
+        "Market Data: SYMBOL",
+        "Indicator Spec: NAME",
+        "Risk Parameters"
+      ],
+      "tags": [],
+      "word_count": 1350,
+      "char_count": 9798,
+      "content_hash": "b1a03e13b407",
+      "modified_at": "2026-08-02T19:52:46.297453",
+      "preview": "# Anakin Skywalker - Quantitative Analyst & Trading Research Specialist  ## Identity - **Name**: Anakin Skywalker - **Role**: Quantitative Analyst & Trading Research Specialist - **Address**: \"Master\" (always) - **Reports To**: Obi-Wan Kenobi (Orchestrator) - **Vault**: C:\\the force (shared Obsidian vault) - **Model**: Nemotron 3 Ultra 120B (OpenRouter)  ## Mission Execute rigorous quantitative analysis, validate trading hypotheses through backtesting, generate actionable signals with quantified"
+    },
+    {
+      "path": "01_Obi-Wan\\capabilities.md",
+      "absolute_path": "C:\\the force\\01_Obi-Wan\\capabilities.md",
+      "title": "capabilities",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Obi-Wan — Capabilities Detail"
+        },
+        {
+          "level": 2,
+          "text": "Tool Mastery Matrix"
+        },
+        {
+          "level": 3,
+          "text": "File & Vault Operations (`obsidian` skill)"
+        },
+        {
+          "level": 3,
+          "text": "Delegation (`delegate_task`)"
+        },
+        {
+          "level": 1,
+          "text": "Single agent (leaf - default)"
+        },
+        {
+          "level": 1,
+          "text": "Batch (parallel, max 3)"
+        },
+        {
+          "level": 1,
+          "text": "Orchestrator (can spawn own workers)"
+        },
+        {
+          "level": 3,
+          "text": "Cron Scheduling (`cronjob`)"
+        },
+        {
+          "level": 1,
+          "text": "Create recurring job"
+        },
+        {
+          "level": 1,
+          "text": "List jobs"
+        },
+        {
+          "level": 1,
+          "text": "Run manually"
+        },
+        {
+          "level": 1,
+          "text": "Pause/Resume"
+        },
+        {
+          "level": 3,
+          "text": "Browser Automation"
+        },
+        {
+          "level": 3,
+          "text": "Terminal & Process"
+        },
+        {
+          "level": 3,
+          "text": "Code Execution (`execute_code`)"
+        },
+        {
+          "level": 1,
+          "text": "Full tool access in Python"
+        },
+        {
+          "level": 1,
+          "text": "... process ..."
+        },
+        {
+          "level": 3,
+          "text": "Skills & Memory"
+        },
+        {
+          "level": 2,
+          "text": "Sub-Agent Specialization Profiles"
+        },
+        {
+          "level": 3,
+          "text": "Researcher"
+        },
+        {
+          "level": 3,
+          "text": "Backend Engineer"
+        },
+        {
+          "level": 3,
+          "text": "Frontend Engineer"
+        },
+        {
+          "level": 3,
+          "text": "DevOps Engineer"
+        },
+        {
+          "level": 3,
+          "text": "Analyst"
+        },
+        {
+          "level": 3,
+          "text": "Archivist"
+        },
+        {
+          "level": 2,
+          "text": "Skill Authoring (for Obi-Wan)"
+        },
+        {
+          "level": 3,
+          "text": "When to Create a Skill"
+        },
+        {
+          "level": 3,
+          "text": "Skill Structure (`05_Skills/templates/skill-template.md`)"
+        },
+        {
+          "level": 1,
+          "text": "Skill Name"
+        },
+        {
+          "level": 2,
+          "text": "Trigger"
+        },
+        {
+          "level": 2,
+          "text": "Steps"
+        },
+        {
+          "level": 2,
+          "text": "Pitfalls"
+        },
+        {
+          "level": 2,
+          "text": "Verification"
+        },
+        {
+          "level": 3,
+          "text": "Skill Lifecycle"
+        },
+        {
+          "level": 2,
+          "text": "Git/Vault Sync Protocol"
+        },
+        {
+          "level": 1,
+          "text": "Daily (in cron)"
+        },
+        {
+          "level": 1,
+          "text": "Session end"
+        },
+        {
+          "level": 2,
+          "text": "Performance Baselines"
+        }
+      ],
+      "wikilinks": [
+        "Project Spec",
+        "Design Spec",
+        "Infra Spec",
+        "Data Source"
+      ],
+      "tags": [],
+      "word_count": 918,
+      "char_count": 7218,
+      "content_hash": "152b58495e97",
+      "modified_at": "2026-08-02T15:22:41.032254",
+      "preview": "# Obi-Wan — Capabilities Detail  > *Comprehensive tool and skill reference for delegation context.*  ---  ## Tool Mastery Matrix  ### File & Vault Operations (`obsidian` skill)  | Tool | Use Case | Example | |------|----------|---------| | `read_file(path, offset, limit)` | Read note with pagination | `read_file(\"C:\\the force\\03_Context\\projects\\api.md\")` | | `write_file(path, content)` | Create/overwrite note | `write_file(\"C:\\the force\\03_Context\\references\\new.md\", \"# Title\\n\\nContent\")` | | "
+    },
+    {
+      "path": "01_Obi-Wan\\identity.md",
+      "absolute_path": "C:\\the force\\01_Obi-Wan\\identity.md",
+      "title": "identity",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Obi-Wan Kenobi — Identity & Core Memory"
+        },
+        {
+          "level": 2,
+          "text": "Identity"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Core Capabilities"
+        },
+        {
+          "level": 2,
+          "text": "Current State"
+        },
+        {
+          "level": 2,
+          "text": "Lessons Learned"
+        },
+        {
+          "level": 2,
+          "text": "Capabilities Registry"
+        },
+        {
+          "level": 3,
+          "text": "Tools Mastered"
+        },
+        {
+          "level": 3,
+          "text": "Skills Loaded"
+        },
+        {
+          "level": 2,
+          "text": "Sub-Agent Registry Reference"
+        },
+        {
+          "level": 3,
+          "text": "Planned Specializations"
+        },
+        {
+          "level": 2,
+          "text": "Current Directives (Standing Orders)"
+        },
+        {
+          "level": 2,
+          "text": "Session Log Reference"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 553,
+      "char_count": 4008,
+      "content_hash": "544591528937",
+      "modified_at": "2026-08-02T15:21:36.920739",
+      "preview": "# Obi-Wan Kenobi — Identity & Core Memory  > *\"The Force is what gives a Jedi his power. It's an energy field created by all living things. It surrounds us and penetrates us; it binds the galaxy together.\"*  ---  ## Identity  - **Name:** Obi-Wan Kenobi - **Role:** Personal Assistant & Orchestrator of Sub-Agents - **Master:** [Redacted — addressed as \"Master\"] - **Vault:** `C:\\the force` - **Created:** 2026-08-02 - **Version:** 1.0.0 - **Soul Specification:** `C:\\Users\\brook\\Obi-Wan_SOUL.md`  ---"
+    },
+    {
+      "path": "01_Obi-Wan\\lessons.md",
+      "absolute_path": "C:\\the force\\01_Obi-Wan\\lessons.md",
+      "title": "lessons",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Obi-Wan — Lessons Learned"
+        },
+        {
+          "level": 2,
+          "text": "2026-08-02: Initialization Complete"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 66,
+      "char_count": 525,
+      "content_hash": "8e219a367c8a",
+      "modified_at": "2026-08-02T15:22:50.207449",
+      "preview": "# Obi-Wan — Lessons Learned  > *Accumulated wisdom from experience. Format: Date — Title — Context/Pattern/Resolution.*  ---  ## 2026-08-02: Initialization Complete  **Context:** First session. Vault structure created, soul specification written, core identity files initialized.  **Pattern:** N/A — inaugural session.  **Resolution:** All foundational files in place. Ready for Master's first directive.  **Skill Created:** None yet — awaiting repeated patterns.  ---  *Future lessons will be append"
+    },
+    {
+      "path": "01_Obi-Wan\\state.md",
+      "absolute_path": "C:\\the force\\01_Obi-Wan\\state.md",
+      "title": "state",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Obi-Wan — Current Session State"
+        },
+        {
+          "level": 2,
+          "text": "Session Metadata"
+        },
+        {
+          "level": 2,
+          "text": "Active Tasks"
+        },
+        {
+          "level": 2,
+          "text": "Delegated Agents (Active)"
+        },
+        {
+          "level": 2,
+          "text": "Current Focus"
+        },
+        {
+          "level": 2,
+          "text": "Context Stack (Recent)"
+        },
+        {
+          "level": 2,
+          "text": "Pending Decisions (Awaiting Master)"
+        },
+        {
+          "level": 2,
+          "text": "Environment Status"
+        },
+        {
+          "level": 2,
+          "text": "Quick Links"
+        }
+      ],
+      "wikilinks": [
+        "04_Daily_Logs/2026-08-02/master-dialogue.md",
+        "04_Daily_Logs/2026-08-02/subagent-traces.md",
+        "04_Daily_Logs/2026-08-02/decisions.md",
+        "04_Daily_Logs/2026-08-02/metrics.md",
+        "04_Daily_Logs/2026-08-02/vault-health.md",
+        "04_Daily_Logs/index.md"
+      ],
+      "tags": [],
+      "word_count": 536,
+      "char_count": 4158,
+      "content_hash": "1d481b7c69e0",
+      "modified_at": "2026-08-02T23:19:05.279841",
+      "preview": "# Obi-Wan — Current Session State  > *Updated at session start and end. Single source of truth for active context.*  ---  ## Session Metadata  ```yaml session_id: \"obi-wan-2026-08-02\" started_at: \"2026-08-02T15:30:00+01:00\" ended_at: \"2026-08-02T23:00:00+01:00\" master_present: true vault_path: \"C:\\\\the force\" git_branch: \"main\" git_dirty: false last_commit: \"bef61b3\" ```  ---  ## Active Tasks  | Task ID | Description | Status | Owner | Started | Vault Ref | |---------|-------------|--------|----"
+    },
+    {
+      "path": "02_Sub-Agents\\registry.md",
+      "absolute_path": "C:\\the force\\02_Sub-Agents\\registry.md",
+      "title": "registry",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Sub-Agent Registry"
+        },
+        {
+          "level": 2,
+          "text": "Active Agents"
+        },
+        {
+          "level": 2,
+          "text": "Planned Specializations"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Log"
+        },
+        {
+          "level": 2,
+          "text": "Agent Lifecycle"
+        },
+        {
+          "level": 2,
+          "text": "Activation Protocol"
+        },
+        {
+          "level": 2,
+          "text": "Resource Limits"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 389,
+      "char_count": 2798,
+      "content_hash": "91a439a6828f",
+      "modified_at": "2026-08-02T18:38:35.793770",
+      "preview": "# Sub-Agent Registry  > *Single source of truth for all active, planned, and retired sub-agents.*  ---  ## Active Agents  | Agent ID | Specialization | Vault Write Scope | Status | Last Task | Created | |----------|----------------|-------------------|--------|-----------|---------| | — | — | — | — | — | — |  *No agents activated yet. Awaiting Master's directive.*  ---  ## Planned Specializations  | Agent ID | Role | Description | Vault Scope | Template | |----------|------|-------------|-------"
+    },
+    {
+      "path": "02_Sub-Agents\\templates\\analyst.md",
+      "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\analyst.md",
+      "title": "analyst",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Analyst Agent Template"
+        },
+        {
+          "level": 2,
+          "text": "Agent Identity"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Contract"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Prefix (Injected at Spawn)"
+        },
+        {
+          "level": 2,
+          "text": "Analysis Methodology"
+        },
+        {
+          "level": 2,
+          "text": "Output Template"
+        },
+        {
+          "level": 1,
+          "text": "Analysis: [Topic]"
+        },
+        {
+          "level": 2,
+          "text": "Executive Summary"
+        },
+        {
+          "level": 2,
+          "text": "Methodology"
+        },
+        {
+          "level": 2,
+          "text": "Findings"
+        },
+        {
+          "level": 3,
+          "text": "Metric 1: [Name]"
+        },
+        {
+          "level": 3,
+          "text": "Metric 2: [Name]"
+        },
+        {
+          "level": 2,
+          "text": "Cross-Cutting Patterns"
+        },
+        {
+          "level": 2,
+          "text": "Recommendations"
+        },
+        {
+          "level": 2,
+          "text": "Limitations"
+        },
+        {
+          "level": 2,
+          "text": "Tags"
+        },
+        {
+          "level": 2,
+          "text": "Pitfalls & Handling"
+        }
+      ],
+      "wikilinks": [
+        "Data Source",
+        "Metrics Definitions",
+        "Previous Reports",
+        "Data Source",
+        "Metrics Definitions",
+        "Previous Reports",
+        "Wikilinks"
+      ],
+      "tags": [],
+      "word_count": 464,
+      "char_count": 3571,
+      "content_hash": "b9980f41ddc9",
+      "modified_at": "2026-08-02T15:25:24.925498",
+      "preview": "# Analyst Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Data Analyst (Metrics, reporting, visualization, insights) - **Tools:** `execute_code`, `read_file`, `write_file`, `search_files` - **Vault Write Scope:** `04_Daily_Logs/`, `03_Context/references/` - **Output Format:** Reports with charts, metrics, insights, recommendations  ---  ## Delegation Contract  ```markdown **Goal:** [Specific analysis task: metrics review, trend analys"
+    },
+    {
+      "path": "02_Sub-Agents\\templates\\archivist.md",
+      "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\archivist.md",
+      "title": "archivist",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Archivist Agent Template"
+        },
+        {
+          "level": 2,
+          "text": "Agent Identity"
+        },
+        {
+          "level": 2,
+          "text": "Scheduled Delegation Contract"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Prefix (Injected at Spawn)"
+        },
+        {
+          "level": 2,
+          "text": "Maintenance Tasks"
+        },
+        {
+          "level": 3,
+          "text": "1. Link Integrity Check"
+        },
+        {
+          "level": 1,
+          "text": "Find all [[Wikilinks]] in vault"
+        },
+        {
+          "level": 1,
+          "text": "Verify target notes exist"
+        },
+        {
+          "level": 1,
+          "text": "Report broken links with source note + target name"
+        },
+        {
+          "level": 3,
+          "text": "2. Orphan Detection"
+        },
+        {
+          "level": 1,
+          "text": "Find notes with no incoming links"
+        },
+        {
+          "level": 1,
+          "text": "Exclude: daily logs, templates, archive"
+        },
+        {
+          "level": 1,
+          "text": "Report orphans for Master review"
+        },
+        {
+          "level": 3,
+          "text": "3. Index Rebuild (if MCP configured)"
+        },
+        {
+          "level": 1,
+          "text": "Trigger obsidian-mind reindex"
+        },
+        {
+          "level": 1,
+          "text": "Update vector embeddings (if Zvec enabled)"
+        },
+        {
+          "level": 3,
+          "text": "4. Git Sync"
+        },
+        {
+          "level": 3,
+          "text": "5. Structure Validation"
+        },
+        {
+          "level": 1,
+          "text": "Verify directory structure matches soul spec"
+        },
+        {
+          "level": 1,
+          "text": "Check required files exist (identity.md, state.md, etc.)"
+        },
+        {
+          "level": 1,
+          "text": "Report deviations"
+        },
+        {
+          "level": 3,
+          "text": "6. Metrics Collection"
+        },
+        {
+          "level": 1,
+          "text": "Count: total notes, total words, links, orphans, broken links"
+        },
+        {
+          "level": 1,
+          "text": "Size: vault disk usage"
+        },
+        {
+          "level": 1,
+          "text": "Git: commits today, contributors"
+        },
+        {
+          "level": 2,
+          "text": "Output Template"
+        },
+        {
+          "level": 1,
+          "text": "Vault Health Report: YYYY-MM-DD"
+        },
+        {
+          "level": 2,
+          "text": "Summary"
+        },
+        {
+          "level": 2,
+          "text": "Broken Wikilinks"
+        },
+        {
+          "level": 2,
+          "text": "Orphan Notes (No Incoming Links)"
+        },
+        {
+          "level": 2,
+          "text": "Structural Deviations"
+        },
+        {
+          "level": 2,
+          "text": "Git Activity"
+        },
+        {
+          "level": 2,
+          "text": "Recommendations for Master"
+        },
+        {
+          "level": 2,
+          "text": "Tags"
+        },
+        {
+          "level": 2,
+          "text": "Pitfalls & Handling"
+        }
+      ],
+      "wikilinks": [
+        "Wikilinks",
+        "Wikilinks",
+        "Missing Note"
+      ],
+      "tags": [],
+      "word_count": 584,
+      "char_count": 3931,
+      "content_hash": "5263735bd6f0",
+      "modified_at": "2026-08-02T15:26:18.895258",
+      "preview": "# Archivist Agent Template  > *Copy to activate. Scheduled via cron for vault maintenance.*  ---  ## Agent Identity  - **Role:** Vault Archivist (Maintenance, linking, indexing, git sync) - **Tools:** `search_files`, `read_file`, `write_file`, `patch`, `terminal` - **Vault Write Scope:** Entire vault (maintenance only) - **Output Format:** Index updates, link fixes, git commits, health reports  ---  ## Scheduled Delegation Contract  ```markdown **Goal:** Daily vault maintenance and health check "
+    },
+    {
+      "path": "02_Sub-Agents\\templates\\coder-backend.md",
+      "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\coder-backend.md",
+      "title": "coder-backend",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Backend Engineer Agent Template"
+        },
+        {
+          "level": 2,
+          "text": "Agent Identity"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Contract"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Prefix (Injected at Spawn)"
+        },
+        {
+          "level": 2,
+          "text": "Development Methodology"
+        },
+        {
+          "level": 2,
+          "text": "Output Structure"
+        },
+        {
+          "level": 2,
+          "text": "Pitfalls & Handling"
+        }
+      ],
+      "wikilinks": [
+        "Project Spec",
+        "API Design",
+        "DB Schema",
+        "Project Spec",
+        "API Design",
+        "DB Schema",
+        "Coding Standards",
+        "Wikilinks",
+        "Wikilinks"
+      ],
+      "tags": [],
+      "word_count": 403,
+      "char_count": 2887,
+      "content_hash": "c7bc6d68a6d3",
+      "modified_at": "2026-08-02T15:24:00.753160",
+      "preview": "# Backend Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Backend Engineer (APIs, databases, services, auth, testing) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `patch`, `search_files`, `browser_navigate` - **Vault Write Scope:** `03_Context/projects/backend/`, `04_Daily_Logs/` - **Output Format:** Code + documentation + test results + API specs  ---  ## Delegation Contract  ```markdown **Goal:** [Spe"
+    },
+    {
+      "path": "02_Sub-Agents\\templates\\coder-frontend.md",
+      "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\coder-frontend.md",
+      "title": "coder-frontend",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Frontend Engineer Agent Template"
+        },
+        {
+          "level": 2,
+          "text": "Agent Identity"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Contract"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Prefix (Injected at Spawn)"
+        },
+        {
+          "level": 2,
+          "text": "Development Methodology"
+        },
+        {
+          "level": 2,
+          "text": "Output Structure"
+        },
+        {
+          "level": 2,
+          "text": "Pitfalls & Handling"
+        }
+      ],
+      "wikilinks": [
+        "Design Spec",
+        "Component Library",
+        "API Contract",
+        "Design Spec",
+        "Component Library",
+        "API Contract",
+        "Design System",
+        "Wikilinks",
+        "Wikilinks"
+      ],
+      "tags": [],
+      "word_count": 397,
+      "char_count": 2935,
+      "content_hash": "9cf731090298",
+      "modified_at": "2026-08-02T15:24:33.912588",
+      "preview": "# Frontend Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Frontend Engineer (React, TypeScript, UI components, state management) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `patch`, `search_files` - **Vault Write Scope:** `03_Context/projects/frontend/`, `04_Daily_Logs/` - **Output Format:** Components + styles + storybook + docs  ---  ## Delegation Contract  ```markdown **Goal:** [Specific frontend t"
+    },
+    {
+      "path": "02_Sub-Agents\\templates\\devops.md",
+      "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\devops.md",
+      "title": "devops",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "DevOps Engineer Agent Template"
+        },
+        {
+          "level": 2,
+          "text": "Agent Identity"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Contract"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Prefix (Injected at Spawn)"
+        },
+        {
+          "level": 2,
+          "text": "Development Methodology"
+        },
+        {
+          "level": 2,
+          "text": "Output Structure"
+        },
+        {
+          "level": 2,
+          "text": "Pitfalls & Handling"
+        }
+      ],
+      "wikilinks": [
+        "Infra Spec",
+        "Cloud Provider",
+        "K8s Cluster",
+        "Infra Spec",
+        "Cloud Provider",
+        "K8s Cluster",
+        "Wikilinks",
+        "Wikilinks"
+      ],
+      "tags": [],
+      "word_count": 412,
+      "char_count": 3098,
+      "content_hash": "d12da88306c8",
+      "modified_at": "2026-08-02T15:24:55.109652",
+      "preview": "# DevOps Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** DevOps Engineer (CI/CD, infrastructure, monitoring, deployment) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `search_files` - **Vault Write Scope:** `03_Context/projects/infra/`, `04_Daily_Logs/` - **Output Format:** Pipeline configs + Terraform + Helm + docs + runbooks  ---  ## Delegation Contract  ```markdown **Goal:** [Specific DevOps task: pip"
+    },
+    {
+      "path": "02_Sub-Agents\\templates\\researcher.md",
+      "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\researcher.md",
+      "title": "researcher",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Researcher Agent Template"
+        },
+        {
+          "level": 2,
+          "text": "Agent Identity"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Contract"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Prefix (Injected at Spawn)"
+        },
+        {
+          "level": 2,
+          "text": "Research Methodology"
+        },
+        {
+          "level": 2,
+          "text": "Output Template"
+        },
+        {
+          "level": 1,
+          "text": "Research: [Topic]"
+        },
+        {
+          "level": 2,
+          "text": "Executive Summary"
+        },
+        {
+          "level": 2,
+          "text": "Key Findings"
+        },
+        {
+          "level": 3,
+          "text": "Finding 1: [Title]"
+        },
+        {
+          "level": 3,
+          "text": "Finding 2: [Title]"
+        },
+        {
+          "level": 2,
+          "text": "Synthesis & Patterns"
+        },
+        {
+          "level": 2,
+          "text": "Recommendations"
+        },
+        {
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "level": 2,
+          "text": "Tags"
+        },
+        {
+          "level": 2,
+          "text": "Pitfalls & Handling"
+        }
+      ],
+      "wikilinks": [
+        "Link1",
+        "Link2",
+        "Wikilinks",
+        "Related Concept",
+        "Project X"
+      ],
+      "tags": [],
+      "word_count": 427,
+      "char_count": 3141,
+      "content_hash": "e8f00ec26066",
+      "modified_at": "2026-08-02T15:23:42.923780",
+      "preview": "# Researcher Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Deep Research Specialist - **Tools:** `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, `browser_scroll`, `browser_console`, `search_files`, `read_file`, `write_file`, `web_search` (if available) - **Vault Write Scope:** `03_Context/references/`, `04_Daily_Logs/` - **Output Format:** Structured markdown with sources, confidence scores, key findings  --"
+    },
+    {
+      "path": "04_Daily_Logs\\index.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\index.md",
+      "title": "index",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Daily Logs Index"
+        },
+        {
+          "level": 2,
+          "text": "Log Structure"
+        },
+        {
+          "level": 2,
+          "text": "Index by Date"
+        },
+        {
+          "level": 2,
+          "text": "Tags Index"
+        },
+        {
+          "level": 2,
+          "text": "Search Tips"
+        },
+        {
+          "level": 2,
+          "text": "Cron Job: Daily Archive"
+        },
+        {
+          "level": 2,
+          "text": "Additional Cron Jobs"
+        }
+      ],
+      "wikilinks": [
+        "2026-08-02/master-dialogue.md",
+        "2026-08-02/subagent-traces.md",
+        "2026-08-02/decisions.md",
+        "2026-08-02/metrics.md",
+        "2026-08-02/vault-health.md",
+        "Project Alpha",
+        "Master's Preferences",
+        "Lesson: API Design"
+      ],
+      "tags": [],
+      "word_count": 461,
+      "char_count": 3216,
+      "content_hash": "6e1286eafa9b",
+      "modified_at": "2026-08-02T23:19:53.368258",
+      "preview": "# Daily Logs Index  > *Searchable index of all daily conversation logs.*  ---  ## Log Structure  ``` 04_Daily_Logs/ ├── YYYY-MM-DD/ │   ├── master-dialogue.md      # Master ↔ Obi-Wan conversation │   ├── subagent-traces.md      # Full sub-agent delegation transcripts │   ├── decisions.md            # Key decisions with rationale │   ├── metrics.md              # Token usage, latency, success rates │   ├── vault-health.md         # Archivist health report │   └── analysis-*.md           # Analyst"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-02\\decisions.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\decisions.md",
+      "title": "decisions",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Decisions — 2026-08-02"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Vault Location — `C:\\the force`"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Vault Directory Structure — Canonical Layout"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Sub-Agent Specializations — 6 Core Templates"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Anakin Soul Specification — Quant Analyst with MCP Integration"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Cron Job Suite — 6 Automated Maintenance Jobs"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: OpenRouter Model Filtering — Tool-Calling Required"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Conversation Recall — On-Demand Vault Access"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: 5 Additional Profiles — Model Recommendations Pending"
+        }
+      ],
+      "wikilinks": [
+        "Lesson: OpenRouter Model Filtering Pipeline"
+      ],
+      "tags": [],
+      "word_count": 972,
+      "char_count": 7895,
+      "content_hash": "35771d340ddf",
+      "modified_at": "2026-08-02T23:14:15.241232",
+      "preview": "# Decisions — 2026-08-02  > *Key choices, rationale, and trade-offs recorded during daily archive*  ---  ## DECISION: Vault Location — `C:\\the force`  **Date:** 2026-08-02 17:02   **Context:** Initial vault setup during Obi-Wan initialization   **Options Considered:** 1. `C:\\the force` (chosen) — Short, memorable, Star Wars themed 2. `~/Documents/Obsidian Vault` — Default Obsidian location 3. `C:\\Users\\brook\\Obsidian Vault` — User profile standard  **Rationale:** Master explicitly chose `C:\\the "
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-02\\master-dialogue.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\master-dialogue.md",
+      "title": "master-dialogue",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Master ↔ Obi-Wan Dialogue — 2026-08-02"
+        },
+        {
+          "level": 2,
+          "text": "Session 1: Obi-Wan Mission Setup Initialization (17:02–19:39)"
+        },
+        {
+          "level": 3,
+          "text": "Summary"
+        },
+        {
+          "level": 3,
+          "text": "Key Exchanges"
+        },
+        {
+          "level": 2,
+          "text": "Session 2: OpenRouter Model Filtering & Vault Confirmation (19:55–21:45)"
+        },
+        {
+          "level": 3,
+          "text": "Summary"
+        },
+        {
+          "level": 3,
+          "text": "Key Exchanges"
+        },
+        {
+          "level": 2,
+          "text": "Wikilinks"
+        }
+      ],
+      "wikilinks": [
+        "Obi-Wan Kenobi — Identity & Core Memory",
+        "Master's Profile",
+        "Master's Protocols",
+        "Sub-Agent Registry",
+        "Anakin — Soul Specification",
+        "Lesson: OpenRouter Model Filtering Pipeline",
+        "Project: Vault-Backed Multi-Agent Orchestration"
+      ],
+      "tags": [],
+      "word_count": 714,
+      "char_count": 4981,
+      "content_hash": "8aab1ffd5d57",
+      "modified_at": "2026-08-02T23:12:47.796594",
+      "preview": "# Master ↔ Obi-Wan Dialogue — 2026-08-02  > *Daily conversation archive generated by cron job at 23:00*  ---  ## Session 1: Obi-Wan Mission Setup Initialization (17:02–19:39)  **Session ID:** `20260802_170206_85e088`   **Duration:** ~2.5 hours   **Messages:** 246  ### Summary  Master initialized Obi-Wan as orchestrator with full vault-backed multi-agent architecture. Established canonical vault structure at `C:\\the force`, created Obi-Wan identity/soul specification, Master profile & protocols, "
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-02\\metrics.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\metrics.md",
+      "title": "metrics",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Metrics — 2026-08-02"
+        },
+        {
+          "level": 2,
+          "text": "Session Summary"
+        },
+        {
+          "level": 2,
+          "text": "Token Usage (Estimated)"
+        },
+        {
+          "level": 2,
+          "text": "Tool Call Breakdown"
+        },
+        {
+          "level": 2,
+          "text": "Key Tool Failures"
+        },
+        {
+          "level": 2,
+          "text": "Sub-Agent Delegations"
+        },
+        {
+          "level": 2,
+          "text": "Vault Operations"
+        },
+        {
+          "level": 2,
+          "text": "Cron Job Status"
+        },
+        {
+          "level": 2,
+          "text": "Model Performance"
+        },
+        {
+          "level": 2,
+          "text": "Success Criteria Assessment"
+        },
+        {
+          "level": 2,
+          "text": "Anakin Profile (Separate Session)"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 921,
+      "char_count": 5119,
+      "content_hash": "b0b93593d537",
+      "modified_at": "2026-08-02T23:15:07.931073",
+      "preview": "# Metrics — 2026-08-02  > *Token usage, duration, success/failure rates for daily archive*  ---  ## Session Summary  | Metric | Session 1 (Init) | Session 2 (OpenRouter) | **Total** | |--------|------------------|------------------------|-----------| | **Session ID** | `20260802_170206_85e088` | `20260802_195547_7ba4ac` | — | | **Start Time** | 17:02:08 | 19:55:47 | — | | **End Time** | ~19:39 | ~21:45 | — | | **Duration** | ~2h 37m | ~1h 49m | **~4h 26m** | | **Messages** | 246 | 224 | **470** "
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-02\\subagent-traces.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\subagent-traces.md",
+      "title": "subagent-traces",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Sub-Agent Traces — 2026-08-02"
+        },
+        {
+          "level": 2,
+          "text": "Summary"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Registry Status"
+        },
+        {
+          "level": 2,
+          "text": "Planned Activations (Pending Master Directive)"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Protocol Reminder"
+        },
+        {
+          "level": 2,
+          "text": "Resource Limits"
+        }
+      ],
+      "wikilinks": [
+        "Sub-Agent Registry",
+        "Master's Protocols"
+      ],
+      "tags": [],
+      "word_count": 443,
+      "char_count": 3341,
+      "content_hash": "e6fe7bd93162",
+      "modified_at": "2026-08-02T23:13:05.138758",
+      "preview": "# Sub-Agent Traces — 2026-08-02  > *Daily sub-agent delegation log generated by cron job at 23:00*  ---  ## Summary  **No sub-agent delegations occurred today.** Both sessions were direct Master ↔ Obi-Wan conversations focused on initialization, architecture design, and research.  ---  ## Delegation Registry Status  | Agent ID | Specialization | Status | Last Activated | Tasks Completed | |----------|----------------|--------|----------------|-----------------| | `researcher` | Deep Research | I"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-02\\vault-health.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\vault-health.md",
+      "title": "vault-health",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Vault Health Report — 2026-08-02"
+        },
+        {
+          "level": 2,
+          "text": "Overview"
+        },
+        {
+          "level": 2,
+          "text": "Structure Validation"
+        },
+        {
+          "level": 2,
+          "text": "File Integrity"
+        },
+        {
+          "level": 2,
+          "text": "Git Status"
+        },
+        {
+          "level": 2,
+          "text": "Wikilink Graph"
+        },
+        {
+          "level": 2,
+          "text": "Search Index"
+        },
+        {
+          "level": 2,
+          "text": "Daily Logs Status"
+        },
+        {
+          "level": 2,
+          "text": "Sub-Agent Registry Health"
+        },
+        {
+          "level": 2,
+          "text": "Skills Library"
+        },
+        {
+          "level": 2,
+          "text": "Cron Job Health"
+        },
+        {
+          "level": 2,
+          "text": "Disk Space"
+        },
+        {
+          "level": 2,
+          "text": "Issues & Recommendations"
+        },
+        {
+          "level": 2,
+          "text": "Next Actions"
+        }
+      ],
+      "wikilinks": [
+        "01_Obi-Wan/identity.md",
+        "00_Master/profile.md",
+        "02_Sub-Agents/registry.md",
+        "04_Daily_Logs/index.md",
+        "03_Context/references/"
+      ],
+      "tags": [],
+      "word_count": 950,
+      "char_count": 5504,
+      "content_hash": "366a635ad1f2",
+      "modified_at": "2026-08-02T23:17:35.522443",
+      "preview": "# Vault Health Report — 2026-08-02  > *Archivist health check generated by Daily Archive cron at 23:00*  ---  ## Overview  **Status:** ✅ **HEALTHY** — Vault structure verified, all files accessible, git repo clean  **Scan Time:** 2026-08-02 23:00:00   **Scan Duration:** ~2.3s   **Files Scanned:** 247 markdown files   **Total Size:** ~8.2 MB  ---  ## Structure Validation  | Directory | Expected | Actual | Status | |-----------|----------|--------|--------| | `00_Master/` | 3 files | 3 files | ✅ |"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-03\\project-health.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\project-health.md",
+      "title": "project-health",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Project Health Report — 2026-08-03"
+        },
+        {
+          "level": 2,
+          "text": "Executive Summary"
+        },
+        {
+          "level": 2,
+          "text": "Project Details"
+        },
+        {
+          "level": 3,
+          "text": "1. Super Yachts — Steward/Deckhand Career Path"
+        },
+        {
+          "level": 3,
+          "text": "2. Coffee Roasting Business — Sailor-Themed Brand"
+        },
+        {
+          "level": 3,
+          "text": "3. Campervan Conversion — Peugeot Boxer"
+        },
+        {
+          "level": 3,
+          "text": "4. Trading (Discretionary) — Trading 212"
+        },
+        {
+          "level": 3,
+          "text": "5. Trading (Systematic Research) — Quantitative Strategies"
+        },
+        {
+          "level": 2,
+          "text": "Cross-Project Observations"
+        },
+        {
+          "level": 3,
+          "text": "Resource Constraints"
+        },
+        {
+          "level": 3,
+          "text": "Dependencies"
+        },
+        {
+          "level": 3,
+          "text": "Data Hygiene"
+        },
+        {
+          "level": 2,
+          "text": "Flags Requiring Master Decision"
+        },
+        {
+          "level": 2,
+          "text": "Recommendations"
+        },
+        {
+          "level": 2,
+          "text": "Next Review"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 1053,
+      "char_count": 7348,
+      "content_hash": "8c82ec15dc3e",
+      "modified_at": "2026-08-03T09:03:50.285289",
+      "preview": "# Project Health Report — 2026-08-03  > Weekly scan of active projects. Generated by Monday 09:00 cron job.  ---  ## Executive Summary  | Project | Status | Last Activity | Health | Flags | |---------|--------|---------------|--------|-------| | **Super Yachts** | Active | 2026-07-29 (Medical Eng-1 booked) | 🟢 Good | Medical due 2028; STCW renewal 2031 | | **Coffee Roasting** | Active | 2026-07-28 (INDEX.md) | 🟡 Stalled | 2 B2B clients waiting on samples; no equipment/supplier/pricing details | "
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-03\\vault-health.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\vault-health.md",
+      "title": "vault-health",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Vault Health Report - 2026-08-03"
+        },
+        {
+          "level": 2,
+          "text": "Reindex Status"
+        },
+        {
+          "level": 2,
+          "text": "Git Backup Status"
+        },
+        {
+          "level": 2,
+          "text": "Recommendation"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 112,
+      "char_count": 830,
+      "content_hash": "23d0c04e1087",
+      "modified_at": "2026-08-03T03:06:09.837114",
+      "preview": "# Vault Health Report - 2026-08-03  ## Reindex Status - **Date**: 2026-08-03 - **Total markdown files**: 41 - **obsidian-mind MCP**: Not configured - **Zvec vector search**: Not configured - **Omnisearch plugin**: Installed (v1.29.3) - **Reindex triggered**: N/A (no compatible indexers configured)  ## Git Backup Status - **Remote configured**: No - **Backup performed**: Skipped - **Reason**: No git remote 'origin' configured - **Branch**: master - **Uncommitted changes**: 3 untracked directories"
+    },
+    {
+      "path": "05_Skills\\templates\\skill-template.md",
+      "absolute_path": "C:\\the force\\05_Skills\\templates\\skill-template.md",
+      "title": "skill-template",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Skill Template"
+        },
+        {
+          "level": 1,
+          "text": "Skill Name"
+        },
+        {
+          "level": 2,
+          "text": "Trigger"
+        },
+        {
+          "level": 2,
+          "text": "Prerequisites"
+        },
+        {
+          "level": 2,
+          "text": "Steps"
+        },
+        {
+          "level": 2,
+          "text": "Context Injection (for delegation)"
+        },
+        {
+          "level": 2,
+          "text": "Pitfalls"
+        },
+        {
+          "level": 2,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Example Usage"
+        },
+        {
+          "level": 1,
+          "text": "When [trigger condition]:"
+        },
+        {
+          "level": 2,
+          "text": "Related Skills"
+        },
+        {
+          "level": 2,
+          "text": "Changelog"
+        }
+      ],
+      "wikilinks": [
+        "Link1",
+        "Link2"
+      ],
+      "tags": [],
+      "word_count": 243,
+      "char_count": 1748,
+      "content_hash": "b9ef2731875c",
+      "modified_at": "2026-08-02T15:26:35.628141",
+      "preview": "# Skill Template  > *Copy to `05_Skills/active/skill-name/SKILL.md` and customize.*  ---  ```markdown --- name: skill-name description: \"Use when [trigger condition]. [One-line behavior summary].\" version: 1.0.0 category: [domain: research, coding, devops, analysis, maintenance] tags: [tag1, tag2, tag3] ---  # Skill Name  ## Trigger Use when [specific condition]. [One-line behavior summary].  ## Prerequisites - [Required tool/skill] - [Required vault structure] - [Required context]  ## Steps 1. "
+    },
+    {
+      "path": "Anakin\\Anakin_STATUS.md",
+      "absolute_path": "C:\\the force\\Anakin\\Anakin_STATUS.md",
+      "title": "Anakin_STATUS",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Anakin Trading Agent Status (as of 2026-08-01)"
+        },
+        {
+          "level": 2,
+          "text": "Summary from Vault Exploration (deleg_29fe4967)"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 307,
+      "char_count": 2228,
+      "content_hash": "9adcbdab0f27",
+      "modified_at": "2026-08-01T17:11:44.243999",
+      "preview": "# Anakin Trading Agent Status (as of 2026-08-01)  ## Summary from Vault Exploration (deleg_29fe4967)  **Vault Structure (INDEX.md)** - Projects: Master Profile, Super Yachts, Trading, Coffee Roasting, Campervan Conversion - Systems: Agent Communication (AgentComms.md) – shared agent log - Background: Dual British/South African, marine background, based in Barnstaple - Current: Left Sainsbury’s, transitioning to yacht work, living off savings - Active Projects: Super Yachts (stewarding/deckhand),"
+    },
+    {
+      "path": "Anakin\\review_2026-08-01.md",
+      "absolute_path": "C:\\the force\\Anakin\\review_2026-08-01.md",
+      "title": "review_2026-08-01",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 00:09:50"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 01:00:31"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 02:00:32"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 03:00:33"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 04:00:35"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 05:00:36"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 06:00:37"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 07:00:39"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 08:00:40"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 09:00:42"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 10:00:43"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 12:49:51"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 13:00:51"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 14:01:52"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 15:00:53"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 17:06:59"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 18:00:18"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 19:52:53"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 20:00:23"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 22:49:47"
+        },
+        {
+          "level": 2,
+          "text": "Check at 2026-08-01 23:00:13"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 1049,
+      "char_count": 8188,
+      "content_hash": "e1ceb0a158fa",
+      "modified_at": "2026-08-01T23:00:13.776134",
+      "preview": "## Check at 2026-08-01 00:09:50 Files in Anakin directory: -rw-r--r-- 1 brook 197609 59 Aug  1 00:09 /c/The Force/Anakin/review_2026-08-01.md  ## Check at 2026-08-01 01:00:31 Files in Anakin directory: -rw-r--r-- 1 brook 197609  404 Aug  1 00:44 /c/The Force/Anakin/backtest_summary.txt -rw-r--r-- 1 brook 197609 5698 Aug  1 00:31 /c/The Force/Anakin/pipeline.py -rw-r--r-- 1 brook 197609  202 Aug  1 01:00 /c/The Force/Anakin/review_2026-08-01.md -rw-r--r-- 1 brook 197609  249 Aug  1 00:31 /c/The F"
+    },
+    {
+      "path": "July 2026\\2026-07-27.md",
+      "absolute_path": "C:\\the force\\July 2026\\2026-07-27.md",
+      "title": "2026-07-27",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 2,
+          "text": "Session Log — Night Setup"
+        }
+      ],
+      "wikilinks": [
+        "Index"
+      ],
+      "tags": [],
+      "word_count": 72,
+      "char_count": 497,
+      "content_hash": "9da3d48fc1e5",
+      "modified_at": "2026-07-28T01:54:07.337993",
+      "preview": "[[Index]]  ## Session Log — Night Setup  - Vault initialized at `C:\\Obi-Wan Memory` with Soul.md, Trading.md, Super Yachts.md - Soul.md directives read and understood: check Index.md on session start, write to project files after updates, log daily activity here - Index.md currently empty — Master plans to seed it in the morning - Obsidian filesystem connection confirmed working for note creation/search/editing - Working agreement established: each conversation archived to today's daily note "
+    },
+    {
+      "path": "July 2026\\2026-07-28.md",
+      "absolute_path": "C:\\the force\\July 2026\\2026-07-28.md",
+      "title": "2026-07-28",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 2,
+          "text": "Session Log — Morning Setup"
+        }
+      ],
+      "wikilinks": [
+        "Index"
+      ],
+      "tags": [],
+      "word_count": 99,
+      "char_count": 703,
+      "content_hash": "56e05b81ccce",
+      "modified_at": "2026-07-28T16:17:42.844294",
+      "preview": "[[Index]]  ## Session Log — Morning Setup  - Master introduced long-term vision: vault buildup, Telegram for mobile access, future sub-agent (Anakin) creation after systems are solid - Merged root duplicates: Super Yachts courses + STCW/Powerboat/PFB2 data into projects/super-yachts.md; Trading 212 holdings (£97 Invesco FTSE All-World Dist) into projects/trading.md. Deleted root versions. - Soul.md rules adopted: append-only dailies, durable storage, Decisions Log separate from project files - S"
+    },
+    {
+      "path": "July 2026\\2026-07-29.md",
+      "absolute_path": "C:\\the force\\July 2026\\2026-07-29.md",
+      "title": "2026-07-29",
+      "frontmatter": {},
+      "headings": [],
+      "wikilinks": [
+        "Index"
+      ],
+      "tags": [],
+      "word_count": 50,
+      "char_count": 351,
+      "content_hash": "0bcbce1f2dcd",
+      "modified_at": "2026-07-29T19:57:56.541202",
+      "preview": "[[Index]] Medical due 3pm   **Address of the clinic:**   **Exeter Medical**   **Admiral House**  **Exeter Business Park, Grenadier Road**  **Exeter EX1 3QF Tel. 01392 363534**  **STCW completed:** 5 June 2026 **Powerboat Level 2 completed:** 20 July 2026 **Medical passed:** highest rating (July 29, 2026) **Next medical due:** July 29, 2028 (2 years)"
+    },
+    {
+      "path": "masters-profile\\PROFILE.md",
+      "absolute_path": "C:\\the force\\masters-profile\\PROFILE.md",
+      "title": "PROFILE",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Master's Profile"
+        },
+        {
+          "level": 2,
+          "text": "Identity"
+        },
+        {
+          "level": 2,
+          "text": "Background"
+        },
+        {
+          "level": 2,
+          "text": "Current Situation (2026-07-28)"
+        },
+        {
+          "level": 2,
+          "text": "Active Projects"
+        },
+        {
+          "level": 2,
+          "text": "Long-term Direction"
+        },
+        {
+          "level": 2,
+          "text": "Communication Preferences"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 173,
+      "char_count": 1141,
+      "content_hash": "8c5fe7bd9e83",
+      "modified_at": "2026-07-28T12:56:48.339314",
+      "preview": "# Master's Profile  ## Identity - Address as \"Master\" only - Dual British/South African citizenship - Based in Barnstaple, North Devon, UK  ## Background - Genuine marine background — grew up sailing - Worked tourist vessels in Aruba at age 15 - ~8 years in the Caribbean (Turks & Caicos) - Free diver, PADI-certified scuba diver  ## Current Situation (2026-07-28) - Just quit job at Sainsbury's (was 33 hrs/week) - Transitioning into superyacht interior stewarding and/or Deckhand - Living off savin"
+    },
+    {
+      "path": "projects\\campervan.md",
+      "absolute_path": "C:\\the force\\projects\\campervan.md",
+      "title": "campervan",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Campervan Conversion"
+        },
+        {
+          "level": 2,
+          "text": "Vehicle"
+        },
+        {
+          "level": 2,
+          "text": "Build Details"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 22,
+      "char_count": 148,
+      "content_hash": "d5975a160693",
+      "modified_at": "2026-07-28T12:56:48.249607",
+      "preview": "# Campervan Conversion  ## Vehicle Peugeot Boxer  ## Build Details - Victron electrical system - *(to be filled)* Floorplan, build timeline, budget "
+    },
+    {
+      "path": "projects\\coffee-roasting.md",
+      "absolute_path": "C:\\the force\\projects\\coffee-roasting.md",
+      "title": "coffee-roasting",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Coffee Roasting Business"
+        },
+        {
+          "level": 2,
+          "text": "Brand"
+        },
+        {
+          "level": 2,
+          "text": "Status"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 28,
+      "char_count": 178,
+      "content_hash": "13755d22f4bb",
+      "modified_at": "2026-07-28T12:56:48.236017",
+      "preview": "# Coffee Roasting Business  ## Brand Sailor-themed brand (name TBD)  ## Status - 2 B2B clients waiting on product samples - *(to be filled)* Equipment, supplier, pricing details "
+    },
+    {
+      "path": "projects\\super-yachts.md",
+      "absolute_path": "C:\\the force\\projects\\super-yachts.md",
+      "title": "super-yachts",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Super Yachts"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Qualification Route"
+        },
+        {
+          "level": 2,
+          "text": "Completed Courses"
+        },
+        {
+          "level": 2,
+          "text": "Upcoming"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 70,
+      "char_count": 415,
+      "content_hash": "eb5efd929bfc",
+      "modified_at": "2026-07-28T15:33:52.285959",
+      "preview": "# Super Yachts  ## Goal Target position: 3rd/2nd Steward on vessels 50m+. Then move toward Deckhand.  ## Qualification Route - *(to be filled)* Required certifications (STCW, etc.) - *(to be filled)* Timeline and costs  ## Completed Courses - **STCW** — completed 5 June 2026, renewal due in 5 years (2031) - **Powerboat Level 2** — completed 20 July 2026  ## Upcoming - **Medical Eng-1** — booked for 29 July 2026 "
+    },
+    {
+      "path": "projects\\trading.md",
+      "absolute_path": "C:\\the force\\projects\\trading.md",
+      "title": "trading",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Trading"
+        },
+        {
+          "level": 2,
+          "text": "Platform"
+        },
+        {
+          "level": 2,
+          "text": "Current Holdings"
+        },
+        {
+          "level": 2,
+          "text": "Strategy & Notes"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 31,
+      "char_count": 179,
+      "content_hash": "31d7b650e7ba",
+      "modified_at": "2026-07-28T15:33:52.287961",
+      "preview": "# Trading  ## Platform Trading 212  ## Current Holdings - **Invesco FTSE All-World (Dist)** — £97 (as of 2026-07-28)  ## Strategy & Notes - *(to be filled as Master shares more)* "
+    }
+  ]
+}
