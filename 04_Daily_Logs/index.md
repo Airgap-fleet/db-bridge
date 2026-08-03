@@ -22,16 +22,24 @@
 
 ## Index by Date
 
-| Date | Master Dialogue | Sub-Agent Traces | Decisions | Metrics | Vault Health | Notes |
+|| Date | Master Dialogue | Sub-Agent Traces | Decisions | Metrics | Vault Health | Notes ||
 |------|-----------------|------------------|-----------|---------|--------------|-------|
+| 2026-08-03 | [[2026-08-03/master-dialogue.md]] | [[2026-08-03/subagent-traces.md]] | [[2026-08-03/decisions.md]] | [[2026-08-03/metrics.md]] | [[2026-08-03/vault-health.md]] | Fallback model config; GPU DirectML; Anakin pipeline fix verified; full cron suite operational; K-2SO first optimization (rejected); trading loop activated; project health flags |
 | 2026-08-02 | [[2026-08-02/master-dialogue.md]] | [[2026-08-02/subagent-traces.md]] | [[2026-08-02/decisions.md]] | [[2026-08-02/metrics.md]] | [[2026-08-02/vault-health.md]] | Initialization; vault setup; 6 sub-agent templates; Anakin soul spec + MCP trading; OpenRouter model filtering explained; conversation recall confirmed |
 
 ---
 
 ## Tags Index
 
-| Tag | Dates | Count |
+|| Tag | Dates | Count ||
 |-----|-------|-------|
+| #fallback-model | 2026-08-03 | 1 |
+| #gpu-directml | 2026-08-03 | 1 |
+| #anakin-pipeline-fix | 2026-08-03 | 1 |
+| #cron-suite-operational | 2026-08-03 | 1 |
+| #k2so-optimization | 2026-08-03 | 1 |
+| #trading-loop-activated | 2026-08-03 | 1 |
+| #project-health-flags | 2026-08-03 | 1 |
 | #initialization | 2026-08-02 | 1 |
 | #vault-setup | 2026-08-02 | 1 |
 | #obi-wan-design | 2026-08-02 | 1 |

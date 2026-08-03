@@ -102,3 +102,14 @@ last_commit: "bef61b3"
 - **Today's Metrics:** [[04_Daily_Logs/2026-08-02/metrics.md]]
 - **Today's Vault Health:** [[04_Daily_Logs/2026-08-02/vault-health.md]]
 - **Daily Logs Index:** [[04_Daily_Logs/index.md]]
+- **Anakin Review (2026-08-03):** [[Anakin/Anakin_REVIEW_2026-08-03.md]]
+
+---
+
+## Anakin Daily Review Summary (2026-08-03)
+
+**Status: DRIFTING** — SMA200 NaN blocks all signals (compact API call only 100 bars, needs 200). Backtest Sharpe 0.38 << 1.0 target. Win rate 3.86%. K-2SO optimization loop not yet verified.
+
+**Required:** Fix `outputsize=full` in pipeline.py:24, add retry/backoff, implement position sizing, walk-forward backtest with costs, version results, verify K-2SO → Anakin param handoff.
+
+**Review written:** [[Anakin/Anakin_REVIEW_2026-08-03.md]]

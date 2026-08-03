@@ -37,7 +37,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -209,23 +211,25 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "hermes-console:Open Hermes Console": false,
       "omnisearch:Omnisearch": false
     }
   },
   "active": "7cca74fd35f03fd3",
   "lastOpenFiles": [
+    "K-2SO_SOUL.md",
+    "01_Anakin/identity.md",
+    "masters-profile/PROFILE.md",
+    "03_Context/systems/hardware.md",
+    "INDEX.md",
     "Chat Logs/ChatLog-2026-07-29.md",
     "July 2026/2026-07-29.md",
     "Chat Logs/2026-07-29.md",
     "Chat Logs",
-    "INDEX.md",
     "Decisions Log.md",
     "Skill Map.md",
     "projects/super-yachts.md",
     "July 2026/2026-07-28.md",
     "Trading.md",
-    "masters-profile/PROFILE.md",
     "projects/trading.md",
     "Super Yachts.md",
     "projects/campervan.md",

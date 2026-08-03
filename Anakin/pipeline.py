@@ -21,7 +21,7 @@ def fetch_forex_daily(symbol, api_key):
     if '/' not in symbol:
         raise ValueError("Symbol must be in format FROM/TO (e.g., GBP/USD)")
     from_symbol, to_symbol = symbol.split('/')
-    url = f'https://www.alphavantage.co/query?function=FX_DAILY&from_symbol={from_symbol}&to_symbol={to_symbol}&outputsize=compact&apikey={api_key}'
+    url = f'https://www.alphavantage.co/query?function=FX_DAILY&from_symbol={from_symbol}&to_symbol={to_symbol}&outputsize=full&apikey={api_key}'
     response = requests.get(url)
     data = response.json()
     ts_key = 'Time Series FX (Daily)'

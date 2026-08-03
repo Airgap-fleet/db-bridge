@@ -9,7 +9,18 @@
   "accessibility": {
     "highTextContrast": false
   },
-  "knownTags": {},
+  "knownTags": {
+    "anakin-soul": 1,
+    "conversation-recall": 2,
+    "cron-archive": 3,
+    "initialization": 4,
+    "mcp-trading": 5,
+    "obi-wan-design": 6,
+    "on-hold": 7,
+    "openrouter-filtering": 8,
+    "sub-agent-architecture": 9,
+    "vault-setup": 10
+  },
   "tagColors": {},
   "_version": 4
 }
