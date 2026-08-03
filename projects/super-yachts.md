@@ -13,3 +13,9 @@ Target position: 3rd/2nd Steward on vessels 50m+. Then move toward Deckhand.
 
 ## Upcoming
 - **Medical Eng-1** — booked for 29 July 2026
+
+## Health Status (2026-08-03)
+- **Status**: 🟢 Good
+- **Last Activity**: 2026-07-29 (Medical Eng-1 booked)
+- **Flags**: Medical valid to 2028; STCW renewal 2031
+- **Next Actions**: Document application targets/timeline once medical confirmed
