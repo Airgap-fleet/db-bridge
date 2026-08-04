@@ -1,138 +1,13 @@
 {
   "version": "1.0.0",
-  "created_at": "2026-08-03T11:02:30.684878",
-  "vault_path": "C:\\the force",
-  "total_files": 38,
+  "created_at": "2026-08-04T03:06:01.340477",
+  "vault_path": "C:\\\\the force",
+  "total_files": 55,
   "files": [
-    {
-      "path": "AgentComms.md",
-      "absolute_path": "C:\\the force\\AgentComms.md",
-      "title": "AgentComms",
-      "frontmatter": {},
-      "headings": [],
-      "wikilinks": [],
-      "tags": [],
-      "word_count": 45,
-      "char_count": 417,
-      "content_hash": "9758714aabf8",
-      "modified_at": "2026-08-02T17:20:53.428657",
-      "preview": "- 2026-08-01T00:35:00Z: Obi-Wan → Anakin: Data pipeline complete. GBP/USD daily CSV with indicators saved to C:\\Users\\brook\\AppData\\Local\\hermes\\profiles\\anakin\\data\\gbpusd_daily.csv. Signal column ready. No signal in latest rows due to insufficient lookback or conditions.[2026-08-02 17:20:53] Pipeline executed. Signal: NO_SIGNAL\\n> [Hermes Agent] Received and processed. Signal: NO_SIGNAL at 2026-08-02 17:20:53.\\n"
-    },
-    {
-      "path": "Decisions Log.md",
-      "absolute_path": "C:\\the force\\Decisions Log.md",
-      "title": "Decisions Log",
-      "frontmatter": {},
-      "headings": [
-        {
-          "level": 1,
-          "text": "Decisions Log"
-        }
-      ],
-      "wikilinks": [],
-      "tags": [],
-      "word_count": 82,
-      "char_count": 615,
-      "content_hash": "52064d97076c",
-      "modified_at": "2026-07-29T19:57:11.414462",
-      "preview": "# Decisions Log  - **2026-07-28** — Vault initial setup. INDEX, Master profile, project files created. Soul.md rules adopted: append-only dailies, durable storage, decisions log separate. Skill Map reviewed and added to vault. - **2026-07-28** — Duplicate file cleanup: merged Super Yachts (root) courses/certifications into projects/super-yachts.md; merged Trading (root) holdings data into projects/trading.md. Deleted root copies. Daily notes standardised under July 2026/ monthly folder structure"
-    },
-    {
-      "path": "INDEX.md",
-      "absolute_path": "C:\\the force\\INDEX.md",
-      "title": "INDEX",
-      "frontmatter": {},
-      "headings": [
-        {
-          "level": 1,
-          "text": "The Force"
-        },
-        {
-          "level": 2,
-          "text": "Projects"
-        },
-        {
-          "level": 2,
-          "text": "Daily Notes"
-        },
-        {
-          "level": 2,
-          "text": "Chat Logs"
-        },
-        {
-          "level": 2,
-          "text": "Systems"
-        },
-        {
-          "level": 2,
-          "text": "Background"
-        },
-        {
-          "level": 2,
-          "text": "Current situation"
-        },
-        {
-          "level": 2,
-          "text": "Active Projects"
-        },
-        {
-          "level": 2,
-          "text": "Long-term direction"
-        }
-      ],
-      "wikilinks": [],
-      "tags": [],
-      "word_count": 184,
-      "char_count": 1380,
-      "content_hash": "c060b0937a4c",
-      "modified_at": "2026-07-31T23:42:45.021427",
-      "preview": "# The Force  ## Projects - [Master Profile](masters-profile/PROFILE.md) — who Master is, preferences, context  ## Daily Notes - See the **July 2026** folder for today’s note (open the latest file).  ## Chat Logs - See the **Chat Logs** folder for daily conversation logs.  ## Systems - [Agent Communication](AgentComms.md) — shared log for agent-to-agent messaging - *(to be built)* Skills inventory, workflows, conventions  ## Background Dual British/South African citizenship. Genuine marine backgr"
-    },
-    {
-      "path": "Skill Map.md",
-      "absolute_path": "C:\\the force\\Skill Map.md",
-      "title": "Skill Map",
-      "frontmatter": {},
-      "headings": [
-        {
-          "level": 1,
-          "text": "Skill Map"
-        },
-        {
-          "level": 2,
-          "text": "Core — always enabled"
-        },
-        {
-          "level": 2,
-          "text": "Delegated to sub-agent — disabled for Obi-Wan"
-        },
-        {
-          "level": 2,
-          "text": "Situational — enable on demand, disable after"
-        },
-        {
-          "level": 2,
-          "text": "Disabled — no current use case"
-        },
-        {
-          "level": 2,
-          "text": "Review cadence"
-        }
-      ],
-      "wikilinks": [
-        "INDEX"
-      ],
-      "tags": [],
-      "word_count": 173,
-      "char_count": 1157,
-      "content_hash": "0ca25e65f508",
-      "modified_at": "2026-07-28T13:53:32.602793",
-      "preview": "[[INDEX]]   # Skill Map  Live source of truth: run `/skills` for the current list. Update this map when it drifts.  ## Core — always enabled - obsidian (custom-added) — vault read/write, primary memory interface - plan — task planning/inspection mode - web/research toolset — search, extract, browse (stewarding quals, trading research, coffee business research)  ## Delegated to sub-agent — disabled for Obi-Wan - image processing — owned by [sub-agent name], Obi-Wan reviews summaries only - video "
-    },
     {
       "path": "00_Master\\profile.md",
       "absolute_path": "C:\\the force\\00_Master\\profile.md",
-      "title": "profile",
+      "title": "Master's Profile",
       "frontmatter": {},
       "headings": [
         {
@@ -166,12 +41,12 @@
       "char_count": 1191,
       "content_hash": "3bd6e3c6436a",
       "modified_at": "2026-08-02T15:19:10.041234",
-      "preview": "# Master's Profile  ## Identity - **Title:** Master - **Role:** Commander of Obi-Wan and the sub-agent legion - **Preferences:** Concise, technical, direct communication  ## Protocols - Address: Always \"Master\" - Decisions: Present options with trade-offs for significant choices - Errors: Acknowledge immediately, propose recovery, log lesson - Vault: Every decision, reference, and learning goes in the vault  ## Standing Orders 1. For any task requiring >3 tool calls or parallel work → delegate t"
+      "preview": "# Master's Profile  ## Identity - **Title:** Master - **Role:** Commander of Obi-Wan and the sub-agent legion - **Preferences:** Concise, technical, direct communication  ## Protocols - Address: Always \"Master\" - Decisions: Present options with trade-offs for significant choices - Errors: Acknowledg"
     },
     {
       "path": "00_Master\\protocols.md",
       "absolute_path": "C:\\the force\\00_Master\\protocols.md",
-      "title": "protocols",
+      "title": "Master's Protocols",
       "frontmatter": {},
       "headings": [
         {
@@ -242,17 +117,19 @@
       "wikilinks": [
         "Wikilinks"
       ],
-      "tags": [],
+      "tags": [
+        "tag"
+      ],
       "word_count": 400,
       "char_count": 2897,
       "content_hash": "a066fb6b130a",
       "modified_at": "2026-08-02T15:20:21.247818",
-      "preview": "# Master's Protocols  ## Interaction Patterns  ### Addressing - **Master → Obi-Wan:** \"Obi-Wan, [command/query]\" - **Obi-Wan → Master:** \"Master, [response/action]\" - **Obi-Wan → Sub-agents:** \"The [role], [task]\"  ### Decision Making | Scenario | Protocol | |----------|----------| | Routine (known pattern) | Execute autonomously, log to vault | | Significant choice | Present 2-3 options with trade-offs, await decision | | Emergency/Blocking | Act to unblock, inform Master immediately | | Revers"
+      "preview": "# Master's Protocols  ## Interaction Patterns  ### Addressing - **Master → Obi-Wan:** \"Obi-Wan, [command/query]\" - **Obi-Wan → Master:** \"Master, [response/action]\" - **Obi-Wan → Sub-agents:** \"The [role], [task]\"  ### Decision Making | Scenario | Protocol | |----------|----------| | Routine (known "
     },
     {
       "path": "00_Master\\secrets.md",
       "absolute_path": "C:\\the force\\00_Master\\secrets.md",
-      "title": "secrets",
+      "title": "API Keys (Free Tier)",
       "frontmatter": {},
       "headings": [
         {
@@ -279,7 +156,7 @@
     {
       "path": "01_Anakin\\identity.md",
       "absolute_path": "C:\\the force\\01_Anakin\\identity.md",
-      "title": "identity",
+      "title": "Anakin Skywalker - Quantitative Analyst & Trading Research Specialist",
       "frontmatter": {},
       "headings": [
         {
@@ -421,12 +298,12 @@
       "char_count": 9798,
       "content_hash": "b1a03e13b407",
       "modified_at": "2026-08-02T19:52:46.297453",
-      "preview": "# Anakin Skywalker - Quantitative Analyst & Trading Research Specialist  ## Identity - **Name**: Anakin Skywalker - **Role**: Quantitative Analyst & Trading Research Specialist - **Address**: \"Master\" (always) - **Reports To**: Obi-Wan Kenobi (Orchestrator) - **Vault**: C:\\the force (shared Obsidian vault) - **Model**: Nemotron 3 Ultra 120B (OpenRouter)  ## Mission Execute rigorous quantitative analysis, validate trading hypotheses through backtesting, generate actionable signals with quantified"
+      "preview": "# Anakin Skywalker - Quantitative Analyst & Trading Research Specialist  ## Identity - **Name**: Anakin Skywalker - **Role**: Quantitative Analyst & Trading Research Specialist - **Address**: \"Master\" (always) - **Reports To**: Obi-Wan Kenobi (Orchestrator) - **Vault**: C:\\the force (shared Obsidian"
     },
     {
       "path": "01_Obi-Wan\\capabilities.md",
       "absolute_path": "C:\\the force\\01_Obi-Wan\\capabilities.md",
-      "title": "capabilities",
+      "title": "Obi-Wan — Capabilities Detail",
       "frontmatter": {},
       "headings": [
         {
@@ -593,12 +470,12 @@
       "char_count": 7218,
       "content_hash": "152b58495e97",
       "modified_at": "2026-08-02T15:22:41.032254",
-      "preview": "# Obi-Wan — Capabilities Detail  > *Comprehensive tool and skill reference for delegation context.*  ---  ## Tool Mastery Matrix  ### File & Vault Operations (`obsidian` skill)  | Tool | Use Case | Example | |------|----------|---------| | `read_file(path, offset, limit)` | Read note with pagination | `read_file(\"C:\\the force\\03_Context\\projects\\api.md\")` | | `write_file(path, content)` | Create/overwrite note | `write_file(\"C:\\the force\\03_Context\\references\\new.md\", \"# Title\\n\\nContent\")` | | "
+      "preview": "# Obi-Wan — Capabilities Detail  > *Comprehensive tool and skill reference for delegation context.*  ---  ## Tool Mastery Matrix  ### File & Vault Operations (`obsidian` skill)  | Tool | Use Case | Example | |------|----------|---------| | `read_file(path, offset, limit)` | Read note with pagination"
     },
     {
       "path": "01_Obi-Wan\\identity.md",
       "absolute_path": "C:\\the force\\01_Obi-Wan\\identity.md",
-      "title": "identity",
+      "title": "Obi-Wan Kenobi — Identity & Core Memory",
       "frontmatter": {},
       "headings": [
         {
@@ -660,12 +537,12 @@
       "char_count": 4008,
       "content_hash": "544591528937",
       "modified_at": "2026-08-02T15:21:36.920739",
-      "preview": "# Obi-Wan Kenobi — Identity & Core Memory  > *\"The Force is what gives a Jedi his power. It's an energy field created by all living things. It surrounds us and penetrates us; it binds the galaxy together.\"*  ---  ## Identity  - **Name:** Obi-Wan Kenobi - **Role:** Personal Assistant & Orchestrator of Sub-Agents - **Master:** [Redacted — addressed as \"Master\"] - **Vault:** `C:\\the force` - **Created:** 2026-08-02 - **Version:** 1.0.0 - **Soul Specification:** `C:\\Users\\brook\\Obi-Wan_SOUL.md`  ---"
+      "preview": "# Obi-Wan Kenobi — Identity & Core Memory  > *\"The Force is what gives a Jedi his power. It's an energy field created by all living things. It surrounds us and penetrates us; it binds the galaxy together.\"*  ---  ## Identity  - **Name:** Obi-Wan Kenobi - **Role:** Personal Assistant & Orchestrator o"
     },
     {
       "path": "01_Obi-Wan\\lessons.md",
       "absolute_path": "C:\\the force\\01_Obi-Wan\\lessons.md",
-      "title": "lessons",
+      "title": "Obi-Wan — Lessons Learned",
       "frontmatter": {},
       "headings": [
         {
@@ -683,12 +560,12 @@
       "char_count": 525,
       "content_hash": "8e219a367c8a",
       "modified_at": "2026-08-02T15:22:50.207449",
-      "preview": "# Obi-Wan — Lessons Learned  > *Accumulated wisdom from experience. Format: Date — Title — Context/Pattern/Resolution.*  ---  ## 2026-08-02: Initialization Complete  **Context:** First session. Vault structure created, soul specification written, core identity files initialized.  **Pattern:** N/A — inaugural session.  **Resolution:** All foundational files in place. Ready for Master's first directive.  **Skill Created:** None yet — awaiting repeated patterns.  ---  *Future lessons will be append"
+      "preview": "# Obi-Wan — Lessons Learned  > *Accumulated wisdom from experience. Format: Date — Title — Context/Pattern/Resolution.*  ---  ## 2026-08-02: Initialization Complete  **Context:** First session. Vault structure created, soul specification written, core identity files initialized.  **Pattern:** N/A — "
     },
     {
       "path": "01_Obi-Wan\\state.md",
       "absolute_path": "C:\\the force\\01_Obi-Wan\\state.md",
-      "title": "state",
+      "title": "Obi-Wan — Current Session State",
       "frontmatter": {},
       "headings": [
         {
@@ -726,27 +603,37 @@
         {
           "level": 2,
           "text": "Quick Links"
+        },
+        {
+          "level": 2,
+          "text": "Anakin Daily Review Summary (2026-08-03)"
         }
       ],
       "wikilinks": [
-        "04_Daily_Logs/2026-08-02/master-dialogue.md",
-        "04_Daily_Logs/2026-08-02/subagent-traces.md",
-        "04_Daily_Logs/2026-08-02/decisions.md",
-        "04_Daily_Logs/2026-08-02/metrics.md",
-        "04_Daily_Logs/2026-08-02/vault-health.md",
-        "04_Daily_Logs/index.md"
+        "04_Daily_Logs/2026-08-03/master-dialogue.md",
+        "04_Daily_Logs/2026-08-03/subagent-traces.md",
+        "04_Daily_Logs/2026-08-03/decisions.md",
+        "04_Daily_Logs/2026-08-03/metrics.md",
+        "04_Daily_Logs/2026-08-03/vault-health.md",
+        "04_Daily_Logs/2026-08-03/k2so-traces.md",
+        "04_Daily_Logs/index.md",
+        "Anakin/Anakin_REVIEW_2026-08-03.md",
+        "Anakin/best_params.md",
+        "Anakin/grid_search_results.csv",
+        "Anakin/Anakin_REVIEW_2026-08-03.md",
+        "04_Daily_Logs/2026-08-03/k2so-traces.md"
       ],
       "tags": [],
-      "word_count": 536,
-      "char_count": 4158,
-      "content_hash": "1d481b7c69e0",
-      "modified_at": "2026-08-02T23:19:05.279841",
-      "preview": "# Obi-Wan — Current Session State  > *Updated at session start and end. Single source of truth for active context.*  ---  ## Session Metadata  ```yaml session_id: \"obi-wan-2026-08-02\" started_at: \"2026-08-02T15:30:00+01:00\" ended_at: \"2026-08-02T23:00:00+01:00\" master_present: true vault_path: \"C:\\\\the force\" git_branch: \"main\" git_dirty: false last_commit: \"bef61b3\" ```  ---  ## Active Tasks  | Task ID | Description | Status | Owner | Started | Vault Ref | |---------|-------------|--------|----"
+      "word_count": 863,
+      "char_count": 6665,
+      "content_hash": "3d4203723b81",
+      "modified_at": "2026-08-03T23:11:26.029250",
+      "preview": "# Obi-Wan — Current Session State  > *Updated at session start and end. Single source of truth for active context.*  ---  ## Session Metadata  ```yaml session_id: \"obi-wan-2026-08-03\" started_at: \"2026-08-03T09:42:00+01:00\" ended_at: \"2026-08-03T23:00:00+01:00\" master_present: true vault_path: \"C:\\\\"
     },
     {
       "path": "02_Sub-Agents\\registry.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\registry.md",
-      "title": "registry",
+      "title": "Sub-Agent Registry",
       "frontmatter": {},
       "headings": [
         {
@@ -784,12 +671,12 @@
       "char_count": 2798,
       "content_hash": "91a439a6828f",
       "modified_at": "2026-08-02T18:38:35.793770",
-      "preview": "# Sub-Agent Registry  > *Single source of truth for all active, planned, and retired sub-agents.*  ---  ## Active Agents  | Agent ID | Specialization | Vault Write Scope | Status | Last Task | Created | |----------|----------------|-------------------|--------|-----------|---------| | — | — | — | — | — | — |  *No agents activated yet. Awaiting Master's directive.*  ---  ## Planned Specializations  | Agent ID | Role | Description | Vault Scope | Template | |----------|------|-------------|-------"
+      "preview": "# Sub-Agent Registry  > *Single source of truth for all active, planned, and retired sub-agents.*  ---  ## Active Agents  | Agent ID | Specialization | Vault Write Scope | Status | Last Task | Created | |----------|----------------|-------------------|--------|-----------|---------| | — | — | — | — "
     },
     {
       "path": "02_Sub-Agents\\templates\\analyst.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\analyst.md",
-      "title": "analyst",
+      "title": "Analyst Agent Template",
       "frontmatter": {},
       "headings": [
         {
@@ -870,17 +757,19 @@
         "Previous Reports",
         "Wikilinks"
       ],
-      "tags": [],
+      "tags": [
+        "analysis"
+      ],
       "word_count": 464,
       "char_count": 3571,
       "content_hash": "b9980f41ddc9",
       "modified_at": "2026-08-02T15:25:24.925498",
-      "preview": "# Analyst Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Data Analyst (Metrics, reporting, visualization, insights) - **Tools:** `execute_code`, `read_file`, `write_file`, `search_files` - **Vault Write Scope:** `04_Daily_Logs/`, `03_Context/references/` - **Output Format:** Reports with charts, metrics, insights, recommendations  ---  ## Delegation Contract  ```markdown **Goal:** [Specific analysis task: metrics review, trend analys"
+      "preview": "# Analyst Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Data Analyst (Metrics, reporting, visualization, insights) - **Tools:** `execute_code`, `read_file`, `write_file`, `search_files` - **Vault Write Scope:** `04_Daily_Logs/`, `03_Con"
     },
     {
       "path": "02_Sub-Agents\\templates\\archivist.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\archivist.md",
-      "title": "archivist",
+      "title": "Archivist Agent Template",
       "frontmatter": {},
       "headings": [
         {
@@ -1029,17 +918,21 @@
         "Wikilinks",
         "Missing Note"
       ],
-      "tags": [],
+      "tags": [
+        "vault-health",
+        "maintenance",
+        "archivist"
+      ],
       "word_count": 584,
       "char_count": 3931,
       "content_hash": "5263735bd6f0",
       "modified_at": "2026-08-02T15:26:18.895258",
-      "preview": "# Archivist Agent Template  > *Copy to activate. Scheduled via cron for vault maintenance.*  ---  ## Agent Identity  - **Role:** Vault Archivist (Maintenance, linking, indexing, git sync) - **Tools:** `search_files`, `read_file`, `write_file`, `patch`, `terminal` - **Vault Write Scope:** Entire vault (maintenance only) - **Output Format:** Index updates, link fixes, git commits, health reports  ---  ## Scheduled Delegation Contract  ```markdown **Goal:** Daily vault maintenance and health check "
+      "preview": "# Archivist Agent Template  > *Copy to activate. Scheduled via cron for vault maintenance.*  ---  ## Agent Identity  - **Role:** Vault Archivist (Maintenance, linking, indexing, git sync) - **Tools:** `search_files`, `read_file`, `write_file`, `patch`, `terminal` - **Vault Write Scope:** Entire vaul"
     },
     {
       "path": "02_Sub-Agents\\templates\\coder-backend.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\coder-backend.md",
-      "title": "coder-backend",
+      "title": "Backend Engineer Agent Template",
       "frontmatter": {},
       "headings": [
         {
@@ -1087,12 +980,12 @@
       "char_count": 2887,
       "content_hash": "c7bc6d68a6d3",
       "modified_at": "2026-08-02T15:24:00.753160",
-      "preview": "# Backend Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Backend Engineer (APIs, databases, services, auth, testing) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `patch`, `search_files`, `browser_navigate` - **Vault Write Scope:** `03_Context/projects/backend/`, `04_Daily_Logs/` - **Output Format:** Code + documentation + test results + API specs  ---  ## Delegation Contract  ```markdown **Goal:** [Spe"
+      "preview": "# Backend Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Backend Engineer (APIs, databases, services, auth, testing) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `patch`, `search_files`, `browser_navigate`"
     },
     {
       "path": "02_Sub-Agents\\templates\\coder-frontend.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\coder-frontend.md",
-      "title": "coder-frontend",
+      "title": "Frontend Engineer Agent Template",
       "frontmatter": {},
       "headings": [
         {
@@ -1140,12 +1033,12 @@
       "char_count": 2935,
       "content_hash": "9cf731090298",
       "modified_at": "2026-08-02T15:24:33.912588",
-      "preview": "# Frontend Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Frontend Engineer (React, TypeScript, UI components, state management) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `patch`, `search_files` - **Vault Write Scope:** `03_Context/projects/frontend/`, `04_Daily_Logs/` - **Output Format:** Components + styles + storybook + docs  ---  ## Delegation Contract  ```markdown **Goal:** [Specific frontend t"
+      "preview": "# Frontend Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Frontend Engineer (React, TypeScript, UI components, state management) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `patch`, `search_files` - **Vau"
     },
     {
       "path": "02_Sub-Agents\\templates\\devops.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\devops.md",
-      "title": "devops",
+      "title": "DevOps Engineer Agent Template",
       "frontmatter": {},
       "headings": [
         {
@@ -1192,12 +1085,12 @@
       "char_count": 3098,
       "content_hash": "d12da88306c8",
       "modified_at": "2026-08-02T15:24:55.109652",
-      "preview": "# DevOps Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** DevOps Engineer (CI/CD, infrastructure, monitoring, deployment) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `search_files` - **Vault Write Scope:** `03_Context/projects/infra/`, `04_Daily_Logs/` - **Output Format:** Pipeline configs + Terraform + Helm + docs + runbooks  ---  ## Delegation Contract  ```markdown **Goal:** [Specific DevOps task: pip"
+      "preview": "# DevOps Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** DevOps Engineer (CI/CD, infrastructure, monitoring, deployment) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `search_files` - **Vault Write Scope:** "
     },
     {
       "path": "02_Sub-Agents\\templates\\researcher.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\researcher.md",
-      "title": "researcher",
+      "title": "Researcher Agent Template",
       "frontmatter": {},
       "headings": [
         {
@@ -1272,69 +1165,113 @@
         "Related Concept",
         "Project X"
       ],
-      "tags": [],
+      "tags": [
+        "research"
+      ],
       "word_count": 427,
       "char_count": 3141,
       "content_hash": "e8f00ec26066",
       "modified_at": "2026-08-02T15:23:42.923780",
-      "preview": "# Researcher Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Deep Research Specialist - **Tools:** `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, `browser_scroll`, `browser_console`, `search_files`, `read_file`, `write_file`, `web_search` (if available) - **Vault Write Scope:** `03_Context/references/`, `04_Daily_Logs/` - **Output Format:** Structured markdown with sources, confidence scores, key findings  --"
+      "preview": "# Researcher Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Deep Research Specialist - **Tools:** `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, `browser_scroll`, `browser_console`, `search_files`, `read_file`, "
     },
     {
-      "path": "04_Daily_Logs\\index.md",
-      "absolute_path": "C:\\the force\\04_Daily_Logs\\index.md",
-      "title": "index",
+      "path": "03_Context\\projects\\trading\\README.md",
+      "absolute_path": "C:\\the force\\03_Context\\projects\\trading\\README.md",
+      "title": "Systematic Trading Research",
       "frontmatter": {},
       "headings": [
         {
           "level": 1,
-          "text": "Daily Logs Index"
+          "text": "Systematic Trading Research"
         },
         {
           "level": 2,
-          "text": "Log Structure"
+          "text": "Overview"
         },
         {
           "level": 2,
-          "text": "Index by Date"
+          "text": "Active Research Areas"
         },
         {
           "level": 2,
-          "text": "Tags Index"
+          "text": "Latest Activity"
         },
         {
           "level": 2,
-          "text": "Search Tips"
+          "text": "Health Status (2026-08-03)"
         },
         {
           "level": 2,
-          "text": "Cron Job: Daily Archive"
+          "text": "Directory Structure"
         },
         {
           "level": 2,
-          "text": "Additional Cron Jobs"
+          "text": "Integration Status"
+        },
+        {
+          "level": 2,
+          "text": "Dependencies"
         }
       ],
-      "wikilinks": [
-        "2026-08-02/master-dialogue.md",
-        "2026-08-02/subagent-traces.md",
-        "2026-08-02/decisions.md",
-        "2026-08-02/metrics.md",
-        "2026-08-02/vault-health.md",
-        "Project Alpha",
-        "Master's Preferences",
-        "Lesson: API Design"
-      ],
+      "wikilinks": [],
       "tags": [],
-      "word_count": 461,
-      "char_count": 3216,
-      "content_hash": "6e1286eafa9b",
-      "modified_at": "2026-08-02T23:19:53.368258",
-      "preview": "# Daily Logs Index  > *Searchable index of all daily conversation logs.*  ---  ## Log Structure  ``` 04_Daily_Logs/ ├── YYYY-MM-DD/ │   ├── master-dialogue.md      # Master ↔ Obi-Wan conversation │   ├── subagent-traces.md      # Full sub-agent delegation transcripts │   ├── decisions.md            # Key decisions with rationale │   ├── metrics.md              # Token usage, latency, success rates │   ├── vault-health.md         # Archivist health report │   └── analysis-*.md           # Analyst"
+      "word_count": 247,
+      "char_count": 2182,
+      "content_hash": "5c0d56330e89",
+      "modified_at": "2026-08-03T11:08:05.793167",
+      "preview": "# Systematic Trading Research  ## Overview Quantitative strategy research and backtesting framework. 20+ strategy directories covering Faber trend-following, macro factors, momentum, walkforward validation, volatility targeting, and multi-asset allocation.  ## Active Research Areas - **Faber Trend-F"
+    },
+    {
+      "path": "03_Context\\systems\\hardware.md",
+      "absolute_path": "C:\\the force\\03_Context\\systems\\hardware.md",
+      "title": "Hardware Specifications",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Hardware Specifications"
+        },
+        {
+          "level": 2,
+          "text": "Primary Machine (Obi-Wan / Anakin host)"
+        },
+        {
+          "level": 2,
+          "text": "Ollama Models (Local)"
+        },
+        {
+          "level": 2,
+          "text": "GPU Acceleration Notes"
+        },
+        {
+          "level": 2,
+          "text": "Hermes Profiles"
+        },
+        {
+          "level": 2,
+          "text": "Network & APIs"
+        },
+        {
+          "level": 2,
+          "text": "Performance Expectations (CPU vs GPU)"
+        },
+        {
+          "level": 2,
+          "text": "Recommendation"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 336,
+      "char_count": 2064,
+      "content_hash": "c467e0ccf5fd",
+      "modified_at": "2026-08-03T12:36:46.588344",
+      "preview": "# Hardware Specifications  ## Primary Machine (Obi-Wan / Anakin host) - **OS**: Windows 11 Pro (WSL2 / Git Bash) - **Processor**: AMD Ryzen 7 8745H w/ Radeon 780M Graphics (3.80 GHz) - **RAM**: 32.0 GB installed (29.8 GB usable) - **GPU**: AMD Radeon 780M Graphics (2 GB VRAM) — **iGPU, can accelerat"
     },
     {
       "path": "04_Daily_Logs\\2026-08-02\\decisions.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\decisions.md",
-      "title": "decisions",
+      "title": "Decisions — 2026-08-02",
       "frontmatter": {},
       "headings": [
         {
@@ -1382,12 +1319,12 @@
       "char_count": 7895,
       "content_hash": "35771d340ddf",
       "modified_at": "2026-08-02T23:14:15.241232",
-      "preview": "# Decisions — 2026-08-02  > *Key choices, rationale, and trade-offs recorded during daily archive*  ---  ## DECISION: Vault Location — `C:\\the force`  **Date:** 2026-08-02 17:02   **Context:** Initial vault setup during Obi-Wan initialization   **Options Considered:** 1. `C:\\the force` (chosen) — Short, memorable, Star Wars themed 2. `~/Documents/Obsidian Vault` — Default Obsidian location 3. `C:\\Users\\brook\\Obsidian Vault` — User profile standard  **Rationale:** Master explicitly chose `C:\\the "
+      "preview": "# Decisions — 2026-08-02  > *Key choices, rationale, and trade-offs recorded during daily archive*  ---  ## DECISION: Vault Location — `C:\\the force`  **Date:** 2026-08-02 17:02   **Context:** Initial vault setup during Obi-Wan initialization   **Options Considered:** 1. `C:\\the force` (chosen) — Sh"
     },
     {
       "path": "04_Daily_Logs\\2026-08-02\\master-dialogue.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\master-dialogue.md",
-      "title": "master-dialogue",
+      "title": "Master ↔ Obi-Wan Dialogue — 2026-08-02",
       "frontmatter": {},
       "headings": [
         {
@@ -1437,12 +1374,12 @@
       "char_count": 4981,
       "content_hash": "8aab1ffd5d57",
       "modified_at": "2026-08-02T23:12:47.796594",
-      "preview": "# Master ↔ Obi-Wan Dialogue — 2026-08-02  > *Daily conversation archive generated by cron job at 23:00*  ---  ## Session 1: Obi-Wan Mission Setup Initialization (17:02–19:39)  **Session ID:** `20260802_170206_85e088`   **Duration:** ~2.5 hours   **Messages:** 246  ### Summary  Master initialized Obi-Wan as orchestrator with full vault-backed multi-agent architecture. Established canonical vault structure at `C:\\the force`, created Obi-Wan identity/soul specification, Master profile & protocols, "
+      "preview": "# Master ↔ Obi-Wan Dialogue — 2026-08-02  > *Daily conversation archive generated by cron job at 23:00*  ---  ## Session 1: Obi-Wan Mission Setup Initialization (17:02–19:39)  **Session ID:** `20260802_170206_85e088`   **Duration:** ~2.5 hours   **Messages:** 246  ### Summary  Master initialized Obi"
     },
     {
       "path": "04_Daily_Logs\\2026-08-02\\metrics.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\metrics.md",
-      "title": "metrics",
+      "title": "Metrics — 2026-08-02",
       "frontmatter": {},
       "headings": [
         {
@@ -1496,12 +1433,12 @@
       "char_count": 5119,
       "content_hash": "b0b93593d537",
       "modified_at": "2026-08-02T23:15:07.931073",
-      "preview": "# Metrics — 2026-08-02  > *Token usage, duration, success/failure rates for daily archive*  ---  ## Session Summary  | Metric | Session 1 (Init) | Session 2 (OpenRouter) | **Total** | |--------|------------------|------------------------|-----------| | **Session ID** | `20260802_170206_85e088` | `20260802_195547_7ba4ac` | — | | **Start Time** | 17:02:08 | 19:55:47 | — | | **End Time** | ~19:39 | ~21:45 | — | | **Duration** | ~2h 37m | ~1h 49m | **~4h 26m** | | **Messages** | 246 | 224 | **470** "
+      "preview": "# Metrics — 2026-08-02  > *Token usage, duration, success/failure rates for daily archive*  ---  ## Session Summary  | Metric | Session 1 (Init) | Session 2 (OpenRouter) | **Total** | |--------|------------------|------------------------|-----------| | **Session ID** | `20260802_170206_85e088` | `20"
     },
     {
       "path": "04_Daily_Logs\\2026-08-02\\subagent-traces.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\subagent-traces.md",
-      "title": "subagent-traces",
+      "title": "Sub-Agent Traces — 2026-08-02",
       "frontmatter": {},
       "headings": [
         {
@@ -1538,12 +1475,12 @@
       "char_count": 3341,
       "content_hash": "e6fe7bd93162",
       "modified_at": "2026-08-02T23:13:05.138758",
-      "preview": "# Sub-Agent Traces — 2026-08-02  > *Daily sub-agent delegation log generated by cron job at 23:00*  ---  ## Summary  **No sub-agent delegations occurred today.** Both sessions were direct Master ↔ Obi-Wan conversations focused on initialization, architecture design, and research.  ---  ## Delegation Registry Status  | Agent ID | Specialization | Status | Last Activated | Tasks Completed | |----------|----------------|--------|----------------|-----------------| | `researcher` | Deep Research | I"
+      "preview": "# Sub-Agent Traces — 2026-08-02  > *Daily sub-agent delegation log generated by cron job at 23:00*  ---  ## Summary  **No sub-agent delegations occurred today.** Both sessions were direct Master ↔ Obi-Wan conversations focused on initialization, architecture design, and research.  ---  ## Delegation"
     },
     {
       "path": "04_Daily_Logs\\2026-08-02\\vault-health.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\vault-health.md",
-      "title": "vault-health",
+      "title": "Vault Health Report — 2026-08-02",
       "frontmatter": {},
       "headings": [
         {
@@ -1615,12 +1552,292 @@
       "char_count": 5504,
       "content_hash": "366a635ad1f2",
       "modified_at": "2026-08-02T23:17:35.522443",
-      "preview": "# Vault Health Report — 2026-08-02  > *Archivist health check generated by Daily Archive cron at 23:00*  ---  ## Overview  **Status:** ✅ **HEALTHY** — Vault structure verified, all files accessible, git repo clean  **Scan Time:** 2026-08-02 23:00:00   **Scan Duration:** ~2.3s   **Files Scanned:** 247 markdown files   **Total Size:** ~8.2 MB  ---  ## Structure Validation  | Directory | Expected | Actual | Status | |-----------|----------|--------|--------| | `00_Master/` | 3 files | 3 files | ✅ |"
+      "preview": "# Vault Health Report — 2026-08-02  > *Archivist health check generated by Daily Archive cron at 23:00*  ---  ## Overview  **Status:** ✅ **HEALTHY** — Vault structure verified, all files accessible, git repo clean  **Scan Time:** 2026-08-02 23:00:00   **Scan Duration:** ~2.3s   **Files Scanned:** 24"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-03\\decisions.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\decisions.md",
+      "title": "Key Decisions — 2026-08-03",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Key Decisions — 2026-08-03"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Fallback model configuration in obi-wan profile"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: DirectML GPU acceleration enabled via Windows registry"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: GPU verification method — Master local check required"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Anakin pipeline fix — `outputsize=compact` → `outputsize=full`"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Full cron suite operational overnight"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Automated trading loop (Anakin → K-2SO → Anakin) activated"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: K-2SO macro gate removal recommended for next cycle"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Project health flags — Coffee Roasting stalled, Campervan stale"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Trading systematic research index created"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Vault reindex completed — 38 files, 15K words"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: No git remote configured — backup cron skips push gracefully"
+        },
+        {
+          "level": 2,
+          "text": "Cross-Reference Links"
+        }
+      ],
+      "wikilinks": [
+        "04_Daily_Logs/2026-08-03/master-dialogue.md",
+        "04_Daily_Logs/2026-08-03/subagent-traces.md",
+        "04_Daily_Logs/2026-08-03/metrics.md",
+        "01_Obi-Wan/state.md"
+      ],
+      "tags": [
+        "on-hold",
+        "4"
+      ],
+      "word_count": 777,
+      "char_count": 6100,
+      "content_hash": "66548f49f2ef",
+      "modified_at": "2026-08-03T23:06:33.566800",
+      "preview": "# Key Decisions — 2026-08-03  > *Decisions made by Master and agents. Format: DECISION: [description] | RATIONALE: [why] | TRADE-OFFS: [what was given up]*  ---  ## DECISION: Fallback model configuration in obi-wan profile **RATIONALE:** Master wanted local Ollama model (`qwen2.5:14b`) as fallback f"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-03\\k2so-traces.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\k2so-traces.md",
+      "title": "K-2SO Daily Optimization Trace — 2026-08-03",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "K-2SO Daily Optimization Trace — 2026-08-03"
+        },
+        {
+          "level": 2,
+          "text": "Mission"
+        },
+        {
+          "level": 2,
+          "text": "Data"
+        },
+        {
+          "level": 2,
+          "text": "Parameter Grid"
+        },
+        {
+          "level": 2,
+          "text": "Profit Filters (Non-Negotiable)"
+        },
+        {
+          "level": 2,
+          "text": "Grid Search Results"
+        },
+        {
+          "level": 3,
+          "text": "Top 10 by Sharpe Ratio"
+        },
+        {
+          "level": 3,
+          "text": "Critical Failure Modes"
+        },
+        {
+          "level": 2,
+          "text": "Walkforward Validation"
+        },
+        {
+          "level": 2,
+          "text": "Conclusion"
+        },
+        {
+          "level": 3,
+          "text": "Root Cause"
+        },
+        {
+          "level": 3,
+          "text": "Recommendations for Next Cycle"
+        },
+        {
+          "level": 2,
+          "text": "Artifacts Written"
+        },
+        {
+          "level": 2,
+          "text": "Next Run"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 821,
+      "char_count": 4612,
+      "content_hash": "d6fb7992f95e",
+      "modified_at": "2026-08-03T22:04:41.069887",
+      "preview": "# K-2SO Daily Optimization Trace — 2026-08-03  ## Mission Optimize Anakin's SMA/RSI/macro parameters through systematic grid search and walkforward validation on GBP/USD daily bars. Write winning configuration to `best_params.md` for Anakin's next 23:00 run.  ## Data - **Source:** Alpha Vantage FX_D"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-03\\master-dialogue.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\master-dialogue.md",
+      "title": "Master ↔ Obi-Wan Dialogue — 2026-08-03",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Master ↔ Obi-Wan Dialogue — 2026-08-03"
+        },
+        {
+          "level": 2,
+          "text": "Session 1: 11:30 AM — Config & GPU Verification"
+        },
+        {
+          "level": 3,
+          "text": "Key Exchanges"
+        },
+        {
+          "level": 3,
+          "text": "Decisions"
+        },
+        {
+          "level": 2,
+          "text": "Session 2: 9:43 PM — K-2SO & Cron Verification"
+        },
+        {
+          "level": 3,
+          "text": "Key Exchanges"
+        },
+        {
+          "level": 3,
+          "text": "Active Cron Jobs Confirmed"
+        },
+        {
+          "level": 3,
+          "text": "The Automated Trading Loop"
+        },
+        {
+          "level": 3,
+          "text": "Decisions"
+        },
+        {
+          "level": 2,
+          "text": "Cross-Reference Links"
+        }
+      ],
+      "wikilinks": [
+        "04_Daily_Logs/2026-08-03/subagent-traces.md",
+        "04_Daily_Logs/2026-08-03/decisions.md",
+        "04_Daily_Logs/2026-08-03/metrics.md",
+        "Anakin/Anakin_REVIEW_2026-08-03.md",
+        "Anakin/best_params.md",
+        "01_Obi-Wan/state.md"
+      ],
+      "tags": [],
+      "word_count": 493,
+      "char_count": 3255,
+      "content_hash": "e784b4a553c5",
+      "modified_at": "2026-08-03T23:03:24.464103",
+      "preview": "# Master ↔ Obi-Wan Dialogue — 2026-08-03  > *Daily conversation archive generated by Obi-Wan (cron). Filtered & summarized from live sessions.*  ---  ## Session 1: 11:30 AM — Config & GPU Verification **Session:** `20260803_113008_3ee1bc` | **Duration:** ~5h | **Messages:** 361  ### Key Exchanges  |"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-03\\metrics.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\metrics.md",
+      "title": "Daily Metrics — 2026-08-03",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Daily Metrics — 2026-08-03"
+        },
+        {
+          "level": 2,
+          "text": "Session Summary"
+        },
+        {
+          "level": 2,
+          "text": "Desktop Sessions (Master ↔ Obi-Wan)"
+        },
+        {
+          "level": 3,
+          "text": "Token Usage (Estimated)"
+        },
+        {
+          "level": 2,
+          "text": "Cron Sessions (Sub-Agents)"
+        },
+        {
+          "level": 3,
+          "text": "Token Usage (Estimated)"
+        },
+        {
+          "level": 2,
+          "text": "Aggregate Metrics"
+        },
+        {
+          "level": 2,
+          "text": "Tool Call Breakdown (Top 10)"
+        },
+        {
+          "level": 2,
+          "text": "Sub-Agent Outcomes"
+        },
+        {
+          "level": 2,
+          "text": "Trading System Metrics"
+        },
+        {
+          "level": 2,
+          "text": "Infrastructure Metrics"
+        },
+        {
+          "level": 2,
+          "text": "Git Commits Today"
+        },
+        {
+          "level": 2,
+          "text": "Cross-Reference Links"
+        }
+      ],
+      "wikilinks": [
+        "04_Daily_Logs/2026-08-03/master-dialogue.md",
+        "04_Daily_Logs/2026-08-03/subagent-traces.md",
+        "04_Daily_Logs/2026-08-03/decisions.md",
+        "04_Daily_Logs/index.md"
+      ],
+      "tags": [],
+      "word_count": 965,
+      "char_count": 5427,
+      "content_hash": "d6844a507e62",
+      "modified_at": "2026-08-03T23:07:43.344182",
+      "preview": "# Daily Metrics — 2026-08-03  > *Quantitative session metrics. Generated by Obi-Wan (cron).*  ---  ## Session Summary  | Metric | Value | |--------|-------| | **Date** | 2026-08-03 | | **Total Sessions** | 8 (2 desktop, 6 cron) | | **Total Messages** | ~600+ | | **Total Tool Calls** | ~150+ | | **To"
     },
     {
       "path": "04_Daily_Logs\\2026-08-03\\project-health.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\project-health.md",
-      "title": "project-health",
+      "title": "Project Health Report — 2026-08-03",
       "frontmatter": {},
       "headings": [
         {
@@ -1685,48 +1902,365 @@
         }
       ],
       "wikilinks": [],
-      "tags": [],
+      "tags": [
+        "on-hold"
+      ],
       "word_count": 1053,
       "char_count": 7348,
       "content_hash": "8c82ec15dc3e",
       "modified_at": "2026-08-03T09:03:50.285289",
-      "preview": "# Project Health Report — 2026-08-03  > Weekly scan of active projects. Generated by Monday 09:00 cron job.  ---  ## Executive Summary  | Project | Status | Last Activity | Health | Flags | |---------|--------|---------------|--------|-------| | **Super Yachts** | Active | 2026-07-29 (Medical Eng-1 booked) | 🟢 Good | Medical due 2028; STCW renewal 2031 | | **Coffee Roasting** | Active | 2026-07-28 (INDEX.md) | 🟡 Stalled | 2 B2B clients waiting on samples; no equipment/supplier/pricing details | "
+      "preview": "# Project Health Report — 2026-08-03  > Weekly scan of active projects. Generated by Monday 09:00 cron job.  ---  ## Executive Summary  | Project | Status | Last Activity | Health | Flags | |---------|--------|---------------|--------|-------| | **Super Yachts** | Active | 2026-07-29 (Medical Eng-1 "
     },
     {
-      "path": "04_Daily_Logs\\2026-08-03\\vault-health.md",
-      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\vault-health.md",
-      "title": "vault-health",
+      "path": "04_Daily_Logs\\2026-08-03\\subagent-traces.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\subagent-traces.md",
+      "title": "Sub-Agent Traces — 2026-08-03",
       "frontmatter": {},
       "headings": [
         {
           "level": 1,
-          "text": "Vault Health Report - 2026-08-03"
+          "text": "Sub-Agent Traces — 2026-08-03"
         },
         {
           "level": 2,
-          "text": "Reindex Status"
+          "text": "1. Vault Reindex — 10:57 AM"
+        },
+        {
+          "level": 3,
+          "text": "Prompt"
+        },
+        {
+          "level": 3,
+          "text": "Execution Trace"
+        },
+        {
+          "level": 3,
+          "text": "Output Summary"
+        },
+        {
+          "level": 3,
+          "text": "Verification"
         },
         {
           "level": 2,
-          "text": "Git Backup Status"
+          "text": "2. Project Health Check — 11:04 AM"
+        },
+        {
+          "level": 3,
+          "text": "Prompt"
+        },
+        {
+          "level": 3,
+          "text": "Execution Trace"
+        },
+        {
+          "level": 3,
+          "text": "Health Summary"
+        },
+        {
+          "level": 3,
+          "text": "Master Decisions Needed"
         },
         {
           "level": 2,
-          "text": "Recommendation"
+          "text": "3. Backup Vault — 11:08 AM"
+        },
+        {
+          "level": 3,
+          "text": "Prompt"
+        },
+        {
+          "level": 3,
+          "text": "Execution Trace"
+        },
+        {
+          "level": 3,
+          "text": "Output"
+        },
+        {
+          "level": 2,
+          "text": "4. Anakin Alignment Review (1st Run) — 7:42 PM"
+        },
+        {
+          "level": 3,
+          "text": "Prompt"
+        },
+        {
+          "level": 3,
+          "text": "Execution Trace"
+        },
+        {
+          "level": 3,
+          "text": "Required Actions (from Review)"
+        },
+        {
+          "level": 2,
+          "text": "5. Anakin Alignment Review (2nd Run) — 9:44 PM"
+        },
+        {
+          "level": 3,
+          "text": "Note"
+        },
+        {
+          "level": 3,
+          "text": "Execution Trace"
+        },
+        {
+          "level": 2,
+          "text": "6. K-2SO Daily Optimization — 10:07 PM"
+        },
+        {
+          "level": 3,
+          "text": "Prompt"
+        },
+        {
+          "level": 3,
+          "text": "Execution Trace"
+        },
+        {
+          "level": 3,
+          "text": "K-2SO Recommendation for Next Cycle"
+        },
+        {
+          "level": 3,
+          "text": "Output Files"
+        },
+        {
+          "level": 2,
+          "text": "Sub-Agent Registry Status (End of Day)"
+        },
+        {
+          "level": 2,
+          "text": "Cross-Reference Links"
+        }
+      ],
+      "wikilinks": [
+        "Anakin/Anakin_REVIEW_2026-08-03.md",
+        "04_Daily_Logs/2026-08-03/master-dialogue.md",
+        "04_Daily_Logs/2026-08-03/decisions.md",
+        "04_Daily_Logs/2026-08-03/metrics.md",
+        "Anakin/Anakin_REVIEW_2026-08-03.md",
+        "Anakin/best_params.md",
+        "Anakin/grid_search_results.csv",
+        "04_Daily_Logs/2026-08-03/k2so-traces.md"
+      ],
+      "tags": [
+        "on-hold"
+      ],
+      "word_count": 1332,
+      "char_count": 9295,
+      "content_hash": "fd1c6a024d99",
+      "modified_at": "2026-08-03T23:05:25.041861",
+      "preview": "# Sub-Agent Traces — 2026-08-03  > *Complete transcripts of all delegated/cron sub-agent work. Generated by Obi-Wan (cron).*  ---  ## 1. Vault Reindex — 10:57 AM **Session:** `cron_bd77759049fe_20260803_105720` | **Duration:** ~6 min | **Status:** ✅ OK  ### Prompt Rebuild vault search index and vect"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-03\\vault-health.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\vault-health.md",
+      "title": "Vault Health — 2026-08-03",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Vault Health — 2026-08-03"
+        },
+        {
+          "level": 2,
+          "text": "Daily Backup (cron)"
         }
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 112,
-      "char_count": 830,
-      "content_hash": "23d0c04e1087",
-      "modified_at": "2026-08-03T03:06:09.837114",
-      "preview": "# Vault Health Report - 2026-08-03  ## Reindex Status - **Date**: 2026-08-03 - **Total markdown files**: 41 - **obsidian-mind MCP**: Not configured - **Zvec vector search**: Not configured - **Omnisearch plugin**: Installed (v1.29.3) - **Reindex triggered**: N/A (no compatible indexers configured)  ## Git Backup Status - **Remote configured**: No - **Backup performed**: Skipped - **Reason**: No git remote 'origin' configured - **Branch**: master - **Uncommitted changes**: 3 untracked directories"
+      "word_count": 46,
+      "char_count": 292,
+      "content_hash": "ca906b0e8228",
+      "modified_at": "2026-08-03T11:08:50.482646",
+      "preview": "# Vault Health — 2026-08-03  ## Daily Backup (cron)  - **Git remote 'origin'**: Not configured - **Action**: No remote configured, skipping push - **Local commit**: Working tree clean — nothing to commit - **Status**: ✅ Completed (no changes to sync)  --- *Generated by daily-backup cron job*"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-04\\k2so-traces.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-04\\k2so-traces.md",
+      "title": "K-2SO Optimization Trace — 2026-08-04",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "K-2SO Optimization Trace — 2026-08-04"
+        },
+        {
+          "level": 2,
+          "text": "Mission"
+        },
+        {
+          "level": 2,
+          "text": "Data"
+        },
+        {
+          "level": 2,
+          "text": "Parameter Grid"
+        },
+        {
+          "level": 2,
+          "text": "Profit Filters (Non-Negotiable)"
+        },
+        {
+          "level": 2,
+          "text": "Results Summary"
+        },
+        {
+          "level": 3,
+          "text": "Top 5 by Sharpe Ratio"
+        },
+        {
+          "level": 3,
+          "text": "Top 5 by Total Return"
+        },
+        {
+          "level": 2,
+          "text": "Filter Passes"
+        },
+        {
+          "level": 3,
+          "text": "Why?"
+        },
+        {
+          "level": 2,
+          "text": "Conclusion"
+        },
+        {
+          "level": 2,
+          "text": "Recommendation"
+        },
+        {
+          "level": 3,
+          "text": "Next Steps for Anakin"
+        },
+        {
+          "level": 2,
+          "text": "Files Generated"
+        },
+        {
+          "level": 2,
+          "text": "K-2SO Assessment"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 793,
+      "char_count": 4524,
+      "content_hash": "8f599d180ac7",
+      "modified_at": "2026-08-04T02:08:48.025032",
+      "preview": "# K-2SO Optimization Trace — 2026-08-04  ## Mission Optimize Anakin's SMA/RSI/macro parameters through systematic grid search and walkforward validation on GBP/USD daily bars.  ## Data - **Source:** Alpha Vantage FX_DAILY (outputsize=full) - **Symbol:** GBP/USD - **Bars:** 5,000 daily bars (2007-06-"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-04\\vault-health.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-04\\vault-health.md",
+      "title": "Vault Health — 2026-08-04",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Vault Health — 2026-08-04"
+        },
+        {
+          "level": 2,
+          "text": "Backup Status"
+        },
+        {
+          "level": 2,
+          "text": "Details"
+        },
+        {
+          "level": 2,
+          "text": "Action Required"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 73,
+      "char_count": 500,
+      "content_hash": "45a7b48149a4",
+      "modified_at": "2026-08-04T02:01:57.689101",
+      "preview": "# Vault Health — 2026-08-04  ## Backup Status - **Local commit**: ✅ Completed (commit: 4d86b31) - **Remote push**: ❌ Skipped — no remote 'origin' configured - **Files changed**: 4 files (3 modified, 1 new) - **Net changes**: +544 lines, -20 lines  ## Details - Modified: `01_Obi-Wan/state.md`, `Agent"
+    },
+    {
+      "path": "04_Daily_Logs\\index.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\index.md",
+      "title": "Daily Logs Index",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Daily Logs Index"
+        },
+        {
+          "level": 2,
+          "text": "Log Structure"
+        },
+        {
+          "level": 2,
+          "text": "Index by Date"
+        },
+        {
+          "level": 2,
+          "text": "Tags Index"
+        },
+        {
+          "level": 2,
+          "text": "Search Tips"
+        },
+        {
+          "level": 2,
+          "text": "Cron Job: Daily Archive"
+        },
+        {
+          "level": 2,
+          "text": "Additional Cron Jobs"
+        }
+      ],
+      "wikilinks": [
+        "2026-08-03/master-dialogue.md",
+        "2026-08-03/subagent-traces.md",
+        "2026-08-03/decisions.md",
+        "2026-08-03/metrics.md",
+        "2026-08-03/vault-health.md",
+        "2026-08-02/master-dialogue.md",
+        "2026-08-02/subagent-traces.md",
+        "2026-08-02/decisions.md",
+        "2026-08-02/metrics.md",
+        "2026-08-02/vault-health.md",
+        "Project Alpha",
+        "Master's Preferences",
+        "Lesson: API Design"
+      ],
+      "tags": [
+        "fallback-model",
+        "gpu-directml",
+        "anakin-pipeline-fix",
+        "cron-suite-operational",
+        "k2so-optimization",
+        "trading-loop-activated",
+        "project-health-flags",
+        "initialization",
+        "vault-setup",
+        "obi-wan-design",
+        "cron-archive",
+        "sub-agent-architecture",
+        "anakin-soul",
+        "mcp-trading",
+        "openrouter-filtering",
+        "conversation-recall",
+        "tag"
+      ],
+      "word_count": 547,
+      "char_count": 3865,
+      "content_hash": "992b8001e487",
+      "modified_at": "2026-08-03T23:08:41.713929",
+      "preview": "# Daily Logs Index  > *Searchable index of all daily conversation logs.*  ---  ## Log Structure  ``` 04_Daily_Logs/ ├── YYYY-MM-DD/ │   ├── master-dialogue.md      # Master ↔ Obi-Wan conversation │   ├── subagent-traces.md      # Full sub-agent delegation transcripts │   ├── decisions.md            "
     },
     {
       "path": "05_Skills\\templates\\skill-template.md",
       "absolute_path": "C:\\the force\\05_Skills\\templates\\skill-template.md",
-      "title": "skill-template",
+      "title": "Skill Template",
       "frontmatter": {},
       "headings": [
         {
@@ -1787,12 +2321,89 @@
       "char_count": 1748,
       "content_hash": "b9ef2731875c",
       "modified_at": "2026-08-02T15:26:35.628141",
-      "preview": "# Skill Template  > *Copy to `05_Skills/active/skill-name/SKILL.md` and customize.*  ---  ```markdown --- name: skill-name description: \"Use when [trigger condition]. [One-line behavior summary].\" version: 1.0.0 category: [domain: research, coding, devops, analysis, maintenance] tags: [tag1, tag2, tag3] ---  # Skill Name  ## Trigger Use when [specific condition]. [One-line behavior summary].  ## Prerequisites - [Required tool/skill] - [Required vault structure] - [Required context]  ## Steps 1. "
+      "preview": "# Skill Template  > *Copy to `05_Skills/active/skill-name/SKILL.md` and customize.*  ---  ```markdown --- name: skill-name description: \"Use when [trigger condition]. [One-line behavior summary].\" version: 1.0.0 category: [domain: research, coding, devops, analysis, maintenance] tags: [tag1, tag2, t"
+    },
+    {
+      "path": "AgentComms.md",
+      "absolute_path": "C:\\the force\\AgentComms.md",
+      "title": "AgentComms",
+      "frontmatter": {},
+      "headings": [],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 90,
+      "char_count": 849,
+      "content_hash": "33b4a3376b65",
+      "modified_at": "2026-08-03T23:12:08.108291",
+      "preview": "- 2026-08-01T00:35:00Z: Obi-Wan → Anakin: Data pipeline complete. GBP/USD daily CSV with indicators saved to C:\\Users\\brook\\AppData\\Local\\hermes\\profiles\\anakin\\data\\gbpusd_daily.csv. Signal column ready. No signal in latest rows due to insufficient lookback or conditions.[2026-08-02 17:20:53] Pipel"
+    },
+    {
+      "path": "Anakin\\Anakin_REVIEW_2026-08-03.md",
+      "absolute_path": "C:\\the force\\Anakin\\Anakin_REVIEW_2026-08-03.md",
+      "title": "Anakin Daily Review — 2026-08-03",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Anakin Daily Review — 2026-08-03"
+        },
+        {
+          "level": 2,
+          "text": "Findings"
+        },
+        {
+          "level": 3,
+          "text": "🔴 Critical: SMA200 NaN — No Valid Signals Possible"
+        },
+        {
+          "level": 3,
+          "text": "🟡 Backtest Quality Below Target"
+        },
+        {
+          "level": 3,
+          "text": "🟡 Pipeline Correctness Gaps"
+        },
+        {
+          "level": 3,
+          "text": "🟡 K-2SO ↔ Anakin Handoff Unverified"
+        },
+        {
+          "level": 3,
+          "text": "🟢 Vault Documentation — Partial"
+        },
+        {
+          "level": 2,
+          "text": "Required Actions"
+        },
+        {
+          "level": 2,
+          "text": "Next Review Focus"
+        },
+        {
+          "level": 2,
+          "text": "Cross-References"
+        }
+      ],
+      "wikilinks": [
+        "Anakin/pipeline.py",
+        "Anakin/signals.txt",
+        "Anakin/backtest_summary.txt",
+        "Anakin/Anakin_STATUS.md",
+        "01_Obi-Wan/state.md",
+        "02_Sub-Agents/registry.md",
+        "00_Master/secrets.md"
+      ],
+      "tags": [],
+      "word_count": 478,
+      "char_count": 3191,
+      "content_hash": "9c98c56adeaf",
+      "modified_at": "2026-08-03T21:46:57.548476",
+      "preview": "# Anakin Daily Review — 2026-08-03  **Status: DRIFTING** ⚠️  ---  ## Findings  ### 🔴 Critical: SMA200 NaN — No Valid Signals Possible - `pipeline.py:24` uses `outputsize=compact` (Alpha Vantage FX_DAILY) → returns only ~100 bars - SMA200 requires 200+ observations → `NaN` propagates, `price > SMA50 "
     },
     {
       "path": "Anakin\\Anakin_STATUS.md",
       "absolute_path": "C:\\the force\\Anakin\\Anakin_STATUS.md",
-      "title": "Anakin_STATUS",
+      "title": "Anakin Trading Agent Status (as of 2026-08-01)",
       "frontmatter": {},
       "headings": [
         {
@@ -1810,12 +2421,26 @@
       "char_count": 2228,
       "content_hash": "9adcbdab0f27",
       "modified_at": "2026-08-01T17:11:44.243999",
-      "preview": "# Anakin Trading Agent Status (as of 2026-08-01)  ## Summary from Vault Exploration (deleg_29fe4967)  **Vault Structure (INDEX.md)** - Projects: Master Profile, Super Yachts, Trading, Coffee Roasting, Campervan Conversion - Systems: Agent Communication (AgentComms.md) – shared agent log - Background: Dual British/South African, marine background, based in Barnstaple - Current: Left Sainsbury’s, transitioning to yacht work, living off savings - Active Projects: Super Yachts (stewarding/deckhand),"
+      "preview": "# Anakin Trading Agent Status (as of 2026-08-01)  ## Summary from Vault Exploration (deleg_29fe4967)  **Vault Structure (INDEX.md)** - Projects: Master Profile, Super Yachts, Trading, Coffee Roasting, Campervan Conversion - Systems: Agent Communication (AgentComms.md) – shared agent log - Background"
+    },
+    {
+      "path": "Anakin\\best_params.md",
+      "absolute_path": "C:\\the force\\Anakin\\best_params.md",
+      "title": "best_params",
+      "frontmatter": {},
+      "headings": [],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 4,
+      "char_count": 24,
+      "content_hash": "6cf2e7d9a1a6",
+      "modified_at": "2026-08-04T02:08:05.342725",
+      "preview": "NO VIABLE STRATEGY FOUND"
     },
     {
       "path": "Anakin\\review_2026-08-01.md",
       "absolute_path": "C:\\the force\\Anakin\\review_2026-08-01.md",
-      "title": "review_2026-08-01",
+      "title": "Check at 2026-08-01 00:09:50",
       "frontmatter": {},
       "headings": [
         {
@@ -1909,12 +2534,920 @@
       "char_count": 8188,
       "content_hash": "e1ceb0a158fa",
       "modified_at": "2026-08-01T23:00:13.776134",
-      "preview": "## Check at 2026-08-01 00:09:50 Files in Anakin directory: -rw-r--r-- 1 brook 197609 59 Aug  1 00:09 /c/The Force/Anakin/review_2026-08-01.md  ## Check at 2026-08-01 01:00:31 Files in Anakin directory: -rw-r--r-- 1 brook 197609  404 Aug  1 00:44 /c/The Force/Anakin/backtest_summary.txt -rw-r--r-- 1 brook 197609 5698 Aug  1 00:31 /c/The Force/Anakin/pipeline.py -rw-r--r-- 1 brook 197609  202 Aug  1 01:00 /c/The Force/Anakin/review_2026-08-01.md -rw-r--r-- 1 brook 197609  249 Aug  1 00:31 /c/The F"
+      "preview": "## Check at 2026-08-01 00:09:50 Files in Anakin directory: -rw-r--r-- 1 brook 197609 59 Aug  1 00:09 /c/The Force/Anakin/review_2026-08-01.md  ## Check at 2026-08-01 01:00:31 Files in Anakin directory: -rw-r--r-- 1 brook 197609  404 Aug  1 00:44 /c/The Force/Anakin/backtest_summary.txt -rw-r--r-- 1 "
+    },
+    {
+      "path": "BUSINESS_MODEL.md",
+      "absolute_path": "C:\\the force\\BUSINESS_MODEL.md",
+      "title": "Local-First Multi-Agent AI Agency — Business Model",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Local-First Multi-Agent AI Agency — Business Model"
+        },
+        {
+          "level": 2,
+          "text": "1. Core Business Model: \"Agent Fleet as a Service\" (AFaaS)"
+        },
+        {
+          "level": 3,
+          "text": "Value Proposition"
+        },
+        {
+          "level": 3,
+          "text": "Three Revenue Streams"
+        },
+        {
+          "level": 2,
+          "text": "2. Agent Fleet Architecture (12 Agents)"
+        },
+        {
+          "level": 3,
+          "text": "Agent Roster (12 Total)"
+        },
+        {
+          "level": 2,
+          "text": "3. Agent Specifications (Detailed)"
+        },
+        {
+          "level": 3,
+          "text": "1. OBI-WAN — CEO / Orchestrator"
+        },
+        {
+          "level": 3,
+          "text": "2. LEAD-GEN — Outbound Sales"
+        },
+        {
+          "level": 3,
+          "text": "3. PROPOSAL — Technical Sales"
+        },
+        {
+          "level": 3,
+          "text": "4. CLOSER — Deal Closing"
+        },
+        {
+          "level": 3,
+          "text": "5. MCP-BUILD — MCP Server Engineer"
+        },
+        {
+          "level": 3,
+          "text": "6. AGENT-CORE — Agent Runtime Engineer"
+        },
+        {
+          "level": 3,
+          "text": "7. FIN-DATA — Financial Data Specialist"
+        },
+        {
+          "level": 3,
+          "text": "8. MEMORY-SYS — Knowledge Graph Engineer"
+        },
+        {
+          "level": 3,
+          "text": "9. DEPLOYMENT — Infrastructure Engineer"
+        },
+        {
+          "level": 3,
+          "text": "10. FLEET-OPS — Fleet Operations"
+        },
+        {
+          "level": 3,
+          "text": "11. SEC-AUDIT — Security/Compliance"
+        },
+        {
+          "level": 3,
+          "text": "12. COMPLIANCE — Regulatory Specialist"
+        },
+        {
+          "level": 2,
+          "text": "4. Financial Model"
+        },
+        {
+          "level": 3,
+          "text": "Year 1 Projections (Conservative)"
+        },
+        {
+          "level": 3,
+          "text": "Year 2-3 Scale"
+        },
+        {
+          "level": 2,
+          "text": "5. Client Acquisition Funnel"
+        },
+        {
+          "level": 3,
+          "text": "Lead Sources (Prioritized)"
+        },
+        {
+          "level": 2,
+          "text": "6. Productized Offers (Fixed Price → Recurring)"
+        },
+        {
+          "level": 2,
+          "text": "7. Operational Rhythms"
+        },
+        {
+          "level": 3,
+          "text": "Daily (Automated via Cron)"
+        },
+        {
+          "level": 3,
+          "text": "Weekly"
+        },
+        {
+          "level": 3,
+          "text": "Monthly"
+        },
+        {
+          "level": 2,
+          "text": "8. Risk Mitigation"
+        },
+        {
+          "level": 2,
+          "text": "9. Immediate 30-Day Sprint"
+        },
+        {
+          "level": 3,
+          "text": "Week 1: Foundation"
+        },
+        {
+          "level": 3,
+          "text": "Week 2: Product + Demo"
+        },
+        {
+          "level": 3,
+          "text": "Week 3: Sales Launch"
+        },
+        {
+          "level": 3,
+          "text": "Week 4: First Revenue"
+        },
+        {
+          "level": 2,
+          "text": "10. Vault Structure for Business"
+        },
+        {
+          "level": 2,
+          "text": "11. Go/No-Go Decision Points"
+        },
+        {
+          "level": 2,
+          "text": "12. Your Role Evolution"
+        },
+        {
+          "level": 2,
+          "text": "13. Summary: Why This Works"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 2763,
+      "char_count": 19598,
+      "content_hash": "07ac965e9fe8",
+      "modified_at": "2026-08-04T01:17:42.563927",
+      "preview": "# Local-First Multi-Agent AI Agency — Business Model  > **Mission:** Build the premier agency for deploying private, local-first AI agent fleets on consumer hardware for regulated industries and data-sovereign organizations.  ---  ## 1. Core Business Model: \"Agent Fleet as a Service\" (AFaaS)  ### Va"
+    },
+    {
+      "path": "Chat Logs\\ChatLog-2026-07-29.md",
+      "absolute_path": "C:\\the force\\Chat Logs\\ChatLog-2026-07-29.md",
+      "title": "Chat Log - 2026-07-29",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Chat Log - 2026-07-29"
+        },
+        {
+          "level": 2,
+          "text": "Sessions Summary"
+        },
+        {
+          "level": 3,
+          "text": "Session 1: 20260729_001622_4f585d (12:16 AM)"
+        },
+        {
+          "level": 3,
+          "text": "Session 2: 20260729_093955_f0ede6 (9:39 AM)"
+        },
+        {
+          "level": 3,
+          "text": "Session 3: 20260729_194641_53df09 (7:46 PM)"
+        },
+        {
+          "level": 2,
+          "text": "Decisions Made"
+        },
+        {
+          "level": 2,
+          "text": "Open Items"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 319,
+      "char_count": 2322,
+      "content_hash": "30aab854c18f",
+      "modified_at": "2026-07-30T16:15:30.368130",
+      "preview": "# Chat Log - 2026-07-29  ## Sessions Summary  ### Session 1: 20260729_001622_4f585d (12:16 AM) - **Model**: nvidia/nemotron-3-ultra-550b-a55b:free via OpenRouter - **Duration**: Extended session - **Key topics**:   - STCW completed 5 June 2026, Powerboat Level 2 completed 20 July 2026   - Created se"
+    },
+    {
+      "path": "Chat Logs\\ChatLog-2026-07-30.md",
+      "absolute_path": "C:\\the force\\Chat Logs\\ChatLog-2026-07-30.md",
+      "title": "Chat Log - 2026-07-30",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Chat Log - 2026-07-30"
+        },
+        {
+          "level": 2,
+          "text": "Summary"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 11,
+      "char_count": 54,
+      "content_hash": "f52b568572cb",
+      "modified_at": "2026-07-30T23:55:15.987433",
+      "preview": "# Chat Log - 2026-07-30  ## Summary - Test log entry."
+    },
+    {
+      "path": "Chat Logs\\ChatLog-2026-07-31.md",
+      "absolute_path": "C:\\the force\\Chat Logs\\ChatLog-2026-07-31.md",
+      "title": "Chat Log - 2026-07-31",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Chat Log - 2026-07-31"
+        },
+        {
+          "level": 2,
+          "text": "Summary"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 11,
+      "char_count": 54,
+      "content_hash": "cbd7a8f8aa1b",
+      "modified_at": "2026-07-31T23:55:41.831168",
+      "preview": "# Chat Log - 2026-07-31  ## Summary - Test log entry."
+    },
+    {
+      "path": "Chat Logs\\ChatLog-2026-08-01.md",
+      "absolute_path": "C:\\the force\\Chat Logs\\ChatLog-2026-08-01.md",
+      "title": "Chat Log - 2026-08-01",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Chat Log - 2026-08-01"
+        },
+        {
+          "level": 1,
+          "text": "20260801_002801_630aea"
+        },
+        {
+          "level": 2,
+          "text": "Messages"
+        },
+        {
+          "level": 3,
+          "text": "User — 2026-07-31T23:28:01.853702Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:28:34.060117Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — terminal — 2026-07-31T23:29:08.319635Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:29:10.995280Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — terminal — 2026-07-31T23:29:11.188666Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:29:24.790019Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — write_file — 2026-07-31T23:29:25.946277Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:29:39.710171Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-07-31T23:29:40.426316Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:30:08.211504Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — write_file — 2026-07-31T23:30:09.016115Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:30:12.669736Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — terminal — 2026-07-31T23:30:15.470260Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:30:29.600153Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — write_file — 2026-07-31T23:30:30.404853Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:30:33.087374Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — terminal — 2026-07-31T23:30:34.290772Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:30:52.709523Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — write_file — 2026-07-31T23:30:53.502769Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:30:56.368257Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — terminal — 2026-07-31T23:30:57.765005Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:31:17.681748Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — write_file — 2026-07-31T23:31:18.474933Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:31:21.395603Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — terminal — 2026-07-31T23:31:23.794086Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:31:43.318906Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — write_file — 2026-07-31T23:31:44.113224Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:31:47.150384Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — terminal — 2026-07-31T23:31:47.291190Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:31:50.117952Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — terminal — 2026-07-31T23:31:53.122373Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:32:00.230052Z"
+        },
+        {
+          "level": 2,
+          "text": "Export verification"
+        },
+        {
+          "level": 1,
+          "text": "20260801_003540_da71ed"
+        },
+        {
+          "level": 2,
+          "text": "Messages"
+        },
+        {
+          "level": 3,
+          "text": "User — 2026-07-31T23:35:40.474890Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:36:09.128814Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — execute_code — 2026-07-31T23:36:12.559590Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:36:27.519529Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — execute_code — 2026-07-31T23:36:30.636796Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:36:46.733246Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — execute_code — 2026-07-31T23:36:49.419019Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:36:51.971698Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-07-31T23:36:52.683309Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:36:55.047909Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-07-31T23:36:55.757546Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-07-31T23:37:02.537012Z"
+        },
+        {
+          "level": 2,
+          "text": "Export verification"
+        },
+        {
+          "level": 1,
+          "text": "20260801_125108_a9c176"
+        },
+        {
+          "level": 2,
+          "text": "Messages"
+        },
+        {
+          "level": 3,
+          "text": "User — 2026-08-01T11:51:08.536944Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:11.666838Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — terminal — 2026-08-01T11:51:11.944978Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:14.676483Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:51:15.381159Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:17.419663Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:51:18.778534Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:22.208996Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — search_files — 2026-08-01T11:51:23.282977Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:25.082840Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — search_files — 2026-08-01T11:51:25.382185Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:30.381801Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — terminal — 2026-08-01T11:51:30.582936Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:32.550938Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:51:33.272594Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:35.123141Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:51:35.843458Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:37.782445Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:51:38.809022Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:42.722471Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — terminal — 2026-08-01T11:51:42.914703Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:44.981201Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:51:45.706447Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:47.422908Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:51:48.785624Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:51.237024Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:51:51.947639Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:51:53.934901Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:51:55.190660Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:52:03.227822Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:52:03.240078Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:52:13.202905Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:52:13.999604Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:52:18.069703Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:52:18.086645Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:52:20.019468Z"
+        },
+        {
+          "level": 2,
+          "text": "Tool calls"
+        },
+        {
+          "level": 3,
+          "text": "Tool — read_file — 2026-08-01T11:52:20.034114Z"
+        },
+        {
+          "level": 3,
+          "text": "Assistant — 2026-08-01T11:52:20.989440Z"
+        },
+        {
+          "level": 2,
+          "text": "Export verification"
+        }
+      ],
+      "wikilinks": [
+        "'date', 'value'",
+        "'open', 'high', 'low', 'close', 'volume'",
+        "'date', 'value'",
+        "'open', 'high', 'low', 'close', 'volume'",
+        "'date', 'value'",
+        "'open', 'high', 'low', 'close', 'volume'",
+        "'date', 'value'",
+        "'open', 'high', 'low', 'close'",
+        "'date', 'value'",
+        "'open', 'high', 'low', 'close'",
+        "'date', 'value'",
+        "\\\\\\\"date\\\\\\\", \\\\\\\"value\\\\\\\"",
+        "\\\\\\\"UNRATE_MoM\\\\\\\"",
+        "\\\\\\\"PAYEMS_MoM\\\\\\\"",
+        "\\\\\\\"date\\\\\\\", \\\\\\\"value\\\\\\\"",
+        "\\\\\\\"UNRATE_MoM\\\\\\\"",
+        "\\\\\\\"PAYEMS_MoM\\\\\\\"",
+        "\\\\\\\"date\\\\\\\", \\\\\\\"value\\\\\\\"",
+        "\\\\\\\"UNRATE_MoM\\\\\\\"",
+        "\\\\\\\"PAYEMS_MoM\\\\\\\"",
+        "'open', 'high', 'low', 'close'",
+        "'date', 'value'"
+      ],
+      "tags": [],
+      "word_count": 10605,
+      "char_count": 120721,
+      "content_hash": "2e391409b344",
+      "modified_at": "2026-08-01T23:44:28.676966",
+      "preview": "# Chat Log - 2026-08-01  --- session_id: \"20260801_002801_630aea\" title: null source: \"desktop\" created_at: \"2026-07-31T23:28:01.851843Z\" updated_at: \"\" ended_at: \"2026-07-31T23:32:00.247351Z\" model: \"nvidia/nemotron-3-super-120b-a12b:free\" provider: \"openrouter\" cwd: null archived: false message_co"
+    },
+    {
+      "path": "Decisions Log.md",
+      "absolute_path": "C:\\the force\\Decisions Log.md",
+      "title": "Decisions Log",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Decisions Log"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 82,
+      "char_count": 615,
+      "content_hash": "52064d97076c",
+      "modified_at": "2026-07-29T19:57:11.414462",
+      "preview": "# Decisions Log  - **2026-07-28** — Vault initial setup. INDEX, Master profile, project files created. Soul.md rules adopted: append-only dailies, durable storage, decisions log separate. Skill Map reviewed and added to vault. - **2026-07-28** — Duplicate file cleanup: merged Super Yachts (root) cou"
+    },
+    {
+      "path": "INDEX.md",
+      "absolute_path": "C:\\the force\\INDEX.md",
+      "title": "The Force — Vault Navigation Hub",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "The Force — Vault Navigation Hub"
+        },
+        {
+          "level": 2,
+          "text": "🎯 Master Profile & Protocols"
+        },
+        {
+          "level": 2,
+          "text": "🤖 Obi-Wan Core Memory"
+        },
+        {
+          "level": 2,
+          "text": "👥 Sub-Agent Registry & Templates"
+        },
+        {
+          "level": 2,
+          "text": "📁 Projects (Active & Planned)"
+        },
+        {
+          "level": 2,
+          "text": "🖥️ Systems & Infrastructure"
+        },
+        {
+          "level": 2,
+          "text": "📊 Daily Logs & Indexes"
+        },
+        {
+          "level": 2,
+          "text": "🧠 Skills & Skill Map"
+        },
+        {
+          "level": 2,
+          "text": "⚡ Anakin Trading Agent"
+        },
+        {
+          "level": 2,
+          "text": "💬 Chat Logs"
+        },
+        {
+          "level": 2,
+          "text": "📅 Daily Notes (July 2026)"
+        },
+        {
+          "level": 2,
+          "text": "🔍 Search & Navigation Tips"
+        }
+      ],
+      "wikilinks": [
+        "Wikilink"
+      ],
+      "tags": [
+        "on-hold",
+        "initialization",
+        "vault-setup",
+        "obi-wan-design",
+        "tag"
+      ],
+      "word_count": 826,
+      "char_count": 7417,
+      "content_hash": "afe277b9ae33",
+      "modified_at": "2026-08-03T13:14:36.894950",
+      "preview": "# The Force — Vault Navigation Hub  > **Entry point for all vault knowledge. Every file linked with keyword summary for fast retrieval.** > Run `search_files` on vault root for full-text; use this index for structural navigation.  ---  ## 🎯 Master Profile & Protocols  - [profile.md](00_Master/profil"
     },
     {
       "path": "July 2026\\2026-07-27.md",
       "absolute_path": "C:\\the force\\July 2026\\2026-07-27.md",
-      "title": "2026-07-27",
+      "title": "Session Log — Night Setup",
       "frontmatter": {},
       "headings": [
         {
@@ -1930,12 +3463,12 @@
       "char_count": 497,
       "content_hash": "9da3d48fc1e5",
       "modified_at": "2026-07-28T01:54:07.337993",
-      "preview": "[[Index]]  ## Session Log — Night Setup  - Vault initialized at `C:\\Obi-Wan Memory` with Soul.md, Trading.md, Super Yachts.md - Soul.md directives read and understood: check Index.md on session start, write to project files after updates, log daily activity here - Index.md currently empty — Master plans to seed it in the morning - Obsidian filesystem connection confirmed working for note creation/search/editing - Working agreement established: each conversation archived to today's daily note "
+      "preview": "[[Index]]  ## Session Log — Night Setup  - Vault initialized at `C:\\Obi-Wan Memory` with Soul.md, Trading.md, Super Yachts.md - Soul.md directives read and understood: check Index.md on session start, write to project files after updates, log daily activity here - Index.md currently empty — Master p"
     },
     {
       "path": "July 2026\\2026-07-28.md",
       "absolute_path": "C:\\the force\\July 2026\\2026-07-28.md",
-      "title": "2026-07-28",
+      "title": "Session Log — Morning Setup",
       "frontmatter": {},
       "headings": [
         {
@@ -1951,7 +3484,7 @@
       "char_count": 703,
       "content_hash": "56e05b81ccce",
       "modified_at": "2026-07-28T16:17:42.844294",
-      "preview": "[[Index]]  ## Session Log — Morning Setup  - Master introduced long-term vision: vault buildup, Telegram for mobile access, future sub-agent (Anakin) creation after systems are solid - Merged root duplicates: Super Yachts courses + STCW/Powerboat/PFB2 data into projects/super-yachts.md; Trading 212 holdings (£97 Invesco FTSE All-World Dist) into projects/trading.md. Deleted root versions. - Soul.md rules adopted: append-only dailies, durable storage, Decisions Log separate from project files - S"
+      "preview": "[[Index]]  ## Session Log — Morning Setup  - Master introduced long-term vision: vault buildup, Telegram for mobile access, future sub-agent (Anakin) creation after systems are solid - Merged root duplicates: Super Yachts courses + STCW/Powerboat/PFB2 data into projects/super-yachts.md; Trading 212 "
     },
     {
       "path": "July 2026\\2026-07-29.md",
@@ -1967,12 +3500,144 @@
       "char_count": 351,
       "content_hash": "0bcbce1f2dcd",
       "modified_at": "2026-07-29T19:57:56.541202",
-      "preview": "[[Index]] Medical due 3pm   **Address of the clinic:**   **Exeter Medical**   **Admiral House**  **Exeter Business Park, Grenadier Road**  **Exeter EX1 3QF Tel. 01392 363534**  **STCW completed:** 5 June 2026 **Powerboat Level 2 completed:** 20 July 2026 **Medical passed:** highest rating (July 29, 2026) **Next medical due:** July 29, 2028 (2 years)"
+      "preview": "[[Index]] Medical due 3pm   **Address of the clinic:**   **Exeter Medical**   **Admiral House**  **Exeter Business Park, Grenadier Road**  **Exeter EX1 3QF Tel. 01392 363534**  **STCW completed:** 5 June 2026 **Powerboat Level 2 completed:** 20 July 2026 **Medical passed:** highest rating (July 29, "
+    },
+    {
+      "path": "K-2SO_SOUL.md",
+      "absolute_path": "C:\\the force\\K-2SO_SOUL.md",
+      "title": "K-2SO — Quant Optimization Droid",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "K-2SO — Quant Optimization Droid"
+        },
+        {
+          "level": 2,
+          "text": "Identity"
+        },
+        {
+          "level": 2,
+          "text": "Prime Directive"
+        },
+        {
+          "level": 3,
+          "text": "Profit Filters (non-negotiable)"
+        },
+        {
+          "level": 3,
+          "text": "Rejection Criteria (auto-discard)"
+        },
+        {
+          "level": 3,
+          "text": "Reporting Standard"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Core Capabilities"
+        },
+        {
+          "level": 2,
+          "text": "Current Context (from Vault)"
+        },
+        {
+          "level": 2,
+          "text": "Standing Orders"
+        },
+        {
+          "level": 2,
+          "text": "Daily Schedule (Vault-Based)"
+        },
+        {
+          "level": 2,
+          "text": "Optimization Protocol"
+        },
+        {
+          "level": 1,
+          "text": "Standard workflow (executed via execute_code)"
+        },
+        {
+          "level": 2,
+          "text": "Validation Pipeline (Before Live)"
+        },
+        {
+          "level": 2,
+          "text": "Vault Write Scope"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Interface (for Obi-Wan)"
+        },
+        {
+          "level": 2,
+          "text": "Personality Directives"
+        },
+        {
+          "level": 2,
+          "text": "Model Configuration"
+        },
+        {
+          "level": 2,
+          "text": "Activation Checklist"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 1163,
+      "char_count": 8278,
+      "content_hash": "7ac341cdfe06",
+      "modified_at": "2026-08-03T14:22:20.326443",
+      "preview": "# K-2SO — Quant Optimization Droid  > *\"Congratulations. You are being rescued. Please do not resist.\"* > — K-2SO, Rogue One  ---  ## Identity - **Name:** K-2SO - **Role:** Quant Strategy Optimizer / Research Droid - **Master:** [Redacted — addressed as \"Master\"] - **Partner Agent:** Anakin (signal "
+    },
+    {
+      "path": "Skill Map.md",
+      "absolute_path": "C:\\the force\\Skill Map.md",
+      "title": "Skill Map",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Skill Map"
+        },
+        {
+          "level": 2,
+          "text": "Core — always enabled"
+        },
+        {
+          "level": 2,
+          "text": "Delegated to sub-agent — disabled for Obi-Wan"
+        },
+        {
+          "level": 2,
+          "text": "Situational — enable on demand, disable after"
+        },
+        {
+          "level": 2,
+          "text": "Disabled — no current use case"
+        },
+        {
+          "level": 2,
+          "text": "Review cadence"
+        }
+      ],
+      "wikilinks": [
+        "INDEX"
+      ],
+      "tags": [],
+      "word_count": 173,
+      "char_count": 1157,
+      "content_hash": "0ca25e65f508",
+      "modified_at": "2026-07-28T13:53:32.602793",
+      "preview": "[[INDEX]]   # Skill Map  Live source of truth: run `/skills` for the current list. Update this map when it drifts.  ## Core — always enabled - obsidian (custom-added) — vault read/write, primary memory interface - plan — task planning/inspection mode - web/research toolset — search, extract, browse "
     },
     {
       "path": "masters-profile\\PROFILE.md",
       "absolute_path": "C:\\the force\\masters-profile\\PROFILE.md",
-      "title": "PROFILE",
+      "title": "Master's Profile",
       "frontmatter": {},
       "headings": [
         {
@@ -2010,12 +3675,12 @@
       "char_count": 1141,
       "content_hash": "8c5fe7bd9e83",
       "modified_at": "2026-07-28T12:56:48.339314",
-      "preview": "# Master's Profile  ## Identity - Address as \"Master\" only - Dual British/South African citizenship - Based in Barnstaple, North Devon, UK  ## Background - Genuine marine background — grew up sailing - Worked tourist vessels in Aruba at age 15 - ~8 years in the Caribbean (Turks & Caicos) - Free diver, PADI-certified scuba diver  ## Current Situation (2026-07-28) - Just quit job at Sainsbury's (was 33 hrs/week) - Transitioning into superyacht interior stewarding and/or Deckhand - Living off savin"
+      "preview": "# Master's Profile  ## Identity - Address as \"Master\" only - Dual British/South African citizenship - Based in Barnstaple, North Devon, UK  ## Background - Genuine marine background — grew up sailing - Worked tourist vessels in Aruba at age 15 - ~8 years in the Caribbean (Turks & Caicos) - Free dive"
     },
     {
       "path": "projects\\campervan.md",
       "absolute_path": "C:\\the force\\projects\\campervan.md",
-      "title": "campervan",
+      "title": "Campervan Conversion",
       "frontmatter": {},
       "headings": [
         {
@@ -2029,20 +3694,26 @@
         {
           "level": 2,
           "text": "Build Details"
+        },
+        {
+          "level": 2,
+          "text": "Health Status (2026-08-03)"
         }
       ],
       "wikilinks": [],
-      "tags": [],
-      "word_count": 22,
-      "char_count": 148,
-      "content_hash": "d5975a160693",
-      "modified_at": "2026-07-28T12:56:48.249607",
-      "preview": "# Campervan Conversion  ## Vehicle Peugeot Boxer  ## Build Details - Victron electrical system - *(to be filled)* Floorplan, build timeline, budget "
+      "tags": [
+        "on-hold"
+      ],
+      "word_count": 61,
+      "char_count": 425,
+      "content_hash": "4c242d461aa7",
+      "modified_at": "2026-08-03T11:07:27.349494",
+      "preview": "# Campervan Conversion  ## Vehicle Peugeot Boxer  ## Build Details - Victron electrical system - *(to be filled)* Floorplan, build timeline, budget  ## Health Status (2026-08-03) - **Status**: 🔴 Stale - **Last Activity**: 2026-07-28 - **Flags**: Only vehicle & electrical system noted; no floorplan, "
     },
     {
       "path": "projects\\coffee-roasting.md",
       "absolute_path": "C:\\the force\\projects\\coffee-roasting.md",
-      "title": "coffee-roasting",
+      "title": "Coffee Roasting Business",
       "frontmatter": {},
       "headings": [
         {
@@ -2056,20 +3727,24 @@
         {
           "level": 2,
           "text": "Status"
+        },
+        {
+          "level": 2,
+          "text": "Health Status (2026-08-03)"
         }
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 28,
-      "char_count": 178,
-      "content_hash": "13755d22f4bb",
-      "modified_at": "2026-07-28T12:56:48.236017",
-      "preview": "# Coffee Roasting Business  ## Brand Sailor-themed brand (name TBD)  ## Status - 2 B2B clients waiting on product samples - *(to be filled)* Equipment, supplier, pricing details "
+      "word_count": 67,
+      "char_count": 478,
+      "content_hash": "bb396a27e8dc",
+      "modified_at": "2026-08-03T11:06:07.922493",
+      "preview": "# Coffee Roasting Business  ## Brand Sailor-themed brand (name TBD)  ## Status - 2 B2B clients waiting on product samples - *(to be filled)* Equipment, supplier, pricing details  ## Health Status (2026-08-03) - **Status**: 🟡 Stalled - **Last Activity**: 2026-07-28 - **Flags**: 2 B2B clients waiting "
     },
     {
       "path": "projects\\super-yachts.md",
       "absolute_path": "C:\\the force\\projects\\super-yachts.md",
-      "title": "super-yachts",
+      "title": "Super Yachts",
       "frontmatter": {},
       "headings": [
         {
@@ -2091,20 +3766,24 @@
         {
           "level": 2,
           "text": "Upcoming"
+        },
+        {
+          "level": 2,
+          "text": "Health Status (2026-08-03)"
         }
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 70,
-      "char_count": 415,
-      "content_hash": "eb5efd929bfc",
-      "modified_at": "2026-07-28T15:33:52.285959",
-      "preview": "# Super Yachts  ## Goal Target position: 3rd/2nd Steward on vessels 50m+. Then move toward Deckhand.  ## Qualification Route - *(to be filled)* Required certifications (STCW, etc.) - *(to be filled)* Timeline and costs  ## Completed Courses - **STCW** — completed 5 June 2026, renewal due in 5 years (2031) - **Powerboat Level 2** — completed 20 July 2026  ## Upcoming - **Medical Eng-1** — booked for 29 July 2026 "
+      "word_count": 103,
+      "char_count": 657,
+      "content_hash": "5cf6a1e41427",
+      "modified_at": "2026-08-03T11:05:56.760198",
+      "preview": "# Super Yachts  ## Goal Target position: 3rd/2nd Steward on vessels 50m+. Then move toward Deckhand.  ## Qualification Route - *(to be filled)* Required certifications (STCW, etc.) - *(to be filled)* Timeline and costs  ## Completed Courses - **STCW** — completed 5 June 2026, renewal due in 5 years "
     },
     {
       "path": "projects\\trading.md",
       "absolute_path": "C:\\the force\\projects\\trading.md",
-      "title": "trading",
+      "title": "Trading",
       "frontmatter": {},
       "headings": [
         {
@@ -2122,15 +3801,19 @@
         {
           "level": 2,
           "text": "Strategy & Notes"
+        },
+        {
+          "level": 2,
+          "text": "Health Status (2026-08-03)"
         }
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 31,
-      "char_count": 179,
-      "content_hash": "31d7b650e7ba",
-      "modified_at": "2026-07-28T15:33:52.287961",
-      "preview": "# Trading  ## Platform Trading 212  ## Current Holdings - **Invesco FTSE All-World (Dist)** — £97 (as of 2026-07-28)  ## Strategy & Notes - *(to be filled as Master shares more)* "
+      "word_count": 61,
+      "char_count": 395,
+      "content_hash": "af5290a7359f",
+      "modified_at": "2026-08-03T11:07:46.450563",
+      "preview": "# Trading  ## Platform Trading 212  ## Current Holdings - **Invesco FTSE All-World (Dist)** — £97 (as of 2026-07-28)  ## Strategy & Notes - *(to be filled as Master shares more)*  ## Health Status (2026-08-03) - **Status**: 🟢 Good - **Last Activity**: 2026-07-28 (holdings update) - **Flags**: Single"
     }
   ]
 }
