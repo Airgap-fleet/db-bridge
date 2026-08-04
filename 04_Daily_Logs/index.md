@@ -24,6 +24,7 @@
 
 || Date | Master Dialogue | Sub-Agent Traces | Decisions | Metrics | Vault Health | Notes ||
 |------|-----------------|------------------|-----------|---------|--------------|-------|
+| 2026-08-04 | [[2026-08-04/master-dialogue.md]] | [[2026-08-04/subagent-traces.md]] | [[2026-08-04/decisions.md]] | [[2026-08-04/metrics.md]] | [[2026-08-04/vault-health.md]] | AFaaS business model finalized; 12-agent fleet model allocation; dashboard architecture; Scotty MCP critical path; dashboard research delegated (interrupted); K-2SO strategy pivot; vault reindex; git backup |
 | 2026-08-03 | [[2026-08-03/master-dialogue.md]] | [[2026-08-03/subagent-traces.md]] | [[2026-08-03/decisions.md]] | [[2026-08-03/metrics.md]] | [[2026-08-03/vault-health.md]] | Fallback model config; GPU DirectML; Anakin pipeline fix verified; full cron suite operational; K-2SO first optimization (rejected); trading loop activated; project health flags |
 | 2026-08-02 | [[2026-08-02/master-dialogue.md]] | [[2026-08-02/subagent-traces.md]] | [[2026-08-02/decisions.md]] | [[2026-08-02/metrics.md]] | [[2026-08-02/vault-health.md]] | Initialization; vault setup; 6 sub-agent templates; Anakin soul spec + MCP trading; OpenRouter model filtering explained; conversation recall confirmed |
 
@@ -33,6 +34,15 @@
 
 || Tag | Dates | Count ||
 |-----|-------|-------|
+| #afaaS-business-model | 2026-08-04 | 1 |
+| #12-agent-fleet | 2026-08-04 | 1 |
+| #model-allocation | 2026-08-04 | 1 |
+| #dashboard-architecture | 2026-08-04 | 1 |
+| #scotty-mcp-critical-path | 2026-08-04 | 1 |
+| #dashboard-research | 2026-08-04 | 1 |
+| #k2so-strategy-pivot | 2026-08-04 | 1 |
+| #vault-reindex | 2026-08-04 | 1 |
+| #git-backup | 2026-08-04 | 1 |
 | #fallback-model | 2026-08-03 | 1 |
 | #gpu-directml | 2026-08-03 | 1 |
 | #anakin-pipeline-fix | 2026-08-03 | 1 |
