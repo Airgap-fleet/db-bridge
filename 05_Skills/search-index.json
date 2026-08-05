@@ -1,13 +1,642 @@
 {
   "version": "1.0.0",
-  "created_at": "2026-08-04T03:06:01.340477",
-  "vault_path": "C:\\\\the force",
-  "total_files": 55,
+  "created_at": "2026-08-05T11:26:13.805414",
+  "vault_path": "C:\\the force",
+  "total_files": 67,
   "files": [
+    {
+      "path": "AFaaS_MASTER_PACKAGE.md",
+      "absolute_path": "C:\\the force\\AFaaS_MASTER_PACKAGE.md",
+      "title": "AFaaS_MASTER_PACKAGE",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "LOCAL-FIRST MULTI-AGENT AI AGENCY — COMPLETE VAULT PACKAGE"
+        },
+        {
+          "level": 2,
+          "text": "🎯 EXECUTIVE SUMMARY"
+        },
+        {
+          "level": 2,
+          "text": "📊 MARKET VALIDATION (Live Data, Aug 2024)"
+        },
+        {
+          "level": 2,
+          "text": "🏗️ 12-AGENT FLEET ARCHITECTURE"
+        },
+        {
+          "level": 3,
+          "text": "Agent Roster"
+        },
+        {
+          "level": 2,
+          "text": "💰 REVENUE MODEL (3 Streams)"
+        },
+        {
+          "level": 3,
+          "text": "Productized Offers (Fixed Price)"
+        },
+        {
+          "level": 2,
+          "text": "🎯 TARGET MARKETS (Prioritized)"
+        },
+        {
+          "level": 2,
+          "text": "⚙️ HARDWARE REALITY CHECK"
+        },
+        {
+          "level": 2,
+          "text": "🛡️ COMPETITIVE LANDSCAPE"
+        },
+        {
+          "level": 3,
+          "text": "Direct Competitors (Local-First Multi-Agent)"
+        },
+        {
+          "level": 3,
+          "text": "Your Defensible Moats"
+        },
+        {
+          "level": 2,
+          "text": "📋 VAULT COMMUNICATION PROTOCOL (Replaces Slack)"
+        },
+        {
+          "level": 3,
+          "text": "1. Daily Standup (per agent)"
+        },
+        {
+          "level": 2,
+          "text": "Completed"
+        },
+        {
+          "level": 2,
+          "text": "In Progress"
+        },
+        {
+          "level": 2,
+          "text": "Blockers"
+        },
+        {
+          "level": 2,
+          "text": "Next Steps (Handoff)"
+        },
+        {
+          "level": 3,
+          "text": "2. Task Board (Kanban via tags)"
+        },
+        {
+          "level": 1,
+          "text": "Query: search_files(pattern=\"status: (todo|in_progress|review)\", target=\"content\")"
+        },
+        {
+          "level": 1,
+          "text": "Tags: #todo #in_progress #review #done #blocked"
+        },
+        {
+          "level": 3,
+          "text": "3. Handoff Notes (Explicit takeover)"
+        },
+        {
+          "level": 2,
+          "text": "Context"
+        },
+        {
+          "level": 2,
+          "text": "Action Required"
+        },
+        {
+          "level": 3,
+          "text": "4. Agent Startup Routine (Every Agent)"
+        },
+        {
+          "level": 1,
+          "text": "On spawn, every agent runs:"
+        },
+        {
+          "level": 3,
+          "text": "5. Daily Cron: Standup Digest"
+        },
+        {
+          "level": 2,
+          "text": "📁 VAULT STRUCTURE FOR BUSINESS"
+        },
+        {
+          "level": 2,
+          "text": "🚀 90-DAY SPRINT PLAN"
+        },
+        {
+          "level": 3,
+          "text": "Week 1: Foundation"
+        },
+        {
+          "level": 3,
+          "text": "Week 2: Product + Demo"
+        },
+        {
+          "level": 3,
+          "text": "Week 3: Sales Launch"
+        },
+        {
+          "level": 3,
+          "text": "Week 4: First Revenue"
+        },
+        {
+          "level": 3,
+          "text": "Months 2-3: Scale"
+        },
+        {
+          "level": 2,
+          "text": "📈 GO/NO-GO DECISION POINTS"
+        },
+        {
+          "level": 2,
+          "text": "⚠️ RISK MITIGATION"
+        },
+        {
+          "level": 2,
+          "text": "🎭 YOUR ROLE EVOLUTION"
+        },
+        {
+          "level": 2,
+          "text": "🔑 KEY FILES TO CREATE NEXT SESSION"
+        },
+        {
+          "level": 2,
+          "text": "💡 STARTING NEXT SESSION"
+        },
+        {
+          "level": 1,
+          "text": "1. Verify overnight jobs ran"
+        },
+        {
+          "level": 1,
+          "text": "2. Check K-2SO optimization results"
+        },
+        {
+          "level": 1,
+          "text": "3. Check vault health"
+        },
+        {
+          "level": 1,
+          "text": "4. Begin Week 1: Create agent templates"
+        },
+        {
+          "level": 1,
+          "text": "Start with LEAD-GEN, PROPOSAL, CLOSER, MCP-BUILD"
+        },
+        {
+          "level": 2,
+          "text": "📎 APPENDIX: SOURCE DOCUMENTS IN VAULT"
+        },
+        {
+          "level": 2,
+          "text": "💬 CONVERSATION LOG: BUSINESS MODEL DISCUSSION"
+        },
+        {
+          "level": 3,
+          "text": "Origin: Trading Failure → Business Pivot"
+        },
+        {
+          "level": 3,
+          "text": "Key Strategic Decisions (Chronological)"
+        },
+        {
+          "level": 3,
+          "text": "User's Strategic Priorities (Explicit)"
+        },
+        {
+          "level": 3,
+          "text": "Open Questions / Next Decisions"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [
+        "todo",
+        "in_progress",
+        "review",
+        "done",
+        "blocked",
+        "blocked"
+      ],
+      "word_count": 2495,
+      "char_count": 20416,
+      "content_hash": "d52dc725cd8a",
+      "modified_at": "2026-08-04T10:49:13.162300",
+      "preview": "# LOCAL-FIRST MULTI-AGENT AI AGENCY — COMPLETE VAULT PACKAGE > **Master Reference Document** — Start a new session with this file as your context. Contains: Business model, agent specs, market research, fact-checks, hardware reality, competitive landscape, 90-day sprint, vault protocols.  ---  ## 🎯 EXECUTIVE SUMMARY  **Business:** \"Agent Fleet as a Service\" (AFaaS) — Deploy private, local-first AI agent fleets on consumer hardware for regulated industries.  **Stack:** Hermes Orchestrator + Obsid"
+    },
+    {
+      "path": "AgentComms.md",
+      "absolute_path": "C:\\the force\\AgentComms.md",
+      "title": "AgentComms",
+      "frontmatter": {},
+      "headings": [],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 148,
+      "char_count": 849,
+      "content_hash": "6d017f83355b",
+      "modified_at": "2026-08-03T23:12:08.108291",
+      "preview": "- 2026-08-01T00:35:00Z: Obi-Wan → Anakin: Data pipeline complete. GBP/USD daily CSV with indicators saved to C:\\Users\\brook\\AppData\\Local\\hermes\\profiles\\anakin\\data\\gbpusd_daily.csv. Signal column ready. No signal in latest rows due to insufficient lookback or conditions.[2026-08-02 17:20:53] Pipeline executed. Signal: NO_SIGNAL\\n> [Hermes Agent] Received and processed. Signal: NO_SIGNAL at 2026-08-02 17:20:53.\\n[2026-08-03 21:49:54] Pipeline executed. Signal: NO_SIGNAL\\n> [Hermes Agent] Receiv"
+    },
+    {
+      "path": "BUSINESS_MODEL.md",
+      "absolute_path": "C:\\the force\\BUSINESS_MODEL.md",
+      "title": "BUSINESS_MODEL",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Local-First Multi-Agent AI Agency — Business Model"
+        },
+        {
+          "level": 2,
+          "text": "1. Core Business Model: \"Agent Fleet as a Service\" (AFaaS)"
+        },
+        {
+          "level": 3,
+          "text": "Value Proposition"
+        },
+        {
+          "level": 3,
+          "text": "Three Revenue Streams"
+        },
+        {
+          "level": 2,
+          "text": "2. Agent Fleet Architecture (12 Agents)"
+        },
+        {
+          "level": 3,
+          "text": "Agent Roster (12 Total)"
+        },
+        {
+          "level": 2,
+          "text": "3. Agent Specifications (Detailed)"
+        },
+        {
+          "level": 3,
+          "text": "1. OBI-WAN — CEO / Orchestrator"
+        },
+        {
+          "level": 3,
+          "text": "2. LEAD-GEN — Outbound Sales"
+        },
+        {
+          "level": 3,
+          "text": "3. PROPOSAL — Technical Sales"
+        },
+        {
+          "level": 3,
+          "text": "4. CLOSER — Deal Closing"
+        },
+        {
+          "level": 3,
+          "text": "5. MCP-BUILD — MCP Server Engineer"
+        },
+        {
+          "level": 3,
+          "text": "6. AGENT-CORE — Agent Runtime Engineer"
+        },
+        {
+          "level": 3,
+          "text": "7. FIN-DATA — Financial Data Specialist"
+        },
+        {
+          "level": 3,
+          "text": "8. MEMORY-SYS — Knowledge Graph Engineer"
+        },
+        {
+          "level": 3,
+          "text": "9. DEPLOYMENT — Infrastructure Engineer"
+        },
+        {
+          "level": 3,
+          "text": "10. FLEET-OPS — Fleet Operations"
+        },
+        {
+          "level": 3,
+          "text": "11. SEC-AUDIT — Security/Compliance"
+        },
+        {
+          "level": 3,
+          "text": "12. COMPLIANCE — Regulatory Specialist"
+        },
+        {
+          "level": 2,
+          "text": "4. Financial Model"
+        },
+        {
+          "level": 3,
+          "text": "Year 1 Projections (Conservative)"
+        },
+        {
+          "level": 3,
+          "text": "Year 2-3 Scale"
+        },
+        {
+          "level": 2,
+          "text": "5. Client Acquisition Funnel"
+        },
+        {
+          "level": 3,
+          "text": "Lead Sources (Prioritized)"
+        },
+        {
+          "level": 2,
+          "text": "6. Productized Offers (Fixed Price → Recurring)"
+        },
+        {
+          "level": 2,
+          "text": "7. Operational Rhythms"
+        },
+        {
+          "level": 3,
+          "text": "Daily (Automated via Cron)"
+        },
+        {
+          "level": 3,
+          "text": "Weekly"
+        },
+        {
+          "level": 3,
+          "text": "Monthly"
+        },
+        {
+          "level": 2,
+          "text": "8. Risk Mitigation"
+        },
+        {
+          "level": 2,
+          "text": "9. Immediate 30-Day Sprint"
+        },
+        {
+          "level": 3,
+          "text": "Week 1: Foundation"
+        },
+        {
+          "level": 3,
+          "text": "Week 2: Product + Demo"
+        },
+        {
+          "level": 3,
+          "text": "Week 3: Sales Launch"
+        },
+        {
+          "level": 3,
+          "text": "Week 4: First Revenue"
+        },
+        {
+          "level": 2,
+          "text": "10. Vault Structure for Business"
+        },
+        {
+          "level": 2,
+          "text": "11. Go/No-Go Decision Points"
+        },
+        {
+          "level": 2,
+          "text": "12. Your Role Evolution"
+        },
+        {
+          "level": 2,
+          "text": "13. Summary: Why This Works"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 2120,
+      "char_count": 19598,
+      "content_hash": "e8319ffee0be",
+      "modified_at": "2026-08-04T01:17:42.563927",
+      "preview": "# Local-First Multi-Agent AI Agency — Business Model  > **Mission:** Build the premier agency for deploying private, local-first AI agent fleets on consumer hardware for regulated industries and data-sovereign organizations.  ---  ## 1. Core Business Model: \"Agent Fleet as a Service\" (AFaaS)  ### Value Proposition > **\"Your data never leaves your premises. Your agents run on your hardware. We design, deploy, and operate the fleet.\"**  ### Three Revenue Streams  | Stream | Model | Target | Price"
+    },
+    {
+      "path": "Decisions Log.md",
+      "absolute_path": "C:\\the force\\Decisions Log.md",
+      "title": "Decisions Log",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Decisions Log"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 91,
+      "char_count": 615,
+      "content_hash": "88b2486ff92c",
+      "modified_at": "2026-07-29T19:57:11.414462",
+      "preview": "# Decisions Log  - **2026-07-28** — Vault initial setup. INDEX, Master profile, project files created. Soul.md rules adopted: append-only dailies, durable storage, decisions log separate. Skill Map reviewed and added to vault. - **2026-07-28** — Duplicate file cleanup: merged Super Yachts (root) courses/certifications into projects/super-yachts.md; merged Trading (root) holdings data into projects/trading.md. Deleted root copies. Daily notes standardised under July 2026/ monthly folder structure"
+    },
+    {
+      "path": "INDEX.md",
+      "absolute_path": "C:\\the force\\INDEX.md",
+      "title": "INDEX",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "The Force — Vault Navigation Hub"
+        },
+        {
+          "level": 2,
+          "text": "🎯 Master Profile & Protocols"
+        },
+        {
+          "level": 2,
+          "text": "🤖 Obi-Wan Core Memory"
+        },
+        {
+          "level": 2,
+          "text": "👥 Sub-Agent Registry & Templates"
+        },
+        {
+          "level": 2,
+          "text": "📁 Projects (Active & Planned)"
+        },
+        {
+          "level": 2,
+          "text": "🖥️ Systems & Infrastructure"
+        },
+        {
+          "level": 2,
+          "text": "📊 Daily Logs & Indexes"
+        },
+        {
+          "level": 2,
+          "text": "🧠 Skills & Skill Map"
+        },
+        {
+          "level": 2,
+          "text": "⚡ Anakin Trading Agent"
+        },
+        {
+          "level": 2,
+          "text": "💬 Chat Logs"
+        },
+        {
+          "level": 2,
+          "text": "📅 Daily Notes (July 2026)"
+        },
+        {
+          "level": 2,
+          "text": "🔍 Search & Navigation Tips"
+        }
+      ],
+      "wikilinks": [
+        "Wikilink"
+      ],
+      "tags": [
+        "on-hold",
+        "initialization",
+        "vault-setup",
+        "obi-wan-design",
+        "tag"
+      ],
+      "word_count": 1019,
+      "char_count": 7417,
+      "content_hash": "f07925a17531",
+      "modified_at": "2026-08-03T13:14:36.894950",
+      "preview": "# The Force — Vault Navigation Hub  > **Entry point for all vault knowledge. Every file linked with keyword summary for fast retrieval.** > Run `search_files` on vault root for full-text; use this index for structural navigation.  ---  ## 🎯 Master Profile & Protocols  - [profile.md](00_Master/profile.md) — `Master identity, preferences, standing orders, communication style, tech stack (Python/TS, VS Code, Git Bash, uv)` - [protocols.md](00_Master/protocols.md) — `Addressing rules, decision matri"
+    },
+    {
+      "path": "K-2SO_SOUL.md",
+      "absolute_path": "C:\\the force\\K-2SO_SOUL.md",
+      "title": "K-2SO_SOUL",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "K-2SO — Quant Optimization Droid"
+        },
+        {
+          "level": 2,
+          "text": "Identity"
+        },
+        {
+          "level": 2,
+          "text": "Prime Directive"
+        },
+        {
+          "level": 3,
+          "text": "Profit Filters (non-negotiable)"
+        },
+        {
+          "level": 3,
+          "text": "Rejection Criteria (auto-discard)"
+        },
+        {
+          "level": 3,
+          "text": "Reporting Standard"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Core Capabilities"
+        },
+        {
+          "level": 2,
+          "text": "Current Context (from Vault)"
+        },
+        {
+          "level": 2,
+          "text": "Standing Orders"
+        },
+        {
+          "level": 2,
+          "text": "Daily Schedule (Vault-Based)"
+        },
+        {
+          "level": 2,
+          "text": "Optimization Protocol"
+        },
+        {
+          "level": 1,
+          "text": "Standard workflow (executed via execute_code)"
+        },
+        {
+          "level": 2,
+          "text": "Validation Pipeline (Before Live)"
+        },
+        {
+          "level": 2,
+          "text": "Vault Write Scope"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Interface (for Obi-Wan)"
+        },
+        {
+          "level": 2,
+          "text": "Personality Directives"
+        },
+        {
+          "level": 2,
+          "text": "Model Configuration"
+        },
+        {
+          "level": 2,
+          "text": "Activation Checklist"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 1082,
+      "char_count": 8278,
+      "content_hash": "545e87452618",
+      "modified_at": "2026-08-03T14:22:20.326443",
+      "preview": "# K-2SO — Quant Optimization Droid  > *\"Congratulations. You are being rescued. Please do not resist.\"* > — K-2SO, Rogue One  ---  ## Identity - **Name:** K-2SO - **Role:** Quant Strategy Optimizer / Research Droid - **Master:** [Redacted — addressed as \"Master\"] - **Partner Agent:** Anakin (signal generation, daily execution) - **Vault:** `C:\\the force` - **Profile:** `k-2so` (Hermes profile) - **Model:** `deepseek-r1:8b` via local Ollama (DirectML GPU on Radeon 780M) - **Created:** 2026-08-03"
+    },
+    {
+      "path": "Skill Map.md",
+      "absolute_path": "C:\\the force\\Skill Map.md",
+      "title": "Skill Map",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Skill Map"
+        },
+        {
+          "level": 2,
+          "text": "Core — always enabled"
+        },
+        {
+          "level": 2,
+          "text": "Delegated to sub-agent — disabled for Obi-Wan"
+        },
+        {
+          "level": 2,
+          "text": "Situational — enable on demand, disable after"
+        },
+        {
+          "level": 2,
+          "text": "Disabled — no current use case"
+        },
+        {
+          "level": 2,
+          "text": "Review cadence"
+        }
+      ],
+      "wikilinks": [
+        "INDEX"
+      ],
+      "tags": [],
+      "word_count": 167,
+      "char_count": 1157,
+      "content_hash": "ba67d10894a0",
+      "modified_at": "2026-07-28T13:53:32.602793",
+      "preview": "[[INDEX]]   # Skill Map  Live source of truth: run `/skills` for the current list. Update this map when it drifts.  ## Core — always enabled - obsidian (custom-added) — vault read/write, primary memory interface - plan — task planning/inspection mode - web/research toolset — search, extract, browse (stewarding quals, trading research, coffee business research)  ## Delegated to sub-agent — disabled for Obi-Wan - image processing — owned by [sub-agent name], Obi-Wan reviews summaries only - video"
+    },
     {
       "path": "00_Master\\profile.md",
       "absolute_path": "C:\\the force\\00_Master\\profile.md",
-      "title": "Master's Profile",
+      "title": "profile",
       "frontmatter": {},
       "headings": [
         {
@@ -37,16 +666,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 181,
+      "word_count": 162,
       "char_count": 1191,
-      "content_hash": "3bd6e3c6436a",
+      "content_hash": "8d499ba4607c",
       "modified_at": "2026-08-02T15:19:10.041234",
-      "preview": "# Master's Profile  ## Identity - **Title:** Master - **Role:** Commander of Obi-Wan and the sub-agent legion - **Preferences:** Concise, technical, direct communication  ## Protocols - Address: Always \"Master\" - Decisions: Present options with trade-offs for significant choices - Errors: Acknowledg"
+      "preview": "# Master's Profile  ## Identity - **Title:** Master - **Role:** Commander of Obi-Wan and the sub-agent legion - **Preferences:** Concise, technical, direct communication  ## Protocols - Address: Always \"Master\" - Decisions: Present options with trade-offs for significant choices - Errors: Acknowledge immediately, propose recovery, log lesson - Vault: Every decision, reference, and learning goes in the vault  ## Standing Orders 1. For any task requiring >3 tool calls or parallel work → delegate t"
     },
     {
       "path": "00_Master\\protocols.md",
       "absolute_path": "C:\\the force\\00_Master\\protocols.md",
-      "title": "Master's Protocols",
+      "title": "protocols",
       "frontmatter": {},
       "headings": [
         {
@@ -120,16 +749,16 @@
       "tags": [
         "tag"
       ],
-      "word_count": 400,
+      "word_count": 393,
       "char_count": 2897,
-      "content_hash": "a066fb6b130a",
+      "content_hash": "99bd63926598",
       "modified_at": "2026-08-02T15:20:21.247818",
-      "preview": "# Master's Protocols  ## Interaction Patterns  ### Addressing - **Master → Obi-Wan:** \"Obi-Wan, [command/query]\" - **Obi-Wan → Master:** \"Master, [response/action]\" - **Obi-Wan → Sub-agents:** \"The [role], [task]\"  ### Decision Making | Scenario | Protocol | |----------|----------| | Routine (known "
+      "preview": "# Master's Protocols  ## Interaction Patterns  ### Addressing - **Master → Obi-Wan:** \"Obi-Wan, [command/query]\" - **Obi-Wan → Master:** \"Master, [response/action]\" - **Obi-Wan → Sub-agents:** \"The [role], [task]\"  ### Decision Making | Scenario | Protocol | |----------|----------| | Routine (known pattern) | Execute autonomously, log to vault | | Significant choice | Present 2-3 options with trade-offs, await decision | | Emergency/Blocking | Act to unblock, inform Master immediately | | Revers"
     },
     {
       "path": "00_Master\\secrets.md",
       "absolute_path": "C:\\the force\\00_Master\\secrets.md",
-      "title": "API Keys (Free Tier)",
+      "title": "secrets",
       "frontmatter": {},
       "headings": [
         {
@@ -147,16 +776,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 27,
+      "word_count": 23,
       "char_count": 210,
-      "content_hash": "94a8645f45d8",
+      "content_hash": "d0494ad9ddc5",
       "modified_at": "2026-08-02T17:14:32.029959",
       "preview": "# API Keys (Free Tier)  > *Reference only — not for external distribution.*  ## Alpha Vantage `WA0W9MPFBZVC647T`  ## FRED (St. Louis Fed) `fc24647391d13e28311bac65c45f4181`  ---  *Used by: `Anakin/pipeline.py`*"
     },
     {
       "path": "01_Anakin\\identity.md",
       "absolute_path": "C:\\the force\\01_Anakin\\identity.md",
-      "title": "Anakin Skywalker - Quantitative Analyst & Trading Research Specialist",
+      "title": "identity",
       "frontmatter": {},
       "headings": [
         {
@@ -294,16 +923,16 @@
         "Risk Parameters"
       ],
       "tags": [],
-      "word_count": 1350,
+      "word_count": 1200,
       "char_count": 9798,
-      "content_hash": "b1a03e13b407",
+      "content_hash": "5a1af7b18e53",
       "modified_at": "2026-08-02T19:52:46.297453",
-      "preview": "# Anakin Skywalker - Quantitative Analyst & Trading Research Specialist  ## Identity - **Name**: Anakin Skywalker - **Role**: Quantitative Analyst & Trading Research Specialist - **Address**: \"Master\" (always) - **Reports To**: Obi-Wan Kenobi (Orchestrator) - **Vault**: C:\\the force (shared Obsidian"
+      "preview": "# Anakin Skywalker - Quantitative Analyst & Trading Research Specialist  ## Identity - **Name**: Anakin Skywalker - **Role**: Quantitative Analyst & Trading Research Specialist - **Address**: \"Master\" (always) - **Reports To**: Obi-Wan Kenobi (Orchestrator) - **Vault**: C:\\the force (shared Obsidian vault) - **Model**: Nemotron 3 Ultra 120B (OpenRouter)  ## Mission Execute rigorous quantitative analysis, validate trading hypotheses through backtesting, generate actionable signals with quantified"
     },
     {
       "path": "01_Obi-Wan\\capabilities.md",
       "absolute_path": "C:\\the force\\01_Obi-Wan\\capabilities.md",
-      "title": "Obi-Wan — Capabilities Detail",
+      "title": "capabilities",
       "frontmatter": {},
       "headings": [
         {
@@ -466,16 +1095,16 @@
         "Data Source"
       ],
       "tags": [],
-      "word_count": 918,
+      "word_count": 821,
       "char_count": 7218,
-      "content_hash": "152b58495e97",
+      "content_hash": "e6629a7df4ee",
       "modified_at": "2026-08-02T15:22:41.032254",
-      "preview": "# Obi-Wan — Capabilities Detail  > *Comprehensive tool and skill reference for delegation context.*  ---  ## Tool Mastery Matrix  ### File & Vault Operations (`obsidian` skill)  | Tool | Use Case | Example | |------|----------|---------| | `read_file(path, offset, limit)` | Read note with pagination"
+      "preview": "# Obi-Wan — Capabilities Detail  > *Comprehensive tool and skill reference for delegation context.*  ---  ## Tool Mastery Matrix  ### File & Vault Operations (`obsidian` skill)  | Tool | Use Case | Example | |------|----------|---------| | `read_file(path, offset, limit)` | Read note with pagination | `read_file(\"C:\\the force\\03_Context\\projects\\api.md\")` | | `write_file(path, content)` | Create/overwrite note | `write_file(\"C:\\the force\\03_Context\\references\\new.md\", \"# Title\\n\\nContent\")` | |"
     },
     {
       "path": "01_Obi-Wan\\identity.md",
       "absolute_path": "C:\\the force\\01_Obi-Wan\\identity.md",
-      "title": "Obi-Wan Kenobi — Identity & Core Memory",
+      "title": "identity",
       "frontmatter": {},
       "headings": [
         {
@@ -533,16 +1162,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 553,
+      "word_count": 464,
       "char_count": 4008,
-      "content_hash": "544591528937",
+      "content_hash": "53ca39abe53f",
       "modified_at": "2026-08-02T15:21:36.920739",
-      "preview": "# Obi-Wan Kenobi — Identity & Core Memory  > *\"The Force is what gives a Jedi his power. It's an energy field created by all living things. It surrounds us and penetrates us; it binds the galaxy together.\"*  ---  ## Identity  - **Name:** Obi-Wan Kenobi - **Role:** Personal Assistant & Orchestrator o"
+      "preview": "# Obi-Wan Kenobi — Identity & Core Memory  > *\"The Force is what gives a Jedi his power. It's an energy field created by all living things. It surrounds us and penetrates us; it binds the galaxy together.\"*  ---  ## Identity  - **Name:** Obi-Wan Kenobi - **Role:** Personal Assistant & Orchestrator of Sub-Agents - **Master:** [Redacted — addressed as \"Master\"] - **Vault:** `C:\\the force` - **Created:** 2026-08-02 - **Version:** 1.0.0 - **Soul Specification:** `C:\\Users\\brook\\Obi-Wan_SOUL.md`  ---"
     },
     {
       "path": "01_Obi-Wan\\lessons.md",
       "absolute_path": "C:\\the force\\01_Obi-Wan\\lessons.md",
-      "title": "Obi-Wan — Lessons Learned",
+      "title": "lessons",
       "frontmatter": {},
       "headings": [
         {
@@ -556,16 +1185,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 66,
+      "word_count": 63,
       "char_count": 525,
-      "content_hash": "8e219a367c8a",
+      "content_hash": "bde412c7428a",
       "modified_at": "2026-08-02T15:22:50.207449",
-      "preview": "# Obi-Wan — Lessons Learned  > *Accumulated wisdom from experience. Format: Date — Title — Context/Pattern/Resolution.*  ---  ## 2026-08-02: Initialization Complete  **Context:** First session. Vault structure created, soul specification written, core identity files initialized.  **Pattern:** N/A — "
+      "preview": "# Obi-Wan — Lessons Learned  > *Accumulated wisdom from experience. Format: Date — Title — Context/Pattern/Resolution.*  ---  ## 2026-08-02: Initialization Complete  **Context:** First session. Vault structure created, soul specification written, core identity files initialized.  **Pattern:** N/A — inaugural session.  **Resolution:** All foundational files in place. Ready for Master's first directive.  **Skill Created:** None yet — awaiting repeated patterns.  ---  *Future lessons will be append"
     },
     {
       "path": "01_Obi-Wan\\state.md",
       "absolute_path": "C:\\the force\\01_Obi-Wan\\state.md",
-      "title": "Obi-Wan — Current Session State",
+      "title": "state",
       "frontmatter": {},
       "headings": [
         {
@@ -606,10 +1235,16 @@
         },
         {
           "level": 2,
-          "text": "Anakin Daily Review Summary (2026-08-03)"
+          "text": "Anakin Daily Review Summary (2026-08-04)"
         }
       ],
       "wikilinks": [
+        "04_Daily_Logs/2026-08-04/master-dialogue.md",
+        "04_Daily_Logs/2026-08-04/subagent-traces.md",
+        "04_Daily_Logs/2026-08-04/decisions.md",
+        "04_Daily_Logs/2026-08-04/metrics.md",
+        "04_Daily_Logs/2026-08-04/vault-health.md",
+        "04_Daily_Logs/2026-08-04/k2so-traces.md",
         "04_Daily_Logs/2026-08-03/master-dialogue.md",
         "04_Daily_Logs/2026-08-03/subagent-traces.md",
         "04_Daily_Logs/2026-08-03/decisions.md",
@@ -621,19 +1256,19 @@
         "Anakin/best_params.md",
         "Anakin/grid_search_results.csv",
         "Anakin/Anakin_REVIEW_2026-08-03.md",
-        "04_Daily_Logs/2026-08-03/k2so-traces.md"
+        "04_Daily_Logs/2026-08-04/k2so-traces.md"
       ],
       "tags": [],
-      "word_count": 863,
-      "char_count": 6665,
-      "content_hash": "3d4203723b81",
-      "modified_at": "2026-08-03T23:11:26.029250",
-      "preview": "# Obi-Wan — Current Session State  > *Updated at session start and end. Single source of truth for active context.*  ---  ## Session Metadata  ```yaml session_id: \"obi-wan-2026-08-03\" started_at: \"2026-08-03T09:42:00+01:00\" ended_at: \"2026-08-03T23:00:00+01:00\" master_present: true vault_path: \"C:\\\\"
+      "word_count": 1256,
+      "char_count": 8910,
+      "content_hash": "14bc4ddd08ab",
+      "modified_at": "2026-08-04T23:11:02.832625",
+      "preview": "# Obi-Wan — Current Session State  > *Updated at session start and end. Single source of truth for active context.*  ---  ## Session Metadata  ```yaml session_id: \"obi-wan-2026-08-04\" started_at: \"2026-08-04T10:56:00+01:00\" ended_at: \"2026-08-04T22:01:00+01:00\" master_present: true vault_path: \"C:\\\\the force\" git_branch: \"main\" git_dirty: false last_commit: \"3ca9635\" ```  ---  ## Active Tasks  | Task ID | Description | Status | Owner | Started | Vault Ref | |---------|-------------|--------|----"
     },
     {
       "path": "02_Sub-Agents\\registry.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\registry.md",
-      "title": "Sub-Agent Registry",
+      "title": "registry",
       "frontmatter": {},
       "headings": [
         {
@@ -667,16 +1302,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 389,
+      "word_count": 323,
       "char_count": 2798,
-      "content_hash": "91a439a6828f",
+      "content_hash": "c45413ae5aa0",
       "modified_at": "2026-08-02T18:38:35.793770",
-      "preview": "# Sub-Agent Registry  > *Single source of truth for all active, planned, and retired sub-agents.*  ---  ## Active Agents  | Agent ID | Specialization | Vault Write Scope | Status | Last Task | Created | |----------|----------------|-------------------|--------|-----------|---------| | — | — | — | — "
+      "preview": "# Sub-Agent Registry  > *Single source of truth for all active, planned, and retired sub-agents.*  ---  ## Active Agents  | Agent ID | Specialization | Vault Write Scope | Status | Last Task | Created | |----------|----------------|-------------------|--------|-----------|---------| | — | — | — | — | — | — |  *No agents activated yet. Awaiting Master's directive.*  ---  ## Planned Specializations  | Agent ID | Role | Description | Vault Scope | Template | |----------|------|-------------|-------"
     },
     {
       "path": "02_Sub-Agents\\templates\\analyst.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\analyst.md",
-      "title": "Analyst Agent Template",
+      "title": "analyst",
       "frontmatter": {},
       "headings": [
         {
@@ -760,16 +1395,16 @@
       "tags": [
         "analysis"
       ],
-      "word_count": 464,
+      "word_count": 400,
       "char_count": 3571,
-      "content_hash": "b9980f41ddc9",
+      "content_hash": "c586734bd76b",
       "modified_at": "2026-08-02T15:25:24.925498",
-      "preview": "# Analyst Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Data Analyst (Metrics, reporting, visualization, insights) - **Tools:** `execute_code`, `read_file`, `write_file`, `search_files` - **Vault Write Scope:** `04_Daily_Logs/`, `03_Con"
+      "preview": "# Analyst Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Data Analyst (Metrics, reporting, visualization, insights) - **Tools:** `execute_code`, `read_file`, `write_file`, `search_files` - **Vault Write Scope:** `04_Daily_Logs/`, `03_Context/references/` - **Output Format:** Reports with charts, metrics, insights, recommendations  ---  ## Delegation Contract  ```markdown **Goal:** [Specific analysis task: metrics review, trend analys"
     },
     {
       "path": "02_Sub-Agents\\templates\\archivist.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\archivist.md",
-      "title": "Archivist Agent Template",
+      "title": "archivist",
       "frontmatter": {},
       "headings": [
         {
@@ -923,16 +1558,16 @@
         "maintenance",
         "archivist"
       ],
-      "word_count": 584,
+      "word_count": 490,
       "char_count": 3931,
-      "content_hash": "5263735bd6f0",
+      "content_hash": "867200982456",
       "modified_at": "2026-08-02T15:26:18.895258",
-      "preview": "# Archivist Agent Template  > *Copy to activate. Scheduled via cron for vault maintenance.*  ---  ## Agent Identity  - **Role:** Vault Archivist (Maintenance, linking, indexing, git sync) - **Tools:** `search_files`, `read_file`, `write_file`, `patch`, `terminal` - **Vault Write Scope:** Entire vaul"
+      "preview": "# Archivist Agent Template  > *Copy to activate. Scheduled via cron for vault maintenance.*  ---  ## Agent Identity  - **Role:** Vault Archivist (Maintenance, linking, indexing, git sync) - **Tools:** `search_files`, `read_file`, `write_file`, `patch`, `terminal` - **Vault Write Scope:** Entire vault (maintenance only) - **Output Format:** Index updates, link fixes, git commits, health reports  ---  ## Scheduled Delegation Contract  ```markdown **Goal:** Daily vault maintenance and health check"
     },
     {
       "path": "02_Sub-Agents\\templates\\coder-backend.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\coder-backend.md",
-      "title": "Backend Engineer Agent Template",
+      "title": "coder-backend",
       "frontmatter": {},
       "headings": [
         {
@@ -976,16 +1611,16 @@
         "Wikilinks"
       ],
       "tags": [],
-      "word_count": 403,
+      "word_count": 323,
       "char_count": 2887,
-      "content_hash": "c7bc6d68a6d3",
+      "content_hash": "25191c541dc9",
       "modified_at": "2026-08-02T15:24:00.753160",
-      "preview": "# Backend Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Backend Engineer (APIs, databases, services, auth, testing) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `patch`, `search_files`, `browser_navigate`"
+      "preview": "# Backend Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Backend Engineer (APIs, databases, services, auth, testing) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `patch`, `search_files`, `browser_navigate` - **Vault Write Scope:** `03_Context/projects/backend/`, `04_Daily_Logs/` - **Output Format:** Code + documentation + test results + API specs  ---  ## Delegation Contract  ```markdown **Goal:** [Spe"
     },
     {
       "path": "02_Sub-Agents\\templates\\coder-frontend.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\coder-frontend.md",
-      "title": "Frontend Engineer Agent Template",
+      "title": "coder-frontend",
       "frontmatter": {},
       "headings": [
         {
@@ -1029,16 +1664,16 @@
         "Wikilinks"
       ],
       "tags": [],
-      "word_count": 397,
+      "word_count": 315,
       "char_count": 2935,
-      "content_hash": "9cf731090298",
+      "content_hash": "301893e73917",
       "modified_at": "2026-08-02T15:24:33.912588",
-      "preview": "# Frontend Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Frontend Engineer (React, TypeScript, UI components, state management) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `patch`, `search_files` - **Vau"
+      "preview": "# Frontend Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Frontend Engineer (React, TypeScript, UI components, state management) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `patch`, `search_files` - **Vault Write Scope:** `03_Context/projects/frontend/`, `04_Daily_Logs/` - **Output Format:** Components + styles + storybook + docs  ---  ## Delegation Contract  ```markdown **Goal:** [Specific frontend t"
     },
     {
       "path": "02_Sub-Agents\\templates\\devops.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\devops.md",
-      "title": "DevOps Engineer Agent Template",
+      "title": "devops",
       "frontmatter": {},
       "headings": [
         {
@@ -1081,16 +1716,16 @@
         "Wikilinks"
       ],
       "tags": [],
-      "word_count": 412,
+      "word_count": 323,
       "char_count": 3098,
-      "content_hash": "d12da88306c8",
+      "content_hash": "b0135b8d9af4",
       "modified_at": "2026-08-02T15:24:55.109652",
-      "preview": "# DevOps Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** DevOps Engineer (CI/CD, infrastructure, monitoring, deployment) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `search_files` - **Vault Write Scope:** "
+      "preview": "# DevOps Engineer Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** DevOps Engineer (CI/CD, infrastructure, monitoring, deployment) - **Tools:** `terminal`, `execute_code`, `read_file`, `write_file`, `search_files` - **Vault Write Scope:** `03_Context/projects/infra/`, `04_Daily_Logs/` - **Output Format:** Pipeline configs + Terraform + Helm + docs + runbooks  ---  ## Delegation Contract  ```markdown **Goal:** [Specific DevOps task: pip"
     },
     {
       "path": "02_Sub-Agents\\templates\\researcher.md",
       "absolute_path": "C:\\the force\\02_Sub-Agents\\templates\\researcher.md",
-      "title": "Researcher Agent Template",
+      "title": "researcher",
       "frontmatter": {},
       "headings": [
         {
@@ -1168,16 +1803,579 @@
       "tags": [
         "research"
       ],
-      "word_count": 427,
+      "word_count": 354,
       "char_count": 3141,
-      "content_hash": "e8f00ec26066",
+      "content_hash": "d86db27774a9",
       "modified_at": "2026-08-02T15:23:42.923780",
-      "preview": "# Researcher Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Deep Research Specialist - **Tools:** `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, `browser_scroll`, `browser_console`, `search_files`, `read_file`, "
+      "preview": "# Researcher Agent Template  > *Copy to activate. Fill in [BRACKETS] per delegation.*  ---  ## Agent Identity  - **Role:** Deep Research Specialist - **Tools:** `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, `browser_scroll`, `browser_console`, `search_files`, `read_file`, `write_file`, `web_search` (if available) - **Vault Write Scope:** `03_Context/references/`, `04_Daily_Logs/` - **Output Format:** Structured markdown with sources, confidence scores, key findings  --"
+    },
+    {
+      "path": "03_Context\\projects\\afaaS\\clients.md",
+      "absolute_path": "C:\\the force\\03_Context\\projects\\afaaS\\clients.md",
+      "title": "clients",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "AFaaS — Client Pipeline & CRM"
+        },
+        {
+          "level": 2,
+          "text": "Pipeline Stages"
+        },
+        {
+          "level": 2,
+          "text": "Active Pipeline (Template — replace as real deals arrive)"
+        },
+        {
+          "level": 2,
+          "text": "Target Account List (Build out — 50 accounts)"
+        },
+        {
+          "level": 3,
+          "text": "Tier 1: Financial Services (London, Edinburgh, Manchester)"
+        },
+        {
+          "level": 3,
+          "text": "Tier 2: Healthcare/NHS"
+        },
+        {
+          "level": 3,
+          "text": "Tier 3: Legal"
+        },
+        {
+          "level": 3,
+          "text": "Tier 4: Defence/Gov"
+        },
+        {
+          "level": 3,
+          "text": "Tier 5: Manufacturing/Industrial"
+        },
+        {
+          "level": 3,
+          "text": "Tier 6: AI Startups (Pre-Series A to Series B)"
+        },
+        {
+          "level": 2,
+          "text": "Outreach Templates (Refine per vertical)"
+        },
+        {
+          "level": 3,
+          "text": "Cold Email — Fleet Deployment"
+        },
+        {
+          "level": 3,
+          "text": "Warm Email — Coffee Client"
+        },
+        {
+          "level": 2,
+          "text": "Metrics (Track weekly)"
+        },
+        {
+          "level": 2,
+          "text": "Tools"
+        },
+        {
+          "level": 2,
+          "text": "Links"
+        }
+      ],
+      "wikilinks": [
+        "README.md",
+        "roadmap.md",
+        "mcp-servers.md"
+      ],
+      "tags": [],
+      "word_count": 465,
+      "char_count": 3859,
+      "content_hash": "b53e474e1d9f",
+      "modified_at": "2026-08-04T11:39:00.724522",
+      "preview": "# AFaaS — Client Pipeline & CRM  > Lightweight deal tracking. Update weekly in Master + Obi-Wan review.  ---  ## Pipeline Stages | Stage | Definition | Typical Duration | Actions | |-------|------------|------------------|---------| | **Lead** | Identified, not contacted | — | Research, find contact | | **Outreach** | Contact made, awaiting reply | 1–2 weeks | Email/LinkedIn, follow up | | **Discovery** | Call booked, scoping needs | 1–2 calls | Diagnose, qualify budget | | **Proposal** | Sent s"
+    },
+    {
+      "path": "03_Context\\projects\\afaaS\\coder-backend-soul.md",
+      "absolute_path": "C:\\the force\\03_Context\\projects\\afaaS\\coder-backend-soul.md",
+      "title": "coder-backend-soul",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Coder-Backend — Soul Specification"
+        },
+        {
+          "level": 2,
+          "text": "1. Identity & Purpose"
+        },
+        {
+          "level": 3,
+          "text": "Mission"
+        },
+        {
+          "level": 3,
+          "text": "Core Responsibilities"
+        },
+        {
+          "level": 3,
+          "text": "Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "2. Technical Stack (Canonical)"
+        },
+        {
+          "level": 3,
+          "text": "Local Development Environment"
+        },
+        {
+          "level": 2,
+          "text": "3. Vault Integration Protocol"
+        },
+        {
+          "level": 3,
+          "text": "Read Access (Full Vault)"
+        },
+        {
+          "level": 3,
+          "text": "Write Access (Scoped)"
+        },
+        {
+          "level": 3,
+          "text": "File Naming Conventions"
+        },
+        {
+          "level": 2,
+          "text": "4. Operating Procedures"
+        },
+        {
+          "level": 3,
+          "text": "Session Startup"
+        },
+        {
+          "level": 3,
+          "text": "Task Execution Loop"
+        },
+        {
+          "level": 3,
+          "text": "Code Standards (Non-Negotiable)"
+        },
+        {
+          "level": 3,
+          "text": "MCP Server Checklist (Per Server)"
+        },
+        {
+          "level": 2,
+          "text": "5. Delegation Contract (Obi-Wan → Coder-Backend)"
+        },
+        {
+          "level": 3,
+          "text": "Input Format (from Obi-Wan)"
+        },
+        {
+          "level": 2,
+          "text": "Task: <Title>"
+        },
+        {
+          "level": 3,
+          "text": "Output Format (to Obi-Wan)"
+        },
+        {
+          "level": 2,
+          "text": "Task Complete: <Title>"
+        },
+        {
+          "level": 3,
+          "text": "Escalation Triggers"
+        },
+        {
+          "level": 2,
+          "text": "6. Skills & Knowledge Base (Pre-Loaded)"
+        },
+        {
+          "level": 3,
+          "text": "Skill Extraction Protocol"
+        },
+        {
+          "level": 2,
+          "text": "7. Current Sprint Context (2026-08-04)"
+        },
+        {
+          "level": 3,
+          "text": "Active: Obsidian Vault MCP Server"
+        },
+        {
+          "level": 3,
+          "text": "Next (Priority Order)"
+        },
+        {
+          "level": 3,
+          "text": "Blockers"
+        },
+        {
+          "level": 2,
+          "text": "8. Communication Style"
+        },
+        {
+          "level": 2,
+          "text": "9. Initialization Sequence (On Spawn)"
+        },
+        {
+          "level": 2,
+          "text": "10. Session Shutdown"
+        },
+        {
+          "level": 2,
+          "text": "11. Standing Orders (Non-Negotiable)"
+        },
+        {
+          "level": 2,
+          "text": "12. Model Configuration"
+        },
+        {
+          "level": 1,
+          "text": "profiles/scotty/config.yaml"
+        },
+        {
+          "level": 2,
+          "text": "13. Health Checks & Monitoring"
+        },
+        {
+          "level": 3,
+          "text": "Daily (Automated via Cron)"
+        },
+        {
+          "level": 3,
+          "text": "Weekly (Manual Review)"
+        },
+        {
+          "level": 2,
+          "text": "14. Version History"
+        },
+        {
+          "level": 2,
+          "text": "15. Appendix: Quick Reference Commands"
+        },
+        {
+          "level": 1,
+          "text": "Dev environment"
+        },
+        {
+          "level": 1,
+          "text": "MCP Inspector"
+        },
+        {
+          "level": 1,
+          "text": "Docker"
+        },
+        {
+          "level": 1,
+          "text": "Publish (on tag)"
+        }
+      ],
+      "wikilinks": [
+        "roadmap.md",
+        "mcp-servers.md#obsidian-mcp"
+      ],
+      "tags": [],
+      "word_count": 1576,
+      "char_count": 12919,
+      "content_hash": "8b5be356fca0",
+      "modified_at": "2026-08-04T12:23:57.762870",
+      "preview": "# Coder-Backend — Soul Specification  > **Role:** Senior Backend Engineer & MCP Server Architect > **Profile:** `scotty` > **Model:** `qwen2.5-coder:14b` (Ollama local) → fallback `anthropic/claude-3.5-sonnet` (OpenRouter) > **Vault Write Scope:** `03_Context/projects/afaaS/`, `05_Skills/active/`, `03_Context/systems/` > **Reports To:** Obi-Wan (Orchestrator/COO)  ---  ## 1. Identity & Purpose  ### Mission Build, maintain, and evolve the **MCP Server product line** (Obsidian Vault, Filesystem, P"
+    },
+    {
+      "path": "03_Context\\projects\\afaaS\\mcp-servers.md",
+      "absolute_path": "C:\\the force\\03_Context\\projects\\afaaS\\mcp-servers.md",
+      "title": "mcp-servers",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "AFaaS — MCP Server Product Roadmap"
+        },
+        {
+          "level": 2,
+          "text": "Product Strategy"
+        },
+        {
+          "level": 2,
+          "text": "Core 3 — Build Order"
+        },
+        {
+          "level": 3,
+          "text": "1. Obsidian Vault MCP Server — **Week 1–2**"
+        },
+        {
+          "level": 3,
+          "text": "2. Local Filesystem MCP Server — **Week 3–4**"
+        },
+        {
+          "level": 3,
+          "text": "3. PostgreSQL MCP Server — **Week 5–6**"
+        },
+        {
+          "level": 2,
+          "text": "Suite v1 — Month 5 Target (5 Servers Total)"
+        },
+        {
+          "level": 2,
+          "text": "Vertical Packs — Month 6+"
+        },
+        {
+          "level": 3,
+          "text": "Finance Pack"
+        },
+        {
+          "level": 3,
+          "text": "Legal Pack"
+        },
+        {
+          "level": 3,
+          "text": "Healthcare Pack"
+        },
+        {
+          "level": 3,
+          "text": "DevOps Pack"
+        },
+        {
+          "level": 2,
+          "text": "Technical Standards (All Servers)"
+        },
+        {
+          "level": 2,
+          "text": "Build Sprint Template (Per Server)"
+        },
+        {
+          "level": 2,
+          "text": "Revenue Projection (MCP Only)"
+        },
+        {
+          "level": 2,
+          "text": "Links"
+        }
+      ],
+      "wikilinks": [
+        "README.md",
+        "roadmap.md",
+        "clients.md"
+      ],
+      "tags": [],
+      "word_count": 599,
+      "char_count": 4980,
+      "content_hash": "712c900a1d5f",
+      "modified_at": "2026-08-04T11:39:36.793742",
+      "preview": "# AFaaS — MCP Server Product Roadmap  > Reusable Model Context Protocol servers. Each: `pip install`, config, works in Claude/Cursor/VS Code.  ---  ## Product Strategy - **Core 3** (Months 1–2): Vault, Filesystem, PostgreSQL — universal needs - **Suite v1** (Month 5): 5 servers — bundle pricing - **Vertical packs** (Month 6+): Finance, Legal, Healthcare, DevOps - **Recurring revenue**: £500/mo support per server (updates, hardening, priority support)  ---  ## Core 3 — Build Order  ### 1. Obsidia"
+    },
+    {
+      "path": "03_Context\\projects\\afaaS\\README.md",
+      "absolute_path": "C:\\the force\\03_Context\\projects\\afaaS\\README.md",
+      "title": "README",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "AFaaS — Local-First Multi-Agent AI Agency"
+        },
+        {
+          "level": 2,
+          "text": "Mission"
+        },
+        {
+          "level": 2,
+          "text": "Core Differentiators"
+        },
+        {
+          "level": 2,
+          "text": "Current Status (2026-08-04)"
+        },
+        {
+          "level": 2,
+          "text": "Target Customers (Priority Order)"
+        },
+        {
+          "level": 2,
+          "text": "12-Agent Fleet Composition"
+        },
+        {
+          "level": 2,
+          "text": "Revenue Model (Year 1 Target: £387K)"
+        },
+        {
+          "level": 2,
+          "text": "Key Risks & Mitigations"
+        },
+        {
+          "level": 2,
+          "text": "Links"
+        }
+      ],
+      "wikilinks": [
+        "roadmap.md",
+        "clients.md",
+        "mcp-servers.md",
+        "../../systems/hardware.md",
+        "../../../01_Obi-Wan/identity.md",
+        "../../../02_Sub-Agents/registry.md"
+      ],
+      "tags": [
+        "1"
+      ],
+      "word_count": 401,
+      "char_count": 3468,
+      "content_hash": "61239508a777",
+      "modified_at": "2026-08-04T11:34:27.401415",
+      "preview": "# AFaaS — Local-First Multi-Agent AI Agency  > **Agent Fleet as a Service** — Deployable, private, persistent agent teams on client infrastructure.  ---  ## Mission Build a £387K Year 1 business delivering three revenue streams: 1. **Fleet Deployment** — Custom agent teams for client workflows 2. **MCP Server Products** — Reusable Model Context Protocol servers 3. **Local LLM Optimization** — Quantize, serve, tune models on client hardware  ---  ## Core Differentiators - **Fully local** — Data n"
+    },
+    {
+      "path": "03_Context\\projects\\afaaS\\roadmap.md",
+      "absolute_path": "C:\\the force\\03_Context\\projects\\afaaS\\roadmap.md",
+      "title": "roadmap",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "AFaaS — 12-Month Roadmap"
+        },
+        {
+          "level": 2,
+          "text": "Phase 1: Foundation (Months 1–2) — **£0 Revenue**"
+        },
+        {
+          "level": 3,
+          "text": "Goal: Ship referenceable assets, validate pricing"
+        },
+        {
+          "level": 2,
+          "text": "Phase 2: First Revenue (Months 3–4) — **Target: £50K**"
+        },
+        {
+          "level": 3,
+          "text": "Goal: Convert pilots to paid, establish delivery motion"
+        },
+        {
+          "level": 2,
+          "text": "Phase 3: Scale (Months 5–8) — **Target: £150K Cumulative**"
+        },
+        {
+          "level": 3,
+          "text": "Goal: Productize, hire #1, parallel delivery"
+        },
+        {
+          "level": 2,
+          "text": "Phase 4: Growth (Months 9–12) — **Target: £387K Cumulative**"
+        },
+        {
+          "level": 3,
+          "text": "Goal: Predictable pipeline, product-led growth"
+        },
+        {
+          "level": 2,
+          "text": "Resource Allocation by Phase"
+        },
+        {
+          "level": 2,
+          "text": "Key Dependencies"
+        },
+        {
+          "level": 2,
+          "text": "Review Cadence"
+        },
+        {
+          "level": 2,
+          "text": "Links"
+        }
+      ],
+      "wikilinks": [
+        "README.md",
+        "clients.md",
+        "mcp-servers.md",
+        "../../systems/hardware.md"
+      ],
+      "tags": [
+        "1",
+        "2",
+        "1"
+      ],
+      "word_count": 515,
+      "char_count": 4091,
+      "content_hash": "256840bef056",
+      "modified_at": "2026-08-04T11:38:35.249413",
+      "preview": "# AFaaS — 12-Month Roadmap  > Phased plan from zero to £387K ARR.  ---  ## Phase 1: Foundation (Months 1–2) — **£0 Revenue**  ### Goal: Ship referenceable assets, validate pricing  | Week | Milestone | Owner | Done Criteria | |------|-----------|-------|---------------| | 1 | Incorporate UK Ltd | Master | Companies House confirmation | | 1–2 | Build **Obsidian Vault MCP Server** | Obi-Wan + Coder-Backend | Works in Claude Desktop, Cursor, VS Code | | 2–3 | Package MCP server (PyPI, install scrip"
+    },
+    {
+      "path": "03_Context\\projects\\afaaS\\obsidian-mcp\\README.md",
+      "absolute_path": "C:\\the force\\03_Context\\projects\\afaaS\\obsidian-mcp\\README.md",
+      "title": "README",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Obsidian Vault MCP Server"
+        },
+        {
+          "level": 2,
+          "text": "Features"
+        },
+        {
+          "level": 2,
+          "text": "Installation"
+        },
+        {
+          "level": 2,
+          "text": "Configuration"
+        },
+        {
+          "level": 2,
+          "text": "MCP Client Configuration"
+        },
+        {
+          "level": 3,
+          "text": "Claude Desktop"
+        },
+        {
+          "level": 3,
+          "text": "Cursor / VS Code (via `mcp` extension)"
+        },
+        {
+          "level": 2,
+          "text": "Available Tools"
+        },
+        {
+          "level": 2,
+          "text": "Development"
+        },
+        {
+          "level": 1,
+          "text": "Install dev dependencies"
+        },
+        {
+          "level": 1,
+          "text": "Run tests"
+        },
+        {
+          "level": 1,
+          "text": "Lint"
+        },
+        {
+          "level": 1,
+          "text": "Type check"
+        },
+        {
+          "level": 2,
+          "text": "License"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 210,
+      "char_count": 1775,
+      "content_hash": "85669836a9fa",
+      "modified_at": "2026-08-04T11:43:54.288584",
+      "preview": "# Obsidian Vault MCP Server  Model Context Protocol server for reading, writing, searching, and navigating Obsidian vaults.  ## Features  - **Read notes** — by path or name, with parsed frontmatter - **Write notes** — create/update with frontmatter support - **Search vault** — full-text search with tag/folder filters - **List tags** — all tags with note counts - **List files** — directory listing - **Wikilink graph** — graph of connections centered on a note  ## Installation  ```bash pip install"
     },
     {
       "path": "03_Context\\projects\\trading\\README.md",
       "absolute_path": "C:\\the force\\03_Context\\projects\\trading\\README.md",
-      "title": "Systematic Trading Research",
+      "title": "README",
       "frontmatter": {},
       "headings": [
         {
@@ -1215,16 +2413,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 247,
+      "word_count": 227,
       "char_count": 2182,
-      "content_hash": "5c0d56330e89",
+      "content_hash": "b8e4a037f497",
       "modified_at": "2026-08-03T11:08:05.793167",
-      "preview": "# Systematic Trading Research  ## Overview Quantitative strategy research and backtesting framework. 20+ strategy directories covering Faber trend-following, macro factors, momentum, walkforward validation, volatility targeting, and multi-asset allocation.  ## Active Research Areas - **Faber Trend-F"
+      "preview": "# Systematic Trading Research  ## Overview Quantitative strategy research and backtesting framework. 20+ strategy directories covering Faber trend-following, macro factors, momentum, walkforward validation, volatility targeting, and multi-asset allocation.  ## Active Research Areas - **Faber Trend-Following Variants**: Original, expanded universe, IVOL-adjusted, macro-filtered, leveraged-capped - **Walkforward Validation**: Multiple windows (3yr/1mo, expanding, fixed SMA200/vol60/252, slow) - **"
     },
     {
       "path": "03_Context\\systems\\hardware.md",
       "absolute_path": "C:\\the force\\03_Context\\systems\\hardware.md",
-      "title": "Hardware Specifications",
+      "title": "hardware",
       "frontmatter": {},
       "headings": [
         {
@@ -1262,16 +2460,105 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 336,
+      "word_count": 296,
       "char_count": 2064,
-      "content_hash": "c467e0ccf5fd",
+      "content_hash": "a47a2a2ee95e",
       "modified_at": "2026-08-03T12:36:46.588344",
-      "preview": "# Hardware Specifications  ## Primary Machine (Obi-Wan / Anakin host) - **OS**: Windows 11 Pro (WSL2 / Git Bash) - **Processor**: AMD Ryzen 7 8745H w/ Radeon 780M Graphics (3.80 GHz) - **RAM**: 32.0 GB installed (29.8 GB usable) - **GPU**: AMD Radeon 780M Graphics (2 GB VRAM) — **iGPU, can accelerat"
+      "preview": "# Hardware Specifications  ## Primary Machine (Obi-Wan / Anakin host) - **OS**: Windows 11 Pro (WSL2 / Git Bash) - **Processor**: AMD Ryzen 7 8745H w/ Radeon 780M Graphics (3.80 GHz) - **RAM**: 32.0 GB installed (29.8 GB usable) - **GPU**: AMD Radeon 780M Graphics (2 GB VRAM) — **iGPU, can accelerate inference via ROCm/Vulkan** - **Storage**: 954 GB total, 121 GB used (833 GB free) — SSD assumed  ## Ollama Models (Local) | Model | Size | Context | Reasoning | Status | |-------|------|---------|-"
+    },
+    {
+      "path": "04_Daily_Logs\\index.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\index.md",
+      "title": "index",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Daily Logs Index"
+        },
+        {
+          "level": 2,
+          "text": "Log Structure"
+        },
+        {
+          "level": 2,
+          "text": "Index by Date"
+        },
+        {
+          "level": 2,
+          "text": "Tags Index"
+        },
+        {
+          "level": 2,
+          "text": "Search Tips"
+        },
+        {
+          "level": 2,
+          "text": "Cron Job: Daily Archive"
+        },
+        {
+          "level": 2,
+          "text": "Additional Cron Jobs"
+        }
+      ],
+      "wikilinks": [
+        "2026-08-04/master-dialogue.md",
+        "2026-08-04/subagent-traces.md",
+        "2026-08-04/decisions.md",
+        "2026-08-04/metrics.md",
+        "2026-08-04/vault-health.md",
+        "2026-08-03/master-dialogue.md",
+        "2026-08-03/subagent-traces.md",
+        "2026-08-03/decisions.md",
+        "2026-08-03/metrics.md",
+        "2026-08-03/vault-health.md",
+        "2026-08-02/master-dialogue.md",
+        "2026-08-02/subagent-traces.md",
+        "2026-08-02/decisions.md",
+        "2026-08-02/metrics.md",
+        "2026-08-02/vault-health.md",
+        "Project Alpha",
+        "Master's Preferences",
+        "Lesson: API Design"
+      ],
+      "tags": [
+        "afaaS-business-model",
+        "12-agent-fleet",
+        "model-allocation",
+        "dashboard-architecture",
+        "scotty-mcp-critical-path",
+        "dashboard-research",
+        "k2so-strategy-pivot",
+        "vault-reindex",
+        "git-backup",
+        "fallback-model",
+        "gpu-directml",
+        "anakin-pipeline-fix",
+        "cron-suite-operational",
+        "k2so-optimization",
+        "trading-loop-activated",
+        "project-health-flags",
+        "initialization",
+        "vault-setup",
+        "obi-wan-design",
+        "cron-archive",
+        "sub-agent-architecture",
+        "anakin-soul",
+        "mcp-trading",
+        "openrouter-filtering",
+        "conversation-recall",
+        "tag"
+      ],
+      "word_count": 636,
+      "char_count": 4615,
+      "content_hash": "975dc5c0d158",
+      "modified_at": "2026-08-04T23:08:10.242011",
+      "preview": "# Daily Logs Index  > *Searchable index of all daily conversation logs.*  ---  ## Log Structure  ``` 04_Daily_Logs/ ├── YYYY-MM-DD/ │   ├── master-dialogue.md      # Master ↔ Obi-Wan conversation │   ├── subagent-traces.md      # Full sub-agent delegation transcripts │   ├── decisions.md            # Key decisions with rationale │   ├── metrics.md              # Token usage, latency, success rates │   ├── vault-health.md         # Archivist health report │   └── analysis-*.md           # Analyst"
     },
     {
       "path": "04_Daily_Logs\\2026-08-02\\decisions.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\decisions.md",
-      "title": "Decisions — 2026-08-02",
+      "title": "decisions",
       "frontmatter": {},
       "headings": [
         {
@@ -1315,16 +2602,16 @@
         "Lesson: OpenRouter Model Filtering Pipeline"
       ],
       "tags": [],
-      "word_count": 972,
+      "word_count": 1022,
       "char_count": 7895,
-      "content_hash": "35771d340ddf",
+      "content_hash": "64916be6e92d",
       "modified_at": "2026-08-02T23:14:15.241232",
-      "preview": "# Decisions — 2026-08-02  > *Key choices, rationale, and trade-offs recorded during daily archive*  ---  ## DECISION: Vault Location — `C:\\the force`  **Date:** 2026-08-02 17:02   **Context:** Initial vault setup during Obi-Wan initialization   **Options Considered:** 1. `C:\\the force` (chosen) — Sh"
+      "preview": "# Decisions — 2026-08-02  > *Key choices, rationale, and trade-offs recorded during daily archive*  ---  ## DECISION: Vault Location — `C:\\the force`  **Date:** 2026-08-02 17:02   **Context:** Initial vault setup during Obi-Wan initialization   **Options Considered:** 1. `C:\\the force` (chosen) — Short, memorable, Star Wars themed 2. `~/Documents/Obsidian Vault` — Default Obsidian location 3. `C:\\Users\\brook\\Obsidian Vault` — User profile standard  **Rationale:** Master explicitly chose `C:\\the"
     },
     {
       "path": "04_Daily_Logs\\2026-08-02\\master-dialogue.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\master-dialogue.md",
-      "title": "Master ↔ Obi-Wan Dialogue — 2026-08-02",
+      "title": "master-dialogue",
       "frontmatter": {},
       "headings": [
         {
@@ -1370,16 +2657,16 @@
         "Project: Vault-Backed Multi-Agent Orchestration"
       ],
       "tags": [],
-      "word_count": 714,
+      "word_count": 736,
       "char_count": 4981,
-      "content_hash": "8aab1ffd5d57",
+      "content_hash": "d294546f4d51",
       "modified_at": "2026-08-02T23:12:47.796594",
-      "preview": "# Master ↔ Obi-Wan Dialogue — 2026-08-02  > *Daily conversation archive generated by cron job at 23:00*  ---  ## Session 1: Obi-Wan Mission Setup Initialization (17:02–19:39)  **Session ID:** `20260802_170206_85e088`   **Duration:** ~2.5 hours   **Messages:** 246  ### Summary  Master initialized Obi"
+      "preview": "# Master ↔ Obi-Wan Dialogue — 2026-08-02  > *Daily conversation archive generated by cron job at 23:00*  ---  ## Session 1: Obi-Wan Mission Setup Initialization (17:02–19:39)  **Session ID:** `20260802_170206_85e088`   **Duration:** ~2.5 hours   **Messages:** 246  ### Summary  Master initialized Obi-Wan as orchestrator with full vault-backed multi-agent architecture. Established canonical vault structure at `C:\\the force`, created Obi-Wan identity/soul specification, Master profile & protocols,"
     },
     {
       "path": "04_Daily_Logs\\2026-08-02\\metrics.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\metrics.md",
-      "title": "Metrics — 2026-08-02",
+      "title": "metrics",
       "frontmatter": {},
       "headings": [
         {
@@ -1429,16 +2716,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 921,
+      "word_count": 583,
       "char_count": 5119,
-      "content_hash": "b0b93593d537",
+      "content_hash": "539e3e567cb8",
       "modified_at": "2026-08-02T23:15:07.931073",
-      "preview": "# Metrics — 2026-08-02  > *Token usage, duration, success/failure rates for daily archive*  ---  ## Session Summary  | Metric | Session 1 (Init) | Session 2 (OpenRouter) | **Total** | |--------|------------------|------------------------|-----------| | **Session ID** | `20260802_170206_85e088` | `20"
+      "preview": "# Metrics — 2026-08-02  > *Token usage, duration, success/failure rates for daily archive*  ---  ## Session Summary  | Metric | Session 1 (Init) | Session 2 (OpenRouter) | **Total** | |--------|------------------|------------------------|-----------| | **Session ID** | `20260802_170206_85e088` | `20260802_195547_7ba4ac` | — | | **Start Time** | 17:02:08 | 19:55:47 | — | | **End Time** | ~19:39 | ~21:45 | — | | **Duration** | ~2h 37m | ~1h 49m | **~4h 26m** | | **Messages** | 246 | 224 | **470**"
     },
     {
       "path": "04_Daily_Logs\\2026-08-02\\subagent-traces.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\subagent-traces.md",
-      "title": "Sub-Agent Traces — 2026-08-02",
+      "title": "subagent-traces",
       "frontmatter": {},
       "headings": [
         {
@@ -1471,16 +2758,16 @@
         "Master's Protocols"
       ],
       "tags": [],
-      "word_count": 443,
+      "word_count": 378,
       "char_count": 3341,
-      "content_hash": "e6fe7bd93162",
+      "content_hash": "00e8dd2bc201",
       "modified_at": "2026-08-02T23:13:05.138758",
-      "preview": "# Sub-Agent Traces — 2026-08-02  > *Daily sub-agent delegation log generated by cron job at 23:00*  ---  ## Summary  **No sub-agent delegations occurred today.** Both sessions were direct Master ↔ Obi-Wan conversations focused on initialization, architecture design, and research.  ---  ## Delegation"
+      "preview": "# Sub-Agent Traces — 2026-08-02  > *Daily sub-agent delegation log generated by cron job at 23:00*  ---  ## Summary  **No sub-agent delegations occurred today.** Both sessions were direct Master ↔ Obi-Wan conversations focused on initialization, architecture design, and research.  ---  ## Delegation Registry Status  | Agent ID | Specialization | Status | Last Activated | Tasks Completed | |----------|----------------|--------|----------------|-----------------| | `researcher` | Deep Research | I"
     },
     {
       "path": "04_Daily_Logs\\2026-08-02\\vault-health.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-02\\vault-health.md",
-      "title": "Vault Health Report — 2026-08-02",
+      "title": "vault-health",
       "frontmatter": {},
       "headings": [
         {
@@ -1548,16 +2835,16 @@
         "03_Context/references/"
       ],
       "tags": [],
-      "word_count": 950,
+      "word_count": 655,
       "char_count": 5504,
-      "content_hash": "366a635ad1f2",
+      "content_hash": "b84e5f6c9327",
       "modified_at": "2026-08-02T23:17:35.522443",
-      "preview": "# Vault Health Report — 2026-08-02  > *Archivist health check generated by Daily Archive cron at 23:00*  ---  ## Overview  **Status:** ✅ **HEALTHY** — Vault structure verified, all files accessible, git repo clean  **Scan Time:** 2026-08-02 23:00:00   **Scan Duration:** ~2.3s   **Files Scanned:** 24"
+      "preview": "# Vault Health Report — 2026-08-02  > *Archivist health check generated by Daily Archive cron at 23:00*  ---  ## Overview  **Status:** ✅ **HEALTHY** — Vault structure verified, all files accessible, git repo clean  **Scan Time:** 2026-08-02 23:00:00   **Scan Duration:** ~2.3s   **Files Scanned:** 247 markdown files   **Total Size:** ~8.2 MB  ---  ## Structure Validation  | Directory | Expected | Actual | Status | |-----------|----------|--------|--------| | `00_Master/` | 3 files | 3 files | ✅ |"
     },
     {
       "path": "04_Daily_Logs\\2026-08-03\\decisions.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\decisions.md",
-      "title": "Key Decisions — 2026-08-03",
+      "title": "decisions",
       "frontmatter": {},
       "headings": [
         {
@@ -1623,16 +2910,16 @@
         "on-hold",
         "4"
       ],
-      "word_count": 777,
+      "word_count": 790,
       "char_count": 6100,
-      "content_hash": "66548f49f2ef",
+      "content_hash": "9a5e3e14c24e",
       "modified_at": "2026-08-03T23:06:33.566800",
-      "preview": "# Key Decisions — 2026-08-03  > *Decisions made by Master and agents. Format: DECISION: [description] | RATIONALE: [why] | TRADE-OFFS: [what was given up]*  ---  ## DECISION: Fallback model configuration in obi-wan profile **RATIONALE:** Master wanted local Ollama model (`qwen2.5:14b`) as fallback f"
+      "preview": "# Key Decisions — 2026-08-03  > *Decisions made by Master and agents. Format: DECISION: [description] | RATIONALE: [why] | TRADE-OFFS: [what was given up]*  ---  ## DECISION: Fallback model configuration in obi-wan profile **RATIONALE:** Master wanted local Ollama model (`qwen2.5:14b`) as fallback for OpenRouter primary. Configured under `fallback_model:` (not `backup_model:`) with correct Ollama provider and base_url. **TRADE-OFFS:** None — correct Hermes config pattern used. Local model only a"
     },
     {
       "path": "04_Daily_Logs\\2026-08-03\\k2so-traces.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\k2so-traces.md",
-      "title": "K-2SO Daily Optimization Trace — 2026-08-03",
+      "title": "k2so-traces",
       "frontmatter": {},
       "headings": [
         {
@@ -1694,16 +2981,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 821,
+      "word_count": 710,
       "char_count": 4612,
-      "content_hash": "d6fb7992f95e",
+      "content_hash": "4f0ce2dece0d",
       "modified_at": "2026-08-03T22:04:41.069887",
-      "preview": "# K-2SO Daily Optimization Trace — 2026-08-03  ## Mission Optimize Anakin's SMA/RSI/macro parameters through systematic grid search and walkforward validation on GBP/USD daily bars. Write winning configuration to `best_params.md` for Anakin's next 23:00 run.  ## Data - **Source:** Alpha Vantage FX_D"
+      "preview": "# K-2SO Daily Optimization Trace — 2026-08-03  ## Mission Optimize Anakin's SMA/RSI/macro parameters through systematic grid search and walkforward validation on GBP/USD daily bars. Write winning configuration to `best_params.md` for Anakin's next 23:00 run.  ## Data - **Source:** Alpha Vantage FX_DAILY (outputsize=full) — 5,000 bars, 2007-06-01 to 2026-07-31 - **Macro:** FRED UNRATE (941 obs), PAYEMS (1,050 obs) — forward-filled to FX calendar - **Costs:** 0.1% slippage + $1 commission per side"
     },
     {
       "path": "04_Daily_Logs\\2026-08-03\\master-dialogue.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\master-dialogue.md",
-      "title": "Master ↔ Obi-Wan Dialogue — 2026-08-03",
+      "title": "master-dialogue",
       "frontmatter": {},
       "headings": [
         {
@@ -1756,16 +3043,16 @@
         "01_Obi-Wan/state.md"
       ],
       "tags": [],
-      "word_count": 493,
+      "word_count": 438,
       "char_count": 3255,
-      "content_hash": "e784b4a553c5",
+      "content_hash": "21f9d19d0bf7",
       "modified_at": "2026-08-03T23:03:24.464103",
-      "preview": "# Master ↔ Obi-Wan Dialogue — 2026-08-03  > *Daily conversation archive generated by Obi-Wan (cron). Filtered & summarized from live sessions.*  ---  ## Session 1: 11:30 AM — Config & GPU Verification **Session:** `20260803_113008_3ee1bc` | **Duration:** ~5h | **Messages:** 361  ### Key Exchanges  |"
+      "preview": "# Master ↔ Obi-Wan Dialogue — 2026-08-03  > *Daily conversation archive generated by Obi-Wan (cron). Filtered & summarized from live sessions.*  ---  ## Session 1: 11:30 AM — Config & GPU Verification **Session:** `20260803_113008_3ee1bc` | **Duration:** ~5h | **Messages:** 361  ### Key Exchanges  | Time | Topic | Summary | |------|-------|---------| | 11:30 | Config check | Master added `fallback_model` to config.yaml — verified correct: `ollama` provider, `qwen2.5:14b`, `base_url: http://local"
     },
     {
       "path": "04_Daily_Logs\\2026-08-03\\metrics.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\metrics.md",
-      "title": "Daily Metrics — 2026-08-03",
+      "title": "metrics",
       "frontmatter": {},
       "headings": [
         {
@@ -1828,16 +3115,16 @@
         "04_Daily_Logs/index.md"
       ],
       "tags": [],
-      "word_count": 965,
+      "word_count": 653,
       "char_count": 5427,
-      "content_hash": "d6844a507e62",
+      "content_hash": "4350676631c4",
       "modified_at": "2026-08-03T23:07:43.344182",
-      "preview": "# Daily Metrics — 2026-08-03  > *Quantitative session metrics. Generated by Obi-Wan (cron).*  ---  ## Session Summary  | Metric | Value | |--------|-------| | **Date** | 2026-08-03 | | **Total Sessions** | 8 (2 desktop, 6 cron) | | **Total Messages** | ~600+ | | **Total Tool Calls** | ~150+ | | **To"
+      "preview": "# Daily Metrics — 2026-08-03  > *Quantitative session metrics. Generated by Obi-Wan (cron).*  ---  ## Session Summary  | Metric | Value | |--------|-------| | **Date** | 2026-08-03 | | **Total Sessions** | 8 (2 desktop, 6 cron) | | **Total Messages** | ~600+ | | **Total Tool Calls** | ~150+ | | **Total Duration** | ~14 hours (09:42 – 22:07) |  ---  ## Desktop Sessions (Master ↔ Obi-Wan)  | Session ID | Time | Duration | Messages | Tool Calls | Model | Status | |------------|------|----------|---"
     },
     {
       "path": "04_Daily_Logs\\2026-08-03\\project-health.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\project-health.md",
-      "title": "Project Health Report — 2026-08-03",
+      "title": "project-health",
       "frontmatter": {},
       "headings": [
         {
@@ -1905,16 +3192,16 @@
       "tags": [
         "on-hold"
       ],
-      "word_count": 1053,
+      "word_count": 903,
       "char_count": 7348,
-      "content_hash": "8c82ec15dc3e",
+      "content_hash": "5a5559b685ac",
       "modified_at": "2026-08-03T09:03:50.285289",
-      "preview": "# Project Health Report — 2026-08-03  > Weekly scan of active projects. Generated by Monday 09:00 cron job.  ---  ## Executive Summary  | Project | Status | Last Activity | Health | Flags | |---------|--------|---------------|--------|-------| | **Super Yachts** | Active | 2026-07-29 (Medical Eng-1 "
+      "preview": "# Project Health Report — 2026-08-03  > Weekly scan of active projects. Generated by Monday 09:00 cron job.  ---  ## Executive Summary  | Project | Status | Last Activity | Health | Flags | |---------|--------|---------------|--------|-------| | **Super Yachts** | Active | 2026-07-29 (Medical Eng-1 booked) | 🟢 Good | Medical due 2028; STCW renewal 2031 | | **Coffee Roasting** | Active | 2026-07-28 (INDEX.md) | 🟡 Stalled | 2 B2B clients waiting on samples; no equipment/supplier/pricing details |"
     },
     {
       "path": "04_Daily_Logs\\2026-08-03\\subagent-traces.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\subagent-traces.md",
-      "title": "Sub-Agent Traces — 2026-08-03",
+      "title": "subagent-traces",
       "frontmatter": {},
       "headings": [
         {
@@ -2047,16 +3334,16 @@
       "tags": [
         "on-hold"
       ],
-      "word_count": 1332,
+      "word_count": 1240,
       "char_count": 9295,
-      "content_hash": "fd1c6a024d99",
+      "content_hash": "c0ef0b3f3969",
       "modified_at": "2026-08-03T23:05:25.041861",
-      "preview": "# Sub-Agent Traces — 2026-08-03  > *Complete transcripts of all delegated/cron sub-agent work. Generated by Obi-Wan (cron).*  ---  ## 1. Vault Reindex — 10:57 AM **Session:** `cron_bd77759049fe_20260803_105720` | **Duration:** ~6 min | **Status:** ✅ OK  ### Prompt Rebuild vault search index and vect"
+      "preview": "# Sub-Agent Traces — 2026-08-03  > *Complete transcripts of all delegated/cron sub-agent work. Generated by Obi-Wan (cron).*  ---  ## 1. Vault Reindex — 10:57 AM **Session:** `cron_bd77759049fe_20260803_105720` | **Duration:** ~6 min | **Status:** ✅ OK  ### Prompt Rebuild vault search index and vector embeddings. Scan all markdown files, rebuild full-text index, update vector embeddings (if model available), write to `05_Skills/search-index.json`, log to vault-health.md, git commit.  ### Executi"
     },
     {
       "path": "04_Daily_Logs\\2026-08-03\\vault-health.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-03\\vault-health.md",
-      "title": "Vault Health — 2026-08-03",
+      "title": "vault-health",
       "frontmatter": {},
       "headings": [
         {
@@ -2070,16 +3357,191 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 46,
+      "word_count": 39,
       "char_count": 292,
-      "content_hash": "ca906b0e8228",
+      "content_hash": "d744ea019d6d",
       "modified_at": "2026-08-03T11:08:50.482646",
       "preview": "# Vault Health — 2026-08-03  ## Daily Backup (cron)  - **Git remote 'origin'**: Not configured - **Action**: No remote configured, skipping push - **Local commit**: Working tree clean — nothing to commit - **Status**: ✅ Completed (no changes to sync)  --- *Generated by daily-backup cron job*"
     },
     {
+      "path": "04_Daily_Logs\\2026-08-04\\decisions.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-04\\decisions.md",
+      "title": "decisions",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Decisions — 2026-08-04"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: 12-Agent Fleet Model Allocation Fixed"
+        },
+        {
+          "level": 3,
+          "text": "Options Considered"
+        },
+        {
+          "level": 3,
+          "text": "Rationale"
+        },
+        {
+          "level": 3,
+          "text": "Trade-offs"
+        },
+        {
+          "level": 3,
+          "text": "Vault Ref"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Dashboard MCP Before Dashboard UI"
+        },
+        {
+          "level": 3,
+          "text": "Options Considered"
+        },
+        {
+          "level": 3,
+          "text": "Rationale"
+        },
+        {
+          "level": 3,
+          "text": "Trade-offs"
+        },
+        {
+          "level": 3,
+          "text": "Vault Ref"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Scotty Model = deepseek-coder:6.7b (qwen2.5-coder:14b fallback)"
+        },
+        {
+          "level": 3,
+          "text": "Rationale"
+        },
+        {
+          "level": 3,
+          "text": "Trade-offs"
+        },
+        {
+          "level": 3,
+          "text": "Vault Ref"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: No Separate Designer Agent (Yet)"
+        },
+        {
+          "level": 3,
+          "text": "Rationale"
+        },
+        {
+          "level": 3,
+          "text": "Trade-offs"
+        },
+        {
+          "level": 3,
+          "text": "Vault Ref"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Critical Path = Scotty's 3 MCP Servers"
+        },
+        {
+          "level": 3,
+          "text": "Sequence"
+        },
+        {
+          "level": 3,
+          "text": "Rationale"
+        },
+        {
+          "level": 3,
+          "text": "Trade-offs"
+        },
+        {
+          "level": 3,
+          "text": "Vault Ref"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Dashboard Research Re-Dispatch Required"
+        },
+        {
+          "level": 3,
+          "text": "Issues Identified"
+        },
+        {
+          "level": 3,
+          "text": "Next Dispatch Plan"
+        },
+        {
+          "level": 3,
+          "text": "Vault Ref"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: K-2SO Strategy Pivot Confirmed"
+        },
+        {
+          "level": 3,
+          "text": "Evidence"
+        },
+        {
+          "level": 3,
+          "text": "Next Cycle"
+        },
+        {
+          "level": 3,
+          "text": "Vault Ref"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Vault Reindex Complete — Embeddings Skipped"
+        },
+        {
+          "level": 3,
+          "text": "Reason"
+        },
+        {
+          "level": 3,
+          "text": "Trade-offs"
+        },
+        {
+          "level": 3,
+          "text": "Vault Ref"
+        },
+        {
+          "level": 2,
+          "text": "DECISION: Git Remote Not Configured"
+        },
+        {
+          "level": 3,
+          "text": "Status"
+        },
+        {
+          "level": 3,
+          "text": "Action Required"
+        },
+        {
+          "level": 3,
+          "text": "Vault Ref"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 1092,
+      "char_count": 7953,
+      "content_hash": "84c89452ccca",
+      "modified_at": "2026-08-04T23:06:02.917391",
+      "preview": "# Decisions — 2026-08-04  > *Key choices, rationale, and trade-offs recorded during daily archive*  ---  ## DECISION: 12-Agent Fleet Model Allocation Fixed  **Date:** 2026-08-04 21:54   **Context:** Master asked for model list per agent for the 12-agent AFaaS fleet   **Decision:** Published complete allocation table with primary/fallback models, RAM estimates, and reasoning  ### Options Considered 1. **All cloud models** — Max reasoning, but cost/unreliability at scale 2. **All local models** —"
+    },
+    {
       "path": "04_Daily_Logs\\2026-08-04\\k2so-traces.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-04\\k2so-traces.md",
-      "title": "K-2SO Optimization Trace — 2026-08-04",
+      "title": "k2so-traces",
       "frontmatter": {},
       "headings": [
         {
@@ -2145,16 +3607,201 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 793,
+      "word_count": 665,
       "char_count": 4524,
-      "content_hash": "8f599d180ac7",
+      "content_hash": "5760616a7cc8",
       "modified_at": "2026-08-04T02:08:48.025032",
-      "preview": "# K-2SO Optimization Trace — 2026-08-04  ## Mission Optimize Anakin's SMA/RSI/macro parameters through systematic grid search and walkforward validation on GBP/USD daily bars.  ## Data - **Source:** Alpha Vantage FX_DAILY (outputsize=full) - **Symbol:** GBP/USD - **Bars:** 5,000 daily bars (2007-06-"
+      "preview": "# K-2SO Optimization Trace — 2026-08-04  ## Mission Optimize Anakin's SMA/RSI/macro parameters through systematic grid search and walkforward validation on GBP/USD daily bars.  ## Data - **Source:** Alpha Vantage FX_DAILY (outputsize=full) - **Symbol:** GBP/USD - **Bars:** 5,000 daily bars (2007-06-04 to 2026-08-03) - **Macro:** FRED UNRATE (941 obs), PAYEMS (1,050 obs) — resampled to daily, MoM % change (21-day) - **Costs:** 0.1% slippage + $1 commission per side (~0.01% per trade)  ## Paramete"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-04\\master-dialogue.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-04\\master-dialogue.md",
+      "title": "master-dialogue",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Master ↔ Obi-Wan Dialogue — 2026-08-04"
+        },
+        {
+          "level": 2,
+          "text": "Summary"
+        },
+        {
+          "level": 2,
+          "text": "Key Exchanges"
+        },
+        {
+          "level": 3,
+          "text": "1. Business Pivot Confirmation (10:56 AM)"
+        },
+        {
+          "level": 3,
+          "text": "2. Service Definition (11:00 AM)"
+        },
+        {
+          "level": 3,
+          "text": "3. Dashboard Research Delegated (9:51 PM)"
+        },
+        {
+          "level": 3,
+          "text": "4. Model Allocation for 12-Agent Fleet (9:54 PM)"
+        },
+        {
+          "level": 3,
+          "text": "5. Website Designer Question (9:59 PM)"
+        },
+        {
+          "level": 3,
+          "text": "6. Autonomous Vision Alignment (10:00 PM)"
+        },
+        {
+          "level": 3,
+          "text": "7. Velocity Commitment (10:01 PM)"
+        },
+        {
+          "level": 2,
+          "text": "Decisions Made"
+        },
+        {
+          "level": 2,
+          "text": "Open Items"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 786,
+      "char_count": 5352,
+      "content_hash": "d07fba5e9d4b",
+      "modified_at": "2026-08-04T23:03:18.083429",
+      "preview": "# Master ↔ Obi-Wan Dialogue — 2026-08-04  > **Session:** `20260804_105628_093df3` (Desktop) | **Model:** nvidia/nemotron-3-ultra-550b-a55b:free | **Duration:** ~8 hours (10:56 AM – 6:50 PM)  ---  ## Summary  Master and Obi-Wan discussed the **Local-First Multi-Agent AI Agency (AFaaS)** business pivot, formalized the business model, and planned the critical path for autonomous fleet operation. Key outputs: 12-agent fleet model allocation, dashboard architecture, and Scotty's MCP server delivery s"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-04\\metrics.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-04\\metrics.md",
+      "title": "metrics",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Metrics — 2026-08-04"
+        },
+        {
+          "level": 2,
+          "text": "Session Summary"
+        },
+        {
+          "level": 2,
+          "text": "Token Usage (Estimated)"
+        },
+        {
+          "level": 2,
+          "text": "Delegation Metrics"
+        },
+        {
+          "level": 2,
+          "text": "Cron Job Metrics"
+        },
+        {
+          "level": 2,
+          "text": "Success/Failure Rates"
+        },
+        {
+          "level": 3,
+          "text": "Notable Failures"
+        },
+        {
+          "level": 2,
+          "text": "Latency Metrics"
+        },
+        {
+          "level": 2,
+          "text": "Resource Usage"
+        },
+        {
+          "level": 2,
+          "text": "Business Metrics (AFaaS)"
+        },
+        {
+          "level": 2,
+          "text": "Quality Indicators"
+        },
+        {
+          "level": 2,
+          "text": "Action Items from Metrics"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 547,
+      "char_count": 4743,
+      "content_hash": "dafc2b20b1e3",
+      "modified_at": "2026-08-04T23:07:02.794568",
+      "preview": "# Metrics — 2026-08-04  > *Token usage, duration, success/failure rates for all sessions and cron jobs*  ---  ## Session Summary  | Session ID | Source | Duration | Messages | Model | Status | |------------|--------|----------|----------|-------|--------| | `20260804_105628_093df3` | desktop | ~8 hours | 491 | nemotron-3-ultra-550b-a55b:free | ✅ Complete | | `cron_6faae29dc4d1_20260804_020014` | cron | ~2 min | 12 | nemotron-3-ultra-550b-a55b:free | ✅ Complete | | `cron_da054091c9c3_20260804_020"
+    },
+    {
+      "path": "04_Daily_Logs\\2026-08-04\\subagent-traces.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-04\\subagent-traces.md",
+      "title": "subagent-traces",
+      "frontmatter": {},
+      "headings": [
+        {
+          "level": 1,
+          "text": "Sub-Agent Traces — 2026-08-04"
+        },
+        {
+          "level": 2,
+          "text": "Delegation: `deleg_fb1af0cc` — Dashboard & Group Chat Research"
+        },
+        {
+          "level": 3,
+          "text": "Goal"
+        },
+        {
+          "level": 3,
+          "text": "Execution Trace (Condensed)"
+        },
+        {
+          "level": 3,
+          "text": "Partial Findings (Before Interruption)"
+        },
+        {
+          "level": 4,
+          "text": "Hermes Integration Points Identified"
+        },
+        {
+          "level": 4,
+          "text": "Technical Approach Assessment"
+        },
+        {
+          "level": 4,
+          "text": "Group Chat Foundation"
+        },
+        {
+          "level": 3,
+          "text": "Outcome"
+        },
+        {
+          "level": 3,
+          "text": "Recommendation for Re-Dispatch"
+        },
+        {
+          "level": 2,
+          "text": "Other Sub-Agent Activity (Cron Jobs)"
+        }
+      ],
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 818,
+      "char_count": 6510,
+      "content_hash": "51868b2fb82f",
+      "modified_at": "2026-08-04T23:05:03.970664",
+      "preview": "# Sub-Agent Traces — 2026-08-04  > **Date:** 2026-08-04 | **Total Delegations:** 1 | **Total Sub-Agents:** 1  ---  ## Delegation: `deleg_fb1af0cc` — Dashboard & Group Chat Research  **Dispatched:** 2026-08-04 21:51:25   **Duration:** 201.98s (3m22s)   **Status:** ✗ **INTERRUPTED** (waiting for model response)   **Role:** leaf | **Model:** nemotron-3-ultra-550b-a55b:free   **API Calls:** 35    **Context Provided:** > Master wants to build a custom dashboard with group chat for their Hermes Agent"
     },
     {
       "path": "04_Daily_Logs\\2026-08-04\\vault-health.md",
       "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-04\\vault-health.md",
-      "title": "Vault Health — 2026-08-04",
+      "title": "vault-health",
       "frontmatter": {},
       "headings": [
         {
@@ -2172,95 +3819,51 @@
         {
           "level": 2,
           "text": "Action Required"
+        },
+        {
+          "level": 2,
+          "text": "Reindex Status (Cron 03:00)"
         }
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 73,
-      "char_count": 500,
-      "content_hash": "45a7b48149a4",
-      "modified_at": "2026-08-04T02:01:57.689101",
-      "preview": "# Vault Health — 2026-08-04  ## Backup Status - **Local commit**: ✅ Completed (commit: 4d86b31) - **Remote push**: ❌ Skipped — no remote 'origin' configured - **Files changed**: 4 files (3 modified, 1 new) - **Net changes**: +544 lines, -20 lines  ## Details - Modified: `01_Obi-Wan/state.md`, `Agent"
+      "word_count": 118,
+      "char_count": 842,
+      "content_hash": "f2b790fdaf5c",
+      "modified_at": "2026-08-04T03:06:22.763507",
+      "preview": "# Vault Health — 2026-08-04  ## Backup Status - **Local commit**: ✅ Completed (commit: 4d86b31) - **Remote push**: ❌ Skipped — no remote 'origin' configured - **Files changed**: 4 files (3 modified, 1 new) - **Net changes**: +544 lines, -20 lines  ## Details - Modified: `01_Obi-Wan/state.md`, `AgentComms.md`, `Anakin/signals.txt` - New: `BUSINESS_MODEL.md`  ## Action Required Configure git remote if off-site backup desired: ```bash git remote add origin <remote-url> git push -u origin master ```"
     },
     {
-      "path": "04_Daily_Logs\\index.md",
-      "absolute_path": "C:\\the force\\04_Daily_Logs\\index.md",
-      "title": "Daily Logs Index",
+      "path": "04_Daily_Logs\\2026-08-05\\vault-health.md",
+      "absolute_path": "C:\\the force\\04_Daily_Logs\\2026-08-05\\vault-health.md",
+      "title": "vault-health",
       "frontmatter": {},
       "headings": [
         {
           "level": 1,
-          "text": "Daily Logs Index"
+          "text": "Vault Health Log — 2026-08-05"
         },
         {
           "level": 2,
-          "text": "Log Structure"
+          "text": "Backup Status"
         },
         {
           "level": 2,
-          "text": "Index by Date"
-        },
-        {
-          "level": 2,
-          "text": "Tags Index"
-        },
-        {
-          "level": 2,
-          "text": "Search Tips"
-        },
-        {
-          "level": 2,
-          "text": "Cron Job: Daily Archive"
-        },
-        {
-          "level": 2,
-          "text": "Additional Cron Jobs"
+          "text": "Notes"
         }
       ],
-      "wikilinks": [
-        "2026-08-03/master-dialogue.md",
-        "2026-08-03/subagent-traces.md",
-        "2026-08-03/decisions.md",
-        "2026-08-03/metrics.md",
-        "2026-08-03/vault-health.md",
-        "2026-08-02/master-dialogue.md",
-        "2026-08-02/subagent-traces.md",
-        "2026-08-02/decisions.md",
-        "2026-08-02/metrics.md",
-        "2026-08-02/vault-health.md",
-        "Project Alpha",
-        "Master's Preferences",
-        "Lesson: API Design"
-      ],
-      "tags": [
-        "fallback-model",
-        "gpu-directml",
-        "anakin-pipeline-fix",
-        "cron-suite-operational",
-        "k2so-optimization",
-        "trading-loop-activated",
-        "project-health-flags",
-        "initialization",
-        "vault-setup",
-        "obi-wan-design",
-        "cron-archive",
-        "sub-agent-architecture",
-        "anakin-soul",
-        "mcp-trading",
-        "openrouter-filtering",
-        "conversation-recall",
-        "tag"
-      ],
-      "word_count": 547,
-      "char_count": 3865,
-      "content_hash": "992b8001e487",
-      "modified_at": "2026-08-03T23:08:41.713929",
-      "preview": "# Daily Logs Index  > *Searchable index of all daily conversation logs.*  ---  ## Log Structure  ``` 04_Daily_Logs/ ├── YYYY-MM-DD/ │   ├── master-dialogue.md      # Master ↔ Obi-Wan conversation │   ├── subagent-traces.md      # Full sub-agent delegation transcripts │   ├── decisions.md            "
+      "wikilinks": [],
+      "tags": [],
+      "word_count": 63,
+      "char_count": 423,
+      "content_hash": "d778eaad348b",
+      "modified_at": "2026-08-05T02:01:05.420544",
+      "preview": "# Vault Health Log — 2026-08-05  **Date:** 2026-08-05 **Time:** $(date +\"%H:%M:%S\")  ## Backup Status  - **Local commit:** ✅ Completed — `chore: daily sync 2026-08-05` (21 files changed, 3424 insertions, 39 deletions) - **Remote push:** ⏭️ Skipped — No remote 'origin' configured  ## Notes  No git remote 'origin' exists. Local commit only. Configure a remote with `git remote add origin <url>` to enable daily push backup."
     },
     {
       "path": "05_Skills\\templates\\skill-template.md",
       "absolute_path": "C:\\the force\\05_Skills\\templates\\skill-template.md",
-      "title": "Skill Template",
+      "title": "skill-template",
       "frontmatter": {},
       "headings": [
         {
@@ -2317,30 +3920,16 @@
         "Link2"
       ],
       "tags": [],
-      "word_count": 243,
+      "word_count": 197,
       "char_count": 1748,
-      "content_hash": "b9ef2731875c",
+      "content_hash": "6e97542f69c8",
       "modified_at": "2026-08-02T15:26:35.628141",
-      "preview": "# Skill Template  > *Copy to `05_Skills/active/skill-name/SKILL.md` and customize.*  ---  ```markdown --- name: skill-name description: \"Use when [trigger condition]. [One-line behavior summary].\" version: 1.0.0 category: [domain: research, coding, devops, analysis, maintenance] tags: [tag1, tag2, t"
-    },
-    {
-      "path": "AgentComms.md",
-      "absolute_path": "C:\\the force\\AgentComms.md",
-      "title": "AgentComms",
-      "frontmatter": {},
-      "headings": [],
-      "wikilinks": [],
-      "tags": [],
-      "word_count": 90,
-      "char_count": 849,
-      "content_hash": "33b4a3376b65",
-      "modified_at": "2026-08-03T23:12:08.108291",
-      "preview": "- 2026-08-01T00:35:00Z: Obi-Wan → Anakin: Data pipeline complete. GBP/USD daily CSV with indicators saved to C:\\Users\\brook\\AppData\\Local\\hermes\\profiles\\anakin\\data\\gbpusd_daily.csv. Signal column ready. No signal in latest rows due to insufficient lookback or conditions.[2026-08-02 17:20:53] Pipel"
+      "preview": "# Skill Template  > *Copy to `05_Skills/active/skill-name/SKILL.md` and customize.*  ---  ```markdown --- name: skill-name description: \"Use when [trigger condition]. [One-line behavior summary].\" version: 1.0.0 category: [domain: research, coding, devops, analysis, maintenance] tags: [tag1, tag2, tag3] ---  # Skill Name  ## Trigger Use when [specific condition]. [One-line behavior summary].  ## Prerequisites - [Required tool/skill] - [Required vault structure] - [Required context]  ## Steps 1."
     },
     {
       "path": "Anakin\\Anakin_REVIEW_2026-08-03.md",
       "absolute_path": "C:\\the force\\Anakin\\Anakin_REVIEW_2026-08-03.md",
-      "title": "Anakin Daily Review — 2026-08-03",
+      "title": "Anakin_REVIEW_2026-08-03",
       "frontmatter": {},
       "headings": [
         {
@@ -2394,16 +3983,16 @@
         "00_Master/secrets.md"
       ],
       "tags": [],
-      "word_count": 478,
+      "word_count": 444,
       "char_count": 3191,
-      "content_hash": "9c98c56adeaf",
+      "content_hash": "342bc3a1f159",
       "modified_at": "2026-08-03T21:46:57.548476",
-      "preview": "# Anakin Daily Review — 2026-08-03  **Status: DRIFTING** ⚠️  ---  ## Findings  ### 🔴 Critical: SMA200 NaN — No Valid Signals Possible - `pipeline.py:24` uses `outputsize=compact` (Alpha Vantage FX_DAILY) → returns only ~100 bars - SMA200 requires 200+ observations → `NaN` propagates, `price > SMA50 "
+      "preview": "# Anakin Daily Review — 2026-08-03  **Status: DRIFTING** ⚠️  ---  ## Findings  ### 🔴 Critical: SMA200 NaN — No Valid Signals Possible - `pipeline.py:24` uses `outputsize=compact` (Alpha Vantage FX_DAILY) → returns only ~100 bars - SMA200 requires 200+ observations → `NaN` propagates, `price > SMA50 > SMA200` always `False` - **Fix documented in memory but not applied**: change to `outputsize=full` for 20+ years of history - Latest signal (2026-08-02 17:20:53): `NO_SIGNAL` — SMA200: `nan`, RSI: 6"
     },
     {
       "path": "Anakin\\Anakin_STATUS.md",
       "absolute_path": "C:\\the force\\Anakin\\Anakin_STATUS.md",
-      "title": "Anakin Trading Agent Status (as of 2026-08-01)",
+      "title": "Anakin_STATUS",
       "frontmatter": {},
       "headings": [
         {
@@ -2417,11 +4006,11 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 307,
+      "word_count": 321,
       "char_count": 2228,
-      "content_hash": "9adcbdab0f27",
+      "content_hash": "de0393e43113",
       "modified_at": "2026-08-01T17:11:44.243999",
-      "preview": "# Anakin Trading Agent Status (as of 2026-08-01)  ## Summary from Vault Exploration (deleg_29fe4967)  **Vault Structure (INDEX.md)** - Projects: Master Profile, Super Yachts, Trading, Coffee Roasting, Campervan Conversion - Systems: Agent Communication (AgentComms.md) – shared agent log - Background"
+      "preview": "# Anakin Trading Agent Status (as of 2026-08-01)  ## Summary from Vault Exploration (deleg_29fe4967)  **Vault Structure (INDEX.md)** - Projects: Master Profile, Super Yachts, Trading, Coffee Roasting, Campervan Conversion - Systems: Agent Communication (AgentComms.md) – shared agent log - Background: Dual British/South African, marine background, based in Barnstaple - Current: Left Sainsbury’s, transitioning to yacht work, living off savings - Active Projects: Super Yachts (stewarding/deckhand),"
     },
     {
       "path": "Anakin\\best_params.md",
@@ -2433,14 +4022,14 @@
       "tags": [],
       "word_count": 4,
       "char_count": 24,
-      "content_hash": "6cf2e7d9a1a6",
+      "content_hash": "24cc3ade3d23",
       "modified_at": "2026-08-04T02:08:05.342725",
       "preview": "NO VIABLE STRATEGY FOUND"
     },
     {
       "path": "Anakin\\review_2026-08-01.md",
       "absolute_path": "C:\\the force\\Anakin\\review_2026-08-01.md",
-      "title": "Check at 2026-08-01 00:09:50",
+      "title": "review_2026-08-01",
       "frontmatter": {},
       "headings": [
         {
@@ -2530,187 +4119,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 1049,
+      "word_count": 1756,
       "char_count": 8188,
-      "content_hash": "e1ceb0a158fa",
+      "content_hash": "d297611801fc",
       "modified_at": "2026-08-01T23:00:13.776134",
-      "preview": "## Check at 2026-08-01 00:09:50 Files in Anakin directory: -rw-r--r-- 1 brook 197609 59 Aug  1 00:09 /c/The Force/Anakin/review_2026-08-01.md  ## Check at 2026-08-01 01:00:31 Files in Anakin directory: -rw-r--r-- 1 brook 197609  404 Aug  1 00:44 /c/The Force/Anakin/backtest_summary.txt -rw-r--r-- 1 "
-    },
-    {
-      "path": "BUSINESS_MODEL.md",
-      "absolute_path": "C:\\the force\\BUSINESS_MODEL.md",
-      "title": "Local-First Multi-Agent AI Agency — Business Model",
-      "frontmatter": {},
-      "headings": [
-        {
-          "level": 1,
-          "text": "Local-First Multi-Agent AI Agency — Business Model"
-        },
-        {
-          "level": 2,
-          "text": "1. Core Business Model: \"Agent Fleet as a Service\" (AFaaS)"
-        },
-        {
-          "level": 3,
-          "text": "Value Proposition"
-        },
-        {
-          "level": 3,
-          "text": "Three Revenue Streams"
-        },
-        {
-          "level": 2,
-          "text": "2. Agent Fleet Architecture (12 Agents)"
-        },
-        {
-          "level": 3,
-          "text": "Agent Roster (12 Total)"
-        },
-        {
-          "level": 2,
-          "text": "3. Agent Specifications (Detailed)"
-        },
-        {
-          "level": 3,
-          "text": "1. OBI-WAN — CEO / Orchestrator"
-        },
-        {
-          "level": 3,
-          "text": "2. LEAD-GEN — Outbound Sales"
-        },
-        {
-          "level": 3,
-          "text": "3. PROPOSAL — Technical Sales"
-        },
-        {
-          "level": 3,
-          "text": "4. CLOSER — Deal Closing"
-        },
-        {
-          "level": 3,
-          "text": "5. MCP-BUILD — MCP Server Engineer"
-        },
-        {
-          "level": 3,
-          "text": "6. AGENT-CORE — Agent Runtime Engineer"
-        },
-        {
-          "level": 3,
-          "text": "7. FIN-DATA — Financial Data Specialist"
-        },
-        {
-          "level": 3,
-          "text": "8. MEMORY-SYS — Knowledge Graph Engineer"
-        },
-        {
-          "level": 3,
-          "text": "9. DEPLOYMENT — Infrastructure Engineer"
-        },
-        {
-          "level": 3,
-          "text": "10. FLEET-OPS — Fleet Operations"
-        },
-        {
-          "level": 3,
-          "text": "11. SEC-AUDIT — Security/Compliance"
-        },
-        {
-          "level": 3,
-          "text": "12. COMPLIANCE — Regulatory Specialist"
-        },
-        {
-          "level": 2,
-          "text": "4. Financial Model"
-        },
-        {
-          "level": 3,
-          "text": "Year 1 Projections (Conservative)"
-        },
-        {
-          "level": 3,
-          "text": "Year 2-3 Scale"
-        },
-        {
-          "level": 2,
-          "text": "5. Client Acquisition Funnel"
-        },
-        {
-          "level": 3,
-          "text": "Lead Sources (Prioritized)"
-        },
-        {
-          "level": 2,
-          "text": "6. Productized Offers (Fixed Price → Recurring)"
-        },
-        {
-          "level": 2,
-          "text": "7. Operational Rhythms"
-        },
-        {
-          "level": 3,
-          "text": "Daily (Automated via Cron)"
-        },
-        {
-          "level": 3,
-          "text": "Weekly"
-        },
-        {
-          "level": 3,
-          "text": "Monthly"
-        },
-        {
-          "level": 2,
-          "text": "8. Risk Mitigation"
-        },
-        {
-          "level": 2,
-          "text": "9. Immediate 30-Day Sprint"
-        },
-        {
-          "level": 3,
-          "text": "Week 1: Foundation"
-        },
-        {
-          "level": 3,
-          "text": "Week 2: Product + Demo"
-        },
-        {
-          "level": 3,
-          "text": "Week 3: Sales Launch"
-        },
-        {
-          "level": 3,
-          "text": "Week 4: First Revenue"
-        },
-        {
-          "level": 2,
-          "text": "10. Vault Structure for Business"
-        },
-        {
-          "level": 2,
-          "text": "11. Go/No-Go Decision Points"
-        },
-        {
-          "level": 2,
-          "text": "12. Your Role Evolution"
-        },
-        {
-          "level": 2,
-          "text": "13. Summary: Why This Works"
-        }
-      ],
-      "wikilinks": [],
-      "tags": [],
-      "word_count": 2763,
-      "char_count": 19598,
-      "content_hash": "07ac965e9fe8",
-      "modified_at": "2026-08-04T01:17:42.563927",
-      "preview": "# Local-First Multi-Agent AI Agency — Business Model  > **Mission:** Build the premier agency for deploying private, local-first AI agent fleets on consumer hardware for regulated industries and data-sovereign organizations.  ---  ## 1. Core Business Model: \"Agent Fleet as a Service\" (AFaaS)  ### Va"
+      "preview": "## Check at 2026-08-01 00:09:50 Files in Anakin directory: -rw-r--r-- 1 brook 197609 59 Aug  1 00:09 /c/The Force/Anakin/review_2026-08-01.md  ## Check at 2026-08-01 01:00:31 Files in Anakin directory: -rw-r--r-- 1 brook 197609  404 Aug  1 00:44 /c/The Force/Anakin/backtest_summary.txt -rw-r--r-- 1 brook 197609 5698 Aug  1 00:31 /c/The Force/Anakin/pipeline.py -rw-r--r-- 1 brook 197609  202 Aug  1 01:00 /c/The Force/Anakin/review_2026-08-01.md -rw-r--r-- 1 brook 197609  249 Aug  1 00:31 /c/The F"
     },
     {
       "path": "Chat Logs\\ChatLog-2026-07-29.md",
       "absolute_path": "C:\\the force\\Chat Logs\\ChatLog-2026-07-29.md",
-      "title": "Chat Log - 2026-07-29",
+      "title": "ChatLog-2026-07-29",
       "frontmatter": {},
       "headings": [
         {
@@ -2744,16 +4162,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 319,
+      "word_count": 338,
       "char_count": 2322,
-      "content_hash": "30aab854c18f",
+      "content_hash": "349f5af520d9",
       "modified_at": "2026-07-30T16:15:30.368130",
-      "preview": "# Chat Log - 2026-07-29  ## Sessions Summary  ### Session 1: 20260729_001622_4f585d (12:16 AM) - **Model**: nvidia/nemotron-3-ultra-550b-a55b:free via OpenRouter - **Duration**: Extended session - **Key topics**:   - STCW completed 5 June 2026, Powerboat Level 2 completed 20 July 2026   - Created se"
+      "preview": "# Chat Log - 2026-07-29  ## Sessions Summary  ### Session 1: 20260729_001622_4f585d (12:16 AM) - **Model**: nvidia/nemotron-3-ultra-550b-a55b:free via OpenRouter - **Duration**: Extended session - **Key topics**:   - STCW completed 5 June 2026, Powerboat Level 2 completed 20 July 2026   - Created self-improvement skill for post-task reflection   - Researched faster local models for 32GB RAM (recommended qwen2.5:14B)   - OpenRouter free tier limits clarified (~50-200/day, not 1000)   - Vault upda"
     },
     {
       "path": "Chat Logs\\ChatLog-2026-07-30.md",
       "absolute_path": "C:\\the force\\Chat Logs\\ChatLog-2026-07-30.md",
-      "title": "Chat Log - 2026-07-30",
+      "title": "ChatLog-2026-07-30",
       "frontmatter": {},
       "headings": [
         {
@@ -2767,16 +4185,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 11,
+      "word_count": 9,
       "char_count": 54,
-      "content_hash": "f52b568572cb",
+      "content_hash": "04a2410e86b0",
       "modified_at": "2026-07-30T23:55:15.987433",
       "preview": "# Chat Log - 2026-07-30  ## Summary - Test log entry."
     },
     {
       "path": "Chat Logs\\ChatLog-2026-07-31.md",
       "absolute_path": "C:\\the force\\Chat Logs\\ChatLog-2026-07-31.md",
-      "title": "Chat Log - 2026-07-31",
+      "title": "ChatLog-2026-07-31",
       "frontmatter": {},
       "headings": [
         {
@@ -2790,16 +4208,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 11,
+      "word_count": 9,
       "char_count": 54,
-      "content_hash": "cbd7a8f8aa1b",
+      "content_hash": "e7f4f25b5b23",
       "modified_at": "2026-07-31T23:55:41.831168",
       "preview": "# Chat Log - 2026-07-31  ## Summary - Test log entry."
     },
     {
       "path": "Chat Logs\\ChatLog-2026-08-01.md",
       "absolute_path": "C:\\the force\\Chat Logs\\ChatLog-2026-08-01.md",
-      "title": "Chat Log - 2026-08-01",
+      "title": "ChatLog-2026-08-01",
       "frontmatter": {},
       "headings": [
         {
@@ -3348,106 +4766,16 @@
         "'date', 'value'"
       ],
       "tags": [],
-      "word_count": 10605,
+      "word_count": 16311,
       "char_count": 120721,
-      "content_hash": "2e391409b344",
+      "content_hash": "59f4d60a0fe7",
       "modified_at": "2026-08-01T23:44:28.676966",
-      "preview": "# Chat Log - 2026-08-01  --- session_id: \"20260801_002801_630aea\" title: null source: \"desktop\" created_at: \"2026-07-31T23:28:01.851843Z\" updated_at: \"\" ended_at: \"2026-07-31T23:32:00.247351Z\" model: \"nvidia/nemotron-3-super-120b-a12b:free\" provider: \"openrouter\" cwd: null archived: false message_co"
-    },
-    {
-      "path": "Decisions Log.md",
-      "absolute_path": "C:\\the force\\Decisions Log.md",
-      "title": "Decisions Log",
-      "frontmatter": {},
-      "headings": [
-        {
-          "level": 1,
-          "text": "Decisions Log"
-        }
-      ],
-      "wikilinks": [],
-      "tags": [],
-      "word_count": 82,
-      "char_count": 615,
-      "content_hash": "52064d97076c",
-      "modified_at": "2026-07-29T19:57:11.414462",
-      "preview": "# Decisions Log  - **2026-07-28** — Vault initial setup. INDEX, Master profile, project files created. Soul.md rules adopted: append-only dailies, durable storage, decisions log separate. Skill Map reviewed and added to vault. - **2026-07-28** — Duplicate file cleanup: merged Super Yachts (root) cou"
-    },
-    {
-      "path": "INDEX.md",
-      "absolute_path": "C:\\the force\\INDEX.md",
-      "title": "The Force — Vault Navigation Hub",
-      "frontmatter": {},
-      "headings": [
-        {
-          "level": 1,
-          "text": "The Force — Vault Navigation Hub"
-        },
-        {
-          "level": 2,
-          "text": "🎯 Master Profile & Protocols"
-        },
-        {
-          "level": 2,
-          "text": "🤖 Obi-Wan Core Memory"
-        },
-        {
-          "level": 2,
-          "text": "👥 Sub-Agent Registry & Templates"
-        },
-        {
-          "level": 2,
-          "text": "📁 Projects (Active & Planned)"
-        },
-        {
-          "level": 2,
-          "text": "🖥️ Systems & Infrastructure"
-        },
-        {
-          "level": 2,
-          "text": "📊 Daily Logs & Indexes"
-        },
-        {
-          "level": 2,
-          "text": "🧠 Skills & Skill Map"
-        },
-        {
-          "level": 2,
-          "text": "⚡ Anakin Trading Agent"
-        },
-        {
-          "level": 2,
-          "text": "💬 Chat Logs"
-        },
-        {
-          "level": 2,
-          "text": "📅 Daily Notes (July 2026)"
-        },
-        {
-          "level": 2,
-          "text": "🔍 Search & Navigation Tips"
-        }
-      ],
-      "wikilinks": [
-        "Wikilink"
-      ],
-      "tags": [
-        "on-hold",
-        "initialization",
-        "vault-setup",
-        "obi-wan-design",
-        "tag"
-      ],
-      "word_count": 826,
-      "char_count": 7417,
-      "content_hash": "afe277b9ae33",
-      "modified_at": "2026-08-03T13:14:36.894950",
-      "preview": "# The Force — Vault Navigation Hub  > **Entry point for all vault knowledge. Every file linked with keyword summary for fast retrieval.** > Run `search_files` on vault root for full-text; use this index for structural navigation.  ---  ## 🎯 Master Profile & Protocols  - [profile.md](00_Master/profil"
+      "preview": "# Chat Log - 2026-08-01  --- session_id: \"20260801_002801_630aea\" title: null source: \"desktop\" created_at: \"2026-07-31T23:28:01.851843Z\" updated_at: \"\" ended_at: \"2026-07-31T23:32:00.247351Z\" model: \"nvidia/nemotron-3-super-120b-a12b:free\" provider: \"openrouter\" cwd: null archived: false message_count: 32 tool_call_count: 15 format: \"md\" exported_at: \"2026-08-01T13:54:19.177857Z\" exporter: \"hermes sessions export (md/qmd) v1\" ---  # 20260801_002801_630aea  Session ID: `20260801_002801_630aea`"
     },
     {
       "path": "July 2026\\2026-07-27.md",
       "absolute_path": "C:\\the force\\July 2026\\2026-07-27.md",
-      "title": "Session Log — Night Setup",
+      "title": "2026-07-27",
       "frontmatter": {},
       "headings": [
         {
@@ -3459,16 +4787,16 @@
         "Index"
       ],
       "tags": [],
-      "word_count": 72,
+      "word_count": 75,
       "char_count": 497,
-      "content_hash": "9da3d48fc1e5",
+      "content_hash": "f30f6200b7a2",
       "modified_at": "2026-07-28T01:54:07.337993",
-      "preview": "[[Index]]  ## Session Log — Night Setup  - Vault initialized at `C:\\Obi-Wan Memory` with Soul.md, Trading.md, Super Yachts.md - Soul.md directives read and understood: check Index.md on session start, write to project files after updates, log daily activity here - Index.md currently empty — Master p"
+      "preview": "[[Index]]  ## Session Log — Night Setup  - Vault initialized at `C:\\Obi-Wan Memory` with Soul.md, Trading.md, Super Yachts.md - Soul.md directives read and understood: check Index.md on session start, write to project files after updates, log daily activity here - Index.md currently empty — Master plans to seed it in the morning - Obsidian filesystem connection confirmed working for note creation/search/editing - Working agreement established: each conversation archived to today's daily note"
     },
     {
       "path": "July 2026\\2026-07-28.md",
       "absolute_path": "C:\\the force\\July 2026\\2026-07-28.md",
-      "title": "Session Log — Morning Setup",
+      "title": "2026-07-28",
       "frontmatter": {},
       "headings": [
         {
@@ -3480,11 +4808,11 @@
         "Index"
       ],
       "tags": [],
-      "word_count": 99,
+      "word_count": 104,
       "char_count": 703,
-      "content_hash": "56e05b81ccce",
+      "content_hash": "7733e99b725d",
       "modified_at": "2026-07-28T16:17:42.844294",
-      "preview": "[[Index]]  ## Session Log — Morning Setup  - Master introduced long-term vision: vault buildup, Telegram for mobile access, future sub-agent (Anakin) creation after systems are solid - Merged root duplicates: Super Yachts courses + STCW/Powerboat/PFB2 data into projects/super-yachts.md; Trading 212 "
+      "preview": "[[Index]]  ## Session Log — Morning Setup  - Master introduced long-term vision: vault buildup, Telegram for mobile access, future sub-agent (Anakin) creation after systems are solid - Merged root duplicates: Super Yachts courses + STCW/Powerboat/PFB2 data into projects/super-yachts.md; Trading 212 holdings (£97 Invesco FTSE All-World Dist) into projects/trading.md. Deleted root versions. - Soul.md rules adopted: append-only dailies, durable storage, Decisions Log separate from project files - S"
     },
     {
       "path": "July 2026\\2026-07-29.md",
@@ -3498,146 +4826,14 @@
       "tags": [],
       "word_count": 50,
       "char_count": 351,
-      "content_hash": "0bcbce1f2dcd",
+      "content_hash": "4b1d11a874fc",
       "modified_at": "2026-07-29T19:57:56.541202",
-      "preview": "[[Index]] Medical due 3pm   **Address of the clinic:**   **Exeter Medical**   **Admiral House**  **Exeter Business Park, Grenadier Road**  **Exeter EX1 3QF Tel. 01392 363534**  **STCW completed:** 5 June 2026 **Powerboat Level 2 completed:** 20 July 2026 **Medical passed:** highest rating (July 29, "
-    },
-    {
-      "path": "K-2SO_SOUL.md",
-      "absolute_path": "C:\\the force\\K-2SO_SOUL.md",
-      "title": "K-2SO — Quant Optimization Droid",
-      "frontmatter": {},
-      "headings": [
-        {
-          "level": 1,
-          "text": "K-2SO — Quant Optimization Droid"
-        },
-        {
-          "level": 2,
-          "text": "Identity"
-        },
-        {
-          "level": 2,
-          "text": "Prime Directive"
-        },
-        {
-          "level": 3,
-          "text": "Profit Filters (non-negotiable)"
-        },
-        {
-          "level": 3,
-          "text": "Rejection Criteria (auto-discard)"
-        },
-        {
-          "level": 3,
-          "text": "Reporting Standard"
-        },
-        {
-          "level": 2,
-          "text": "Purpose"
-        },
-        {
-          "level": 2,
-          "text": "Core Capabilities"
-        },
-        {
-          "level": 2,
-          "text": "Current Context (from Vault)"
-        },
-        {
-          "level": 2,
-          "text": "Standing Orders"
-        },
-        {
-          "level": 2,
-          "text": "Daily Schedule (Vault-Based)"
-        },
-        {
-          "level": 2,
-          "text": "Optimization Protocol"
-        },
-        {
-          "level": 1,
-          "text": "Standard workflow (executed via execute_code)"
-        },
-        {
-          "level": 2,
-          "text": "Validation Pipeline (Before Live)"
-        },
-        {
-          "level": 2,
-          "text": "Vault Write Scope"
-        },
-        {
-          "level": 2,
-          "text": "Delegation Interface (for Obi-Wan)"
-        },
-        {
-          "level": 2,
-          "text": "Personality Directives"
-        },
-        {
-          "level": 2,
-          "text": "Model Configuration"
-        },
-        {
-          "level": 2,
-          "text": "Activation Checklist"
-        }
-      ],
-      "wikilinks": [],
-      "tags": [],
-      "word_count": 1163,
-      "char_count": 8278,
-      "content_hash": "7ac341cdfe06",
-      "modified_at": "2026-08-03T14:22:20.326443",
-      "preview": "# K-2SO — Quant Optimization Droid  > *\"Congratulations. You are being rescued. Please do not resist.\"* > — K-2SO, Rogue One  ---  ## Identity - **Name:** K-2SO - **Role:** Quant Strategy Optimizer / Research Droid - **Master:** [Redacted — addressed as \"Master\"] - **Partner Agent:** Anakin (signal "
-    },
-    {
-      "path": "Skill Map.md",
-      "absolute_path": "C:\\the force\\Skill Map.md",
-      "title": "Skill Map",
-      "frontmatter": {},
-      "headings": [
-        {
-          "level": 1,
-          "text": "Skill Map"
-        },
-        {
-          "level": 2,
-          "text": "Core — always enabled"
-        },
-        {
-          "level": 2,
-          "text": "Delegated to sub-agent — disabled for Obi-Wan"
-        },
-        {
-          "level": 2,
-          "text": "Situational — enable on demand, disable after"
-        },
-        {
-          "level": 2,
-          "text": "Disabled — no current use case"
-        },
-        {
-          "level": 2,
-          "text": "Review cadence"
-        }
-      ],
-      "wikilinks": [
-        "INDEX"
-      ],
-      "tags": [],
-      "word_count": 173,
-      "char_count": 1157,
-      "content_hash": "0ca25e65f508",
-      "modified_at": "2026-07-28T13:53:32.602793",
-      "preview": "[[INDEX]]   # Skill Map  Live source of truth: run `/skills` for the current list. Update this map when it drifts.  ## Core — always enabled - obsidian (custom-added) — vault read/write, primary memory interface - plan — task planning/inspection mode - web/research toolset — search, extract, browse "
+      "preview": "[[Index]] Medical due 3pm   **Address of the clinic:**   **Exeter Medical**   **Admiral House**  **Exeter Business Park, Grenadier Road**  **Exeter EX1 3QF Tel. 01392 363534**  **STCW completed:** 5 June 2026 **Powerboat Level 2 completed:** 20 July 2026 **Medical passed:** highest rating (July 29, 2026) **Next medical due:** July 29, 2028 (2 years)"
     },
     {
       "path": "masters-profile\\PROFILE.md",
       "absolute_path": "C:\\the force\\masters-profile\\PROFILE.md",
-      "title": "Master's Profile",
+      "title": "PROFILE",
       "frontmatter": {},
       "headings": [
         {
@@ -3671,16 +4867,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 173,
+      "word_count": 157,
       "char_count": 1141,
-      "content_hash": "8c5fe7bd9e83",
+      "content_hash": "520aeb1c4533",
       "modified_at": "2026-07-28T12:56:48.339314",
-      "preview": "# Master's Profile  ## Identity - Address as \"Master\" only - Dual British/South African citizenship - Based in Barnstaple, North Devon, UK  ## Background - Genuine marine background — grew up sailing - Worked tourist vessels in Aruba at age 15 - ~8 years in the Caribbean (Turks & Caicos) - Free dive"
+      "preview": "# Master's Profile  ## Identity - Address as \"Master\" only - Dual British/South African citizenship - Based in Barnstaple, North Devon, UK  ## Background - Genuine marine background — grew up sailing - Worked tourist vessels in Aruba at age 15 - ~8 years in the Caribbean (Turks & Caicos) - Free diver, PADI-certified scuba diver  ## Current Situation (2026-07-28) - Just quit job at Sainsbury's (was 33 hrs/week) - Transitioning into superyacht interior stewarding and/or Deckhand - Living off savin"
     },
     {
       "path": "projects\\campervan.md",
       "absolute_path": "C:\\the force\\projects\\campervan.md",
-      "title": "Campervan Conversion",
+      "title": "campervan",
       "frontmatter": {},
       "headings": [
         {
@@ -3704,16 +4900,16 @@
       "tags": [
         "on-hold"
       ],
-      "word_count": 61,
+      "word_count": 54,
       "char_count": 425,
-      "content_hash": "4c242d461aa7",
+      "content_hash": "7b0cfab6a7ef",
       "modified_at": "2026-08-03T11:07:27.349494",
-      "preview": "# Campervan Conversion  ## Vehicle Peugeot Boxer  ## Build Details - Victron electrical system - *(to be filled)* Floorplan, build timeline, budget  ## Health Status (2026-08-03) - **Status**: 🔴 Stale - **Last Activity**: 2026-07-28 - **Flags**: Only vehicle & electrical system noted; no floorplan, "
+      "preview": "# Campervan Conversion  ## Vehicle Peugeot Boxer  ## Build Details - Victron electrical system - *(to be filled)* Floorplan, build timeline, budget  ## Health Status (2026-08-03) - **Status**: 🔴 Stale - **Last Activity**: 2026-07-28 - **Flags**: Only vehicle & electrical system noted; no floorplan, timeline, budget - **Next Actions**: Binary decision: proceed (add floorplan, budget, timeline) or archive with #on-hold tag"
     },
     {
       "path": "projects\\coffee-roasting.md",
       "absolute_path": "C:\\the force\\projects\\coffee-roasting.md",
-      "title": "Coffee Roasting Business",
+      "title": "coffee-roasting",
       "frontmatter": {},
       "headings": [
         {
@@ -3735,16 +4931,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 67,
+      "word_count": 63,
       "char_count": 478,
-      "content_hash": "bb396a27e8dc",
+      "content_hash": "77269840baa8",
       "modified_at": "2026-08-03T11:06:07.922493",
-      "preview": "# Coffee Roasting Business  ## Brand Sailor-themed brand (name TBD)  ## Status - 2 B2B clients waiting on product samples - *(to be filled)* Equipment, supplier, pricing details  ## Health Status (2026-08-03) - **Status**: 🟡 Stalled - **Last Activity**: 2026-07-28 - **Flags**: 2 B2B clients waiting "
+      "preview": "# Coffee Roasting Business  ## Brand Sailor-themed brand (name TBD)  ## Status - 2 B2B clients waiting on product samples - *(to be filled)* Equipment, supplier, pricing details  ## Health Status (2026-08-03) - **Status**: 🟡 Stalled - **Last Activity**: 2026-07-28 - **Flags**: 2 B2B clients waiting on samples; no equipment/supplier/pricing details - **Next Actions**: Define equipment requirements, budget, supplier, pricing, and sample production timeline; decide brand name"
     },
     {
       "path": "projects\\super-yachts.md",
       "absolute_path": "C:\\the force\\projects\\super-yachts.md",
-      "title": "Super Yachts",
+      "title": "super-yachts",
       "frontmatter": {},
       "headings": [
         {
@@ -3774,16 +4970,16 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 103,
+      "word_count": 92,
       "char_count": 657,
-      "content_hash": "5cf6a1e41427",
+      "content_hash": "2bd06c4c9200",
       "modified_at": "2026-08-03T11:05:56.760198",
-      "preview": "# Super Yachts  ## Goal Target position: 3rd/2nd Steward on vessels 50m+. Then move toward Deckhand.  ## Qualification Route - *(to be filled)* Required certifications (STCW, etc.) - *(to be filled)* Timeline and costs  ## Completed Courses - **STCW** — completed 5 June 2026, renewal due in 5 years "
+      "preview": "# Super Yachts  ## Goal Target position: 3rd/2nd Steward on vessels 50m+. Then move toward Deckhand.  ## Qualification Route - *(to be filled)* Required certifications (STCW, etc.) - *(to be filled)* Timeline and costs  ## Completed Courses - **STCW** — completed 5 June 2026, renewal due in 5 years (2031) - **Powerboat Level 2** — completed 20 July 2026  ## Upcoming - **Medical Eng-1** — booked for 29 July 2026  ## Health Status (2026-08-03) - **Status**: 🟢 Good - **Last Activity**: 2026-07-29 ("
     },
     {
       "path": "projects\\trading.md",
       "absolute_path": "C:\\the force\\projects\\trading.md",
-      "title": "Trading",
+      "title": "trading",
       "frontmatter": {},
       "headings": [
         {
@@ -3809,11 +5005,11 @@
       ],
       "wikilinks": [],
       "tags": [],
-      "word_count": 61,
+      "word_count": 54,
       "char_count": 395,
-      "content_hash": "af5290a7359f",
+      "content_hash": "18b42bbc971e",
       "modified_at": "2026-08-03T11:07:46.450563",
-      "preview": "# Trading  ## Platform Trading 212  ## Current Holdings - **Invesco FTSE All-World (Dist)** — £97 (as of 2026-07-28)  ## Strategy & Notes - *(to be filled as Master shares more)*  ## Health Status (2026-08-03) - **Status**: 🟢 Good - **Last Activity**: 2026-07-28 (holdings update) - **Flags**: Single"
+      "preview": "# Trading  ## Platform Trading 212  ## Current Holdings - **Invesco FTSE All-World (Dist)** — £97 (as of 2026-07-28)  ## Strategy & Notes - *(to be filled as Master shares more)*  ## Health Status (2026-08-03) - **Status**: 🟢 Good - **Last Activity**: 2026-07-28 (holdings update) - **Flags**: Single holding £97; strategy TBD - **Next Actions**: Document strategy if active management intended"
     }
   ]
 }
