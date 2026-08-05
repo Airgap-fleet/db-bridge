@@ -7,14 +7,14 @@
 ## Session Metadata
 
 ```yaml
-session_id: "obi-wan-2026-08-03"
-started_at: "2026-08-03T09:42:00+01:00"
-ended_at: "2026-08-03T23:00:00+01:00"
+session_id: "obi-wan-2026-08-04"
+started_at: "2026-08-04T10:56:00+01:00"
+ended_at: "2026-08-04T22:01:00+01:00"
 master_present: true
 vault_path: "C:\\the force"
 git_branch: "main"
 git_dirty: false
-last_commit: "cf154b6"
+last_commit: "3ca9635"
 ```
 
 ---
@@ -25,10 +25,13 @@ last_commit: "cf154b6"
 |---------|-------------|--------|-------|---------|-----------|
 | INIT-001 | Vault initialization & Obi-Wan design | completed | Obi-Wan | 2026-08-02 15:12 | `04_Daily_Logs/2026-08-02/` |
 | ARCH-001 | Daily conversation archive (cron) | completed | Archivist (cron) | 2026-08-02 23:00 | `04_Daily_Logs/2026-08-02/` |
-| ANAKIN-001 | Anakin soul spec + MCP trading layer | completed | Obi-Wan | 2026-08-02 18:26 | `C:\Users\brook\Obi-Wan_SOUL.md` |
+| ANAKIN-001 | Anakin soul spec + MCP trading layer | completed | Obi-Wan | 2026-08-02 18:26 | `C:\\Users\\brook\\Obi-Wan_SOUL.md` |
 | OPENR-001 | OpenRouter model filtering research | completed | Obi-Wan | 2026-08-02 19:55 | `03_Context/references/providers/` |
 | ARCH-002 | Daily conversation archive 2026-08-03 (cron) | completed | Archivist (cron) | 2026-08-03 23:00 | `04_Daily_Logs/2026-08-03/` |
 | TRADING-001 | Automated trading loop activated (Anakin→K-2SO→Anakin) | active | Obi-Wan | 2026-08-03 22:00 | `Anakin/`, `AgentComms.md` |
+| ARCH-003 | Daily conversation archive 2026-08-04 (cron) | completed | Archivist (cron) | 2026-08-04 23:00 | `04_Daily_Logs/2026-08-04/` |
+| BIZ-001 | AFaaS business model formalized (12 agents, 3 streams, £387K) | completed | Obi-Wan | 2026-08-04 10:56 | `master-dialogue.md`, `decisions.md` |
+| DASH-001 | Dashboard architecture defined (MCP-first, Scotty critical path) | active | Obi-Wan/Scotty | 2026-08-04 22:00 | `decisions.md`, `subagent-traces.md` |
 | — | Awaiting Master's next operational command | pending | Obi-Wan | — | — |
 
 ---
@@ -43,9 +46,9 @@ last_commit: "cf154b6"
 
 ## Current Focus
 
-**Primary:** Daily archive complete. Full cron suite operational overnight. Automated trading loop (Anakin→K-2SO→Anakin) activated — first K-2SO optimization complete (rejected, iterating).  \
-**Secondary:** Anakin pipeline fix verified (`outputsize=full`), SMA200 now valid. K-2SO profile created with deepseek-r1:8b. Paper trade 30 days before live.  \
-**Blockers:** None.
+**Primary:** AFaaS business model formalized — 12-agent fleet, 3 revenue streams (£387K Year 1), model allocation fixed. Dashboard architecture defined: MCP-first approach, Scotty's 3 MCP servers are critical path. Daily archive complete — full cron suite operational overnight. K-2SO optimization pivot: SMA/RSI/macro abandoned on daily GBP/USD, strategy class change required.  
+**Secondary:** Dashboard research delegation interrupted — needs re-dispatch with concrete deliverables. Scotty must deliver verified `filesystem-mcp/` directory (current blocker). Anakin pipeline fix verified (`outputsize=full`), SMA200 valid. Paper trade 30 days before live.  
+**Blockers:** Scotty `filesystem-mcp/` delivery; git remote not configured for off-site backup; no embedding model for semantic search.
 
 ---
 
@@ -65,6 +68,13 @@ last_commit: "cf154b6"
 12. **2026-08-03 10:07 PM:** K-2SO daily optimization — 576 combos, NO VIABLE STRATEGY (macro gate over-filters daily bars)
 13. **2026-08-03 9:43 PM:** Anakin pipeline fix verified (`outputsize=full` → 5000 bars, SMA200=1.3398); Full cron suite confirmed; Trading loop activated
 14. **Daily archive completed (2026-08-03)** — 5 log files + k2so-traces.md, index updated, git committed (`cf154b6`)
+15. **2026-08-04 10:56 AM:** AFaaS business pivot formalized — 12-agent fleet, 3 revenue streams, £387K target
+16. **2026-08-04 9:54 PM:** 12-agent model allocation published (cloud reasoning, local tool-use, small always-on)
+17. **2026-08-04 10:00 PM:** Dashboard architecture defined — MCP-first, Scotty critical path (3 servers → Dashboard UI → AgentComms MCP → Autonomous Loop)
+18. **2026-08-04 10:01 PM:** Velocity commitment — move fast once Scotty delivers Filesystem MCP
+19. **2026-08-04 9:51 PM:** Dashboard research delegated (interrupted at 202s) — needs re-dispatch
+20. **2026-08-04 02:00 AM:** Cron suite — Backup (commit 4d86b31), K-2SO (528 combos, pivot), Reindex (55 files, commit 7eae95a)
+21. **Daily archive completed (2026-08-04)** — 6 log files (incl. k2so-traces.md), index updated, git committed (`3ca9635`)
 
 ---
 
@@ -86,15 +96,16 @@ last_commit: "cf154b6"
 |-----------|--------|-------|
 | Hermes Agent | Running | Current session |
 | Obsidian Vault | Accessible | `C:\the force` |
-| Git Repo | Initialized | Clean, committed `cf154b6` |
-| Cron Scheduler | Available | 8 jobs registered, 2 daily archives completed |
+| Git Repo | Initialized | Clean, committed `3ca9635` |
+| Cron Scheduler | Available | 8 jobs registered, 3 daily archives completed |
 | Delegation | Available | `delegate_task` ready |
 | Skills | Loaded | `obsidian`, `hermes-agent` |
-| Daily Archive | Complete | `04_Daily_Logs/2026-08-03/` (6 files incl. k2so-traces.md) |
+| Daily Archive | Complete | `04_Daily_Logs/2026-08-04/` (6 files incl. k2so-traces.md) |
 | Alpha Vantage API | Working | `outputsize=full` verified, 5000 bars fetched |
 | FRED API | Working | UNRATE/PAYEMS fetching |
 | Ollama (local) | Pending GPU verify | `OLLAMA_DML=1` set, reboot needed for service |
 | DeepSeek-R1:8b | Not yet pulled | For K-2SO profile (5.2 GB) |
+| deepseek-coder:6.7b | Not yet pulled | For Scotty profile (4 GB) |
 
 ---
 
@@ -108,12 +119,18 @@ last_commit: "cf154b6"
 - **Master Profile:** `00_Master/profile.md`
 - **Protocols:** `00_Master/protocols.md`
 - **Sub-Agent Registry:** `02_Sub-Agents/registry.md`
-- **Today's Log:** [[04_Daily_Logs/2026-08-03/master-dialogue.md]]
-- **Today's Traces:** [[04_Daily_Logs/2026-08-03/subagent-traces.md]]
-- **Today's Decisions:** [[04_Daily_Logs/2026-08-03/decisions.md]]
-- **Today's Metrics:** [[04_Daily_Logs/2026-08-03/metrics.md]]
-- **Today's Vault Health:** [[04_Daily_Logs/2026-08-03/vault-health.md]]
-- **Today's K-2SO Trace:** [[04_Daily_Logs/2026-08-03/k2so-traces.md]]
+- **Today's Log:** [[04_Daily_Logs/2026-08-04/master-dialogue.md]]
+- **Today's Traces:** [[04_Daily_Logs/2026-08-04/subagent-traces.md]]
+- **Today's Decisions:** [[04_Daily_Logs/2026-08-04/decisions.md]]
+- **Today's Metrics:** [[04_Daily_Logs/2026-08-04/metrics.md]]
+- **Today's Vault Health:** [[04_Daily_Logs/2026-08-04/vault-health.md]]
+- **Today's K-2SO Trace:** [[04_Daily_Logs/2026-08-04/k2so-traces.md]]
+- **Yesterday's Log:** [[04_Daily_Logs/2026-08-03/master-dialogue.md]]
+- **Yesterday's Traces:** [[04_Daily_Logs/2026-08-03/subagent-traces.md]]
+- **Yesterday's Decisions:** [[04_Daily_Logs/2026-08-03/decisions.md]]
+- **Yesterday's Metrics:** [[04_Daily_Logs/2026-08-03/metrics.md]]
+- **Yesterday's Vault Health:** [[04_Daily_Logs/2026-08-03/vault-health.md]]
+- **Yesterday's K-2SO Trace:** [[04_Daily_Logs/2026-08-03/k2so-traces.md]]
 - **Daily Logs Index:** [[04_Daily_Logs/index.md]]
 - **Anakin Review (2026-08-03):** [[Anakin/Anakin_REVIEW_2026-08-03.md]]
 - **K-2SO Output:** [[Anakin/best_params.md]]
@@ -121,12 +138,12 @@ last_commit: "cf154b6"
 
 ---
 
-## Anakin Daily Review Summary (2026-08-03)
+## Anakin Daily Review Summary (2026-08-04)
 
-**Status: DRIFTING → FIX VERIFIED** — SMA200 NaN blocker **resolved** (`outputsize=full` verified, SMA200=1.3398). Backtest Sharpe 0.38 << 1.0 target. Win rate 3.86%. K-2SO optimization loop ran first cycle: 576 combos tested, **NO VIABLE STRATEGY** (macro gate over-filters daily bars). Loop active, iterating nightly.
+**Status: DRIFTING → PIVOT CONFIRMED** — SMA200 NaN blocker **resolved** (`outputsize=full` verified, SMA200=1.3398). Backtest Sharpe 0.38 << 1.0 target. Win rate 3.86%. K-2SO optimization loop ran second cycle: 528 combos tested, **NO VIABLE STRATEGY** (macro gate over-filters daily bars). Loop active, pivoting strategy class.
 
 **Required:** K-2SO next cycle: test `macro_gate: neither` baseline or weekly bars; add position sizing, walk-forward backtest with costs, version results. Verify K-2SO → Anakin param handoff (best_params.md consumed).
 
-**Review written:** [[Anakin/Anakin_REVIEW_2026-08-03.md]]
-**K-2SO Trace:** [[04_Daily_Logs/2026-08-03/k2so-traces.md]]
+**Review written:** [[Anakin/Anakin_REVIEW_2026-08-03.md]] (previous day)
+**K-2SO Trace:** [[04_Daily_Logs/2026-08-04/k2so-traces.md]]
 **Pipeline Fix:** Verified in `Anakin/pipeline.py:24`
