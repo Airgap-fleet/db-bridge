@@ -1,0 +1,72 @@
+version: "3.8"
+
+services:
+  postgresql:
+    image: postgres:16-alpine
+    container_name: postgresql-mcp-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - postgresql-mcp-network
+
+  postgresql-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: postgresql-mcp-server
+    environment:
+      POSTGRESQL_MCP_DSN: postgresql://postgres:postgres@postgresql:5432/postgres
+      POSTGRESQL_MCP_POOL_SIZE: 10
+      POSTGRESQL_MCP_READ_ONLY: "false"
+      POSTGRESQL_MCP_QUERY_TIMEOUT: 30
+      POSTGRESQL_MCP_LOG_LEVEL: INFO
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    stdin_open: true
+    tty: true
+    networks:
+      - postgresql-mcp-network
+
+  # Development override - run with local source code mounted
+  postgresql-mcp-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    container_name: postgresql-mcp-dev
+    command: uv run postgresql-mcp
+    environment:
+      POSTGRESQL_MCP_DSN: postgresql://postgres:postgres@postgresql:5432/postgres
+      POSTGRESQL_MCP_POOL_SIZE: 10
+      POSTGRESQL_MCP_READ_ONLY: "false"
+      POSTGRESQL_MCP_QUERY_TIMEOUT: 30
+      POSTGRESQL_MCP_LOG_LEVEL: DEBUG
+    volumes:
+      - ./src:/app/src
+      - ./pyproject.toml:/app/pyproject.toml
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    stdin_open: true
+    tty: true
+    networks:
+      - postgresql-mcp-network
+
+volumes:
+  postgresql_data:
+
+networks:
+  postgresql-mcp-network:
+    driver: bridge
