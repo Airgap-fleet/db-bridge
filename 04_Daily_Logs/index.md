@@ -24,8 +24,9 @@
 
 ||| Date | Master Dialogue | Sub-Agent Traces | Decisions | Metrics | Vault Health | Notes ||
 |------|-----------------|------------------|-----------|---------|--------------|-------|
-| 2026-08-08 | [[2026-08-08/master-dialogue.md]] | [[2026-08-08/subagent-traces.md]] | [[2026-08-08/decisions.md]] | [[2026-08-08/metrics.md]] | — | **Complete archive** (23:00). 2 Master sessions (667 msgs), K-2SO soul created, Scotty PostgreSQL MCP DSN fix identified, OpenRouter 928/1000 used #k2so-created #scotty-mcp-blocked #openrouter-critical #scotty-fix-prompt-ready |
-| 2026-08-04 | [[2026-08-04/master-dialogue.md]] | [[2026-08-04/subagent-traces.md]] | [[2026-08-04/decisions.md]] | [[2026-08-04/metrics.md]] | [[2026-08-04/vault-health.md]] | AFaaS business model finalized; 12-agent fleet model allocation; dashboard architecture; Scotty MCP critical path; dashboard research delegated (interrupted); K-2SO strategy pivot; vault reindex; git backup |
+|| 2026-08-10 | [[2026-08-10/master-dialogue.md]] | [[2026-08-10/subagent-traces.md]] | [[2026-08-10/decisions.md]] | [[2026-08-10/metrics.md]] | — | **Complete archive**. 3 Master sessions (826 msgs), Mission Control prompt for Scotty, Moneypenny soul created, MCP viability confirmed, vault dual-folder diagnosed, local tool-calling blocker documented, 4-agent fleet architecture defined #mission-control-prompt #moneypenny-created #mcp-viable #vault-cleanup #local-tool-blocker #fleet-architecture |
+|| 2026-08-08 | [[2026-08-08/master-dialogue.md]] | [[2026-08-08/subagent-traces.md]] | [[2026-08-08/decisions.md]] | [[2026-08-08/metrics.md]] | — | **Complete archive** (23:00). 2 Master sessions (667 msgs), K-2SO soul created, Scotty PostgreSQL MCP DSN fix identified, OpenRouter 928/1000 used #k2so-created #scotty-mcp-blocked #openrouter-critical #scotty-fix-prompt-ready |
+|| 2026-08-04 | [[2026-08-04/master-dialogue.md]] | [[2026-08-04/subagent-traces.md]] | [[2026-08-04/decisions.md]] | [[2026-08-04/metrics.md]] | [[2026-08-04/vault-health.md]] | AFaaS business model finalized; 12-agent fleet model allocation; dashboard architecture; Scotty MCP critical path; dashboard research delegated (interrupted); K-2SO strategy pivot; vault reindex; git backup |
 | 2026-08-03 | [[2026-08-03/master-dialogue.md]] | [[2026-08-03/subagent-traces.md]] | [[2026-08-03/decisions.md]] | [[2026-08-03/metrics.md]] | [[2026-08-03/vault-health.md]] | Fallback model config; GPU DirectML; Anakin pipeline fix verified; full cron suite operational; K-2SO first optimization (rejected); trading loop activated; project health flags |
 | 2026-08-02 | [[2026-08-02/master-dialogue.md]] | [[2026-08-02/subagent-traces.md]] | [[2026-08-02/decisions.md]] | [[2026-08-02/metrics.md]] | [[2026-08-02/vault-health.md]] | Initialization; vault setup; 6 sub-agent templates; Anakin soul spec + MCP trading; OpenRouter model filtering explained; conversation recall confirmed |
 
@@ -33,8 +34,14 @@
 
 ## Tags Index
 
-|| Tag | Dates | Count |
+|| Tag | Dates | Count ||
 |-----|-------|-------|
+| #mission-control-prompt | 2026-08-10 | 1 |
+| #moneypenny-created | 2026-08-10 | 1 |
+| #mcp-viable | 2026-08-10 | 1 |
+| #vault-cleanup | 2026-08-10 | 1 |
+| #local-tool-blocker | 2026-08-10 | 1 |
+| #fleet-architecture | 2026-08-10 | 1 |
 | #k2so-created | 2026-08-08 | 1 |
 | #scotty-mcp-blocked | 2026-08-08 | 1 |
 | #openrouter-critical | 2026-08-08 | 1 |
