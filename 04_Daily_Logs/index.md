@@ -24,7 +24,8 @@
 
 ||| Date | Master Dialogue | Sub-Agent Traces | Decisions | Metrics | Vault Health | Notes ||
 |------|-----------------|------------------|-----------|---------|--------------|-------|
-|| 2026-08-10 | [[2026-08-10/master-dialogue.md]] | [[2026-08-10/subagent-traces.md]] | [[2026-08-10/decisions.md]] | [[2026-08-10/metrics.md]] | — | **Complete archive**. 3 Master sessions (826 msgs), Mission Control prompt for Scotty, Moneypenny soul created, MCP viability confirmed, vault dual-folder diagnosed, local tool-calling blocker documented, 4-agent fleet architecture defined #mission-control-prompt #moneypenny-created #mcp-viable #vault-cleanup #local-tool-blocker #fleet-architecture |
+||| 2026-08-11 | [[2026-08-11/master-dialogue.md]] | [[2026-08-11/subagent-traces.md]] | [[2026-08-11/decisions.md]] | [[2026-08-11/metrics.md]] | — | **Complete archive**. 2 Master sessions (266 msgs), Mission Control Dashboard path bug fixed, Moneypenny + Geppetto RoE added, business intel→spec loop defined #mission-control-bugfix #moneypenny-roe #geppetto-roe #business-loop-defined |
+||| 2026-08-10 | [[2026-08-10/master-dialogue.md]] | [[2026-08-10/subagent-traces.md]] | [[2026-08-10/decisions.md]] | [[2026-08-10/metrics.md]] | — | **Complete archive**. 3 Master sessions (826 msgs), Mission Control prompt for Scotty, Moneypenny soul created, MCP viability confirmed, vault dual-folder diagnosed, local tool-calling blocker documented, 4-agent fleet architecture defined #mission-control-prompt #moneypenny-created #mcp-viable #vault-cleanup #local-tool-blocker #fleet-architecture |
 || 2026-08-08 | [[2026-08-08/master-dialogue.md]] | [[2026-08-08/subagent-traces.md]] | [[2026-08-08/decisions.md]] | [[2026-08-08/metrics.md]] | — | **Complete archive** (23:00). 2 Master sessions (667 msgs), K-2SO soul created, Scotty PostgreSQL MCP DSN fix identified, OpenRouter 928/1000 used #k2so-created #scotty-mcp-blocked #openrouter-critical #scotty-fix-prompt-ready |
 || 2026-08-04 | [[2026-08-04/master-dialogue.md]] | [[2026-08-04/subagent-traces.md]] | [[2026-08-04/decisions.md]] | [[2026-08-04/metrics.md]] | [[2026-08-04/vault-health.md]] | AFaaS business model finalized; 12-agent fleet model allocation; dashboard architecture; Scotty MCP critical path; dashboard research delegated (interrupted); K-2SO strategy pivot; vault reindex; git backup |
 | 2026-08-03 | [[2026-08-03/master-dialogue.md]] | [[2026-08-03/subagent-traces.md]] | [[2026-08-03/decisions.md]] | [[2026-08-03/metrics.md]] | [[2026-08-03/vault-health.md]] | Fallback model config; GPU DirectML; Anakin pipeline fix verified; full cron suite operational; K-2SO first optimization (rejected); trading loop activated; project health flags |
@@ -34,8 +35,12 @@
 
 ## Tags Index
 
-|| Tag | Dates | Count ||
+||| Tag | Dates | Count ||
 |-----|-------|-------|
+| #mission-control-bugfix | 2026-08-11 | 1 |
+| #moneypenny-roe | 2026-08-11 | 1 |
+| #geppetto-roe | 2026-08-11 | 1 |
+| #business-loop-defined | 2026-08-11 | 1 |
 | #mission-control-prompt | 2026-08-10 | 1 |
 | #moneypenny-created | 2026-08-10 | 1 |
 | #mcp-viable | 2026-08-10 | 1 |
