@@ -1,133 +1,77 @@
-# Daily Logs Index
+# Daily Logs Index — 04_Daily_Logs
 
-> *Searchable index of all daily conversation logs.*
-
----
-
-## Log Structure
-
-```
-04_Daily_Logs/
-├── YYYY-MM-DD/
-│   ├── master-dialogue.md      # Master ↔ Obi-Wan conversation
-│   ├── subagent-traces.md      # Full sub-agent delegation transcripts
-│   ├── decisions.md            # Key decisions with rationale
-│   ├── metrics.md              # Token usage, latency, success rates
-│   ├── vault-health.md         # Archivist health report
-│   └── analysis-*.md           # Analyst reports (if any)
-└── index.md                    # This file
-```
+**Vault:** `C:\the force`
+**Maintained by:** Obi-Wan (Cron: Daily Conversation Archive)
+**Format:** `YYYY-MM-DD/` with 4 standard files per day
 
 ---
 
-## Index by Date
+## Index
 
-||| Date | Master Dialogue | Sub-Agent Traces | Decisions | Metrics | Vault Health | Notes ||
-|------|-----------------|------------------|-----------|---------|--------------|-------|
-||| 2026-08-11 | [[2026-08-11/master-dialogue.md]] | [[2026-08-11/subagent-traces.md]] | [[2026-08-11/decisions.md]] | [[2026-08-11/metrics.md]] | — | **Complete archive**. 2 Master sessions (266 msgs), Mission Control Dashboard path bug fixed, Moneypenny + Geppetto RoE added, business intel→spec loop defined #mission-control-bugfix #moneypenny-roe #geppetto-roe #business-loop-defined |
-||| 2026-08-10 | [[2026-08-10/master-dialogue.md]] | [[2026-08-10/subagent-traces.md]] | [[2026-08-10/decisions.md]] | [[2026-08-10/metrics.md]] | — | **Complete archive**. 3 Master sessions (826 msgs), Mission Control prompt for Scotty, Moneypenny soul created, MCP viability confirmed, vault dual-folder diagnosed, local tool-calling blocker documented, 4-agent fleet architecture defined #mission-control-prompt #moneypenny-created #mcp-viable #vault-cleanup #local-tool-blocker #fleet-architecture |
-|| 2026-08-08 | [[2026-08-08/master-dialogue.md]] | [[2026-08-08/subagent-traces.md]] | [[2026-08-08/decisions.md]] | [[2026-08-08/metrics.md]] | — | **Complete archive** (23:00). 2 Master sessions (667 msgs), K-2SO soul created, Scotty PostgreSQL MCP DSN fix identified, OpenRouter 928/1000 used #k2so-created #scotty-mcp-blocked #openrouter-critical #scotty-fix-prompt-ready |
-|| 2026-08-04 | [[2026-08-04/master-dialogue.md]] | [[2026-08-04/subagent-traces.md]] | [[2026-08-04/decisions.md]] | [[2026-08-04/metrics.md]] | [[2026-08-04/vault-health.md]] | AFaaS business model finalized; 12-agent fleet model allocation; dashboard architecture; Scotty MCP critical path; dashboard research delegated (interrupted); K-2SO strategy pivot; vault reindex; git backup |
-| 2026-08-03 | [[2026-08-03/master-dialogue.md]] | [[2026-08-03/subagent-traces.md]] | [[2026-08-03/decisions.md]] | [[2026-08-03/metrics.md]] | [[2026-08-03/vault-health.md]] | Fallback model config; GPU DirectML; Anakin pipeline fix verified; full cron suite operational; K-2SO first optimization (rejected); trading loop activated; project health flags |
-| 2026-08-02 | [[2026-08-02/master-dialogue.md]] | [[2026-08-02/subagent-traces.md]] | [[2026-08-02/decisions.md]] | [[2026-08-02/metrics.md]] | [[2026-08-02/vault-health.md]] | Initialization; vault setup; 6 sub-agent templates; Anakin soul spec + MCP trading; OpenRouter model filtering explained; conversation recall confirmed |
+| Date | Session(s) | Master Dialogue | Sub-Agent Traces | Decisions | Metrics | Tags |
+|------|------------|-----------------|------------------|-----------|---------|------|
+| [[2026-08-12]] | `20260812_210644_0098e8` | ✅ | ✅ | ✅ | ✅ | #scotty-config #cron-repair #vault-hygiene #mcp-servers #afaaS |
+| 2026-08-11 | `20260811_160718_e7a744` (K-2SO), `cron_ed5aef05611a_20260811_231011` | ⏳ | ⏳ | ⏳ | ⏳ | #k2so-frontend #index-html #mission-control |
+| 2026-08-10 | Multiple desktop sessions | ⏳ | ⏳ | ⏳ | ⏳ | #obsidian-mcp #filesystem-mcp |
+| 2026-08-09 | Cron run (failed) | ❌ | ❌ | ❌ | ❌ | #cron-502 |
+| 2026-08-08 | Cron run (failed) | ❌ | ❌ | ❌ | ❌ | #cron-502 |
+| 2026-08-07 | Cron run (failed) | ❌ | ❌ | ❌ | ❌ | #cron-502 |
 
----
-
-## Tags Index
-
-||| Tag | Dates | Count ||
-|-----|-------|-------|
-| #mission-control-bugfix | 2026-08-11 | 1 |
-| #moneypenny-roe | 2026-08-11 | 1 |
-| #geppetto-roe | 2026-08-11 | 1 |
-| #business-loop-defined | 2026-08-11 | 1 |
-| #mission-control-prompt | 2026-08-10 | 1 |
-| #moneypenny-created | 2026-08-10 | 1 |
-| #mcp-viable | 2026-08-10 | 1 |
-| #vault-cleanup | 2026-08-10 | 1 |
-| #local-tool-blocker | 2026-08-10 | 1 |
-| #fleet-architecture | 2026-08-10 | 1 |
-| #k2so-created | 2026-08-08 | 1 |
-| #scotty-mcp-blocked | 2026-08-08 | 1 |
-| #openrouter-critical | 2026-08-08 | 1 |
-| #scotty-fix-prompt-ready | 2026-08-08 | 1 |
-| #early-archive | 2026-08-08 | 1 |
-| #partial-day | 2026-08-08 | 1 |
-| #afaaS-business-model | 2026-08-04 | 1 |
-| #12-agent-fleet | 2026-08-04 | 1 |
-| #model-allocation | 2026-08-04 | 1 |
-| #dashboard-architecture | 2026-08-04 | 1 |
-| #scotty-mcp-critical-path | 2026-08-04 | 1 |
-| #dashboard-research | 2026-08-04 | 1 |
-| #k2so-strategy-pivot | 2026-08-04 | 1 |
-| #vault-reindex | 2026-08-04 | 1 |
-| #git-backup | 2026-08-04 | 1 |
-| #fallback-model | 2026-08-03 | 1 |
-| #gpu-directml | 2026-08-03 | 1 |
-| #anakin-pipeline-fix | 2026-08-03 | 1 |
-| #cron-suite-operational | 2026-08-03 | 1 |
-| #k2so-optimization | 2026-08-03 | 1 |
-| #trading-loop-activated | 2026-08-03 | 1 |
-| #project-health-flags | 2026-08-03 | 1 |
-| #initialization | 2026-08-02 | 1 |
-| #vault-setup | 2026-08-02 | 1 |
-| #obi-wan-design | 2026-08-02 | 1 |
-| #cron-archive | 2026-08-02 | 1 |
-| #sub-agent-architecture | 2026-08-02 | 1 |
-| #anakin-soul | 2026-08-02 | 1 |
-| #mcp-trading | 2026-08-02 | 1 |
-| #openrouter-filtering | 2026-08-02 | 1 |
-| #conversation-recall | 2026-08-02 | 1 |
+**Legend:** ✅ Complete · ⏳ Pending (session exists, log not written) · ❌ Failed (cron error, no data)
 
 ---
 
-## Search Tips
+## Tag Index
 
-- **By date:** Navigate to `YYYY-MM-DD/` folder
-- **By tag:** Search `#tag` in vault
-- **By agent:** Search `agent: researcher` in subagent-traces.md
-- **By decision:** Search `DECISION:` in decisions.md
-- **Full text:** Use `search_files` on `04_Daily_Logs/` with `target: "content"`
-
----
-
-## Cron Job: Daily Archive
-
-**Job Name:** Daily Conversation Archive  
-**Schedule:** `0 23 * * *` (11 PM daily)  
-**Skills:** `obsidian`, `hermes-agent`  
-**Workdir:** `C:\the force`
-
-**Prompt:**
-```
-Record today's conversations for Master and all sub-agents.
-
-Steps:
-1. Read today's session transcripts from Hermes state.db
-2. Extract: Master ↔ Obi-Wan dialogue, all sub-agent delegations + results
-3. Write to vault: 04_Daily_Logs/YYYY-MM-DD/
-   - master-dialogue.md (filtered, summarized)
-   - subagent-traces.md (full traces with outcomes)
-   - decisions.md (key choices, rationale, trade-offs)
-   - metrics.md (tokens, duration, success/failure)
-4. Update 04_Daily_Logs/index.md with date entry + tags
-5. Git commit: "chore: daily log YYYY-MM-DD"
-6. Update Obi-Wan's state.md with summary
-
-Use wikilinks to connect: [[Project Alpha]], [[Master's Preferences]], [[Lesson: API Design]]
-```
+| Tag | Dates | Description |
+|-----|-------|-------------|
+| #scotty-config | 2026-08-12 | Soul/config mismatch, MOA, model provider |
+| #cron-repair | 2026-08-12 | Fixed vault path, re-triggered daily archive |
+| #vault-hygiene | 2026-08-12 | Remove PROMPT files, rely on daily logs |
+| #mcp-servers | 2026-08-10–12 | Obsidian ✅, Filesystem ✅, PostgreSQL 🔄 |
+| #afaaS | 2026-08-12 | 12-agent fleet, £387K Year 1 plan |
+| #k2so-frontend | 2026-08-11 | index.html, AgentListener integration |
+| #mission-control | 2026-08-11–12 | Dashboard MCP, RoE, workflows |
+| #cron-502 | 2026-08-07–10 | Upstream 502 errors, fixed 2026-08-12 |
 
 ---
 
-## Additional Cron Jobs
+## Cross-References
 
-| Job | Schedule | Purpose |
-|-----|----------|---------|
-| Vault Reindex | `0 3 * * *` | Rebuild search index, vector embeddings |
-| Skill Consolidation | `0 4 * * 0` | Weekly: merge overlapping skills, archive stale |
-| Project Health Check | `0 9 * * 1` | Monday: scan active projects, flag stale items |
-| Backup Vault | `0 2 * * *` | Daily git push to remote (if configured) |
+### Projects
+- [[Project: AFaaS Fleet]] — 12 agents, 3 revenue streams
+- [[Project: MCP Servers]] — Obsidian, Filesystem, PostgreSQL, Git, Jira, Notion, Slack, Email
+- [[Project: Mission Control]] — Dashboard MCP, UI/Chat, Autonomous Loop
+
+### People
+- [[Master]] — Commander, dual UK/SA, marine background, Barnstaple
+- [[Obi-Wan]] — Orchestrator, this vault's architect
+- [[Scotty]] — Coder-Backend, MCP Server Engineer
+- [[K-2SO]] — Coder-Frontend, React/TypeScript
+- [[Moneypenny]] — Sales/Outreach
+- [[Geppetto]] — Archivist/Vault Maintenance
+
+### Lessons
+- [[Lesson: Local Model Tool Calling]] — Ollama tool calls fail; use OpenRouter
+- [[Lesson: Vault Hygiene]] — PROMPT files stale; daily logs are source of truth
+- [[Lesson: Cron Path Sensitivity]] — Windows case-insensitivity masks issues
+- [[Lesson: MOA Non-Determinism]] — Free tier aggregators add variance
+
+### Systems
+- [[System: Hermes Agent]] — Multi-profile, cron, delegation, skills
+- [[System: Obsidian Vault]] — `C:\the force`, wikilinks, daily logs
+- [[System: AMD 780M iGPU]] — Shared VRAM, 32GB RAM, DirectML enabled
+- [[System: Ollama]] — qwen2.5-coder:14b, qwen3:14b, hermes3:8B
 
 ---
 
-*"The archives are complete. If it's not in the archives, it doesn't exist."*
+## Maintenance Notes
+
+- **Cron schedule:** 23:00 daily (job `ed5aef05611a`)
+- **Weekly review:** Monday 09:00 (job `a1e585821d49` — Hermes GH issues)
+- **Git commit:** `chore: daily log YYYY-MM-DD` (auto on cron success)
+- **Retention:** All days kept; `06_Archive/` for cold storage after 90 days
+
+---
+
+*Last updated: 2026-08-12 by Obi-Wan (cron delegation `deleg_a2e56942`)*
