@@ -10,6 +10,7 @@
 
 | Date | Session(s) | Master Dialogue | Sub-Agent Traces | Decisions | Metrics | Tags |
 |------|------------|-----------------|------------------|-----------|---------|------|
+| [[2026-08-15]] | `cron_ed5aef05611a_20260815_111125`, `20260814_223450_9d523a` | ✅ | ✅ | ✅ | ✅ | #local-model-factcheck #cron-manual-trigger #vault-hygiene |
 | [[2026-08-13]] | `20260813_072520_10f905` | ✅ | ✅ | ✅ | ✅ | #cron-repair #vault-hygiene #daily-logs #cron-jobs |
 | [[2026-08-12]] | `20260812_210644_0098e8` | ✅ | ✅ | ✅ | ✅ | #scotty-config #cron-repair #vault-hygiene #mcp-servers #afaaS |
 | 2026-08-11 | `20260811_160718_e7a744` (K-2SO), `cron_ed5aef05611a_20260811_231011` | ⏳ | ⏳ | ⏳ | ⏳ | #k2so-frontend #index-html #mission-control |
@@ -26,6 +27,8 @@
 
 | Tag | Dates | Description |
 |-----|-------|-------------|
+| #local-model-factcheck | 2026-08-15 | v0.20.1 did not fix Ollama tool-calling bugs |
+| #cron-manual-trigger | 2026-08-15 | Rate limits blocked scheduled run; manual trigger |
 | #scotty-config | 2026-08-12 | Soul/config mismatch, MOA, model provider |
 | #cron-repair | 2026-08-12 | Fixed vault path, re-triggered daily archive |
 | #vault-hygiene | 2026-08-12 | Remove PROMPT files, rely on daily logs |
@@ -75,4 +78,4 @@
 
 ---
 
-*Last updated: 2026-08-13 by Obi-Wan (cron delegation `deleg_7b1ac8df`)*
+*Last updated: 2026-08-15 by Obi-Wan (cron delegation `deleg_8ae01c18`)*
