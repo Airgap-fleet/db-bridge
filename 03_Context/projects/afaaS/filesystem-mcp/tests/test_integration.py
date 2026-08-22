@@ -6,20 +6,21 @@ from pathlib import Path
 import pytest
 
 from filesystem_mcp.core import FilesystemCore
-from filesystem_mcp.models import FilesystemConfig
-from filesystem_mcp.server import (
+from filesystem_mcp.models import (
+    FilesystemConfig,
     GlobRequest,
     ListDirRequest,
     PatchFileRequest,
     ReadFileRequest,
     WriteFileRequest,
+)
+from filesystem_mcp.server import (
     glob,
     list_dir,
     patch_file,
     read_file,
-    reset_core,
-    set_core,
     write_file,
+    create_core,
 )
 
 
@@ -46,10 +47,17 @@ class TestMCPServerIntegration:
 
     @pytest.fixture(autouse=True)
     def inject_core(self, core):
-        """Inject test core into server module."""
-        set_core(core)
+        """Inject test core into server module by patching create_core."""
+        import filesystem_mcp.server as server_module
+
+        original_create_core = server_module.create_core
+
+        def test_create_core():
+            return core
+
+        server_module.create_core = test_create_core
         yield
-        reset_core()
+        server_module.create_core = original_create_core
 
     @pytest.mark.asyncio
     async def test_read_file_tool(self, core, temp_dir):
@@ -57,8 +65,7 @@ class TestMCPServerIntegration:
         test_file = temp_dir / "integration_read.txt"
         test_file.write_text("Integration test content")
 
-        request = ReadFileRequest(path="integration_read.txt")
-        response = await read_file(request)
+        response = await read_file(path="integration_read.txt")
 
         assert response.path == "integration_read.txt"
         assert response.content == "Integration test content"
@@ -68,8 +75,7 @@ class TestMCPServerIntegration:
     @pytest.mark.asyncio
     async def test_write_file_tool(self, core, temp_dir):
         """Test write_file MCP tool."""
-        request = WriteFileRequest(path="integration_write.txt", content="Written via MCP")
-        response = await write_file(request)
+        response = await write_file(path="integration_write.txt", content="Written via MCP")
 
         assert response.path == "integration_write.txt"
         assert response.size == 15  # "Written via MCP" is 15 chars
@@ -84,8 +90,7 @@ class TestMCPServerIntegration:
         (temp_dir / "file2.py").write_text("b")
         (temp_dir / "subdir").mkdir()
 
-        request = ListDirRequest(path=".")
-        response = await list_dir(request)
+        response = await list_dir(path=".")
 
         assert response.path == "."
         assert response.total == 3
@@ -102,8 +107,7 @@ class TestMCPServerIntegration:
         (temp_dir / "subdir").mkdir()
         (temp_dir / "subdir" / "test.py").write_text("c")
 
-        request = GlobRequest(pattern="**/*.py", path=".")
-        response = await glob(request)
+        response = await glob(pattern="**/*.py", path=".")
 
         assert response.pattern == "**/*.py"
         assert response.total == 2
@@ -118,8 +122,7 @@ class TestMCPServerIntegration:
         test_file = temp_dir / "integration_patch.txt"
         test_file.write_text("Hello world\nHello again")
 
-        request = PatchFileRequest(path="integration_patch.txt", old_str="Hello", new_str="Hi")
-        response = await patch_file(request)
+        response = await patch_file(path="integration_patch.txt", old_str="Hello", new_str="Hi")
 
         assert response.path == "integration_patch.txt"
         assert response.replacements == 2
@@ -131,33 +134,31 @@ class TestMCPServerIntegration:
     async def test_full_workflow(self, core, temp_dir):
         """Test a complete workflow: write, read, list, glob, patch."""
         # Write multiple files
-        await write_file(WriteFileRequest(path="docs/readme.md", content="# Readme\n\nContent"))
-        await write_file(
-            WriteFileRequest(path="src/main.py", content="def main():\n    print('hello')")
-        )
-        await write_file(WriteFileRequest(path="src/utils.py", content="def util():\n    pass"))
+        await write_file(path="docs/readme.md", content="# Readme\n\nContent")
+        await write_file(path="src/main.py", content="def main():\n    print('hello')")
+        await write_file(path="src/utils.py", content="def util():\n    pass")
 
         # List directory
-        list_response = await list_dir(ListDirRequest(path=".", recursive=True))
+        list_response = await list_dir(path=".", recursive=True)
         assert list_response.total >= 4  # docs, src, readme.md, main.py, utils.py
 
         # Glob for Python files
-        glob_response = await glob(GlobRequest(pattern="**/*.py", path="."))
+        glob_response = await glob(pattern="**/*.py", path=".")
         assert glob_response.total == 2
         matches = {m.replace("\\", "/") for m in glob_response.matches}
         assert "src/main.py" in matches
         assert "src/utils.py" in matches
 
         # Read a file
-        read_response = await read_file(ReadFileRequest(path="src/main.py"))
+        read_response = await read_file(path="src/main.py")
         assert "def main()" in read_response.content
 
         # Patch a file
         patch_response = await patch_file(
-            PatchFileRequest(path="src/main.py", old_str="print('hello')", new_str="print('world')")
+            path="src/main.py", old_str="print('hello')", new_str="print('world')"
         )
         assert patch_response.replacements == 1
 
         # Verify patch
-        read_response = await read_file(ReadFileRequest(path="src/main.py"))
+        read_response = await read_file(path="src/main.py")
         assert "print('world')" in read_response.content

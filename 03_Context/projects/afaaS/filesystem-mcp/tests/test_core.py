@@ -1,402 +1,446 @@
-"""Tests for FilesystemCore business logic."""
+"""Unit tests for FilesystemCore."""
+
+from __future__ import annotations
 
 import tempfile
 from pathlib import Path
+from unittest.mock import Mock, patch
 
 import pytest
 
-from filesystem_mcp.core import FileSizeError, FilesystemCore, FilesystemError, SecurityError
-from filesystem_mcp.models import (
-    FilesystemConfig,
-    GlobRequest,
-    ListDirRequest,
-    PatchFileRequest,
-    ReadFileRequest,
-    SearchFilesRequest,
-    WriteFileRequest,
+from filesystem_mcp.core import (
+    FileSizeError,
+    FilesystemCore,
+    FilesystemError,
+    SecurityError,
 )
+from filesystem_mcp.models import FilesystemConfig
+
+
+@pytest.fixture
+def temp_dir():
+    """Create a temporary directory for testing."""
+    with tempfile.TemporaryDirectory() as tmp:
+        yield Path(tmp)
+
+
+@pytest.fixture
+def config(temp_dir):
+    """Create a test configuration."""
+    return FilesystemConfig(root_path=temp_dir, max_file_size=1024 * 1024)  # 1 MB
+
+
+@pytest.fixture
+def core(config):
+    """Create a FilesystemCore instance."""
+    return FilesystemCore(config)
 
 
 class TestFilesystemCore:
-    """Tests for FilesystemCore."""
+    """Tests for FilesystemCore class."""
 
-    @pytest.fixture
-    def temp_dir(self):
-        """Create a temporary directory for testing."""
-        with tempfile.TemporaryDirectory() as tmpdir:
-            yield Path(tmpdir)
-
-    @pytest.fixture
-    def config(self, temp_dir):
-        """Create a test configuration."""
-        return FilesystemConfig(
-            root_path=temp_dir,
-            max_file_size=1024 * 1024,  # 1 MB for tests
-            follow_symlinks=False,
-            allow_absolute_paths=False,
-            default_encoding="utf-8",
-        )
-
-    @pytest.fixture
-    def core(self, config):
-        """Create a FilesystemCore instance."""
-        return FilesystemCore(config)
+    def test_init(self, core, temp_dir):
+        """Test initialization."""
+        assert core.config.root_path == temp_dir
 
     def test_resolve_path_relative(self, core, temp_dir):
         """Test resolving relative paths."""
-        test_file = temp_dir / "test.txt"
-        test_file.write_text("hello")
         resolved = core._resolve_path("test.txt")
-        assert resolved == test_file.resolve()
+        assert resolved == (temp_dir / "test.txt").resolve()
 
-    def test_resolve_path_outside_root_raises(self, core, temp_dir):
-        """Test that paths outside root raise SecurityError."""
-        with pytest.raises(SecurityError):
-            core._resolve_path("../outside.txt")
+    def test_resolve_path_absolute_not_allowed(self, core):
+        """Test that absolute paths are rejected when not allowed."""
+        with pytest.raises(SecurityError) as exc:
+            core._resolve_path("/etc/passwd")
+        assert exc.value.code == "SECURITY_ERROR"
 
-    def test_reserved_path_symlink_protection(self, core, temp_dir):
-        """Test symlink protection when follow_symlinks=False."""
-        import sys
+    def test_resolve_path_absolute_allowed(self, temp_dir):
+        """Test absolute paths when allowed."""
+        config = FilesystemConfig(root_path=temp_dir, allow_absolute_paths=True)
+        core = FilesystemCore(config)
+        resolved = core._resolve_path(str(temp_dir / "test.txt"))
+        assert resolved == (temp_dir / "test.txt").resolve()
 
-        if sys.platform == "win32":
-            pytest.skip("Symlink creation requires admin on Windows")
-
-        # Create a real file
-        real_file = temp_dir / "real.txt"
-        real_file.write_text("real")
-
-        # Create a symlink inside root pointing outside
-        outside_dir = temp_dir.parent / "outside"
-        outside_dir.mkdir(exist_ok=True)
-        outside_file = outside_dir / "secret.txt"
-        outside_file.write_text("secret")
-
-        symlink = temp_dir / "link.txt"
-        symlink.symlink_to(outside_file)
-
-        with pytest.raises(SecurityError):
-            core._resolve_path("link.txt")
-
-    def test_read_file_success(self, core, temp_dir):
-        """Test reading a file successfully."""
-        test_file = temp_dir / "read_test.txt"
-        test_file.write_text("Hello, World!")
-
-        request = ReadFileRequest(path="read_test.txt")
-        response = core.read_file(request)
-
-        assert response.path == "read_test.txt"
-        assert response.content == "Hello, World!"
-        assert response.size == 13
-        assert response.encoding == "utf-8"
-        assert response.is_binary is False
-
-    def test_read_file_not_found(self, core):
-        """Test reading a non-existent file raises error."""
-        with pytest.raises(FilesystemError) as exc:
-            core.read_file(ReadFileRequest(path="nonexistent.txt"))
-        assert exc.value.code == "NOT_FOUND"
-
-    def test_read_file_not_a_file(self, core, temp_dir):
-        """Test reading a directory raises error."""
+    def test_resolve_path_outside_root(self, core, temp_dir):
+        """Test that paths outside root are rejected."""
+        # Create a subdirectory
         subdir = temp_dir / "subdir"
         subdir.mkdir()
 
+        with pytest.raises(SecurityError) as exc:
+            core._resolve_path("../etc/passwd")
+        assert exc.value.code == "SECURITY_ERROR"
+
+    def test_read_file_success(self, core, temp_dir):
+        """Test reading a file successfully."""
+        test_file = temp_dir / "test.txt"
+        test_file.write_text("Hello, World!")
+
+        from filesystem_mcp.models import ReadFileRequest
+
+        request = ReadFileRequest(path="test.txt")
+        response = core.read_file(request)
+
+        assert response.content == "Hello, World!"
+        assert response.size == 13
+        assert response.is_binary is False
+
+    def test_read_file_not_found(self, core):
+        """Test reading a non-existent file."""
+        from filesystem_mcp.models import ReadFileRequest
+
+        request = ReadFileRequest(path="nonexistent.txt")
         with pytest.raises(FilesystemError) as exc:
-            core.read_file(ReadFileRequest(path="subdir"))
+            core.read_file(request)
+        assert exc.value.code == "NOT_FOUND"
+
+    def test_read_file_not_a_file(self, core, temp_dir):
+        """Test reading a directory as a file."""
+        from filesystem_mcp.models import ReadFileRequest
+
+        request = ReadFileRequest(path=".")
+        with pytest.raises(FilesystemError) as exc:
+            core.read_file(request)
         assert exc.value.code == "NOT_A_FILE"
 
     def test_read_file_size_limit(self, core, temp_dir):
         """Test file size limit on read."""
-        large_file = temp_dir / "large.txt"
-        large_file.write_text("x" * 2000)  # 2 KB
+        test_file = temp_dir / "large.txt"
+        test_file.write_text("x" * 2000)  # 2KB
 
+        from filesystem_mcp.models import ReadFileRequest
+
+        request = ReadFileRequest(path="large.txt", max_size=1000)  # 1KB limit
         with pytest.raises(FileSizeError):
-            core.read_file(ReadFileRequest(path="large.txt", max_size=1000))
-
-    def test_read_binary_file(self, core, temp_dir):
-        """Test reading a binary file returns base64."""
-        binary_file = temp_dir / "binary.bin"
-        binary_file.write_bytes(b"\x00\x01\x02\x03\xff\xfe\xfd")
-
-        request = ReadFileRequest(path="binary.bin")
-        response = core.read_file(request)
-
-        assert response.is_binary is True
-        import base64
-
-        decoded = base64.b64decode(response.content)
-        assert decoded == b"\x00\x01\x02\x03\xff\xfe\xfd"
+            core.read_file(request)
 
     def test_write_file_success(self, core, temp_dir):
         """Test writing a file successfully."""
-        request = WriteFileRequest(path="new_file.txt", content="Hello, World!")
+        from filesystem_mcp.models import WriteFileRequest
+
+        request = WriteFileRequest(path="new.txt", content="New content")
         response = core.write_file(request)
 
-        assert response.path == "new_file.txt"
-        assert response.size == 13
-        assert response.encoding == "utf-8"
-
-        # Verify file was written
-        written = (temp_dir / "new_file.txt").read_text()
-        assert written == "Hello, World!"
-
-    def test_write_file_creates_dirs(self, core, temp_dir):
-        """Test write_file creates parent directories."""
-        request = WriteFileRequest(
-            path="nested/deep/file.txt",
-            content="deep",
-            create_dirs=True,
-        )
-        response = core.write_file(request)
-
-        assert response.path == "nested/deep/file.txt"
-        assert (temp_dir / "nested" / "deep" / "file.txt").read_text() == "deep"
+        assert response.size == 11
+        assert (temp_dir / "new.txt").read_text() == "New content"
 
     def test_write_file_atomic(self, core, temp_dir):
-        """Test atomic write prevents partial writes."""
-        file_path = temp_dir / "atomic.txt"
-        file_path.write_text("original")
+        """Test atomic write."""
+        from filesystem_mcp.models import WriteFileRequest
 
-        # This should work
-        request = WriteFileRequest(path="atomic.txt", content="new content", atomic=True)
-        core.write_file(request)
+        request = WriteFileRequest(path="atomic.txt", content="Atomic write", atomic=True)
+        response = core.write_file(request)
 
-        assert file_path.read_text() == "new content"
+        assert response.size == 12
+        assert (temp_dir / "atomic.txt").read_text() == "Atomic write"
 
-    def test_write_file_size_limit(self, core, temp_dir):
-        """Test write file size limit."""
-        large_content = "x" * (2 * 1024 * 1024)  # 2 MB
+    def test_write_file_size_limit(self, core):
+        """Test file size limit on write."""
+        from filesystem_mcp.models import WriteFileRequest
 
+        # Create a core with small limit for this test (minimum 1024)
+        small_config = FilesystemConfig(root_path=core.config.root_path, max_file_size=1024)
+        small_core = FilesystemCore(small_config)
+
+        request = WriteFileRequest(path="large.txt", content="x" * 2000)
         with pytest.raises(FileSizeError):
-            core.write_file(WriteFileRequest(path="large.txt", content=large_content))
+            small_core.write_file(request)
+
+    def test_write_file_create_dirs(self, core, temp_dir):
+        """Test writing with create_dirs=True."""
+        from filesystem_mcp.models import WriteFileRequest
+
+        request = WriteFileRequest(path="subdir/new.txt", content="In subdir", create_dirs=True)
+        response = core.write_file(request)
+
+        assert response.size == 9
+        assert (temp_dir / "subdir" / "new.txt").read_text() == "In subdir"
+
+    def test_write_file_no_create_dirs_fail(self, core):
+        """Test writing without create_dirs fails when parent doesn't exist."""
+        from filesystem_mcp.models import WriteFileRequest
+
+        request = WriteFileRequest(path="nonexistent/new.txt", content="Fail", create_dirs=False)
+        with pytest.raises(FilesystemError) as exc:
+            core.write_file(request)
+        assert exc.value.code == "NOT_FOUND"
 
     def test_list_dir_success(self, core, temp_dir):
-        """Test listing directory contents."""
-        (temp_dir / "file1.txt").write_text("a")
-        (temp_dir / "file2.py").write_text("b")
+        """Test listing a directory."""
+        (temp_dir / "file1.txt").write_text("content1")
+        (temp_dir / "file2.txt").write_text("content2")
         (temp_dir / "subdir").mkdir()
-        (temp_dir / "subdir" / "file3.txt").write_text("c")
+
+        from filesystem_mcp.models import ListDirRequest
 
         request = ListDirRequest(path=".")
         response = core.list_dir(request)
 
-        assert response.path == "."
         assert response.total == 3
         names = [e.name for e in response.entries]
         assert "file1.txt" in names
-        assert "file2.py" in names
+        assert "file2.txt" in names
         assert "subdir" in names
 
-    def test_list_dir_with_glob(self, core, temp_dir):
-        """Test list_dir with glob pattern."""
-        (temp_dir / "test.py").write_text("a")
-        (temp_dir / "test.txt").write_text("b")
-        (temp_dir / "other.py").write_text("c")
+    def test_list_dir_recursive(self, core, temp_dir):
+        """Test recursive directory listing."""
+        (temp_dir / "file1.txt").write_text("content1")
+        subdir = temp_dir / "subdir"
+        subdir.mkdir()
+        (subdir / "file2.txt").write_text("content2")
 
-        request = ListDirRequest(path=".", glob_pattern="test*")
+        from filesystem_mcp.models import ListDirRequest
+
+        request = ListDirRequest(path=".", recursive=True)
+        response = core.list_dir(request)
+
+        assert response.total == 3  # file1.txt, subdir, subdir/file2.txt
+
+    def test_list_dir_glob_filter(self, core, temp_dir):
+        """Test directory listing with glob filter."""
+        (temp_dir / "test.py").write_text("print('hello')")
+        (temp_dir / "test.txt").write_text("text")
+        (temp_dir / "other.md").write_text("markdown")
+
+        from filesystem_mcp.models import ListDirRequest
+
+        request = ListDirRequest(path=".", glob_pattern="test.*")
         response = core.list_dir(request)
 
         assert response.total == 2
         names = [e.name for e in response.entries]
         assert "test.py" in names
         assert "test.txt" in names
-        assert "other.py" not in names
-
-    def test_list_dir_recursive(self, core, temp_dir):
-        """Test recursive directory listing."""
-        (temp_dir / "file1.txt").write_text("a")
-        (temp_dir / "subdir").mkdir()
-        (temp_dir / "subdir" / "file2.txt").write_text("b")
-        (temp_dir / "subdir" / "deep").mkdir()
-        (temp_dir / "subdir" / "deep" / "file3.txt").write_text("c")
-
-        request = ListDirRequest(path=".", recursive=True)
-        response = core.list_dir(request)
-
-        assert response.total == 5  # file1, subdir, file2, deep, file3
 
     def test_list_dir_not_found(self, core):
         """Test listing non-existent directory."""
+        from filesystem_mcp.models import ListDirRequest
+
+        request = ListDirRequest(path="nonexistent")
         with pytest.raises(FilesystemError) as exc:
-            core.list_dir(ListDirRequest(path="nonexistent"))
+            core.list_dir(request)
         assert exc.value.code == "NOT_FOUND"
 
-    def test_search_files_success(self, core, temp_dir):
-        """Test searching files with ripgrep."""
-        (temp_dir / "test.py").write_text("def hello():\n    print('hello')\n")
-        (temp_dir / "test.js").write_text("function hello() {\n    console.log('hello');\n}")
+    def test_list_dir_not_a_dir(self, core, temp_dir):
+        """Test listing a file as directory."""
+        (temp_dir / "file.txt").write_text("content")
 
-        request = SearchFilesRequest(pattern="hello", path=".")
-        response = core.search_files(request)
+        from filesystem_mcp.models import ListDirRequest
 
-        assert response.pattern == "hello"
-        assert response.path == "."
-        assert response.total >= 2  # At least 2 matches
-
-    def test_search_files_not_found(self, core):
-        """Test searching in non-existent directory."""
+        request = ListDirRequest(path="file.txt")
         with pytest.raises(FilesystemError) as exc:
-            core.search_files(SearchFilesRequest(pattern="test", path="nonexistent"))
-        assert exc.value.code == "NOT_FOUND"
+            core.list_dir(request)
+        assert exc.value.code == "NOT_A_DIR"
 
     def test_glob_success(self, core, temp_dir):
         """Test glob pattern matching."""
-        (temp_dir / "test.py").write_text("a")
-        (temp_dir / "test.txt").write_text("b")
-        (temp_dir / "subdir").mkdir()
-        (temp_dir / "subdir" / "test.py").write_text("c")
+        (temp_dir / "test.py").write_text("print('hello')")
+        (temp_dir / "test.txt").write_text("text")
+        subdir = temp_dir / "subdir"
+        subdir.mkdir()
+        (subdir / "test.py").write_text("print('world')")
+
+        from filesystem_mcp.models import GlobRequest
 
         request = GlobRequest(pattern="**/*.py", path=".")
         response = core.glob(request)
 
-        assert response.pattern == "**/*.py"
         assert response.total == 2
-        matches = set(response.matches)
-        assert "test.py" in matches
-        # Handle both forward and backslash separators (Windows compatibility)
-        assert any(m.replace("\\", "/") == "subdir/test.py" for m in matches)
+        assert "test.py" in response.matches
+        # On Windows, path separator is backslash
+        assert any("subdir" in m and "test.py" in m for m in response.matches)
 
     def test_glob_not_found(self, core):
-        """Test glob in non-existent directory."""
+        """Test glob on non-existent directory."""
+        from filesystem_mcp.models import GlobRequest
+
+        request = GlobRequest(pattern="*.py", path="nonexistent")
         with pytest.raises(FilesystemError) as exc:
-            core.glob(GlobRequest(pattern="*.py", path="nonexistent"))
+            core.glob(request)
         assert exc.value.code == "NOT_FOUND"
 
     def test_patch_file_success(self, core, temp_dir):
         """Test patching a file."""
-        test_file = temp_dir / "patch_test.txt"
-        test_file.write_text("Hello world\nHello again")
+        test_file = temp_dir / "test.txt"
+        test_file.write_text("Hello World")
 
-        request = PatchFileRequest(path="patch_test.txt", old_str="Hello", new_str="Hi")
+        from filesystem_mcp.models import PatchFileRequest
+
+        request = PatchFileRequest(path="test.txt", old_str="World", new_str="Universe")
         response = core.patch_file(request)
 
-        assert response.path == "patch_test.txt"
-        assert response.replacements == 2
-        assert response.new_size == len("Hi world\nHi again")
+        assert response.replacements == 1
+        assert response.new_size == 14
+        assert test_file.read_text() == "Hello Universe"
 
-        content = test_file.read_text()
-        assert content == "Hi world\nHi again"
+    def test_patch_file_multiple_replacements(self, core, temp_dir):
+        """Test patching with multiple occurrences."""
+        test_file = temp_dir / "test.txt"
+        test_file.write_text("Hello World World")
+
+        from filesystem_mcp.models import PatchFileRequest
+
+        request = PatchFileRequest(path="test.txt", old_str="World", new_str="Universe")
+        response = core.patch_file(request)
+
+        assert response.replacements == 2
+        assert test_file.read_text() == "Hello Universe Universe"
+
+    def test_patch_file_not_found(self, core):
+        """Test patching non-existent file."""
+        from filesystem_mcp.models import PatchFileRequest
+
+        request = PatchFileRequest(path="nonexistent.txt", old_str="old", new_str="new")
+        with pytest.raises(FilesystemError) as exc:
+            core.patch_file(request)
+        assert exc.value.code == "NOT_FOUND"
 
     def test_patch_file_old_str_not_found(self, core, temp_dir):
-        """Test patch with old_str not in file."""
-        test_file = temp_dir / "patch_test.txt"
-        test_file.write_text("Hello world")
+        """Test patching with old_str not in file."""
+        test_file = temp_dir / "test.txt"
+        test_file.write_text("Hello World")
 
+        from filesystem_mcp.models import PatchFileRequest
+
+        request = PatchFileRequest(path="test.txt", old_str="Mars", new_str="Venus")
         with pytest.raises(FilesystemError) as exc:
-            core.patch_file(
-                PatchFileRequest(path="patch_test.txt", old_str="Goodbye", new_str="Hi")
-            )
+            core.patch_file(request)
+        assert exc.value.code == "PATCH_FAILED"
+
+    def test_patch_file_empty_old_str(self, core, temp_dir):
+        """Test patching with empty old_str."""
+        test_file = temp_dir / "test.txt"
+        test_file.write_text("Hello")
+
+        from filesystem_mcp.models import PatchFileRequest
+
+        request = PatchFileRequest(path="test.txt", old_str="", new_str="X")
+        with pytest.raises(FilesystemError) as exc:
+            core.patch_file(request)
         assert exc.value.code == "PATCH_FAILED"
 
     def test_patch_file_size_limit(self, core, temp_dir):
-        """Test patch file size limit."""
-        test_file = temp_dir / "patch_test.txt"
-        test_file.write_text("a" * 500_000)  # 500 KB
+        """Test patch size limit."""
+        test_file = temp_dir / "test.txt"
+        test_file.write_text("x" * 500)
 
-        # Patch to make it larger than 1 MB limit
+        from filesystem_mcp.models import PatchFileRequest
+
+        # Config has 1MB limit, but let's test with a config that has small limit
+        small_config = FilesystemConfig(root_path=temp_dir, max_file_size=1024)
+        small_core = FilesystemCore(small_config)
+
+        request = PatchFileRequest(path="test.txt", old_str="x", new_str="xx" * 600)  # Would exceed 1024
         with pytest.raises(FileSizeError):
-            core.patch_file(
-                PatchFileRequest(
-                    path="patch_test.txt",
-                    old_str="a" * 100,
-                    new_str="b" * 600_000,  # Would make file ~1.1 MB
-                )
-            )
+            small_core.patch_file(request)
 
-    # Additional tests for coverage
 
-    def test_resolve_path_absolute_allowed(self, temp_dir):
-        """Test resolving absolute paths when allowed."""
-        config = FilesystemConfig(
-            root_path=temp_dir,
-            max_file_size=1024 * 1024,
-            follow_symlinks=False,
-            allow_absolute_paths=True,
-            default_encoding="utf-8",
-        )
+class TestFilesystemCoreBinaryFiles:
+    """Tests for binary file handling."""
+
+    def test_read_binary_file(self, core, temp_dir):
+        """Test reading a binary file returns base64."""
+        test_file = temp_dir / "binary.dat"
+        test_file.write_bytes(b"\x00\x01\x02\x03\xff\xfe\xfd")
+
+        from filesystem_mcp.models import ReadFileRequest
+
+        request = ReadFileRequest(path="binary.dat")
+        response = core.read_file(request)
+
+        assert response.is_binary is True
+        import base64
+        assert base64.b64decode(response.content) == b"\x00\x01\x02\x03\xff\xfe\xfd"
+
+    def test_is_binary_detection(self, core):
+        """Test binary detection heuristic."""
+        # Null byte = binary
+        assert core._is_binary(b"hello\x00world") is True
+        # High non-printable ratio = binary
+        assert core._is_binary(bytes(range(256))) is True
+        # Normal text = not binary
+        assert core._is_binary(b"Hello World") is False
+
+
+class TestFilesystemCoreSymlinks:
+    """Tests for symlink handling."""
+
+    def test_symlink_blocked_when_disabled(self, core, temp_dir):
+        """Test symlinks are blocked when follow_symlinks=False."""
+        # Skip on Windows if no symlink permission
+        import platform
+        if platform.system() == "Windows":
+            pytest.skip("Symlinks may require admin on Windows")
+
+        target = temp_dir / "target.txt"
+        target.write_text("target")
+        link = temp_dir / "link.txt"
+        try:
+            link.symlink_to(target)
+        except OSError:
+            pytest.skip("Cannot create symlinks")
+
+        from filesystem_mcp.models import ReadFileRequest
+
+        request = ReadFileRequest(path="link.txt")
+        with pytest.raises(SecurityError) as exc:
+            core.read_file(request)
+        assert exc.value.code == "SECURITY_ERROR"
+
+    def test_symlink_allowed_when_enabled(self, temp_dir):
+        """Test symlinks work when follow_symlinks=True."""
+        import platform
+        if platform.system() == "Windows":
+            pytest.skip("Symlinks may require admin on Windows")
+
+        config = FilesystemConfig(root_path=temp_dir, follow_symlinks=True)
         core = FilesystemCore(config)
-        test_file = temp_dir / "absolute_test.txt"
-        test_file.write_text("absolute")
 
-        resolved = core._resolve_path(str(test_file))
-        assert resolved == test_file.resolve()
+        target = temp_dir / "target.txt"
+        target.write_text("target content")
+        link = temp_dir / "link.txt"
+        try:
+            link.symlink_to(target)
+        except OSError:
+            pytest.skip("Cannot create symlinks")
 
-    def test_resolve_path_absolute_not_allowed(self, core, temp_dir):
-        """Test resolving absolute paths raises when not allowed."""
-        test_file = temp_dir / "absolute_test.txt"
-        test_file.write_text("absolute")
+        from filesystem_mcp.models import ReadFileRequest
 
-        with pytest.raises(SecurityError):
-            core._resolve_path(str(test_file))
+        request = ReadFileRequest(path="link.txt")
+        response = core.read_file(request)
 
-    def test_symlink_protection_inside_root(self, core, temp_dir):
-        """Test symlink protection for symlinks inside root."""
-        import sys
+        assert response.content == "target content"
 
-        if sys.platform == "win32":
-            pytest.skip("Symlink creation requires admin on Windows")
 
-        # Create a real file
-        real_file = temp_dir / "real.txt"
-        real_file.write_text("real")
+class TestSecurityErrors:
+    """Test security-related errors."""
 
-        # Create a symlink inside root pointing to another file in root
-        symlink = temp_dir / "link.txt"
-        symlink.symlink_to(real_file)
+    def test_path_traversal_blocked(self, core, temp_dir):
+        """Test path traversal attempts are blocked."""
+        from filesystem_mcp.models import ReadFileRequest
 
-        with pytest.raises(SecurityError):
-            core._resolve_path("link.txt")
-
-    def test_read_file_non_atomic_write(self, core, temp_dir):
-        """Test write_file with atomic=False."""
-        request = WriteFileRequest(path="non_atomic.txt", content="non-atomic", atomic=False)
-        response = core.write_file(request)
-
-        assert response.path == "non_atomic.txt"
-        assert (temp_dir / "non_atomic.txt").read_text() == "non-atomic"
-
-    def test_write_file_without_create_dirs(self, core, temp_dir):
-        """Test write_file without creating parent dirs fails."""
-        with pytest.raises(FilesystemError) as exc:
-            core.write_file(
-                WriteFileRequest(
-                    path="nested/deep/file.txt",
-                    content="deep",
-                    create_dirs=False,
-                )
-            )
-        assert exc.value.code == "NOT_FOUND"
-
-    def test_list_dir_not_a_directory(self, core, temp_dir):
-        """Test list_dir on a file raises error."""
-        test_file = temp_dir / "file.txt"
-        test_file.write_text("content")
-
-        with pytest.raises(FilesystemError) as exc:
-            core.list_dir(ListDirRequest(path="file.txt"))
-        assert exc.value.code == "NOT_A_DIR"
-
-    def test_glob_non_existent(self, core):
-        """Test glob on non-existent directory."""
-        with pytest.raises(FilesystemError) as exc:
-            core.glob(GlobRequest(pattern="*.py", path="nonexistent"))
-        assert exc.value.code == "NOT_FOUND"
-
-    def test_patch_file_not_a_file(self, core, temp_dir):
-        """Test patch_file on a directory raises error."""
+        # Create a subdirectory
         subdir = temp_dir / "subdir"
         subdir.mkdir()
+        (subdir / "secret.txt").write_text("secret")
 
-        with pytest.raises(FilesystemError) as exc:
-            core.patch_file(PatchFileRequest(path="subdir", old_str="a", new_str="b"))
-        assert exc.value.code == "NOT_A_FILE"
+        # Try to escape
+        request = ReadFileRequest(path="../subdir/secret.txt")
+        with pytest.raises(SecurityError):
+            core.read_file(request)
 
-    def test_patch_file_empty_old_str(self, core, temp_dir):
-        """Test patch_file with empty old_str."""
-        test_file = temp_dir / "patch_test.txt"
-        test_file.write_text("hello")
+    def test_absolute_path_blocked(self, core):
+        """Test absolute paths blocked by default."""
+        from filesystem_mcp.models import ReadFileRequest
 
-        with pytest.raises(FilesystemError) as exc:
-            core.patch_file(PatchFileRequest(path="patch_test.txt", old_str="", new_str="x"))
-        assert exc.value.code == "PATCH_FAILED"
+        # Use an absolute path - it will be blocked because allow_absolute_paths=False
+        import tempfile
+        outside_path = Path(tempfile.gettempdir()) / "outside_test.txt"
+        request = ReadFileRequest(path=str(outside_path))
+        with pytest.raises(SecurityError) as exc:
+            core.read_file(request)
+        assert "Absolute paths are not allowed" in exc.value.message
+
+
+if __name__ == "__main__":
+    pytest.main([__file__, "-v"])

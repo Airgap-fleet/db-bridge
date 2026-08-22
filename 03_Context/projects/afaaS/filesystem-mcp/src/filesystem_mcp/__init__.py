@@ -1,14 +1,6 @@
-"""Filesystem MCP Server — safe file operations with configurable sandbox."""
+"""Filesystem MCP Server package."""
 
-__version__ = "0.1.0"
-__author__ = "AFaaS Team"
-__email__ = "engineering@afaaS.io"
+from filesystem_mcp.server import mcp
 
-from filesystem_mcp.core import FilesystemCore
-from filesystem_mcp.models import FilesystemConfig
-
-__all__ = [
-    "FilesystemCore",
-    "FilesystemConfig",
-    "__version__",
-]
+__version__ = "1.0.0"
+__all__ = ["mcp"]

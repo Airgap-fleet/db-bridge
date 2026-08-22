@@ -187,7 +187,7 @@ class FilesystemCore:
 
         content_bytes = request.content.encode(encoding)
 
-        # Check size limit
+        # Check size limit BEFORE writing
         if len(content_bytes) > self.config.max_file_size:
             raise FileSizeError(
                 "Content size "
