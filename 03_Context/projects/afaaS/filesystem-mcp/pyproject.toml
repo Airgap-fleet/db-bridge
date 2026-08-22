@@ -1,12 +1,12 @@
 [project]
-name = "filesystem-mcp"
+name = "file-bridge"
 version = "1.0.1"
-description = "FastMCP filesystem tools for file read/write/list/glob/patch/search operations with security, structured logging, and multiple transports"
+description = "Bridge your AI assistant to local files — read, write, search, and manage files securely without cloud dependencies"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-authors = [{name = "AFaaS", email = "dev@afaaS.io"}]
-keywords = ["mcp", "filesystem", "fastmcp", "stdio", "sse", "http", "tools"]
+authors = [{name = "AFaaS", email = "dev@afaas.co.uk"}]
+keywords = ["bridge", "filesystem", "fastmcp", "stdio", "sse", "http", "tools"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -25,7 +25,7 @@ dependencies = [
 ]
 
 [project.scripts]
-filesystem-mcp = "filesystem_mcp.server:main"
+file-bridge = "filesystem_mcp.server:main"
 
 [build-system]
 requires = ["hatchling"]

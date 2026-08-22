@@ -1,4 +1,4 @@
-# Multi-stage Dockerfile for Filesystem MCP Server
+# Multi-stage Dockerfile for File Bridge
 # Uses python:3.12-slim for minimal size
 
 # ==============================================================================
@@ -42,7 +42,7 @@ WORKDIR /app
 
 # Copy installed package from builder
 COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
-COPY --from=builder /usr/local/bin/filesystem-mcp /usr/local/bin/filesystem-mcp
+COPY --from=builder /usr/local/bin/file-bridge /usr/local/bin/file-bridge
 
 # Create sandbox directory (will be mounted at runtime)
 RUN mkdir -p /sandbox && chown appuser:appuser /sandbox
@@ -51,15 +51,15 @@ RUN mkdir -p /sandbox && chown appuser:appuser /sandbox
 USER appuser
 
 # Environment variables
-ENV FILESYSTEM_MCP_ROOT_PATH=/sandbox
-ENV FILESYSTEM_MCP_MAX_FILE_SIZE=10485760
-ENV FILESYSTEM_MCP_FOLLOW_SYMLINKS=false
-ENV FILESYSTEM_MCP_ALLOW_ABSOLUTE_PATHS=false
-ENV FILESYSTEM_MCP_DEFAULT_ENCODING=utf-8
+ENV FILE_BRIDGE_ROOT_PATH=/sandbox
+ENV FILE_BRIDGE_MAX_FILE_SIZE=10485760
+ENV FILE_BRIDGE_FOLLOW_SYMLINKS=false
+ENV FILE_BRIDGE_ALLOW_ABSOLUTE_PATHS=false
+ENV FILE_BRIDGE_DEFAULT_ENCODING=utf-8
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import filesystem_mcp; print('healthy')" || exit 1
 
 # Entry point
-ENTRYPOINT ["filesystem-mcp"]
+ENTRYPOINT ["file-bridge"]

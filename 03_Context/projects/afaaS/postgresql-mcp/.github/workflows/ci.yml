@@ -72,7 +72,7 @@ jobs:
           --health-timeout 5s
           --health-retries 10
     env:
-      POSTGRESQL_MCP_TEST_DSN: postgresql://postgres:postgres@localhost:5432/postgres
+      DB_BRIDGE_TEST_DSN: postgresql://postgres:postgres@localhost:5432/postgres
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -106,6 +106,7 @@ jobs:
         with:
           files: ./coverage.xml
           fail_ci_if_error: true
+          name: db-bridge-coverage
 
   build:
     name: Build Package
@@ -182,7 +183,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: afaaS/postgresql-mcp
+          images: ghcr.io/airgap-fleet/db-bridge
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}

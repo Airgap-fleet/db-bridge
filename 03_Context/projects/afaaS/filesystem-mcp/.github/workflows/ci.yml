@@ -1,9 +1,9 @@
 # =============================================================================
-# Filesystem MCP Server — CI/CD Pipeline
+# File Bridge — CI/CD Pipeline
 # Build, test, lint, and publish to PyPI on release tags
 # =============================================================================
 
-name: filesystem-mcp
+name: file-bridge
 
 on:
   push:
@@ -62,7 +62,6 @@ jobs:
       - name: Install uv and build
         run: |
           pip install uv
-          cd /c/the%20force/03_Context/projects/afafs/filesystem-mcp
           uv build
       
       - name: Publish to PyPI
@@ -79,9 +78,9 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       
-      - name: Build filesystem-mcp image
+      - name: Build file-bridge image
         run: |
-          docker build -t filesystem-mcp:latest .
+          docker build -t file-bridge:latest .
       
       - name: Run health check
         run: |

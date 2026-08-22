@@ -1,4 +1,4 @@
-"""PostgreSQL MCP Server — FastMCP application with 6 database tools.
+"""DB Bridge — Bridge your AI assistant to PostgreSQL databases.
 Stateless protocol (2026-07-28): no global session state, explicit config per request.
 """
 
@@ -77,7 +77,7 @@ async def _get_core(config: PostgreSQLConfig | None = None) -> PostgreSQLCore:
 
 
 # Create FastMCP app (no lifespan - stateless)
-mcp = FastMCP("PostgreSQL MCP Server")
+mcp = FastMCP("DB Bridge")
 
 
 @mcp.tool()

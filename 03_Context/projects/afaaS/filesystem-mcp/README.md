@@ -1,102 +1,75 @@
-# FileSystem MCP Server - FastMCP Tools
+# File Bridge
 
-A FastMCP server providing filesystem operations via stdio transport.
+Bridge your AI assistant to local files — read, write, search, and manage files securely without cloud dependencies.
 
 ## Installation
 
 ```bash
-pip install -e ".[dev]" 
-npx @modelcontextprotocol/inspector uv run python -m mcp server "C:\the force"
-```
-
-Or directly from the project directory:
-
-```bash
-cd C:\the force\03_Context\projects\afaaS\filesystem-mcp
-uv sync --dev
-npx @modelcontextprotocol/inspector python -m filesystem_mcp "C:\the force"
+pip install file-bridge
 ```
 
 ## Usage
 
-### MCP Inspector
-
-Open a terminal in the project directory and run:
-
 ```bash
-cd C:\the force\03_Context\projects\afaaS\filesystem-mcp
-uv sync --dev
-npx @modelcontextprotocol/inspector uv run python -m filesystem_mcp "C:\the force"
+file-bridge
 ```
 
-Or use the `python -m mcp` command:
+Or configure in your MCP client:
 
-```bash
-uv run python -m mcp server "C:\the force"
+```json
+{
+  "mcpServers": {
+    "files": {
+      "command": "file-bridge",
+      "env": {
+        "FILE_BRIDGE_ROOT_PATH": "C:/path/to/files"
+      }
+    }
+  }
+}
 ```
 
-### Available Tools
+## Configuration
 
-| Tool | Parameters | Description |
-|------|------------|-------------|
-| `fs_read` | `path: str`, `max_bytes: int = 1048576` | Read file contents from the given path. Truncates to max_bytes if specified. |
-| `fs_write` | `path: str`, `content: str` | Write content to a file. Creates parent directories as needed. Returns True on success. |
-| `fs_list` | `dir_path: str = ""` | List files and directories at the given path. Empty string lists current directory. |
-| `fs_glob` | `pattern: str` | Find files matching a glob pattern (e.g., `"*.py"`, `"**/*.md"`). Returns absolute paths. |
+| Environment Variable | Default | Description |
+|---------------------|---------|-------------|
+| `FILE_BRIDGE_ROOT_PATH` | Current directory | Root directory for file operations |
+| `FILE_BRIDGE_MAX_FILE_SIZE` | 10MB | Max file size for operations |
+| `FILE_BRIDGE_FOLLOW_SYMLINKS` | false | Follow symlinks |
+| `FILE_BRIDGE_ALLOW_ABSOLUTE_PATHS` | false | Allow absolute paths outside root |
+| `FILE_BRIDGE_DEFAULT_ENCODING` | utf-8 | Text encoding |
 
-### Examples
+## Available Tools
 
-```bash
-# Read a file
-uv run python -m mcp server "C:\the force" <<EOF
-fs_read(path="C:/the force/03_Context/projects/afaaS/filesystem-mcp/pyproject.toml")
-EOF
+| Tool | Description |
+|------|-------------|
+| `read_file` | Read a file safely with size limits and binary detection |
+| `write_file` | Write a file atomically with size limits |
+| `list_dir` | List directory contents with optional filtering and recursion |
+| `search_files` | Search file contents using ripgrep |
+| `glob` | Find files matching a glob pattern |
+| `patch_file` | Apply a targeted patch to a file (find and replace) |
 
-# Write a file
-uv run python -m mcp server "C:\the force" <<EOF
-fs_write(path="C:/the force/logs/test.log", content="Test log entry 1\nTest log entry 2\n")
-EOF
+## Transport Modes
 
-# List directory contents
-uv run python -m mcp server "C:\the force" <<EOF
-fs_list(dir_path="C:/the force/03_Context/projects/afaaS/filesystem-mcp")
-EOF
+- **stdio** (default) — For local MCP clients (Claude Desktop, etc.)
+- **sse** — Server-Sent Events for HTTP clients
+- **http** — Streamable HTTP for modern clients
 
-# Glob for Python files
-uv run python -m mcp server "C:\the force" <<EOF
-fs_glob(pattern="*.py")
-EOF
-```
-
-## Project Structure
-
-```
-filesystem-mcp/
-├── pyproject.toml          # Build config, dependencies
-├── README.md               # This file
-└── src/
-    └── filesystem_mcp/
-        ├── __init__.py     # Server entry point
-        ├── tools/
-        │   └── __init__.py # Tool schemas and metadata
-        └── server.py       # FastMCP app with stdio transport
-```
+Set via `FILE_BRIDGE_TRANSPORT` environment variable.
 
 ## Development
 
-### Running Tests
-
 ```bash
-uv sync --dev
+# Install with dev dependencies
+pip install -e ".[dev]"
+
+# Run tests
 uv run pytest -v
-```
 
-### Checking Code Quality
-
-```bash
+# Check code quality
 uv run ruff check .
 uv run mypy .
-uv run ruff format --check .
 ```
 
 ## License

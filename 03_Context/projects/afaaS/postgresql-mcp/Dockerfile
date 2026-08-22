@@ -1,4 +1,4 @@
-# Multi-stage Dockerfile for PostgreSQL MCP Server
+# Multi-stage Dockerfile for DB Bridge
 # ==============================================================================
 # Stage 1: Builder - Install dependencies and build package
 # ==============================================================================
@@ -38,7 +38,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Copy installed package from builder
 COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
-COPY --from=builder /usr/local/bin/postgresql-mcp /usr/local/bin/postgresql-mcp
+COPY --from=builder /usr/local/bin/db-bridge /usr/local/bin/db-bridge
 
 # Create non-root user and set ownership
 RUN chown -R mcp:mcp /app
@@ -46,11 +46,11 @@ RUN chown -R mcp:mcp /app
 USER mcp
 
 # Environment variables
-ENV POSTGRESQL_MCP_TRANSPORT=stdio \
-    POSTGRESQL_MCP_LOG_LEVEL=INFO \
-    POSTGRESQL_MCP_POOL_MIN_SIZE=1 \
-    POSTGRESQL_MCP_POOL_MAX_SIZE=10 \
-    POSTGRESQL_MCP_QUERY_TIMEOUT=30 \
+ENV DB_BRIDGE_TRANSPORT=stdio \
+    DB_BRIDGE_LOG_LEVEL=INFO \
+    DB_BRIDGE_POOL_MIN_SIZE=1 \
+    DB_BRIDGE_POOL_MAX_SIZE=10 \
+    DB_BRIDGE_QUERY_TIMEOUT=30 \
     PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
 
@@ -62,4 +62,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 EXPOSE 8000
 
 # Entry point
-ENTRYPOINT ["postgresql-mcp"]
+ENTRYPOINT ["db-bridge"]

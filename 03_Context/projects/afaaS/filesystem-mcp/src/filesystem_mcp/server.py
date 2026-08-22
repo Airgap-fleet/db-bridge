@@ -1,4 +1,4 @@
-"""Filesystem MCP Server - FastMCP 3.x with TokenVerifier auth, structured logging, and multiple transports.
+"""File Bridge — Bridge your AI assistant to local files.
 Stateless protocol (2026-07-28): no global session state, explicit config per request.
 """
 
@@ -100,7 +100,7 @@ class FilesystemTokenVerifier(TokenVerifier):
 
 # FastMCP app with auth
 mcp = FastMCP(
-    "Filesystem MCP Server",
+    "File Bridge",
     auth=FilesystemTokenVerifier() if ServerSettings().auth_enabled else None,
 )
 
@@ -225,8 +225,8 @@ async def health_check(request) -> dict[str, Any]:
     core = create_core()
     return {
         "status": "healthy",
-        "server": "Filesystem MCP Server",
-        "version": "1.0.0",
+        "server": "File Bridge",
+        "version": "1.0.1",
         "root_path": str(core.config.root_path),
     }
 
@@ -238,8 +238,8 @@ async def server_info(request) -> dict[str, Any]:
     settings = ServerSettings()
     core = create_core()
     return {
-        "name": "Filesystem MCP Server",
-        "version": "1.0.0",
+        "name": "File Bridge",
+        "version": "1.0.1",
         "transport": settings.transport,
         "auth_enabled": settings.auth_enabled,
         "root_path": str(core.config.root_path),
@@ -277,7 +277,7 @@ def main():
         ],
     )
 
-    log.info("server_startup", transport=settings.transport, host=settings.host, port=settings.port)
+    log.info("server_startup", name="File Bridge", transport=settings.transport, host=settings.host, port=settings.port)
 
     if settings.transport == "stdio":
         mcp.run()

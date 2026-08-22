@@ -1,6 +1,6 @@
-# PostgreSQL MCP Server
+# DB Bridge
 
-A Model Context Protocol (MCP) server providing PostgreSQL database operations via FastMCP. Enables secure, parameterized database access for AI assistants and automation tools.
+Bridge your AI assistant to PostgreSQL databases — query, execute, migrate, and analyze without cloud dependencies.
 
 ## Features
 
@@ -13,19 +13,19 @@ A Model Context Protocol (MCP) server providing PostgreSQL database operations v
 
 ### From PyPI (when published)
 ```bash
-pip install postgresql-mcp
+pip install db-bridge
 ```
 
 ### From Source
 ```bash
-git clone https://github.com/afaaS/postgresql-mcp.git
-cd postgresql-mcp
+git clone https://github.com/airgap-fleet/db-bridge.git
+cd db-bridge
 pip install -e .
 ```
 
 ### Docker
 ```bash
-docker pull afaaS/postgresql-mcp:latest
+docker pull ghcr.io/airgap-fleet/db-bridge:latest
 ```
 
 ## Quick Start
@@ -39,7 +39,7 @@ cp .env.example .env
 ### 2. Run Server
 ```bash
 # Direct execution
-postgresql-mcp
+db-bridge
 
 # Or with Docker Compose (includes PostgreSQL)
 docker-compose up -d
@@ -47,14 +47,13 @@ docker-compose up -d
 
 ### 3. Configure MCP Client
 Add to your MCP client configuration (Claude Desktop, Cursor, VS Code, etc.):
-
 ```json
 {
   "mcpServers": {
     "postgresql": {
-      "command": "postgresql-mcp",
+      "command": "db-bridge",
       "env": {
-        "POSTGRESQL_MCP_DSN": "postgresql://user:pass@localhost:5432/db"
+        "DB_BRIDGE_DSN": "postgresql://user:***@localhost:5432/db"
       }
     }
   }
@@ -65,11 +64,11 @@ Add to your MCP client configuration (Claude Desktop, Cursor, VS Code, etc.):
 
 | Environment Variable | Default | Description |
 |---------------------|---------|-------------|
-| `POSTGRESQL_MCP_DSN` | `postgresql://postgres:postgres@localhost:5432/postgres` | PostgreSQL connection string |
-| `POSTGRESQL_MCP_POOL_SIZE` | `10` | Connection pool size (1-100) |
-| `POSTGRESQL_MCP_READ_ONLY` | `false` | Enable read-only mode (blocks write operations) |
-| `POSTGRESQL_MCP_QUERY_TIMEOUT` | `30.0` | Query timeout in seconds (0-300) |
-| `POSTGRESQL_MCP_LOG_LEVEL` | `INFO` | Structured logging level |
+| `DB_BRIDGE_DSN` | `postgresql://postgres:***@localhost:5432/postgres` | PostgreSQL connection string |
+| `DB_BRIDGE_POOL_SIZE` | `10` | Connection pool size (1-100) |
+| `DB_BRIDGE_READ_ONLY` | `false` | Enable read-only mode (blocks write operations) |
+| `DB_BRIDGE_QUERY_TIMEOUT` | `30.0` | Query timeout in seconds (0-300) |
+| `DB_BRIDGE_LOG_LEVEL` | `INFO` | Structured logging level |
 
 ## Tools Reference
 
@@ -154,7 +153,7 @@ Add to your MCP client configuration (Claude Desktop, Cursor, VS Code, etc.):
 All SQL execution uses parameterized queries (`$1`, `$2`, etc.). String concatenation or interpolation is **not supported** — this prevents SQL injection by design.
 
 ### Read-Only Mode
-Set `POSTGRESQL_MCP_READ_ONLY=true` to disable:
+Set `DB_BRIDGE_READ_ONLY=true` to disable:
 - `execute` (INSERT/UPDATE/DELETE)
 - `run_migration` (DDL)
 
@@ -204,7 +203,7 @@ uv run ruff format .
 docker run -d --name pg-test -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres:16
 
 # Run tests
-POSTGRESQL_MCP_TEST_DSN=postgresql://postgres:postgres@localhost:5432/postgres uv run pytest
+DB_BRIDGE_TEST_DSN=postgresql://postgres:***@localhost:5432/postgres uv run pytest
 
 # Cleanup
 docker rm -f pg-test
@@ -212,13 +211,13 @@ docker rm -f pg-test
 
 ### MCP Inspector
 ```bash
-npx @modelcontextprotocol/inspector uv run postgresql-mcp
+npx @modelcontextprotocol/inspector uv run db-bridge
 ```
 
 ## Architecture
 
 ```
-postgresql-mcp/
+db-bridge/
 ├── src/postgresql_mcp/
 │   ├── __init__.py          # Package exports
 │   ├── models.py            # Pydantic models (requests/responses/config)

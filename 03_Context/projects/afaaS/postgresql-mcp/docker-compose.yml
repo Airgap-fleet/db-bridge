@@ -3,7 +3,7 @@ version: "3.8"
 services:
   postgresql:
     image: postgres:16-alpine
-    container_name: postgresql-mcp-db
+    container_name: db-bridge-db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -18,41 +18,41 @@ services:
       timeout: 5s
       retries: 10
     networks:
-      - postgresql-mcp-network
+      - db-bridge-network
 
-  postgresql-mcp:
+  db-bridge:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: postgresql-mcp-server
+    container_name: db-bridge-server
     environment:
-      POSTGRESQL_MCP_DSN: postgresql://postgres:postgres@postgresql:5432/postgres
-      POSTGRESQL_MCP_POOL_SIZE: 10
-      POSTGRESQL_MCP_READ_ONLY: "false"
-      POSTGRESQL_MCP_QUERY_TIMEOUT: 30
-      POSTGRESQL_MCP_LOG_LEVEL: INFO
+      DB_BRIDGE_DSN: postgresql://postgres:postgres@postgresql:5432/postgres
+      DB_BRIDGE_POOL_SIZE: 10
+      DB_BRIDGE_READ_ONLY: "false"
+      DB_BRIDGE_QUERY_TIMEOUT: 30
+      DB_BRIDGE_LOG_LEVEL: INFO
     depends_on:
       postgresql:
         condition: service_healthy
     stdin_open: true
     tty: true
     networks:
-      - postgresql-mcp-network
+      - db-bridge-network
 
   # Development override - run with local source code mounted
-  postgresql-mcp-dev:
+  db-bridge-dev:
     build:
       context: .
       dockerfile: Dockerfile
       target: builder
-    container_name: postgresql-mcp-dev
-    command: uv run postgresql-mcp
+    container_name: db-bridge-dev
+    command: uv run db-bridge
     environment:
-      POSTGRESQL_MCP_DSN: postgresql://postgres:postgres@postgresql:5432/postgres
-      POSTGRESQL_MCP_POOL_SIZE: 10
-      POSTGRESQL_MCP_READ_ONLY: "false"
-      POSTGRESQL_MCP_QUERY_TIMEOUT: 30
-      POSTGRESQL_MCP_LOG_LEVEL: DEBUG
+      DB_BRIDGE_DSN: postgresql://postgres:postgres@postgresql:5432/postgres
+      DB_BRIDGE_POOL_SIZE: 10
+      DB_BRIDGE_READ_ONLY: "false"
+      DB_BRIDGE_QUERY_TIMEOUT: 30
+      DB_BRIDGE_LOG_LEVEL: DEBUG
     volumes:
       - ./src:/app/src
       - ./pyproject.toml:/app/pyproject.toml
@@ -62,11 +62,11 @@ services:
     stdin_open: true
     tty: true
     networks:
-      - postgresql-mcp-network
+      - db-bridge-network
 
 volumes:
   postgresql_data:
 
 networks:
-  postgresql-mcp-network:
+  db-bridge-network:
     driver: bridge
