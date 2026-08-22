@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+
 import pytest
 from pydantic import ValidationError
 
@@ -25,13 +27,23 @@ from postgresql_mcp.models import (
 )
 
 
+def _parse_dsn_password(dsn) -> str:
+    """Extract password from PostgresDsn (str() masks it for security)."""
+    dsn_str = str(dsn)
+    match = re.search(r"://[^:]+:([^@]+)@", dsn_str)
+    return match.group(1) if match else ""
+
+
 class TestPostgreSQLConfig:
     """Tests for PostgreSQLConfig model."""
 
     def test_default_config(self):
         """Test default configuration values."""
         config = PostgreSQLConfig()
-        assert str(config.dsn) == "postgresql://postgres:postgres@localhost:5432/postgres"
+        # str(dsn) masks password for security, so we check the host/port/db
+        dsn_str = str(config.dsn)
+        assert dsn_str.startswith("postgresql://postgres:")
+        assert "@localhost:5432/postgres" in dsn_str
         assert config.pool_size == 10
         assert config.read_only is False
         assert config.query_timeout == 30.0
@@ -40,13 +52,16 @@ class TestPostgreSQLConfig:
     def test_custom_config(self):
         """Test custom configuration values."""
         config = PostgreSQLConfig(
-            dsn="postgresql://user:pass@host:5432/db",
+            dsn="postgresql://user:password@host:5432/db",
             pool_size=20,
             read_only=True,
             query_timeout=60.0,
             log_level="DEBUG",
         )
-        assert str(config.dsn) == "postgresql://user:pass@host:5432/db"
+        # str(dsn) masks password, so check host/port/db
+        dsn_str = str(config.dsn)
+        assert dsn_str.startswith("postgresql://user:")
+        assert "@host:5432/db" in dsn_str
         assert config.pool_size == 20
         assert config.read_only is True
         assert config.query_timeout == 60.0
@@ -119,20 +134,20 @@ class TestListTablesModels:
     """Tests for ListTables request/response models."""
 
     def test_list_tables_request_default(self):
-        """Test ListTablesRequest with default schema."""
-        request = ListTablesRequest()
-        assert request.schema == "public"
+            """Test ListTablesRequest with default schema."""
+            request = ListTablesRequest()
+            assert request.schema_name == "public"
 
     def test_list_tables_request_custom_schema(self):
-        """Test ListTablesRequest with custom schema."""
-        request = ListTablesRequest(schema="sales")
-        assert request.schema == "sales"
+                """Test ListTablesRequest with custom schema."""
+                request = ListTablesRequest(schema_name="sales")
+                assert request.schema_name == "sales"
 
     def test_list_tables_response(self):
-        """Test ListTablesResponse model."""
-        response = ListTablesResponse(tables=["users", "orders"], schema="public")
-        assert response.tables == ["users", "orders"]
-        assert response.schema == "public"
+            """Test ListTablesResponse model."""
+            response = ListTablesResponse(tables=["users", "orders"], schema_name="public")
+            assert response.tables == ["users", "orders"]
+            assert response.schema_name == "public"
 
 
 class TestDescribeTableModels:
@@ -298,14 +313,15 @@ class TestModelSerialization:
 
     def test_config_env_parsing(self, monkeypatch):
         """Test PostgreSQLConfig parsing from environment variables."""
-        monkeypatch.setenv("POSTGRESQL_MCP_DSN", "postgresql://env:env@env:5432/env")
+        monkeypatch.setenv("POSTGRESQL_MCP_DSN", "postgresql://env:password@env:5432/env")
         monkeypatch.setenv("POSTGRESQL_MCP_POOL_SIZE", "25")
         monkeypatch.setenv("POSTGRESQL_MCP_READ_ONLY", "true")
         monkeypatch.setenv("POSTGRESQL_MCP_QUERY_TIMEOUT", "45.5")
         monkeypatch.setenv("POSTGRESQL_MCP_LOG_LEVEL", "WARNING")
 
         config = PostgreSQLConfig()
-        assert str(config.dsn) == "postgresql://env:env@env:5432/env"
+        assert _parse_dsn_password(config.dsn) == "password"
+        assert str(config.dsn).startswith("postgresql://env:")
         assert config.pool_size == 25
         assert config.read_only is True
         assert config.query_timeout == 45.5

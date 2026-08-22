@@ -1,9 +1,7 @@
 """Test configuration and fixtures for PostgreSQL MCP Server tests."""
 
-
 import os
 from collections.abc import AsyncGenerator
-
 
 import pytest
 import pytest_asyncio
@@ -12,17 +10,14 @@ from asyncpg import Pool, create_pool
 from postgresql_mcp.core import PostgreSQLCore
 from postgresql_mcp.models import PostgreSQLConfig
 
-
 # Use environment variable for test database DSN, fallback to default
 
 TEST_DSN = os.getenv(
     "POSTGRESQL_MCP_TEST_DSN",
-    "postgresql://postgres:postgres@localhost:5432/postgres"
+    "postgresql://postgres:***@localhost:5432/postgres"
 )
 
-
-
-@pytest.fixture(scope="session")
+@pytest.fixture
 def test_config() -> PostgreSQLConfig:
     """Create test configuration."""
     return PostgreSQLConfig(
@@ -33,9 +28,7 @@ def test_config() -> PostgreSQLConfig:
         log_level="DEBUG",
     )
 
-
-
-@pytest.fixture(scope="session")
+@pytest.fixture
 async def test_pool(test_config: PostgreSQLConfig) -> AsyncGenerator[Pool, None]:
     """Create a test connection pool."""
     try:
@@ -53,8 +46,6 @@ async def test_pool(test_config: PostgreSQLConfig) -> AsyncGenerator[Pool, None]
         # Skip tests if PostgreSQL is not available
         pytest.skip("PostgreSQL not available")
 
-
-
 @pytest_asyncio.fixture
 async def core(test_config: PostgreSQLConfig) -> AsyncGenerator[PostgreSQLCore, None]:
     """Create a PostgreSQLCore instance for testing."""
@@ -67,8 +58,6 @@ async def core(test_config: PostgreSQLConfig) -> AsyncGenerator[PostgreSQLCore, 
             await core_instance.close()
     except Exception:
         pytest.skip("PostgreSQL not available")
-
-
 
 @pytest_asyncio.fixture
 async def core_read_only(test_config: PostgreSQLConfig) -> AsyncGenerator[PostgreSQLCore, None]:
@@ -84,9 +73,7 @@ async def core_read_only(test_config: PostgreSQLConfig) -> AsyncGenerator[Postgr
     except Exception:
         pytest.skip("PostgreSQL not available")
 
-
-
-@pytest.fixture(autouse=True)
+@pytest.fixture
 async def setup_test_tables(test_pool: Pool):
     """Set up test tables before each test and clean up after."""
     try:

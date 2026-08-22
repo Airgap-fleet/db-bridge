@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Control Dashboard</title>
+  <!-- Bootstrap for quick prototyping -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-tertiary: #334155;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --border-color: #334155;
+      --accent-primary: #00d4aa;
+      --accent-warning: #f59e0b;
+      --accent-danger: #ef4444;
+      --accent-info: #3b82f6;
+      --accent-purple: #a855f7;
+    }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* Layout */
+    .dashboard-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr 320px;
+      grid-template-rows: auto 1fr;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      min-height: calc(100vh - 4rem);
+    }
+
+    .dashboard-header {
+      grid-column: 1 / -1;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .sidebar-header {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sidebar-title {
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+    }
+
+    .sidebar-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0.5rem;
+    }
+
+    .agent-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      border: 1px solid transparent;
+    }
+
+    .agent-item:hover,
+    .agent-item.active {
+      background: var(--bg-tertiary);
+      border-color: var(--border-color);
+    }
+
+    .agent-status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 2px solid var(--bg-secondary);
+    }
+
+    .agent-status-dot.active { background: #22c55e; }
+    .agent-status-dot.idle { background: #f59e0b; }
+    .agent-status-dot.dormant { background: #64748b; }
+    .agent-status-dot.unknown { background: #64748b; }
+
+    .agent-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .agent-name {
+      font-weight: 500;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .agent-role {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .agent-task-count {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      background: var(--bg-primary);
+      padding: 2px 6px;
+      border-radius: 999px;
+    }
+
+    /* Kanban Board */
+    .kanban-board {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.5rem;
+      min-height: calc(100vh - 6rem);
+      flex: 1;
+    }
+
+    .kanban-column {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .kanban-column.drag-over {
+      border-color: var(--accent-primary);
+      background: rgba(0, 212, 170, 0.05);
+    }
+
+    .kanban-column-header {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .kanban-column-title {
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .kanban-column-count {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: var(--bg-primary);
+      color: var(--text-secondary);
+    }
+
+    .kanban-column-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0.5rem;
+      min-height: 0;
+    }
+
+    .task-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 0.75rem;
+      margin-bottom: 0.5rem;
+      cursor: grab;
+      transition: all 0.15s ease;
+      position: relative;
+    }
+
+    .task-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      border-color: var(--accent-primary);
+    }
+
+    .task-card.dragging {
+      opacity: 0.5;
+      cursor: grabbing;
+    }
+
+    .task-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .task-title {
+      font-weight: 600;
+      font-size: 0.875rem;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .task-priority {
+      flex-shrink: 0;
+    }
+
+    .task-description {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .task-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .task-assignee {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.7rem;
+    }
+
+    .task-assignee-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .task-assignee-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
+    }
+
+    /* Chat Panel */
+    .chat-panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-tertiary);
+      overflow-x: auto;
+      flex-shrink: 0;
+    }
+
+    .chat-tab {
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .chat-tab:hover {
+      color: var(--text-primary);
+      background: var(--bg-secondary);
+    }
+
+    .chat-tab.active {
+      color: var(--accent-primary);
+      border-bottom-color: var(--accent-primary);
+      background: var(--bg-secondary);
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0.75rem;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .chat-message {
+      display: flex;
+      gap: 0.5rem;
+      animation: fadeIn 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .chat-message-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--bg-primary);
+    }
+
+    .chat-message-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .chat-message-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.25rem;
+    }
+
+    .chat-message-author {
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .chat-message-time {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+    }
+
+    .chat-message-text {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+      word-wrap: break-word;
+    }
+
+    .chat-input-area {
+      border-top: 1px solid var(--border-color);
+      padding: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .chat-input-wrapper {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .chat-input {
+      flex: 1;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem;
+      color: var(--text-primary);
+      font-size: 0.8rem;
+      resize: none;
+      min-height: 40px;
+      max-height: 120px;
+    }
+
+    .chat-input:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 2px rgba(0, 212, 170, 0.2);
+    }
+
+    .chat-send-btn {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      align-self: flex-end;
+    }
+
+    /* Modals */
+    .modal-content {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+    }
+
+    .modal-header {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 1.25rem;
+    }
+
+    .modal-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .modal-body {
+      padding: 1.25rem;
+    }
+
+    .modal-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 0.75rem 1.25rem;
+    }
+
+    .form-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 0.375rem;
+    }
+
+    .form-control, .form-select {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--text-primary);
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    .form-control:focus, .form-select:focus {
+      background: var(--bg-primary);
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 2px rgba(0, 212, 170, 0.2);
+      color: var(--text-primary);
+    }
+
+    .form-control::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-select option {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    /* Toast notifications */
+    .toast-container {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 9999;
+    }
+
+    .toast {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      animation: slideIn 0.3s ease;
+      min-width: 280px;
+      max-width: 400px;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .toast.success { border-left: 3px solid #22c55e; }
+    .toast.error { border-left: 3px solid var(--accent-danger); }
+    .toast.warning { border-left: 3px solid var(--accent-warning); }
+    .toast.info { border-left: 3px solid var(--accent-info); }
+
+    .toast-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .toast-title {
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    .toast-body {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* Loading skeletons */
+    .skeleton {
+      background: linear-gradient(90deg, var(--bg-tertiary) 25%, var(--bg-secondary) 50%, var(--bg-tertiary) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 4px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .skeleton-task {
+      height: 80px;
+      margin-bottom: 0.5rem;
+      border-radius: 6px;
+    }
+
+    .skeleton-agent {
+      height: 50px;
+      margin-bottom: 0.5rem;
+      border-radius: 6px;
+    }
+
+    /* Empty states */
+    .empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .empty-state-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .dashboard-layout {
+        grid-template-columns: 240px 1fr 280px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .dashboard-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+      }
+
+      .sidebar {
+        grid-column: 1;
+        grid-row: 2;
+        max-height: 200px;
+      }
+
+      .chat-panel {
+        grid-column: 1;
+        grid-row: 4;
+        max-height: 300px;
+      }
+
+      .kanban-board {
+        grid-column: 1;
+        grid-row: 3;
+      }
+
+      .sidebar.collapsed .sidebar-content,
+      .chat-panel.collapsed .chat-messages,
+      .chat-panel.collapsed .chat-input-area {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .kanban-board {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--bg-tertiary);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-muted);
+    }
+
+    /* Task detail modal */
+    .task-detail-section {
+      margin-bottom: 1rem;
+    }
+
+    .task-detail-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .task-detail-value {
+      font-size: 0.875rem;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.25rem 0.625rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .status-triage { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+    .status-todo { background: rgba(148, 163, 184, 0.2); color: #94a3b8; }
+    .status-ready { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+    .status-running { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+    .status-blocked { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+    .status-done { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+
+    /* Collapse buttons */
+    .collapse-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 0.25rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+    }
+
+    .collapse-btn:hover {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+
+    /* Keyboard shortcut hints */
+    .shortcut-hint {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      background: var(--bg-primary);
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid p-0">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h2 class="mb-1 fw-bold" style="font-size: 1.25rem;">Mission Control Dashboard</h2>
+          <small class="text-muted" style="color: var(--text-secondary);">Real-time task board · Hermes Kanban Integration</small>
+        </div>
+        <div class="col-md-4 text-end">
+          <button id="create-task-btn" class="btn btn-primary px-3 py-2 shadow-sm" title="New Task (N)">
+            <i class="bi bi-plus-lg me-1"></i> New Task
+            <span class="shortcut-hint ms-2">N</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="dashboard-layout" id="dashboard-layout">
+      <!-- Agent Sidebar -->
+      <aside class="sidebar" id="agent-sidebar" role="complementary" aria-label="Agent sidebar">
+        <div class="sidebar-header">
+          <span class="sidebar-title">Agents</span>
+          <button class="collapse-btn" id="sidebar-collapse" aria-label="Collapse sidebar" title="Collapse (Ctrl+B)">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+        </div>
+        <div class="sidebar-content" id="sidebar-content">
+          <div id="agent-list" role="list" aria-label="Agent list">
+            <!-- Agents rendered here -->
+          </div>
+        </div>
+      </aside>
+
+      <!-- Kanban Board -->
+      <main class="kanban-board" id="kanban-board" role="main" aria-label="Task board">
+        <div class="kanban-column" data-status="triage" role="list" aria-label="Triage tasks">
+          <div class="kanban-column-header">
+            <h3 class="kanban-column-title text-warning">
+              <i class="bi bi-inbox"></i> Triage
+              <span class="kanban-column-count" id="count-triage">0</span>
+            </h3>
+          </div>
+          <div class="kanban-column-content" id="column-triage"></div>
+        </div>
+
+        <div class="kanban-column" data-status="todo" role="list" aria-label="To Do tasks">
+          <div class="kanban-column-header">
+            <h3 class="kanban-column-title text-secondary">
+              <i class="bi bi-clock"></i> To Do
+              <span class="kanban-column-count" id="count-todo">0</span>
+            </h3>
+          </div>
+          <div class="kanban-column-content" id="column-todo"></div>
+        </div>
+
+        <div class="kanban-column" data-status="ready" role="list" aria-label="Ready tasks">
+          <div class="kanban-column-header">
+            <h3 class="kanban-column-title text-info">
+              <i class="bi bi-check-circle"></i> Ready
+              <span class="kanban-column-count" id="count-ready">0</span>
+            </h3>
+          </div>
+          <div class="kanban-column-content" id="column-ready"></div>
+        </div>
+
+        <div class="kanban-column" data-status="running" role="list" aria-label="Running tasks">
+          <div class="kanban-column-header">
+            <h3 class="kanban-column-title text-success">
+              <i class="bi bi-play-circle"></i> Running
+              <span class="kanban-column-count" id="count-running">0</span>
+            </h3>
+          </div>
+          <div class="kanban-column-content" id="column-running"></div>
+        </div>
+
+        <div class="kanban-column" data-status="blocked" role="list" aria-label="Blocked tasks">
+          <div class="kanban-column-header">
+            <h3 class="kanban-column-title text-warning">
+              <i class="bi bi-pause-circle"></i> Blocked
+              <span class="kanban-column-count" id="count-blocked">0</span>
+            </h3>
+          </div>
+          <div class="kanban-column-content" id="column-blocked"></div>
+        </div>
+
+        <div class="kanban-column" data-status="done" role="list" aria-label="Done tasks">
+          <div class="kanban-column-header">
+            <h3 class="kanban-column-title text-success">
+              <i class="bi bi-check2-circle"></i> Done
+              <span class="kanban-column-count" id="count-done">0</span>
+            </h3>
+          </div>
+          <div class="kanban-column-content" id="column-done"></div>
+        </div>
+      </main>
+
+      <!-- Chat Panel -->
+      <aside class="chat-panel" id="chat-panel" role="complementary" aria-label="Chat panel">
+        <div class="sidebar-header">
+          <span class="sidebar-title">Chat</span>
+          <button class="collapse-btn" id="chat-collapse" aria-label="Collapse chat" title="Collapse (Ctrl+Shift+B)">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="chat-tabs" id="chat-tabs" role="tablist" aria-label="Chat channels">
+          <button class="chat-tab active" data-channel="general" role="tab" aria-selected="true" aria-controls="panel-general">
+            <i class="bi bi-hash me-1"></i> General
+          </button>
+          <!-- Task channels added dynamically -->
+        </div>
+
+        <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-label="Messages">
+          <div class="empty-state">
+            <i class="bi bi-chat-dots empty-state-icon"></i>
+            <span>Select a channel to start chatting</span>
+          </div>
+        </div>
+
+        <div class="chat-input-area" id="chat-input-area">
+          <div class="chat-input-wrapper">
+            <textarea
+              class="chat-input form-control"
+              id="chat-input"
+              placeholder="Type a message... (Enter to send, Shift+Enter for new line)"
+              rows="1"
+              aria-label="Message input"
+            ></textarea>
+            <button class="btn btn-primary chat-send-btn" id="chat-send-btn" aria-label="Send message">
+              <i class="bi bi-send"></i>
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Create Task Modal -->
+  <div class="modal fade" id="createTaskModal" tabindex="-1" aria-labelledby="createTaskModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createTaskModalLabel"><i class="bi bi-plus-circle me-2"></i>Create New Task</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="create-task-form">
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="task-title" class="form-label">Title <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="task-title" required placeholder="What needs to be done?" maxlength="200" autofocus>
+            </div>
+            <div class="mb-3">
+              <label for="task-description" class="form-label">Description</label>
+              <textarea class="form-control" id="task-description" rows="3" placeholder="Add details, context, or acceptance criteria..." maxlength="2000"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="task-assignee" class="form-label">Assignee</label>
+              <select class="form-select" id="task-assignee" aria-label="Assignee">
+                <option value="">Unassigned</option>
+                <!-- Agents populated dynamically -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="task-priority" class="form-label">Priority</label>
+              <select class="form-select" id="task-priority" aria-label="Priority">
+                <option value="0">Low</option>
+                <option value="1" selected>Medium</option>
+                <option value="2">High</option>
+                <option value="3">Critical</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="create-task-submit">
+              <i class="bi bi-plus-lg me-1"></i> Create Task
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Task Detail Modal -->
+  <div class="modal fade" id="taskDetailModal" tabindex="-1" aria-labelledby="taskDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="taskDetailModalLabel">Task Details</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="task-detail-body">
+          <!-- Populated dynamically -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link text-danger" id="task-delete-btn">
+            <i class="bi bi-trash me-1"></i> Delete Task
+          </button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- App JS -->
+  <script src="app.js"></script>
+</body>
+</html>

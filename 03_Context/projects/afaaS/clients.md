@@ -19,10 +19,10 @@
 
 ## Active Pipeline (Template — replace as real deals arrive)
 
-| Client | Stage | Service | Value | Next Action | Owner | Last Touch | Notes |
+|| Client | Stage | Service | Value | Next Action | Owner | Last Touch | Notes ||
 |--------|-------|---------|-------|-------------|-------|------------|-------|
-| Coffee Client A | Outreach | Fleet Pilot | £25K | Follow up email | Master | 2026-08-04 | 2 B2B clients waiting samples |
-| Coffee Client B | Lead | Fleet Pilot | £25K | Initial email | Master | — | Same relationship |
+| [Tier 1 Financial] | Lead | Fleet Pilot | £25K | Initial outreach | Master | — | Hedge fund / wealth manager target |
+| [Tier 1 Legal] | Lead | Fleet Pilot | £25K | Initial outreach | Master | — | Magic Circle / boutique target |
 | — | — | — | — | — | — | — | — |
 
 ---

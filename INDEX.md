@@ -38,7 +38,6 @@
 
 - [super-yachts.md](03_Context/projects/super-yachts.md) — `STCW, Powerboat L2, ENG1 highest rating, 3rd/2nd steward target 50m+, Barnstaple, career transition from Sainsbury's, dual British/South African citizenship, marine background Aruba/Caribbean`
 - [trading/README.md](03_Context/projects/trading/README.md) — `20+ strategy dirs: Faber trend-following, walkforward validation, macro factors, volatility targeting, param optimization; Trading 212, Invesco FTSE All-World; Python pandas/numpy/yfinance/vectorbt; git uncommitted, no deploy pipeline`
-- [coffee-roasting.md](projects/coffee-roasting.md) — `Sailor-themed brand TBD, 2 B2B clients waiting samples, stalled since 2026-07-28, needs equipment/supplier/pricing/timeline, brand name decision`
 - [campervan.md](projects/campervan.md) — `Peugeot Boxer, Victron electrical, stale since 2026-07-28, no floorplan/timeline/budget, binary decision: proceed or #on-hold`
 
 ---

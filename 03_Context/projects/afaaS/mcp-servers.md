@@ -104,16 +104,25 @@
 
 ## Technical Standards (All Servers)
 
-| Requirement | Standard |
-|-------------|----------|
-| **Transport** | stdio (primary), SSE (optional) |
-| **Auth** | None (local) → API key (remote) |
-| **Config** | JSON file + env vars, schema validated |
-| **Logging** | Structured JSON to stderr |
-| **Testing** | Unit + integration (MCP inspector) |
-| **Packaging** | `pyproject.toml`, `pip install`, GitHub Actions CI |
-| **Docs** | README, tool schemas, examples, troubleshooting |
-| **Versioning** | SemVer, changelog, backward compat |
+|| Requirement | Standard ||
+||-------------|----------||
+|| **Transport** | stdio (primary), SSE (optional) ||
+|| **Auth** | None (local) → API key (remote) ||
+|| **Config** | JSON file + env vars, schema validated ||
+|| **Logging** | Structured JSON to stderr ||
+|| **Testing** | Unit + integration (MCP inspector) ||
+|| **Packaging** | `pyproject.toml`, `pip install`, GitHub Actions CI ||
+|| **Docs** | README, tool schemas, examples, troubleshooting ||
+|| **Versioning** | SemVer, changelog, backward compat ||
+
+### Phase 2b Hardening (Post-First-Sale)
+
+|| Requirement | Standard ||
+||-------------|----------||
+|| **Backup/Restore** | Automated vault + DB snapshots, monthly tested restore ||
+|| **UPS/Graceful Shutdown** | NUT/apcupsd integration, state persistence on power loss ||
+|| **Health Monitoring** | MCP server heartbeats, Prometheus/Grafana or lightweight alerting ||
+|| **Disaster Recovery** | Documented DR runbook, < 4hr RTO, < 1hr RPO drill quarterly ||
 
 ---
 

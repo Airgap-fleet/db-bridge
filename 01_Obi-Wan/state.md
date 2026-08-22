@@ -1,151 +1,114 @@
-# Obi-Wan — Current Session State
+# Session Handoff — 2026-08-21
 
-> *Updated at session start and end. Single source of truth for active context.*
+> **Status:** Phase 1 Complete → Phase 2 In Progress
+> **Active Task:** `t_phase2_publish` (RUNNING) — Package & publish Core 3 MCP servers to PyPI
+> **Next Revenue Task:** `t_phase2_sale1` (READY) — Close 1st MCP server sale (£2K + £500/mo)
 
 ---
 
-## Session Metadata
+## 🎯 Business Goal
+**AFaaS — Agent Fleet as a Service** — £387K Year 1 via 3 streams:
+1. **Fleet Deployment** — £250K (4 projects × £25–100K)
+2. **MCP Server Products** — £100K (6 servers × £2K + £500/mo)
+3. **Local LLM Optimization** — £37K (4 engagements × £15K)
 
-```yaml
-session_id: "obi-wan-2026-08-04"
-started_at: "2026-08-04T10:56:00+01:00"
-ended_at: "2026-08-04T22:01:00+01:00"
-master_present: true
-vault_path: "C:\\the force"
-git_branch: "main"
-git_dirty: false
-last_commit: "3ca9635"
+---
+
+## ✅ Phase 1 Complete — Core 3 MCP Servers
+
+| Server | Status | Location | Tests |
+|--------|--------|----------|-------|
+| **Obsidian Vault MCP** | ✅ Complete, installed | `03_Context/projects/afaaS/obsidian-mcp/` | Manual verified |
+| **Filesystem MCP** | ✅ Complete | `03_Context/projects/afaaS/filesystem-mcp/` | 35/37 pass |
+| **PostgreSQL MCP** | ✅ Code complete | `03_Context/projects/afaaS/postgresql-mcp/` | Fixtures fixed |
+
+**All three servers built to spec from `mcp-servers.md` with FastMCP, stdio transport, Pydantic schemas.**
+
+---
+
+## 🧹 Vault Cleanup — Coffee Roasting Removed
+
+| File | Action |
+|------|--------|
+| `projects/coffee-roasting.md` | Deleted |
+| `afaaS/README.md` | Risk mitigation updated |
+| `afaaS/roadmap.md` | Week 4 & 10–12 de-coffeed |
+| `afaaS/clients.md` | Pipeline: Coffee → Tier 1 Financial/Legal |
+| `INDEX.md` | Coffee link removed |
+
+**Vault now purely MCP Server Business focused.**
+
+---
+
+## 📋 Phase 2 Task Queue (Kanban + task_master.py)
+
+| Task ID | Title | Status | Assignee |
+|---------|-------|--------|----------|
+| `t_phase2_publish` | Package & publish Core 3 MCP servers to PyPI | **RUNNING** | master |
+| `t_phase2_sale1` | Close 1st MCP server sale (£2K + £500/mo) | READY | master |
+| `t_phase2_fleet1` | Deliver 1st Fleet Deployment pilot | READY | master |
+| `t_phase2_llm1` | Close 1st Local LLM Optimization (£15K) | READY | master |
+| `t_phase2_sops` | Document delivery playbooks (3 SOPs) | READY | master |
+| `t_phase2_remote` | Build MCP remote connector (Messages API) | CREATED | master |
+
+---
+
+## 🔬 MoneyPenny Research (2026-08-12) — Key Signals
+
+- **MCP → Linux Foundation (AAIF)** — Community governance, build defensively
+- **MCP Remote + Code Execution** — Cuts context 98.7%, critical for deployments
+- **EU AI Act LIVE (2 Aug 2026)** — Regulated sectors need compliant local AI
+- **UK Pricing Validated** — Discovery £5-15K, Pilot £20-50K, Retainers £350-1.5K/mo
+- **177+ Frameworks** — Differentiation: Local-first + MCP-native + Persistent memory
+
+---
+
+## 🖥️ Hardware State
+- **32GB RAM** — Only ONE 14B model at a time (qwen2.5-coder:14b / qwen3:14b)
+- **Ollama** — Idle (no model loaded)
+- **DirectML** — Enabled (AMD 780M iGPU)
+- **Single-task enforcement** — Active via `task_master.py`
+
+---
+
+## 📁 Key Files for Next Session
+
+| File | Purpose |
+|------|---------|
+| `01_Obi-Wan/task_master.py` | Single-task orchestrator (Kanban DB + vault sync) |
+| `03_Context/projects/afaaS/roadmap.md` | 12-month phased plan |
+| `03_Context/projects/afaaS/mcp-servers.md` | Product specs & build standards |
+| `03_Context/market-intel/2026-08-12.md` | MoneyPenny research |
+| `03_Context/projects/afaaS/README.md` | Business overview |
+| `03_Context/projects/afaaS/clients.md` | Pipeline (now Tier 1 targets) |
+
+---
+
+## 🚀 Resume Commands (Next Session)
+
+```bash
+# 1. Check status
+cd "C:/the force/01_Obi-Wan" && python task_master.py status
+
+# 2. Continue publish task (currently RUNNING)
+#    Work on: obsidian-mcp pyproject.toml publish config
+#    Then: filesystem-mcp, postgresql-mcp
+#    Then: pip install test → TestPyPI → PyPI
+
+# 3. When publish done:
+python task_master.py complete t_phase2_publish true "All 3 MCP servers published to PyPI"
+python task_master.py start t_phase2_sale1
 ```
 
 ---
 
-## Active Tasks
-
-| Task ID | Description | Status | Owner | Started | Vault Ref |
-|---------|-------------|--------|-------|---------|-----------|
-| INIT-001 | Vault initialization & Obi-Wan design | completed | Obi-Wan | 2026-08-02 15:12 | `04_Daily_Logs/2026-08-02/` |
-| ARCH-001 | Daily conversation archive (cron) | completed | Archivist (cron) | 2026-08-02 23:00 | `04_Daily_Logs/2026-08-02/` |
-| ANAKIN-001 | Anakin soul spec + MCP trading layer | completed | Obi-Wan | 2026-08-02 18:26 | `C:\\Users\\brook\\Obi-Wan_SOUL.md` |
-| OPENR-001 | OpenRouter model filtering research | completed | Obi-Wan | 2026-08-02 19:55 | `03_Context/references/providers/` |
-| ARCH-002 | Daily conversation archive 2026-08-03 (cron) | completed | Archivist (cron) | 2026-08-03 23:00 | `04_Daily_Logs/2026-08-03/` |
-| TRADING-001 | Automated trading loop activated (Anakin→K-2SO→Anakin) | active | Obi-Wan | 2026-08-03 22:00 | `Anakin/`, `AgentComms.md` |
-| ARCH-003 | Daily conversation archive 2026-08-04 (cron) | completed | Archivist (cron) | 2026-08-04 23:00 | `04_Daily_Logs/2026-08-04/` |
-| BIZ-001 | AFaaS business model formalized (12 agents, 3 streams, £387K) | completed | Obi-Wan | 2026-08-04 10:56 | `master-dialogue.md`, `decisions.md` |
-| DASH-001 | Dashboard architecture defined (MCP-first, Scotty critical path) | active | Obi-Wan/Scotty | 2026-08-04 22:00 | `decisions.md`, `subagent-traces.md` |
-| ARCH-004 | Daily conversation archive 2026-08-08 (cron, early) | completed | Archivist (cron) | 2026-08-08 10:13 | `04_Daily_Logs/2026-08-08/` |
-| — | Awaiting Master's next operational command | pending | Obi-Wan | — | — |
+## ⚠️ Constraints to Remember
+1. **One task at a time** — `task_master.py` enforces serial execution
+2. **One model at a time** — 32GB RAM, no concurrent Ollama workers
+3. **Scotty write scope** — `03_Context/projects/afaaS/`, `05_Skills/active/`, `03_Context/systems/`
+4. **Mission Control Dashboard** — Abandoned (distraction), do not revive
+5. **Vault discipline** — Every decision, reference, learning goes in vault
 
 ---
 
-## Delegated Agents (Active)
-
-| Agent ID | Task | Status | Delegated At | Expected Completion |
-|----------|------|--------|--------------|---------------------|
-| — | None | — | — | — |
-
----
-
-## Current Focus
-
-**Primary:** AFaaS business model formalized — 12-agent fleet, 3 revenue streams (£387K Year 1), model allocation fixed. Dashboard architecture defined: MCP-first approach, Scotty's 3 MCP servers are critical path. Daily archive complete — full cron suite operational overnight. K-2SO optimization pivot: SMA/RSI/macro abandoned on daily GBP/USD, strategy class change required.  
-**Secondary:** Dashboard research delegation interrupted — needs re-dispatch with concrete deliverables. Scotty must deliver verified `filesystem-mcp/` directory (current blocker). Anakin pipeline fix verified (`outputsize=full`), SMA200 valid. Paper trade 30 days before live.  
-**Blockers:** Scotty `filesystem-mcp/` delivery; git remote not configured for off-site backup; no embedding model for semantic search.
-
----
-
-## Context Stack (Recent)
-
-1. Vault initialized at `C:\the force` with full canonical directory structure
-2. Soul specification written to `C:\Users\brook\Obi-Wan_SOUL.md` (Obi-Wan + Anakin)
-3. Master profile and protocols created in `00_Master/`
-4. Obi-Wan identity, state, capabilities, lessons files created in `01_Obi-Wan/`
-5. Sub-agent registry with 6 specialization templates ready in `02_Sub-Agents/templates/`
-6. **Session 1 (17:02–19:39):** Mission setup, Anakin design, MCP trading research (9 repos found), buzz.xyz research, conversation recording confirmed
-7. **Session 2 (19:55–21:45):** OpenRouter model filtering explained (3-layer pipeline), model recommendations for 5 profiles, vault recall protocol confirmed
-8. **Daily archive completed (2026-08-02)** — 5 log files written, index updated, git committed (`bef61b3`)
-9. **2026-08-03 11:30 AM:** Fallback model config verified; DirectML GPU enabled via registry; Master local GPU verification pending
-10. **2026-08-03 11:00 AM:** Vault reindex (38 files, 15K words); Project health check (5 projects, Coffee stalled, Campervan stale); Backup vault (no remote)
-11. **2026-08-03 7:42 PM / 9:44 PM:** Anakin alignment review — DRIFTING (SMA200 NaN, Sharpe 0.38, win rate 3.86%)
-12. **2026-08-03 10:07 PM:** K-2SO daily optimization — 576 combos, NO VIABLE STRATEGY (macro gate over-filters daily bars)
-13. **2026-08-03 9:43 PM:** Anakin pipeline fix verified (`outputsize=full` → 5000 bars, SMA200=1.3398); Full cron suite confirmed; Trading loop activated
-14. **Daily archive completed (2026-08-03)** — 5 log files + k2so-traces.md, index updated, git committed (`cf154b6`)
-15. **2026-08-04 10:56 AM:** AFaaS business pivot formalized — 12-agent fleet, 3 revenue streams, £387K target
-16. **2026-08-04 9:54 PM:** 12-agent model allocation published (cloud reasoning, local tool-use, small always-on)
-17. **2026-08-04 10:00 PM:** Dashboard architecture defined — MCP-first, Scotty critical path (3 servers → Dashboard UI → AgentComms MCP → Autonomous Loop)
-18. **2026-08-04 10:01 PM:** Velocity commitment — move fast once Scotty delivers Filesystem MCP
-19. **2026-08-04 9:51 PM:** Dashboard research delegated (interrupted at 202s) — needs re-dispatch
-20. **2026-08-04 02:00 AM:** Cron suite — Backup (commit 4d86b31), K-2SO (528 combos, pivot), Reindex (55 files, commit 7eae95a)
-21. **Daily archive completed (2026-08-04)** — 6 log files (incl. k2so-traces.md), index updated, git committed (`3ca9635`)
-22. **2026-08-08 10:13 AM:** Early daily archive (cron) — 4 log files, index updated, git committed (`a5662ea`); No Master sessions today yet (day just begun)
-
----
-
-## Pending Decisions (Awaiting Master)
-
-- [x] Approve soul specification as canonical
-- [x] Confirm vault path `C:\the force` is correct
-- [x] Set preferred daily cron time (currently 23:00)
-- [ ] Define initial sub-agent specializations to activate
-- [ ] Configure git remote for vault backup (optional)
-- [ ] Create 5 additional Hermes profiles with recommended models
-- [ ] Activate Anakin profile with soul spec
-
----
-
-## Environment Status
-
-| Component | Status | Notes |
-|-----------|--------|-------|
-| Hermes Agent | Running | Current session |
-| Obsidian Vault | Accessible | `C:\the force` |
-| Git Repo | Initialized | Clean, committed `3ca9635` |
-| Cron Scheduler | Available | 8 jobs registered, 3 daily archives completed |
-| Delegation | Available | `delegate_task` ready |
-| Skills | Loaded | `obsidian`, `hermes-agent` |
-| Daily Archive | Complete | `04_Daily_Logs/2026-08-04/` (6 files incl. k2so-traces.md) |
-| Alpha Vantage API | Working | `outputsize=full` verified, 5000 bars fetched |
-| FRED API | Working | UNRATE/PAYEMS fetching |
-| Ollama (local) | Pending GPU verify | `OLLAMA_DML=1` set, reboot needed for service |
-| DeepSeek-R1:8b | Not yet pulled | For K-2SO profile (5.2 GB) |
-| deepseek-coder:6.7b | Not yet pulled | For Scotty profile (4 GB) |
-
----
-
-## Quick Links
-
-- **Soul Spec (Obi-Wan + Anakin):** `C:\Users\brook\Obi-Wan_SOUL.md`
-- **Identity:** `01_Obi-Wan/identity.md`
-- **Capabilities:** `01_Obi-Wan/capabilities.md`
-- **Lessons:** `01_Obi-Wan/lessons.md`
-- **State (this file):** `01_Obi-Wan/state.md`
-- **Master Profile:** `00_Master/profile.md`
-- **Protocols:** `00_Master/protocols.md`
-- **Sub-Agent Registry:** `02_Sub-Agents/registry.md`
-- **Today's Log:** [[04_Daily_Logs/2026-08-04/master-dialogue.md]]
-- **Today's Traces:** [[04_Daily_Logs/2026-08-04/subagent-traces.md]]
-- **Today's Decisions:** [[04_Daily_Logs/2026-08-04/decisions.md]]
-- **Today's Metrics:** [[04_Daily_Logs/2026-08-04/metrics.md]]
-- **Today's Vault Health:** [[04_Daily_Logs/2026-08-04/vault-health.md]]
-- **Today's K-2SO Trace:** [[04_Daily_Logs/2026-08-04/k2so-traces.md]]
-- **Yesterday's Log:** [[04_Daily_Logs/2026-08-03/master-dialogue.md]]
-- **Yesterday's Traces:** [[04_Daily_Logs/2026-08-03/subagent-traces.md]]
-- **Yesterday's Decisions:** [[04_Daily_Logs/2026-08-03/decisions.md]]
-- **Yesterday's Metrics:** [[04_Daily_Logs/2026-08-03/metrics.md]]
-- **Yesterday's Vault Health:** [[04_Daily_Logs/2026-08-03/vault-health.md]]
-- **Yesterday's K-2SO Trace:** [[04_Daily_Logs/2026-08-03/k2so-traces.md]]
-- **Daily Logs Index:** [[04_Daily_Logs/index.md]]
-- **Anakin Review (2026-08-03):** [[Anakin/Anakin_REVIEW_2026-08-03.md]]
-- **K-2SO Output:** [[Anakin/best_params.md]]
-- **K-2SO Grid Search:** [[Anakin/grid_search_results.csv]]
-
----
-
-## Anakin Daily Review Summary (2026-08-04)
-
-**Status: DRIFTING → PIVOT CONFIRMED** — SMA200 NaN blocker **resolved** (`outputsize=full` verified, SMA200=1.3398). Backtest Sharpe 0.38 << 1.0 target. Win rate 3.86%. K-2SO optimization loop ran second cycle: 528 combos tested, **NO VIABLE STRATEGY** (macro gate over-filters daily bars). Loop active, pivoting strategy class.
-
-**Required:** K-2SO next cycle: test `macro_gate: neither` baseline or weekly bars; add position sizing, walk-forward backtest with costs, version results. Verify K-2SO → Anakin param handoff (best_params.md consumed).
-
-**Review written:** [[Anakin/Anakin_REVIEW_2026-08-03.md]] (previous day)
-**K-2SO Trace:** [[04_Daily_Logs/2026-08-04/k2so-traces.md]]
-**Pipeline Fix:** Verified in `Anakin/pipeline.py:24`
+*"The archives are complete. If it's not in the archives, it doesn't exist."*

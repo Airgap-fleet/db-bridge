@@ -1,6 +1,6 @@
 """PostgreSQL MCP Server package."""
 
-from __future__ import annotations
+from postgresql_mcp.server import mcp
 
-__version__ = "0.1.0"
-__all__ = ["__version__"]
+__version__ = "1.0.0"
+__all__ = ["mcp"]

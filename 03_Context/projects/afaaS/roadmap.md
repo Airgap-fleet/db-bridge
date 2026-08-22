@@ -14,7 +14,7 @@
 | 1–2 | Build **Obsidian Vault MCP Server** | Obi-Wan + Coder-Backend | Works in Claude Desktop, Cursor, VS Code |
 | 2–3 | Package MCP server (PyPI, install script, README) | Coder-Backend | `pip install obsidian-mcp` works |
 | 3–4 | Create service one-pagers + pricing PDF | Master + Analyst | 3 PDFs: Fleet, MCP, LLM Opt |
-| 4 | Email 2 coffee clients — pilot offer | Master | 1+ replies |
+| 4 | Outbound to Tier 1 verticals (finance, healthcare, legal) | Master | 1+ discovery calls |
 | 5–6 | Build **Local Filesystem MCP Server** | Coder-Backend | Same quality bar |
 | 7–8 | Build **PostgreSQL MCP Server** | Coder-Backend | Same quality bar |
 
@@ -26,14 +26,29 @@
 
 ### Goal: Convert pilots to paid, establish delivery motion
 
-| Week | Milestone | Owner | Done Criteria |
-|------|-----------|-------|---------------|
-| 9–10 | Close 1st MCP server sale (£2K + £500/mo) | Master + Closer | Signed, invoiced |
-| 10–12 | Deliver 1st Fleet Deployment pilot (coffee client) | Fleet (5 agents) | Working agent team in their vault |
-| 12–14 | Close 1st Local LLM Optimization (£15K) | Master + Analyst | Model quantized, served, benchmarked |
-| 14–16 | Document delivery playbooks | Archivist | 3 SOPs in vault |
+|| Week | Milestone | Owner | Done Criteria ||
+||------|-----------|-------|---------------||
+|| 9–10 | Close 1st MCP server sale (£2K + £500/mo) | Master + Closer | Signed, invoiced ||
+|| 10–12 | Deliver 1st Fleet Deployment pilot | Fleet (5 agents) | Working agent team in their vault ||
+|| 12–14 | Close 1st Local LLM Optimization (£15K) | Master + Analyst | Model quantized, served, benchmarked ||
+|| 14–16 | Document delivery playbooks | Archivist | 3 SOPs in vault ||
 
 **Exit Criteria:** £50K invoiced, 3 referenceable case studies, playbooks written.
+
+---
+
+## Phase 2b: Hardening & Safety (Post-First-Sale, Month 4–5) — **Target: Production-Grade Delivery**
+
+### Goal: Add operational safety for client environments
+
+|| Week | Milestone | Owner | Done Criteria ||
+||------|-----------|-------|---------------||
+|| 16–17 | **Backup/Restore SOP** — automated vault + DB snapshots, tested restore | Coder-Backend | Documented, tested monthly ||
+|| 17–18 | **UPS Integration** — graceful shutdown on power loss (NUT/apcupsd), state persistence | Coder-Backend | Simulated outage survives ||
+|| 18–19 | **Health Monitoring** — MCP server heartbeats, alerting (Prometheus/Grafana or lightweight) | Coder-Backend | Dashboard + PagerDuty/email alerts ||
+|| 19–20 | **Disaster Recovery Drill** — full restore from backup to fresh hardware | Fleet + Coder-Backend | < 4hr RTO, < 1hr RPO ||
+
+**Exit Criteria:** Backup tested, UPS configured, monitoring live, DR drill passed. Added to delivery playbook.
 
 ---
 

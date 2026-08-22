@@ -70,12 +70,12 @@ Build a £387K Year 1 business delivering three revenue streams:
 ---
 
 ## Key Risks & Mitigations
-| Risk | Likelihood | Impact | Mitigation |
+|| Risk | Likelihood | Impact | Mitigation ||
 |------|------------|--------|------------|
-| 32 GB RAM bottleneck | High | Medium | Cloud burst (RunPod), upgrade on 1st payment |
-| MCP ecosystem immature | Low | High | Build defensively, contribute upstream |
-| Sales pipeline dry | Medium | High | Convert 2 warm coffee leads, then outbound |
-| Single point of failure (me) | High | High | Document everything, hire #1 by Month 6 |
+|| 32 GB RAM bottleneck | High | Medium | Cloud burst (RunPod), upgrade on 1st payment ||
+|| MCP ecosystem immature | Low | High | Build defensively, contribute upstream ||
+|| Sales pipeline dry | Medium | High | Outbound to Tier 1 verticals (finance, healthcare, legal) ||
+|| Single point of failure (me) | High | High | Document everything, hire #1 by Month 6 ||
 
 ---
 

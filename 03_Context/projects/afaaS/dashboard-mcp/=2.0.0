@@ -1,0 +1,22 @@
+Collecting sqlalchemy
+  Downloading sqlalchemy-2.0.51-cp311-cp311-win_amd64.whl.metadata (9.8 kB)
+Collecting psycopg2-binary
+  Downloading psycopg2_binary-2.9.12-cp311-cp311-win_amd64.whl.metadata (5.1 kB)
+Collecting alembic
+  Downloading alembic-1.19.1-py3-none-any.whl.metadata (7.3 kB)
+Collecting greenlet>=1 (from sqlalchemy)
+  Downloading greenlet-3.5.4-cp311-cp311-win_amd64.whl.metadata (3.9 kB)
+Requirement already satisfied: typing-extensions>=4.6.0 in C:\Users\brook\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages (from sqlalchemy) (4.16.0)
+Collecting Mako (from alembic)
+  Downloading mako-1.4.1-py3-none-any.whl.metadata (2.9 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in C:\Users\brook\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages (from Mako->alembic) (3.0.3)
+Downloading sqlalchemy-2.0.51-cp311-cp311-win_amd64.whl (2.1 MB)
+   ---------------------------------------- 2.1/2.1 MB 2.6 MB/s  0:00:00
+Downloading psycopg2_binary-2.9.12-cp311-cp311-win_amd64.whl (2.8 MB)
+   ---------------------------------------- 2.8/2.8 MB 2.3 MB/s  0:00:01
+Downloading alembic-1.19.1-py3-none-any.whl (265 kB)
+Downloading greenlet-3.5.4-cp311-cp311-win_amd64.whl (246 kB)
+Downloading mako-1.4.1-py3-none-any.whl (80 kB)
+Installing collected packages: psycopg2-binary, Mako, greenlet, sqlalchemy, alembic
+
+Successfully installed Mako-1.4.1 alembic-1.19.1 greenlet-3.5.4 psycopg2-binary-2.9.12 sqlalchemy-2.0.51

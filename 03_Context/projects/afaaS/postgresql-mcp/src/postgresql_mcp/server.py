@@ -1,26 +1,18 @@
-"""PostgreSQL MCP Server — FastMCP application with 6 database tools."""
+"""PostgreSQL MCP Server — FastMCP application with 6 database tools.
+Stateless protocol (2026-07-28): no global session state, explicit config per request.
+"""
 
 from __future__ import annotations
 
 import logging
 import sys
-from collections.abc import AsyncIterator
-from contextlib import asynccontextmanager
 from typing import Any
 
 import structlog
 from fastmcp import FastMCP
 
 from postgresql_mcp.core import PostgreSQLCore
-from postgresql_mcp.models import (
-    DescribeTableRequest,
-    ExecuteRequest,
-    ExplainAnalyzeRequest,
-    ListTablesRequest,
-    PostgreSQLConfig,
-    QueryRequest,
-    RunMigrationRequest,
-)
+from postgresql_mcp.models import PostgreSQLConfig
 
 # Configure structured logging
 structlog.configure(
@@ -49,37 +41,43 @@ logging.basicConfig(
 
 logger = structlog.get_logger(__name__)
 
-# Global core instance
-_core: PostgreSQLCore | None = None
+# Module-level connection pool (infrastructure, not session state)
+_pool: Any | None = None
+_pool_config: PostgreSQLConfig | None = None
 
 
-def get_core() -> PostgreSQLCore:
-    """Get the global PostgreSQLCore instance."""
-    global _core
-    if _core is None:
-        config = PostgreSQLConfig()
-        _core = PostgreSQLCore(config)
-    return _core
+async def _ensure_pool(config: PostgreSQLConfig) -> None:
+    """Ensure the connection pool exists (lazy initialization)."""
+    global _pool, _pool_config
+    if _pool is None or _pool_config != config:
+        from asyncpg import create_pool
+        _pool = await create_pool(
+            dsn=str(config.dsn),
+            min_size=1,
+            max_size=config.pool_size,
+            command_timeout=config.query_timeout,
+        )
+        _pool_config = config
 
 
-@asynccontextmanager
-async def lifespan(app: FastMCP) -> AsyncIterator[None]:
-    """Application lifespan handler for startup/shutdown."""
-    global _core
-    config = PostgreSQLConfig()
-    _core = PostgreSQLCore(config)
-    await _core.initialize()
-    logger.info("postgresql_mcp_started", pool_size=config.pool_size, read_only=config.read_only)
-    try:
-        yield
-    finally:
-        if _core:
-            await _core.close()
-            logger.info("postgresql_mcp_stopped")
+def create_core(config: PostgreSQLConfig | None = None) -> PostgreSQLCore:
+    """Create a PostgreSQLCore instance with shared pool (stateless - no session state)."""
+    config = config or PostgreSQLConfig()
+    core = PostgreSQLCore(config)
+    return core
 
 
-# Create FastMCP app with lifespan
-mcp = FastMCP("PostgreSQL MCP Server", lifespan=lifespan)
+async def _get_core(config: PostgreSQLConfig | None = None) -> PostgreSQLCore:
+    """Get a fresh core instance with initialized pool."""
+    config = config or PostgreSQLConfig()
+    await _ensure_pool(config)
+    core = create_core(config)
+    core.pool = _pool
+    return core
+
+
+# Create FastMCP app (no lifespan - stateless)
+mcp = FastMCP("PostgreSQL MCP Server")
 
 
 @mcp.tool()
@@ -97,10 +95,8 @@ async def query(sql: str, params: list[Any] | None = None) -> dict[str, Any]:
         query("SELECT * FROM users WHERE id = $1", [1])
         query("SELECT * FROM users WHERE name ILIKE $1", ["%john%"])
     """
-    core = get_core()
-    request = QueryRequest(sql=sql, params=params)
-    response = await core.query(request)
-    return response.model_dump()
+    core = await _get_core()
+    return await core.query(sql, params)
 
 
 @mcp.tool()
@@ -122,10 +118,8 @@ async def execute(sql: str, params: list[Any] | None = None) -> dict[str, Any]:
         execute("UPDATE users SET name = $1 WHERE id = $2", ["Jane", 1])
         execute("DELETE FROM users WHERE id = $1", [1])
     """
-    core = get_core()
-    request = ExecuteRequest(sql=sql, params=params)
-    response = await core.execute(request)
-    return response.model_dump()
+    core = await _get_core()
+    return await core.execute(sql, params)
 
 
 @mcp.tool()
@@ -142,10 +136,9 @@ async def list_tables(schema: str = "public") -> dict[str, Any]:
         list_tables("public")
         list_tables("information_schema")
     """
-    core = get_core()
-    request = ListTablesRequest(schema_name=schema)
-    response = await core.list_tables(request)
-    return response.model_dump()
+    core = await _get_core()
+    tables = await core.list_tables(schema)
+    return {"tables": tables, "schema_name": schema}
 
 
 @mcp.tool()
@@ -163,10 +156,8 @@ async def describe_table(table: str, schema: str = "public") -> dict[str, Any]:
         describe_table("users")
         describe_table("orders", "sales")
     """
-    core = get_core()
-    request = DescribeTableRequest(table=table, schema_name=schema)
-    response = await core.describe_table(request)
-    return response.model_dump()
+    core = await _get_core()
+    return await core.describe_table(table, schema)
 
 
 @mcp.tool()
@@ -185,10 +176,8 @@ async def run_migration(sql: str) -> dict[str, Any]:
     Example:
         run_migration("CREATE TABLE test (id SERIAL PRIMARY KEY, name TEXT); CREATE INDEX idx_test_name ON test(name);")
     """
-    core = get_core()
-    request = RunMigrationRequest(sql=sql)
-    response = await core.run_migration(request)
-    return response.model_dump()
+    core = await _get_core()
+    return await core.run_migration(sql)
 
 
 @mcp.tool()
@@ -206,10 +195,8 @@ async def explain_analyze(sql: str, params: list[Any] | None = None) -> dict[str
         explain_analyze("SELECT * FROM users WHERE id = $1", [1])
         explain_analyze("SELECT * FROM users WHERE name ILIKE $1", ["%john%"])
     """
-    core = get_core()
-    request = ExplainAnalyzeRequest(sql=sql, params=params)
-    response = await core.explain_analyze(request)
-    return response.model_dump()
+    core = await _get_core()
+    return await core.explain_analyze(sql, params)
 
 
 def main() -> None:
