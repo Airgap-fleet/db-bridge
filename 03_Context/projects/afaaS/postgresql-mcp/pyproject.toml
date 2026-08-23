@@ -50,7 +50,7 @@ packages = ["src/postgresql_mcp"]
 line-length = 100
 target-version = "py311"
 select = ["E", "F", "I", "UP", "W", "C4", "PT", "PTH", "SIM", "T10", "ARG", "RUF"]
-ignore = ["S101", "PTH123", "ARG001", "ARG002", "T1002"]
+ignore = ["S101", "PTH123", "ARG001", "ARG002"]
 fixable = ["F", "I", "UP", "W", "C4", "PT", "PTH", "SIM", "ARG", "RUF"]
 unfixable = ["E", "T10", "S101"]
 
