@@ -6,7 +6,7 @@ FastMCP imports should NOT be present in this module for testability.
 
 import time
 import logging
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 
 from asyncpg import Pool
 from pydantic import PostgresDsn
@@ -51,7 +51,7 @@ class PostgreSQLCore:
 
     # --- Methods expected by tests (backward compatible names) ---
 
-    async def execute_query(self, sql: str, params: Optional[List[Any]] = None) -> Dict:
+    async def execute_query(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
         """Execute a SELECT query and return results with timing."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")
@@ -77,7 +77,7 @@ class PostgreSQLCore:
                 logger.error(f"Query execution failed: {e}")
                 raise
 
-    async def execute_dml(self, sql: str, params: Optional[List[Any]] = None) -> Dict:
+    async def execute_dml(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
         """Execute a DML (INSERT, UPDATE, DELETE) statement with timing."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")
@@ -104,11 +104,11 @@ class PostgreSQLCore:
 
     # --- New API methods (used by server.py tools) ---
 
-    async def query(self, sql: str, params: Optional[List[Any]] = None) -> Dict:
+    async def query(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
         """Execute a parameterized SELECT query and return rows (new API)."""
         return await self.execute_query(sql, params)
 
-    async def execute(self, sql: str, params: Optional[List[Any]] = None) -> Dict:
+    async def execute(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
         """Execute a parameterized INSERT, UPDATE, or DELETE statement (new API)."""
         return await self.execute_dml(sql, params)
 
@@ -124,7 +124,7 @@ class PostgreSQLCore:
         result = await self.execute_query(sql, [schema_name])
         return [row["table_name"] for row in result["rows"]]
 
-    async def describe_table(self, table: str, schema: str = "public") -> Dict:
+    async def describe_table(self, table: str, schema: str = "public") -> Dict[str, Any]:
         """Get detailed information about a table."""
         # Get column information
         columns_sql = """
@@ -240,7 +240,7 @@ class PostgreSQLCore:
             "constraints": constraints,
         }
 
-    async def run_migration(self, sql: str) -> Dict:
+    async def run_migration(self, sql: str) -> Dict[str, Any]:
         """Run a database migration (DDL statements)."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")
@@ -274,7 +274,7 @@ class PostgreSQLCore:
                     "statements_executed": 0,
                 }
 
-    async def explain_analyze(self, sql: str, params: Optional[List[Any]] = None) -> Dict:
+    async def explain_analyze(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
         """Execute EXPLAIN ANALYZE on a query."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")

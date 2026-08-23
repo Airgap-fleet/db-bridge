@@ -221,9 +221,8 @@ class ConstraintInfo(BaseModel):
 class DescribeTableRequest(BaseModel):
     """Request for describing a table."""
 
-
     table: str = Field(..., min_length=1, description="Table name to describe")
-    schema: str = Field(default="public", min_length=1, description="Schema name")
+    schema_name: str = Field(default="public", min_length=1, description="Schema name", alias="schema")
 
 
 
