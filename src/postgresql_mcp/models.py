@@ -222,7 +222,7 @@ class DescribeTableRequest(BaseModel):
     """Request for describing a table."""
 
     table: str = Field(..., min_length=1, description="Table name to describe")
-    schema_name: str = Field(default="public", min_length=1, description="Schema name", alias="schema")
+    schema_: str = Field(default="public", min_length=1, description="Schema name", alias="schema")
 
 
 
@@ -235,7 +235,7 @@ class DescribeTableResponse(BaseModel):
 
 
     table: str
-    schema_name: str = Field(..., alias="schema")
+    schema_: str = Field(..., alias="schema")
     columns: list[ColumnInfo]
     indexes: list[IndexInfo] = Field(default_factory=list)
     constraints: list[ConstraintInfo] = Field(default_factory=list)

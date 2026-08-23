@@ -155,14 +155,14 @@ class TestDescribeTableModels:
 
     def test_describe_table_request(self):
         """Test DescribeTableRequest model."""
-        request = DescribeTableRequest(table="users", schema_name="public")
+        request = DescribeTableRequest(table="users", schema_="public")
         assert request.table == "users"
-        assert request.schema_name == "public"
+        assert request.schema_ == "public"
 
     def test_describe_table_request_default_schema(self):
         """Test DescribeTableRequest with default schema."""
         request = DescribeTableRequest(table="users")
-        assert request.schema_name == "public"
+        assert request.schema_ == "public"
 
     def test_column_info(self):
         """Test ColumnInfo model."""
@@ -300,7 +300,7 @@ class TestModelSerialization:
             """Test DescribeTableResponse JSON serialization roundtrip."""
             original = DescribeTableResponse(
                 table="users",
-                schema="public",
+                schema_="public",
                 columns=[
                     ColumnInfo(name="id", data_type="integer", is_nullable=False, is_primary_key=True),
                 ],
