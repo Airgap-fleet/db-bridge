@@ -155,14 +155,14 @@ class TestDescribeTableModels:
 
     def test_describe_table_request(self):
         """Test DescribeTableRequest model."""
-        request = DescribeTableRequest(table="users", schema="public")
+        request = DescribeTableRequest(table="users", schema_name="public")
         assert request.table == "users"
-        assert request.schema == "public"
+        assert request.schema_name == "public"
 
     def test_describe_table_request_default_schema(self):
         """Test DescribeTableRequest with default schema."""
         request = DescribeTableRequest(table="users")
-        assert request.schema == "public"
+        assert request.schema_name == "public"
 
     def test_column_info(self):
         """Test ColumnInfo model."""
