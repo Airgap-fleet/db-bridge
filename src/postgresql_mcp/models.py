@@ -232,6 +232,7 @@ class DescribeTableRequest(BaseModel):
 
 class DescribeTableResponse(BaseModel):
     """Response for describing a table."""
+    model_config = ConfigDict(populate_by_name=True)
 
 
     table: str
