@@ -8,8 +8,8 @@ import time
 import logging
 from typing import Any, Dict, List, Optional, Union
 
-from asyncpg import Pool
-from pydantic import PostgresDsn
+from asyncpg import Pool  # type: ignore[import-untyped]
+from pydantic import PostgresDsn  # type: ignore[import-untyped]
 
 from postgresql_mcp.models import PostgreSQLConfig
 
@@ -248,7 +248,7 @@ class PostgreSQLCore:
         async with self.pool.acquire() as conn:
             try:
                 statements_executed = 0
-                execution_time_ms = 0
+                execution_time_ms: float = 0.0
 
                 # Split SQL by semicolons and execute each statement
                 statements = [stmt.strip() for stmt in sql.split(";") if stmt.strip()]

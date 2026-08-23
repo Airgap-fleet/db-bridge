@@ -235,7 +235,7 @@ class DescribeTableResponse(BaseModel):
 
 
     table: str
-    schema: str
+    schema_name: str = Field(..., alias="schema")
     columns: list[ColumnInfo]
     indexes: list[IndexInfo] = Field(default_factory=list)
     constraints: list[ConstraintInfo] = Field(default_factory=list)
