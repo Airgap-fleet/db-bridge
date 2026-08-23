@@ -297,19 +297,19 @@ class TestModelSerialization:
         assert restored.params == original.params
 
     def test_describe_table_response_json_roundtrip(self):
-        """Test DescribeTableResponse JSON serialization roundtrip."""
-        original = DescribeTableResponse(
-            table="users",
-            schema="public",
-            columns=[
-                ColumnInfo(name="id", data_type="integer", is_nullable=False, is_primary_key=True),
-            ],
-        )
-        json_data = original.model_dump()
-        restored = DescribeTableResponse(**json_data)
-        assert restored.table == original.table
-        assert len(restored.columns) == 1
-        assert restored.columns[0].name == "id"
+            """Test DescribeTableResponse JSON serialization roundtrip."""
+            original = DescribeTableResponse(
+                table="users",
+                schema="public",
+                columns=[
+                    ColumnInfo(name="id", data_type="integer", is_nullable=False, is_primary_key=True),
+                ],
+            )
+            json_data = original.model_dump(by_alias=True)
+            restored = DescribeTableResponse(**json_data)
+            assert restored.table == original.table
+            assert len(restored.columns) == 1
+            assert restored.columns[0].name == "id"
 
     def test_config_env_parsing(self, monkeypatch):
         """Test PostgreSQLConfig parsing from environment variables."""
