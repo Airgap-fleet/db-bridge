@@ -10,103 +10,103 @@ on:
 
 jobs:
   lint:
-      name: Lint (ruff)
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
+    name: Lint (ruff)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        - name: Set up Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: "3.12"
-            cache: "pip"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
 
-        - name: Install dependencies
-          run: |
-            pip install -U pip
-            pip install ruff
+      - name: Install dependencies
+        run: |
+          pip install -U pip
+          pip install ruff
 
-        - name: Run ruff check
-          run: ruff check postgresql-mcp
+      - name: Run ruff check
+        run: ruff check postgresql-mcp
 
-        - name: Run ruff format check
-          run: ruff format --check postgresql-mcp
+      - name: Run ruff format check
+        run: ruff format --check postgresql-mcp
 
   typecheck:
-      name: Type Check (mypy)
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
+    name: Type Check (mypy)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        - name: Set up Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: "3.12"
-            cache: "pip"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
 
-        - name: Install dependencies
-          run: |
-            pip install -U pip
-            pip install -e "postgresql-mcp[dev]"
+      - name: Install dependencies
+        run: |
+          pip install -U pip
+          pip install -e ./postgresql-mcp[dev]
 
-        - name: Run mypy
-          run: mypy postgresql-mcp/src/postgresql_mcp
+      - name: Run mypy
+        run: mypy postgresql-mcp/src/postgresql_mcp
 
   test:
-      name: Test (pytest)
-      runs-on: ubuntu-latest
-      services:
-        postgres:
-          image: postgres:16-alpine
-          env:
-            POSTGRES_USER: postgres
-            POSTGRES_PASSWORD: postgres
-            POSTGRES_DB: postgres
-          ports:
-            - 5432:5432
-          options: >-
-            --health-cmd "pg_isready -U postgres"
-            --health-interval 5s
-            --health-timeout 5s
-            --health-retries 10
-      env:
-        DB_BRIDGE_TEST_DSN: postgresql://postgres:***@localhost:5432/postgres
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
+    name: Test (pytest)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DB_BRIDGE_TEST_DSN: postgresql://postgres:***@localhost:5432/postgres
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        - name: Set up Python
-          uses: actions/setup-python@v5
-          with:
-            python-version: "3.12"
-            cache: "pip"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
 
-        - name: Install dependencies
-          run: |
-            pip install -U pip
-            pip install -e "postgresql-mcp[dev]"
+      - name: Install dependencies
+        run: |
+          pip install -U pip
+          pip install -e ./postgresql-mcp[dev]
 
-        - name: Wait for PostgreSQL
-          run: |
-            for i in {1..30}; do
-              if pg_isready -h localhost -p 5432 -U postgres; then
-                echo "PostgreSQL is ready"
-                break
-              fi
-              sleep 1
-            done
+      - name: Wait for PostgreSQL
+        run: |
+          for i in {1..30}; do
+            if pg_isready -h localhost -p 5432 -U postgres; then
+              echo "PostgreSQL is ready"
+              break
+            fi
+            sleep 1
+          done
 
-        - name: Run tests
-          run: pytest postgresql-mcp/tests --cov=postgresql_mcp --cov-report=xml --cov-report=term-missing
+      - name: Run tests
+        run: pytest postgresql-mcp/tests --cov=postgresql_mcp --cov-report=xml --cov-report=term-missing
 
-        - name: Upload coverage
-          uses: codecov/codecov-action@v4
-          with:
-            files: ./coverage.xml
-            fail_ci_if_error: true
-            name: db-bridge-coverage
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage.xml
+          fail_ci_if_error: true
+          name: db-bridge-coverage
 
   build:
     name: Build Package
