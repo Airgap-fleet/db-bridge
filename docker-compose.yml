@@ -1,0 +1,72 @@
+version: "3.8"
+
+services:
+  postgresql:
+    image: postgres:16-alpine
+    container_name: db-bridge-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - db-bridge-network
+
+  db-bridge:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: db-bridge-server
+    environment:
+      DB_BRIDGE_DSN: postgresql://postgres:postgres@postgresql:5432/postgres
+      DB_BRIDGE_POOL_SIZE: 10
+      DB_BRIDGE_READ_ONLY: "false"
+      DB_BRIDGE_QUERY_TIMEOUT: 30
+      DB_BRIDGE_LOG_LEVEL: INFO
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    stdin_open: true
+    tty: true
+    networks:
+      - db-bridge-network
+
+  # Development override - run with local source code mounted
+  db-bridge-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    container_name: db-bridge-dev
+    command: uv run db-bridge
+    environment:
+      DB_BRIDGE_DSN: postgresql://postgres:postgres@postgresql:5432/postgres
+      DB_BRIDGE_POOL_SIZE: 10
+      DB_BRIDGE_READ_ONLY: "false"
+      DB_BRIDGE_QUERY_TIMEOUT: 30
+      DB_BRIDGE_LOG_LEVEL: DEBUG
+    volumes:
+      - ./src:/app/src
+      - ./pyproject.toml:/app/pyproject.toml
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    stdin_open: true
+    tty: true
+    networks:
+      - db-bridge-network
+
+volumes:
+  postgresql_data:
+
+networks:
+  db-bridge-network:
+    driver: bridge

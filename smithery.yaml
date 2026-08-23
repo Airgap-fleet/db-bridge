@@ -1,0 +1,45 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+startCommand:
+  type: stdio
+configSchema:
+  type: object
+  required:
+    - dsn
+  properties:
+    dsn:
+      type: string
+      description: "PostgreSQL connection string (required). Format: postgresql://user:pass@host:port/db"
+    read_only:
+      type: boolean
+      default: false
+      description: "Enable read-only mode (no write/migration operations)"
+    api_key:
+      type: string
+      description: "Optional API key for authentication (HTTP/SSE transports)"
+      default: ""
+    log_level:
+      type: string
+      enum: ["DEBUG", "INFO", "WARNING", "ERROR"]
+      default: "INFO"
+      description: "Logging level"
+    pool_size:
+      type: integer
+      default: 0
+      description: "Connection pool size (0 = stateless, new connection per request)"
+    pool_timeout:
+      type: integer
+      default: 30
+      description: "Connection pool timeout in seconds"
+commandFunction: |
+  (config) => ({
+    "command": "python",
+    "args": ["-m", "postgresql_mcp.server"],
+    "env": {
+      "DB_BRIDGE_DSN": config.dsn,
+      "DB_BRIDGE_READ_ONLY": String(config.read_only),
+      "DB_BRIDGE_API_KEY": config.api_key,
+      "DB_BRIDGE_LOG_LEVEL": config.log_level,
+      "DB_BRIDGE_POOL_SIZE": String(config.pool_size),
+      "DB_BRIDGE_POOL_TIMEOUT": String(config.pool_timeout)
+    }
+  })

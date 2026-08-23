@@ -1,0 +1,77 @@
+{
+  "dxt_version": "0.1",
+  "name": "db-bridge",
+  "display_name": "DB Bridge",
+  "version": "1.0.0",
+  "description": "PostgreSQL database operations for AI agents — query, execute, migrations, and EXPLAIN ANALYZE via FastMCP. Air-gapped, local-first, production-ready.",
+  "long_description": "DB Bridge provides secure, local-only database access for AI agents. Built for regulated industries (finance, legal, marine) where data never leaves your infrastructure.\n\nFeatures:\n- Parameterized SELECT queries with result sets\n- DML execution (INSERT/UPDATE/DELETE) with row counts\n- Schema inspection: list tables, describe columns/indexes/constraints\n- Migration runner for schema changes\n- EXPLAIN ANALYZE for query optimization\n- Connection pooling (asyncpg) with configurable limits\n- Structured JSON logging via structlog\n- API key authentication for remote access\n- Multiple transports: stdio (default), SSE, Streamable HTTP\n- Runs on commodity hardware (AMD/DirectML optimized)\n- Zero cloud dependencies — fully air-gapped",
+  "author": {
+    "name": "AFaaS",
+    "email": "mcp@afaas.co.uk",
+    "url": "https://github.com/airgap-fleet/db-bridge"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/airgap-fleet/db-bridge"
+  },
+  "homepage": "https://github.com/airgap-fleet/db-bridge",
+  "icon": "icon.png",
+  "screenshots": [],
+  "categories": ["developer-tools", "database", "data-analysis"],
+  "keywords": ["postgresql", "mcp", "database", "sql", "local-first", "air-gapped", "analytics"],
+  "mcp": {
+    "server": {
+      "command": "db-bridge",
+      "args": [],
+      "env": {
+        "DB_BRIDGE_DSN": {
+          "type": "string",
+          "description": "PostgreSQL connection string (postgresql://user:***@host:port/db)",
+          "required": true
+        },
+        "DB_BRIDGE_TRANSPORT": {
+          "type": "string",
+          "description": "Transport protocol: stdio, sse, or streamable-http",
+          "default": "stdio",
+          "enum": ["stdio", "sse", "streamable-http"]
+        },
+        "DB_BRIDGE_API_KEY": {
+          "type": "string",
+          "description": "API key for SSE/HTTP authentication (required for non-stdio transports)",
+          "required": false
+        },
+        "DB_BRIDGE_LOG_LEVEL": {
+          "type": "string",
+          "description": "Logging level",
+          "default": "INFO",
+          "enum": ["DEBUG", "INFO", "WARNING", "ERROR"]
+        },
+        "DB_BRIDGE_POOL_MIN_SIZE": {
+          "type": "number",
+          "description": "Minimum connection pool size",
+          "default": 1
+        },
+        "DB_BRIDGE_POOL_MAX_SIZE": {
+          "type": "number",
+          "description": "Maximum connection pool size",
+          "default": 10
+        },
+        "DB_BRIDGE_QUERY_TIMEOUT": {
+          "type": "number",
+          "description": "Query timeout in seconds",
+          "default": 30
+        }
+      }
+    }
+  },
+  "runtime": {
+    "type": "python",
+    "version": ">=3.11",
+    "pip_packages": ["db-bridge==1.0.0"]
+  },
+  "compatibility": {
+    "claude_desktop": ">=0.8.0",
+    "platforms": ["darwin", "win32", "linux"]
+  }
+}
