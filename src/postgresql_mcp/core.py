@@ -8,7 +8,7 @@ import time
 import logging
 from typing import Any, Dict, List, Optional, Union
 
-from asyncpg import Pool
+from asyncpg import Pool  # type: ignore[import-untyped]
 from pydantic import PostgresDsn
 
 from postgresql_mcp.models import PostgreSQLConfig
