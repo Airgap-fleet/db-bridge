@@ -51,6 +51,7 @@ async def _ensure_pool(config: PostgreSQLConfig) -> None:
     global _pool, _pool_config
     if _pool is None or _pool_config != config:
         from asyncpg import create_pool  # type: ignore[import-untyped]
+
         _pool = await create_pool(
             dsn=str(config.dsn),
             min_size=1,
