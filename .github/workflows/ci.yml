@@ -28,10 +28,10 @@ jobs:
           pip install ruff
 
       - name: Run ruff check
-        run: ruff check postgresql-mcp
+        run: ruff check postgresql-mcp/src/postgresql_mcp
 
       - name: Run ruff format check
-        run: ruff format --check postgresql-mcp
+        run: ruff format --check postgresql-mcp/src/postgresql_mcp
 
   typecheck:
     name: Type Check (mypy)
