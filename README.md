@@ -2,16 +2,16 @@
 
 Bridge your AI assistant to PostgreSQL databases — query, execute, migrate, and analyze without cloud dependencies.
 
-## Quick Start (uvx — no install needed)
+## Features
 
-```bash
-uvx db-bridge
-# Then set DB_BRIDGE_DSN env var or pass via MCP config
-```
+- **6 Database Tools**: Query, Execute, List Tables, Describe Table, Run Migration, Explain Analyze
+- **Security First**: Parameterized queries only, read-only mode, connection pooling, audit logging
+- **Production Ready**: Async connection pooling, configurable timeouts, structured logging
+- **Developer Experience**: Type-safe Pydantic models, comprehensive tests, MCP Inspector compatible
 
 ## Installation
 
-### From PyPI
+### From PyPI (when published)
 ```bash
 pip install db-bridge
 ```
@@ -59,9 +59,6 @@ Add to your MCP client configuration (Claude Desktop, Cursor, VS Code, etc.):
   }
 }
 ```
-
-### DXT (Claude Desktop 1-Click)
-Download `db-bridge-1.0.0.dxt` from [Releases](https://github.com/airgap-fleet/db-bridge/releases) → drag into Claude Desktop.
 
 ## Configuration
 
@@ -173,15 +170,6 @@ All operations are logged with structured JSON including:
 - Execution time
 - Row counts affected
 - Error details (if any)
-
-## Why DB Bridge?
-
-- **Local-first** — Your data never leaves your machine
-- **Air-gapped ready** — No cloud dependencies, works offline
-- **Security hardened** — Parameterized queries only, read-only mode, connection pooling, audit logging
-- **Multiple transports** — stdio, SSE, Streamable HTTP
-- **Production ready** — Async connection pooling, configurable timeouts, structured logging
-- **uvx compatible** — Zero-install usage like the competition
 
 ## Development
 

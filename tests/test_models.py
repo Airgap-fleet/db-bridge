@@ -155,14 +155,14 @@ class TestDescribeTableModels:
 
     def test_describe_table_request(self):
         """Test DescribeTableRequest model."""
-        request = DescribeTableRequest(table="users", schema_="public")
+        request = DescribeTableRequest(table="users", schema="public")
         assert request.table == "users"
-        assert request.schema_ == "public"
+        assert request.schema == "public"
 
     def test_describe_table_request_default_schema(self):
         """Test DescribeTableRequest with default schema."""
         request = DescribeTableRequest(table="users")
-        assert request.schema_ == "public"
+        assert request.schema == "public"
 
     def test_column_info(self):
         """Test ColumnInfo model."""
@@ -297,19 +297,19 @@ class TestModelSerialization:
         assert restored.params == original.params
 
     def test_describe_table_response_json_roundtrip(self):
-            """Test DescribeTableResponse JSON serialization roundtrip."""
-            original = DescribeTableResponse(
-                table="users",
-                schema_="public",
-                columns=[
-                    ColumnInfo(name="id", data_type="integer", is_nullable=False, is_primary_key=True),
-                ],
-            )
-            json_data = original.model_dump(by_alias=True)
-            restored = DescribeTableResponse(**json_data)
-            assert restored.table == original.table
-            assert len(restored.columns) == 1
-            assert restored.columns[0].name == "id"
+        """Test DescribeTableResponse JSON serialization roundtrip."""
+        original = DescribeTableResponse(
+            table="users",
+            schema="public",
+            columns=[
+                ColumnInfo(name="id", data_type="integer", is_nullable=False, is_primary_key=True),
+            ],
+        )
+        json_data = original.model_dump()
+        restored = DescribeTableResponse(**json_data)
+        assert restored.table == original.table
+        assert len(restored.columns) == 1
+        assert restored.columns[0].name == "id"
 
     def test_config_env_parsing(self, monkeypatch):
         """Test PostgreSQLConfig parsing from environment variables."""

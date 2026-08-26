@@ -50,8 +50,7 @@ async def _ensure_pool(config: PostgreSQLConfig) -> None:
     """Ensure the connection pool exists (lazy initialization)."""
     global _pool, _pool_config
     if _pool is None or _pool_config != config:
-        from asyncpg import create_pool  # type: ignore[import-untyped]
-
+        from asyncpg import create_pool
         _pool = await create_pool(
             dsn=str(config.dsn),
             min_size=1,
@@ -175,10 +174,7 @@ async def run_migration(sql: str) -> dict[str, Any]:
         Error if server is in read-only mode
 
     Example:
-        run_migration(
-            "CREATE TABLE test (id SERIAL PRIMARY KEY, name TEXT); "
-            "CREATE INDEX idx_test_name ON test(name);"
-        )
+        run_migration("CREATE TABLE test (id SERIAL PRIMARY KEY, name TEXT); CREATE INDEX idx_test_name ON test(name);")
     """
     core = await _get_core()
     return await core.run_migration(sql)

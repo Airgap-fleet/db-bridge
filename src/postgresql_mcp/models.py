@@ -1,5 +1,6 @@
 """Pydantic models for PostgreSQL MCP Server tools and configuration."""
 
+
 from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field, PostgresDsn
@@ -9,12 +10,14 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class PostgreSQLConfig(BaseSettings):
     """Configuration for PostgreSQL MCP Server."""
 
+
     model_config = SettingsConfigDict(
         env_prefix="POSTGRESQL_MCP_",
         env_file=".env",
         env_file_encoding="utf-8",
         extra="ignore",
     )
+
 
     dsn: PostgresDsn = Field(
         default=PostgresDsn("postgresql://postgres:***@localhost:5432/postgres"),
@@ -48,6 +51,7 @@ class PostgreSQLConfig(BaseSettings):
 
 class QueryRequest(BaseModel):
     """Request for parameterized SELECT query."""
+
 
     sql: str = Field(
         ...,
@@ -87,8 +91,11 @@ class QueryResponse(BaseModel):
     )
 
 
+
+
 class ExecuteRequest(BaseModel):
     """Request for parameterized INSERT, UPDATE, DELETE statement."""
+
 
     sql: str = Field(
         ...,
@@ -100,6 +107,8 @@ class ExecuteRequest(BaseModel):
         default=None,
         description="Optional list of statement parameters",
     )
+
+
 
 
 class ExecuteResponse(BaseModel):
@@ -118,8 +127,12 @@ class ExecuteResponse(BaseModel):
     )
 
 
+
+
+
 class ListTablesRequest(BaseModel):
     """Request for listing tables in a schema."""
+
 
     schema_name: str = Field(
         default="public",
@@ -128,8 +141,13 @@ class ListTablesRequest(BaseModel):
     )
 
 
+
+
+
+
 class ListTablesResponse(BaseModel):
     """Response for listing tables."""
+
 
     tables: list[str] = Field(
         default_factory=list,
@@ -142,8 +160,12 @@ class ListTablesResponse(BaseModel):
     )
 
 
+
+
+
 class ColumnInfo(BaseModel):
     """Information about a table column."""
+
 
     name: str
     data_type: str
@@ -156,13 +178,23 @@ class ColumnInfo(BaseModel):
     is_unique: bool = False
 
 
+
+
+
+
 class IndexInfo(BaseModel):
     """Information about a table index."""
+
 
     name: str
     columns: list[str]
     is_unique: bool
     is_primary: bool = False
+
+
+
+
+
 
 
 class ConstraintInfo(BaseModel):
@@ -180,27 +212,45 @@ class ConstraintInfo(BaseModel):
         return self.constraint_type
 
 
+
+
+
+
+
+
 class DescribeTableRequest(BaseModel):
     """Request for describing a table."""
 
+
     table: str = Field(..., min_length=1, description="Table name to describe")
-    schema_: str = Field(default="public", min_length=1, description="Schema name", alias="schema")
+    schema: str = Field(default="public", min_length=1, description="Schema name")
+
+
+
+
+
 
 
 class DescribeTableResponse(BaseModel):
     """Response for describing a table."""
 
-    model_config = ConfigDict(populate_by_name=True)
 
     table: str
-    schema_: str = Field(..., alias="schema")
+    schema: str
     columns: list[ColumnInfo]
     indexes: list[IndexInfo] = Field(default_factory=list)
     constraints: list[ConstraintInfo] = Field(default_factory=list)
 
 
+
+
+
+
+
+
 class RunMigrationRequest(BaseModel):
     """Request for running a database migration."""
+
 
     sql: str = Field(
         ...,
@@ -209,16 +259,31 @@ class RunMigrationRequest(BaseModel):
     )
 
 
+
+
+
+
+
+
 class RunMigrationResponse(BaseModel):
     """Response for running a migration."""
+
 
     success: bool
     execution_time_ms: float
     statements_executed: int
 
 
+
+
+
+
+
+
+
 class ExplainAnalyzeRequest(BaseModel):
     """Request for query execution plan with costs."""
+
 
     sql: str = Field(
         ...,
@@ -232,8 +297,16 @@ class ExplainAnalyzeRequest(BaseModel):
     )
 
 
+
+
+
+
+
+
+
 class ExplainAnalyzeResponse(BaseModel):
     """Response for EXPLAIN ANALYZE."""
+
 
     plan: list[dict[str, Any]] = Field(
         default_factory=list,
