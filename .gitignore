@@ -1,16 +1,44 @@
-# Obsidian vault
-.obsidian/
-
-# Git
-.git/
-
-# Secrets
-00_Master/secrets.md
-
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Test artifacts
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# Type checking
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Build artifacts
+*.dxt
+*.lock
+
+# Environment
+.env
+.env.*
