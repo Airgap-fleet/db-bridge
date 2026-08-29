@@ -52,7 +52,7 @@ class TestPostgreSQLConfig:
     def test_custom_config(self):
         """Test custom configuration values."""
         config = PostgreSQLConfig(
-            dsn="postgresql://user:password@host:5432/db",
+            dsn="postgresql://user:***@host:5432/db",
             pool_size=20,
             read_only=True,
             query_timeout=60.0,
@@ -134,20 +134,20 @@ class TestListTablesModels:
     """Tests for ListTables request/response models."""
 
     def test_list_tables_request_default(self):
-            """Test ListTablesRequest with default schema."""
-            request = ListTablesRequest()
-            assert request.schema_name == "public"
+        """Test ListTablesRequest with default schema."""
+        request = ListTablesRequest()
+        assert request.schema_name == "public"
 
     def test_list_tables_request_custom_schema(self):
-                """Test ListTablesRequest with custom schema."""
-                request = ListTablesRequest(schema_name="sales")
-                assert request.schema_name == "sales"
+        """Test ListTablesRequest with custom schema."""
+        request = ListTablesRequest(schema_name="sales")
+        assert request.schema_name == "sales"
 
     def test_list_tables_response(self):
-            """Test ListTablesResponse model."""
-            response = ListTablesResponse(tables=["users", "orders"], schema_name="public")
-            assert response.tables == ["users", "orders"]
-            assert response.schema_name == "public"
+        """Test ListTablesResponse model."""
+        response = ListTablesResponse(tables=["users", "orders"], schema_name="public", table_count=2)
+        assert response.tables == ["users", "orders"]
+        assert response.schema_name == "public"
 
 
 class TestDescribeTableModels:
@@ -157,12 +157,12 @@ class TestDescribeTableModels:
         """Test DescribeTableRequest model."""
         request = DescribeTableRequest(table="users", schema="public")
         assert request.table == "users"
-        assert request.schema == "public"
+        assert request.schema_name == "public"
 
     def test_describe_table_request_default_schema(self):
         """Test DescribeTableRequest with default schema."""
         request = DescribeTableRequest(table="users")
-        assert request.schema == "public"
+        assert request.schema_name == "public"
 
     def test_column_info(self):
         """Test ColumnInfo model."""
@@ -297,32 +297,32 @@ class TestModelSerialization:
         assert restored.params == original.params
 
     def test_describe_table_response_json_roundtrip(self):
-        """Test DescribeTableResponse JSON serialization roundtrip."""
-        original = DescribeTableResponse(
-            table="users",
-            schema="public",
-            columns=[
-                ColumnInfo(name="id", data_type="integer", is_nullable=False, is_primary_key=True),
-            ],
-        )
-        json_data = original.model_dump()
-        restored = DescribeTableResponse(**json_data)
-        assert restored.table == original.table
-        assert len(restored.columns) == 1
-        assert restored.columns[0].name == "id"
+            """Test DescribeTableResponse JSON serialization roundtrip."""
+            original = DescribeTableResponse(
+                table="users",
+                schema="public",
+                columns=[
+                    ColumnInfo(name="id", data_type="integer", is_nullable=False, is_primary_key=True),
+                ],
+            )
+            json_data = original.model_dump(by_alias=True)
+            restored = DescribeTableResponse(**json_data)
+            assert restored.table == original.table
+            assert len(restored.columns) == 1
+            assert restored.columns[0].name == "id"
 
     def test_config_env_parsing(self, monkeypatch):
-        """Test PostgreSQLConfig parsing from environment variables."""
-        monkeypatch.setenv("POSTGRESQL_MCP_DSN", "postgresql://env:password@env:5432/env")
-        monkeypatch.setenv("POSTGRESQL_MCP_POOL_SIZE", "25")
-        monkeypatch.setenv("POSTGRESQL_MCP_READ_ONLY", "true")
-        monkeypatch.setenv("POSTGRESQL_MCP_QUERY_TIMEOUT", "45.5")
-        monkeypatch.setenv("POSTGRESQL_MCP_LOG_LEVEL", "WARNING")
+            """Test PostgreSQLConfig parsing from environment variables."""
+            monkeypatch.setenv("POSTGRES_DSN", "postgresql://env:***@env:5432/env")
+            monkeypatch.setenv("POSTGRES_POOL_SIZE", "25")
+            monkeypatch.setenv("POSTGRES_READ_ONLY", "true")
+            monkeypatch.setenv("POSTGRES_QUERY_TIMEOUT", "45.5")
+            monkeypatch.setenv("POSTGRES_LOG_LEVEL", "WARNING")
 
-        config = PostgreSQLConfig()
-        assert _parse_dsn_password(config.dsn) == "password"
-        assert str(config.dsn).startswith("postgresql://env:")
-        assert config.pool_size == 25
-        assert config.read_only is True
-        assert config.query_timeout == 45.5
-        assert config.log_level == "WARNING"
+            config = PostgreSQLConfig()
+            assert _parse_dsn_password(config.dsn) == "***"
+            assert str(config.dsn).startswith("postgresql://env:")
+            assert config.pool_size == 25
+            assert config.read_only is True
+            assert config.query_timeout == 45.5
+            assert config.log_level == "WARNING"

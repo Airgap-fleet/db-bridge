@@ -183,7 +183,7 @@ async def test_execute_query_empty_result(mock_pool):
 @pytest.mark.asyncio
 async def test_execute_dml_success(mock_pool_with_transaction):
     """Test successful DML execution."""
-    _mock_pool, mock_conn = mock_pool_with_transaction
+    mock_pool, mock_conn = mock_pool_with_transaction
 
     config = PostgreSQLConfig(
         dsn="postgresql://postgres:***@localhost:5432/postgres",

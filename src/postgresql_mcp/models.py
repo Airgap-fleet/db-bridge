@@ -1,5 +1,9 @@
-"""Pydantic models for PostgreSQL MCP Server tools and configuration."""
+"""Pydantic models for PostgreSQL MCP Server.
 
+All models follow Pydantic v2 patterns with proper validation and serialization.
+"""
+
+from __future__ import annotations
 
 from typing import Any
 
@@ -8,57 +12,33 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class PostgreSQLConfig(BaseSettings):
-    """Configuration for PostgreSQL MCP Server."""
+    """PostgreSQL connection configuration."""
 
-
-    model_config = SettingsConfigDict(
-        env_prefix="POSTGRESQL_MCP_",
-        env_file=".env",
-        env_file_encoding="utf-8",
-        extra="ignore",
-    )
-
-
-    dsn: PostgresDsn = Field(
-        default=PostgresDsn("postgresql://postgres:***@localhost:5432/postgres"),
+    dsn: str = Field(
+        default="postgresql://postgres:***@localhost:5432/postgres",
         description="PostgreSQL connection string",
     )
+    pool_size: int = Field(default=10, ge=1, le=100, description="Connection pool size")
+    read_only: bool = Field(default=False, description="Enforce read-only transactions")
+    query_timeout: float = Field(default=30.0, gt=0, le=300, description="Query timeout in seconds")
+    log_level: str = Field(default="INFO", description="Logging level")
 
-    pool_size: int = Field(
-        default=10,
-        ge=1,
-        le=100,
-        description="Connection pool size",
-    )
-
-    read_only: bool = Field(
-        default=False,
-        description="Enable read-only mode (blocks execute, run_migration)",
-    )
-
-    query_timeout: float = Field(
-        default=30.0,
-        gt=0,
-        le=300,
-        description="Query timeout in seconds",
-    )
-
-    log_level: str = Field(
-        default="INFO",
-        description="Structured logging level",
+    model_config = SettingsConfigDict(
+        env_prefix="POSTGRES_",
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
     )
 
 
 class QueryRequest(BaseModel):
-    """Request for parameterized SELECT query."""
-
+    """Request for executing a parameterized SELECT query."""
 
     sql: str = Field(
         ...,
         min_length=1,
-        description="Parameterized SELECT SQL query (use $1, $2, etc. for parameters)",
+        description="Parameterized SQL query (use $1, $2, etc. for parameters)",
     )
-
     params: list[Any] | None = Field(
         default=None,
         description="Optional list of query parameters",
@@ -66,73 +46,37 @@ class QueryRequest(BaseModel):
 
 
 class QueryResponse(BaseModel):
-    """Response for SELECT query."""
+    """Response for a SELECT query."""
 
-    rows: list[dict[str, Any]] = Field(
-        default_factory=list,
-        description="Query result rows as list of dictionaries",
-    )
-
-    row_count: int = Field(
-        ...,
-        ge=0,
-        description="Number of rows returned",
-    )
-
-    columns: list[str] = Field(
-        default_factory=list,
-        description="Column names in result",
-    )
-
-    execution_time_ms: float = Field(
-        ...,
-        ge=0,
-        description="Query execution time in milliseconds",
-    )
-
-
+    rows: list[dict[str, Any]]
+    row_count: int
+    columns: list[str]
+    execution_time_ms: float
 
 
 class ExecuteRequest(BaseModel):
-    """Request for parameterized INSERT, UPDATE, DELETE statement."""
-
+    """Request for executing a parameterized INSERT, UPDATE, or DELETE."""
 
     sql: str = Field(
         ...,
         min_length=1,
-        description="Parameterized DML SQL statement (use $1, $2, etc. for parameters)",
+        description="Parameterized SQL statement (use $1, $2, etc. for parameters)",
     )
-
     params: list[Any] | None = Field(
         default=None,
         description="Optional list of statement parameters",
     )
 
 
-
-
 class ExecuteResponse(BaseModel):
-    """Response for INSERT, UPDATE, DELETE statement."""
+    """Response for an INSERT, UPDATE, or DELETE statement."""
 
-    affected_rows: int = Field(
-        ...,
-        ge=0,
-        description="Number of rows affected",
-    )
-
-    execution_time_ms: float = Field(
-        ...,
-        ge=0,
-        description="Statement execution time in milliseconds",
-    )
-
-
-
+    affected_rows: int
+    execution_time_ms: float
 
 
 class ListTablesRequest(BaseModel):
     """Request for listing tables in a schema."""
-
 
     schema_name: str = Field(
         default="public",
@@ -141,60 +85,36 @@ class ListTablesRequest(BaseModel):
     )
 
 
-
-
-
-
 class ListTablesResponse(BaseModel):
     """Response for listing tables."""
-
 
     tables: list[str] = Field(
         default_factory=list,
         description="List of table names",
     )
-
-    schema_name: str = Field(
-        ...,
-        description="Schema name that was queried",
-    )
-
-
-
+    schema_name: str
+    table_count: int
 
 
 class ColumnInfo(BaseModel):
     """Information about a table column."""
 
-
     name: str
     data_type: str
     is_nullable: bool
-    column_default: str | None = None
-    character_maximum_length: int | None = None
-    numeric_precision: int | None = None
-    numeric_scale: int | None = None
+    default: str | None = None
     is_primary_key: bool = False
     is_unique: bool = False
-
-
-
-
 
 
 class IndexInfo(BaseModel):
     """Information about a table index."""
 
-
     name: str
     columns: list[str]
     is_unique: bool
     is_primary: bool = False
-
-
-
-
-
+    index_type: str = "btree"
 
 
 class ConstraintInfo(BaseModel):
@@ -207,50 +127,30 @@ class ConstraintInfo(BaseModel):
     referenced_columns: list[str] | None = None
 
     @property
-    def type_alias(self) -> str:
-        """Alias for constraint_type to match test expectations."""
+    def type(self) -> str:
+        """Return constraint_type for compatibility with tests."""
         return self.constraint_type
-
-
-
-
-
-
 
 
 class DescribeTableRequest(BaseModel):
     """Request for describing a table."""
 
-
     table: str = Field(..., min_length=1, description="Table name to describe")
-    schema: str = Field(default="public", min_length=1, description="Schema name")
-
-
-
-
-
+    schema_name: str = Field(default="public", min_length=1, description="Schema name", alias="schema")
 
 
 class DescribeTableResponse(BaseModel):
     """Response for describing a table."""
 
-
     table: str
-    schema: str
+    schema_name: str = Field(..., alias="schema")
     columns: list[ColumnInfo]
     indexes: list[IndexInfo] = Field(default_factory=list)
     constraints: list[ConstraintInfo] = Field(default_factory=list)
 
 
-
-
-
-
-
-
 class RunMigrationRequest(BaseModel):
     """Request for running a database migration."""
-
 
     sql: str = Field(
         ...,
@@ -259,31 +159,16 @@ class RunMigrationRequest(BaseModel):
     )
 
 
-
-
-
-
-
-
 class RunMigrationResponse(BaseModel):
     """Response for running a migration."""
-
 
     success: bool
     execution_time_ms: float
     statements_executed: int
 
 
-
-
-
-
-
-
-
 class ExplainAnalyzeRequest(BaseModel):
     """Request for query execution plan with costs."""
-
 
     sql: str = Field(
         ...,
@@ -297,30 +182,9 @@ class ExplainAnalyzeRequest(BaseModel):
     )
 
 
-
-
-
-
-
-
-
 class ExplainAnalyzeResponse(BaseModel):
     """Response for EXPLAIN ANALYZE."""
 
-
-    plan: list[dict[str, Any]] = Field(
-        default_factory=list,
-        description="Query execution plan nodes",
-    )
-
-    execution_time_ms: float = Field(
-        ...,
-        ge=0,
-        description="Query execution time in milliseconds",
-    )
-
-    planning_time_ms: float = Field(
-        ...,
-        ge=0,
-        description="Query planning time in milliseconds",
-    )
+    plan: list[dict[str, Any]]
+    execution_time_ms: float
+    planning_time_ms: float
