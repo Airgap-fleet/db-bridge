@@ -1,3 +1,0 @@
-# Original
-
-New patched content!

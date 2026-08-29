@@ -1,9 +1,0 @@
-Backtest results for GBP/USD using SMA 50/200, RSI 14, macro filter (UNRATE falling or PAYEMS rising):
-Total return: 23.46%
-Annual return: 1.18%
-Annual volatility: 3.08%
-Sharpe ratio: 0.38
-Max drawdown: -5.96%
-Win rate: 3.86%
-Number of trades: ~108
-Note: Low win rate but large average win vs loss? Further optimization needed (e.g., adjust RSI bounds, SMA lengths, add exit rules, or use intraday data).
