@@ -174,7 +174,10 @@ async def run_migration(sql: str) -> dict[str, Any]:
         Error if server is in read-only mode
 
     Example:
-        run_migration("CREATE TABLE test (id SERIAL PRIMARY KEY, name TEXT); CREATE INDEX idx_test_name ON test(name);")
+            run_migration(
+                "CREATE TABLE test (id SERIAL PRIMARY KEY, name TEXT); "
+                "CREATE INDEX idx_test_name ON test(name);"
+            )
     """
     core = await _get_core()
     return await core.run_migration(sql)

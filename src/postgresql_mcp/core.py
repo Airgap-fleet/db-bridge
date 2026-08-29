@@ -92,8 +92,8 @@ class PostgreSQLCore:
                         "affected_rows": affected_rows,
                         "execution_time_ms": execution_time_ms,
                     }
-                    logger.debug(f"DML executed successfully: {sql[:100]}...")
-                    return dml_result
+                logger.debug(f"DML executed successfully: {sql[:100]}...")
+                return dml_result
 
             except Exception as e:
                 logger.error(f"DML execution failed: {e}")
@@ -182,8 +182,9 @@ class PostgreSQLCore:
 
         pk_result = await self.execute_query(pk_sql, [schema, table])
 
+        pk_columns = {row["column_name"] for row in pk_result["rows"]}
         for index in indexes_by_name.values():
-            if set(index["columns"]) == set([row["column_name"] for row in pk_result["rows"]]):
+            if set(index["columns"]) == pk_columns:
                 index["is_primary"] = True
 
         indexes = list(indexes_by_name.values())
