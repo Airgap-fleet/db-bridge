@@ -207,7 +207,7 @@ class ConstraintInfo(BaseModel):
     referenced_columns: list[str] | None = None
 
     @property
-    def type(self) -> str:
+    def type_alias(self) -> str:
         """Alias for constraint_type to match test expectations."""
         return self.constraint_type
 

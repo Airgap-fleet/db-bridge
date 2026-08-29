@@ -8,7 +8,7 @@ import time
 import logging
 from typing import Any, Dict, List, Optional
 
-from asyncpg import Pool
+import asyncpg  # type: ignore[import-untyped]
 from pydantic import PostgresDsn
 
 from postgresql_mcp.models import PostgreSQLConfig
@@ -21,7 +21,7 @@ class PostgreSQLCore:
 
     def __init__(self, config: PostgreSQLConfig):
         self.config = config
-        self.pool: Optional[Pool] = None
+        self.pool: Optional[asyncpg.Pool] = None
 
     async def initialize(self) -> None:
         """Initialize database connection pool."""
@@ -32,11 +32,9 @@ class PostgreSQLCore:
             logger.error(f"Failed to initialize PostgreSQL pool: {e}")
             raise
 
-    async def _create_pool(self) -> Pool:
+    async def _create_pool(self) -> asyncpg.Pool:
         """Create and return a connection pool."""
-        from asyncpg import create_pool
-
-        return await create_pool(
+        return await asyncpg.create_pool(
             dsn=str(self.config.dsn),
             min_size=1,
             max_size=self.config.pool_size,
@@ -51,7 +49,7 @@ class PostgreSQLCore:
 
     # --- Methods expected by tests (backward compatible names) ---
 
-    async def execute_query(self, sql: str, params: Optional[List[Any]] = None) -> Dict:
+    async def execute_query(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
         """Execute a SELECT query and return results with timing."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")
@@ -64,7 +62,7 @@ class PostgreSQLCore:
 
                 execution_time_ms = (time.perf_counter() - start_time) * 1000
 
-                result = {
+                result: Dict[str, Any] = {
                     "rows": [dict(row) for row in rows],
                     "row_count": len(rows),
                     "columns": columns,
@@ -77,7 +75,7 @@ class PostgreSQLCore:
                 logger.error(f"Query execution failed: {e}")
                 raise
 
-    async def execute_dml(self, sql: str, params: Optional[List[Any]] = None) -> Dict:
+    async def execute_dml(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
         """Execute a DML (INSERT, UPDATE, DELETE) statement with timing."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")
@@ -91,7 +89,7 @@ class PostgreSQLCore:
 
                     execution_time_ms = (time.perf_counter() - start_time) * 1000
 
-                    dml_result = {
+                    dml_result: Dict[str, Any] = {
                         "affected_rows": affected_rows,
                         "execution_time_ms": execution_time_ms,
                     }
@@ -104,11 +102,11 @@ class PostgreSQLCore:
 
     # --- New API methods (used by server.py tools) ---
 
-    async def query(self, sql: str, params: Optional[List[Any]] = None) -> Dict:
+    async def query(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
         """Execute a parameterized SELECT query and return rows (new API)."""
         return await self.execute_query(sql, params)
 
-    async def execute(self, sql: str, params: Optional[List[Any]] = None) -> Dict:
+    async def execute(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
         """Execute a parameterized INSERT, UPDATE, or DELETE statement (new API)."""
         return await self.execute_dml(sql, params)
 
@@ -124,7 +122,7 @@ class PostgreSQLCore:
         result = await self.execute_query(sql, [schema_name])
         return [row["table_name"] for row in result["rows"]]
 
-    async def describe_table(self, table: str, schema: str = "public") -> Dict:
+    async def describe_table(self, table: str, schema: str = "public") -> Dict[str, Any]:
         """Get detailed information about a table."""
         # Get column information
         columns_sql = """
@@ -157,7 +155,7 @@ class PostgreSQLCore:
         """
 
         indexes_result = await self.execute_query(indexes_sql, [schema, table])
-        indexes_by_name = {}
+        indexes_by_name: Dict[str, Dict[str, Any]] = {}
 
         for index_row in indexes_result["rows"]:
             index_name = index_row["index_name"]
@@ -210,7 +208,7 @@ class PostgreSQLCore:
 
         constraints_result = await self.execute_query(constraints_sql, [schema, table])
 
-        constraints_by_name = {}
+        constraints_by_name: Dict[str, Dict[str, Any]] = {}
 
         for constraint_row in constraints_result["rows"]:
             constraint_name = constraint_row["constraint_name"]
@@ -240,7 +238,7 @@ class PostgreSQLCore:
             "constraints": constraints,
         }
 
-    async def run_migration(self, sql: str) -> Dict:
+    async def run_migration(self, sql: str) -> Dict[str, Any]:
         """Run a database migration (DDL statements)."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")
@@ -248,7 +246,7 @@ class PostgreSQLCore:
         async with self.pool.acquire() as conn:
             try:
                 statements_executed = 0
-                execution_time_ms = 0
+                execution_time_ms: float = 0.0
 
                 # Split SQL by semicolons and execute each statement
                 statements = [stmt.strip() for stmt in sql.split(";") if stmt.strip()]
@@ -262,7 +260,7 @@ class PostgreSQLCore:
 
                 return {
                     "success": True,
-                    "execution_time_ms": execution_time_ms,
+                    "execution_time_ms": float(execution_time_ms),
                     "statements_executed": statements_executed,
                 }
 
@@ -270,11 +268,11 @@ class PostgreSQLCore:
                 logger.error(f"Migration failed: {e}")
                 return {
                     "success": False,
-                    "execution_time_ms": 0,
+                    "execution_time_ms": 0.0,
                     "statements_executed": 0,
                 }
 
-    async def explain_analyze(self, sql: str, params: Optional[List[Any]] = None) -> Dict:
+    async def explain_analyze(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
         """Execute EXPLAIN ANALYZE on a query."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")
@@ -296,14 +294,14 @@ class PostgreSQLCore:
                 execution_time_ms = (time.perf_counter() - start_time) * 1000
 
                 # Parse the plan result
-                plan = []
+                plan: List[Dict[str, Any]] = []
                 for row in plan_result:
                     plan.append(dict(row))
 
                 return {
                     "plan": plan,
                     "execution_time_ms": execution_time_ms,
-                    "planning_time_ms": 0,
+                    "planning_time_ms": 0.0,
                 }
 
             except Exception as e:
