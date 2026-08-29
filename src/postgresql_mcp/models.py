@@ -3,7 +3,7 @@
 
 from typing import Any
 
-from pydantic import BaseModel, ConfigDict, Field, PostgresDsn
+from pydantic import BaseModel, Field, PostgresDsn
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 

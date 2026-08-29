@@ -4,12 +4,11 @@ This module contains the synchronous core functionality for PostgreSQL database 
 FastMCP imports should NOT be present in this module for testability.
 """
 
-import time
 import logging
-from typing import Any, Dict, List, Optional
+import time
+from typing import Any
 
 import asyncpg  # type: ignore[import-untyped]
-from pydantic import PostgresDsn
 
 from postgresql_mcp.models import PostgreSQLConfig
 
@@ -21,7 +20,7 @@ class PostgreSQLCore:
 
     def __init__(self, config: PostgreSQLConfig):
         self.config = config
-        self.pool: Optional[asyncpg.Pool] = None
+        self.pool: asyncpg.Pool | None = None
 
     async def initialize(self) -> None:
         """Initialize database connection pool."""
@@ -49,7 +48,7 @@ class PostgreSQLCore:
 
     # --- Methods expected by tests (backward compatible names) ---
 
-    async def execute_query(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
+    async def execute_query(self, sql: str, params: list[Any] | None = None) -> dict[str, Any]:
         """Execute a SELECT query and return results with timing."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")
@@ -62,7 +61,7 @@ class PostgreSQLCore:
 
                 execution_time_ms = (time.perf_counter() - start_time) * 1000
 
-                result: Dict[str, Any] = {
+                result: dict[str, Any] = {
                     "rows": [dict(row) for row in rows],
                     "row_count": len(rows),
                     "columns": columns,
@@ -75,7 +74,7 @@ class PostgreSQLCore:
                 logger.error(f"Query execution failed: {e}")
                 raise
 
-    async def execute_dml(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
+    async def execute_dml(self, sql: str, params: list[Any] | None = None) -> dict[str, Any]:
         """Execute a DML (INSERT, UPDATE, DELETE) statement with timing."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")
@@ -89,7 +88,7 @@ class PostgreSQLCore:
 
                     execution_time_ms = (time.perf_counter() - start_time) * 1000
 
-                    dml_result: Dict[str, Any] = {
+                    dml_result: dict[str, Any] = {
                         "affected_rows": affected_rows,
                         "execution_time_ms": execution_time_ms,
                     }
@@ -102,15 +101,15 @@ class PostgreSQLCore:
 
     # --- New API methods (used by server.py tools) ---
 
-    async def query(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
+    async def query(self, sql: str, params: list[Any] | None = None) -> dict[str, Any]:
         """Execute a parameterized SELECT query and return rows (new API)."""
         return await self.execute_query(sql, params)
 
-    async def execute(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
+    async def execute(self, sql: str, params: list[Any] | None = None) -> dict[str, Any]:
         """Execute a parameterized INSERT, UPDATE, or DELETE statement (new API)."""
         return await self.execute_dml(sql, params)
 
-    async def list_tables(self, schema_name: str = "public") -> List[str]:
+    async def list_tables(self, schema_name: str = "public") -> list[str]:
         """List all tables in a schema."""
         sql = """
         SELECT table_name
@@ -122,7 +121,7 @@ class PostgreSQLCore:
         result = await self.execute_query(sql, [schema_name])
         return [row["table_name"] for row in result["rows"]]
 
-    async def describe_table(self, table: str, schema: str = "public") -> Dict[str, Any]:
+    async def describe_table(self, table: str, schema: str = "public") -> dict[str, Any]:
         """Get detailed information about a table."""
         # Get column information
         columns_sql = """
@@ -155,7 +154,7 @@ class PostgreSQLCore:
         """
 
         indexes_result = await self.execute_query(indexes_sql, [schema, table])
-        indexes_by_name: Dict[str, Dict[str, Any]] = {}
+        indexes_by_name: dict[str, dict[str, Any]] = {}
 
         for index_row in indexes_result["rows"]:
             index_name = index_row["index_name"]
@@ -208,7 +207,7 @@ class PostgreSQLCore:
 
         constraints_result = await self.execute_query(constraints_sql, [schema, table])
 
-        constraints_by_name: Dict[str, Dict[str, Any]] = {}
+        constraints_by_name: dict[str, dict[str, Any]] = {}
 
         for constraint_row in constraints_result["rows"]:
             constraint_name = constraint_row["constraint_name"]
@@ -238,7 +237,7 @@ class PostgreSQLCore:
             "constraints": constraints,
         }
 
-    async def run_migration(self, sql: str) -> Dict[str, Any]:
+    async def run_migration(self, sql: str) -> dict[str, Any]:
         """Run a database migration (DDL statements)."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")
@@ -272,7 +271,7 @@ class PostgreSQLCore:
                     "statements_executed": 0,
                 }
 
-    async def explain_analyze(self, sql: str, params: Optional[List[Any]] = None) -> Dict[str, Any]:
+    async def explain_analyze(self, sql: str, params: list[Any] | None = None) -> dict[str, Any]:
         """Execute EXPLAIN ANALYZE on a query."""
         if not self.pool:
             raise RuntimeError("Database pool not initialized")
@@ -294,7 +293,7 @@ class PostgreSQLCore:
                 execution_time_ms = (time.perf_counter() - start_time) * 1000
 
                 # Parse the plan result
-                plan: List[Dict[str, Any]] = []
+                plan: list[dict[str, Any]] = []
                 for row in plan_result:
                     plan.append(dict(row))
 

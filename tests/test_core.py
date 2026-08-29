@@ -1,8 +1,9 @@
 """PostgreSQL MCP Server tests - core functionality."""
 
+from unittest.mock import AsyncMock, patch
+
 import pytest
 import pytest_asyncio
-from unittest.mock import AsyncMock, patch, MagicMock
 
 from postgresql_mcp.core import PostgreSQLCore
 from postgresql_mcp.models import PostgreSQLConfig
@@ -24,19 +25,19 @@ def test_config():
 async def mock_pool():
     """Create a mock connection pool."""
     from unittest.mock import Mock
-    
+
     # Create a plain object that acts as an async context manager
     class MockConnection:
         def __init__(self):
             self.fetch = AsyncMock(return_value=[])
             self.execute = AsyncMock(return_value="1")
-        
+
         async def __aenter__(self):
             return self
-        
+
         async def __aexit__(self, *args):
             return None
-        
+
         def transaction(self):
             """Return a mock transaction context manager."""
             class MockTransaction:
@@ -45,7 +46,7 @@ async def mock_pool():
                 async def __aexit__(self, *args):
                     return None
             return MockTransaction()
-    
+
     mock_conn = MockConnection()
     mock_pool = Mock()
     mock_pool.acquire = Mock(return_value=mock_conn)
@@ -56,17 +57,17 @@ async def mock_pool():
 async def mock_pool_with_transaction():
     """Create a mock connection pool with transaction."""
     from unittest.mock import Mock
-    
+
     class MockConnection:
         def __init__(self):
             self.execute = AsyncMock(return_value="3")
-        
+
         async def __aenter__(self):
             return self
-        
+
         async def __aexit__(self, *args):
             return None
-        
+
         def transaction(self):
             """Return a mock transaction context manager."""
             class MockTransaction:
@@ -75,10 +76,10 @@ async def mock_pool_with_transaction():
                 async def __aexit__(self, *args):
                     return None
             return MockTransaction()
-    
+
     mock_conn = MockConnection()
     mock_pool = Mock()
-    
+
     mock_pool.acquire = Mock(return_value=mock_conn)
     mock_pool.release = AsyncMock()
     return mock_pool, mock_conn
@@ -182,7 +183,7 @@ async def test_execute_query_empty_result(mock_pool):
 @pytest.mark.asyncio
 async def test_execute_dml_success(mock_pool_with_transaction):
     """Test successful DML execution."""
-    mock_pool, mock_conn = mock_pool_with_transaction
+    _mock_pool, mock_conn = mock_pool_with_transaction
 
     config = PostgreSQLConfig(
         dsn="postgresql://postgres:***@localhost:5432/postgres",

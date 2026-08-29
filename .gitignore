@@ -42,3 +42,33 @@ Thumbs.db
 # Environment
 .env
 .env.*
+
+# Obsidian Vault - NEVER COMMIT PERSONAL DATA
+.obsidian/
+00_Master/
+01_Obi-Wan/
+02_Sub-Agents/
+03_Context/
+04_Daily_Logs/
+05_Skills/
+05_Studies/
+Anakin/
+July 2026/
+AFaaS_MASTER_PACKAGE.md
+BUSINESS_MODEL.md
+AgentComms.md
+INDEX.md
+Skill Map.md
+Chat Logs/
+Decisions Log.md
+"C:\Users\brook\reindex.py"
+*.sqlite
+*.db
+check_db.py
+fix_*.py
+reindex_*.py
+run_*.py
+seed_*.py
+temp.txt
+test_verification.py
+to-patch.md
