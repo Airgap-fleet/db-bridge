@@ -1,4 +1,4 @@
-# DB Bridge
+# Airgap DB Bridge
 
 Bridge your AI assistant to PostgreSQL databases — query, execute, migrate, and analyze without cloud dependencies.
 
@@ -13,7 +13,7 @@ Bridge your AI assistant to PostgreSQL databases — query, execute, migrate, an
 
 ### From PyPI (when published)
 ```bash
-pip install db-bridge
+pip install airgap-db-bridge
 ```
 
 ### From Source
@@ -39,7 +39,7 @@ cp .env.example .env
 ### 2. Run Server
 ```bash
 # Direct execution
-db-bridge
+airgap-db-bridge
 
 # Or with Docker Compose (includes PostgreSQL)
 docker-compose up -d
@@ -51,7 +51,7 @@ Add to your MCP client configuration (Claude Desktop, Cursor, VS Code, etc.):
 {
   "mcpServers": {
     "postgresql": {
-      "command": "db-bridge",
+      "command": "airgap-db-bridge",
       "env": {
         "DB_BRIDGE_DSN": "postgresql://user:***@localhost:5432/db"
       }
@@ -211,7 +211,7 @@ docker rm -f pg-test
 
 ### MCP Inspector
 ```bash
-npx @modelcontextprotocol/inspector uv run db-bridge
+npx @modelcontextprotocol/inspector uv run airgap-db-bridge
 ```
 
 ## Architecture
