@@ -1,0 +1,52 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.airgap-fleet/airgap-db-bridge",
+  "title": "airgap-db-bridge",
+  "description": "Local-first PostgreSQL MCP bridge with parameterized queries (SQLi prevention), read-only mode, connection pooling, tamper-evident audit logging, and stateless protocol. Zero data egress, air-gapped ready.",
+  "repository": {
+    "url": "https://github.com/Airgap-fleet/db-bridge",
+    "source": "github",
+    "id": "airgap-fleet-db-bridge"
+  },
+  "version": "1.0.3",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "airgap-db-bridge",
+      "version": "1.0.3",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "DB_BRIDGE_DSN",
+          "description": "PostgreSQL connection string (postgresql://user:pass@host:port/db)",
+          "required": true
+        },
+        {
+          "name": "DB_BRIDGE_POOL_SIZE",
+          "description": "Connection pool size (1-100)",
+          "required": false,
+          "default": "10"
+        },
+        {
+          "name": "DB_BRIDGE_READ_ONLY",
+          "description": "Enable read-only mode (blocks write operations)",
+          "required": false,
+          "default": "false"
+        },
+        {
+          "name": "DB_BRIDGE_LOG_LEVEL",
+          "description": "Log level",
+          "required": false,
+          "default": "INFO",
+          "enum": ["DEBUG", "INFO", "WARNING", "ERROR"]
+        }
+      ]
+    }
+  ],
+  "keywords": ["mcp", "postgresql", "database", "local-first", "air-gapped", "sql-injection-prevention", "stateless"],
+  "license": "MIT"
+}
