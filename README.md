@@ -1,273 +1,117 @@
-# Airgap DB Bridge
+# DB Bridge
 
-Bridge your AI assistant to PostgreSQL databases — query, execute, migrate, and analyze without cloud dependencies.
+Bridge your AI assistant to local PostgreSQL databases — query, inspect, and manage data without cloud dependencies.
 
-## Features
+## Quick Start (uvx — no install needed)
 
-- **6 Database Tools**: Query, Execute, List Tables, Describe Table, Run Migration, Explain Analyze
-- **Security First**: Parameterized queries only, read-only mode, connection pooling, audit logging
-- **Production Ready**: Async connection pooling, configurable timeouts, structured logging
-- **Developer Experience**: Type-safe Pydantic models, comprehensive tests, MCP Inspector compatible
+```bash
+uvx airgap-db-bridge
+```
 
 ## Installation
 
-### From PyPI (when published)
 ```bash
 pip install airgap-db-bridge
 ```
 
-### From Source
-```bash
-git clone https://github.com/airgap-fleet/db-bridge.git
-cd db-bridge
-pip install -e .
-```
+## Usage
 
-### Docker
+### CLI (Direct)
 ```bash
-docker pull ghcr.io/airgap-fleet/db-bridge:latest
-```
-
-## Quick Start
-
-### 1. Configure Environment
-```bash
-cp .env.example .env
-# Edit .env with your PostgreSQL connection details
-```
-
-### 2. Run Server
-```bash
-# Direct execution
 airgap-db-bridge
-
-# Or with Docker Compose (includes PostgreSQL)
-docker-compose up -d
 ```
 
-### 3. Configure MCP Client
-Add to your MCP client configuration (Claude Desktop, Cursor, VS Code, etc.):
+### MCP Client Config (Claude Desktop, Cursor, VS Code)
+
+**Windows (requires full path to executable):**
 ```json
 {
   "mcpServers": {
-    "postgresql": {
-      "command": "airgap-db-bridge",
+    "database": {
+      "command": "C:\Users\<user>\AppData\Local\hermes\hermes-agent\venv\Scripts\airgap-db-bridge.exe",
       "env": {
-        "DB_BRIDGE_DSN": "postgresql://user:***@localhost:5432/db"
+        "POSTGRES_DSN": "postgresql://user:pass@localhost:5432/db"
       }
     }
   }
 }
 ```
 
+**macOS/Linux (if on PATH):**
+```json
+{
+  "mcpServers": {
+    "database": {
+      "command": "airgap-db-bridge",
+      "env": {
+        "POSTGRES_DSN": "postgresql://user:pass@localhost:5432/db"
+      }
+    }
+  }
+}
+```
+
+### DXT (Claude Desktop 1-Click)
+Download `airgap-db-bridge-1.0.0.dxt` from [Releases](https://github.com/airgap-fleet/db-bridge/releases) → drag into Claude Desktop.
+
 ## Configuration
 
 | Environment Variable | Default | Description |
 |---------------------|---------|-------------|
-| `DB_BRIDGE_DSN` | `postgresql://postgres:***@localhost:5432/postgres` | PostgreSQL connection string |
-| `DB_BRIDGE_POOL_SIZE` | `10` | Connection pool size (1-100) |
-| `DB_BRIDGE_READ_ONLY` | `false` | Enable read-only mode (blocks write operations) |
-| `DB_BRIDGE_QUERY_TIMEOUT` | `30.0` | Query timeout in seconds (0-300) |
-| `DB_BRIDGE_LOG_LEVEL` | `INFO` | Structured logging level |
+| `POSTGRES_DSN` | Required | PostgreSQL connection string (e.g., `postgresql://user:pass@host:5432/db`) |
+| `DB_BRIDGE_MAX_ROWS` | 1000 | Max rows returned per query |
+| `DB_BRIDGE_STATEMENT_TIMEOUT` | 30000 | Query timeout in ms |
+| `DB_BRIDGE_ALLOW_DDL` | false | Allow CREATE/ALTER/DROP statements |
+| `DB_BRIDGE_ALLOW_WRITE` | false | Allow INSERT/UPDATE/DELETE |
 
-## Tools Reference
+## Available Tools
 
-| Tool | Description | Parameters | Read-Only Safe |
-|------|-------------|------------|----------------|
-| `query` | Execute parameterized SELECT query | `sql` (string), `params` (array, optional) | ✅ |
-| `execute` | Execute INSERT/UPDATE/DELETE | `sql` (string), `params` (array, optional) | ❌ |
-| `list_tables` | List tables in a schema | `schema` (string, default: "public") | ✅ |
-| `describe_table` | Get table structure (columns, indexes, constraints) | `table` (string), `schema` (string, default: "public") | ✅ |
-| `run_migration` | Run DDL statements in transaction | `sql` (string) | ❌ |
-| `explain_analyze` | Get query execution plan with costs | `sql` (string), `params` (array, optional) | ✅ |
+| Tool | Description |
+|------|-------------|
+| `query` | Execute a read-only SELECT query |
+| `execute` | Execute a write query (requires `DB_BRIDGE_ALLOW_WRITE=true`) |
+| `list_tables` | List all tables in the database |
+| `describe_table` | Show columns, types, constraints for a table |
+| `list_schemas` | List all schemas in the database |
 
-## Usage Examples
+## Transport Modes
 
-### Query Data
-```json
-{
-  "tool": "query",
-  "arguments": {
-    "sql": "SELECT * FROM users WHERE age > $1 AND active = $2",
-    "params": [18, true]
-  }
-}
-```
+- **stdio** (default) — For local MCP clients (Claude Desktop, etc.)
+- **sse** — Server-Sent Events for HTTP clients
+- **http** — Streamable HTTP for modern clients
 
-### Insert Data
-```json
-{
-  "tool": "execute",
-  "arguments": {
-    "sql": "INSERT INTO users (name, email, age) VALUES ($1, $2, $3)",
-    "params": ["John Doe", "john@example.com", 30]
-  }
-}
-```
+Set via `DB_BRIDGE_TRANSPORT` environment variable.
 
-### List Tables
-```json
-{
-  "tool": "list_tables",
-  "arguments": {
-    "schema": "public"
-  }
-}
-```
+## Windows-Specific Notes
 
-### Describe Table Structure
-```json
-{
-  "tool": "describe_table",
-  "arguments": {
-    "table": "users",
-    "schema": "public"
-  }
-}
-```
+- The executable is installed to `C:\Users\<user>\AppData\Local\hermes\hermes-agent\venv\Scripts\airgap-db-bridge.exe` when using Hermes
+- **Always use the full `.exe` path in MCP client configs on Windows** — bare commands like `airgap-db-bridge` will fail with `ENOENT` because the venv Scripts folder is not on system PATH
+- Use standard PostgreSQL DSN format in environment variables
+- Escape backslashes in JSON command paths (`C:\Users\...`)
 
-### Run Migration
-```json
-{
-  "tool": "run_migration",
-  "arguments": {
-    "sql": "CREATE TABLE products (id SERIAL PRIMARY KEY, name TEXT NOT NULL, price DECIMAL(10,2)); CREATE INDEX idx_products_name ON products(name);"
-  }
-}
-```
+## Why DB Bridge?
 
-### Analyze Query Plan
-```json
-{
-  "tool": "explain_analyze",
-  "arguments": {
-    "sql": "SELECT * FROM users JOIN orders ON users.id = orders.user_id WHERE users.id = $1",
-    "params": [1]
-  }
-}
-```
-
-## Security Model
-
-### Parameterized Queries Only
-All SQL execution uses parameterized queries (`$1`, `$2`, etc.). String concatenation or interpolation is **not supported** — this prevents SQL injection by design.
-
-### Read-Only Mode
-Set `DB_BRIDGE_READ_ONLY=true` to disable:
-- `execute` (INSERT/UPDATE/DELETE)
-- `run_migration` (DDL)
-
-Read operations (`query`, `list_tables`, `describe_table`, `explain_analyze`) remain available.
-
-### Connection Pooling
-- Configurable pool size (1-100 connections)
-- Automatic connection lifecycle management
-- Query timeout enforcement
-
-### Audit Logging
-All operations are logged with structured JSON including:
-- Operation type and parameters (sanitized)
-- Execution time
-- Row counts affected
-- Error details (if any)
+- **Local-first** — Your data never leaves your machine
+- **Air-gapped ready** — No cloud dependencies, works offline
+- **Security hardened** — Read-only by default, optional write/DDL gates, row limits, statement timeouts
+- **Multiple transports** — stdio, SSE, Streamable HTTP
+- **PostgreSQL native** — Full protocol support, prepared statements, connection pooling
+- **uvx compatible** — Zero-install usage like the competition
 
 ## Development
 
-### Prerequisites
-- Python 3.11+
-- PostgreSQL 14+ (for local development)
-- uv (recommended) or pip
-
-### Setup
 ```bash
-# Install uv if not present
-pip install uv
-
-# Create virtual environment and install dependencies
-uv sync --dev
+# Install with dev dependencies
+pip install -e ".[dev]"
 
 # Run tests
-uv run pytest
+uv run pytest -v
 
-# Type check
-uv run mypy src/postgresql_mcp
-
-# Lint and format
+# Check code quality
 uv run ruff check .
-uv run ruff format .
+uv run mypy .
 ```
-
-### Running Tests with Local PostgreSQL
-```bash
-# Start PostgreSQL (Docker)
-docker run -d --name pg-test -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres:16
-
-# Run tests
-DB_BRIDGE_TEST_DSN=postgresql://postgres:***@localhost:5432/postgres uv run pytest
-
-# Cleanup
-docker rm -f pg-test
-```
-
-### MCP Inspector
-```bash
-npx @modelcontextprotocol/inspector uv run airgap-db-bridge
-```
-
-## Architecture
-
-```
-db-bridge/
-├── src/postgresql_mcp/
-│   ├── __init__.py          # Package exports
-│   ├── models.py            # Pydantic models (requests/responses/config)
-│   ├── core.py              # Business logic (asyncpg, zero FastMCP imports)
-│   └── server.py            # FastMCP app, tool registration, lifespan
-├── tests/
-│   ├── conftest.py          # Test fixtures and setup
-│   ├── test_models.py       # Model validation tests
-│   ├── test_core.py         # Core business logic tests
-│   └── test_tools.py        # MCP tool integration tests
-├── .github/workflows/ci.yml # CI/CD pipeline
-├── Dockerfile               # Multi-stage container build
-├── docker-compose.yml       # Local development stack
-├── pyproject.toml           # Project configuration (hatch)
-└── README.md                # This file
-```
-
-### Design Principles
-
-1. **Separation of Concerns**: `core.py` contains zero FastMCP imports — fully testable in isolation
-2. **Type Safety**: Pydantic v2 for all boundaries, mypy strict mode
-3. **Async First**: asyncpg for non-blocking database operations
-4. **Security by Default**: Parameterized queries, read-only mode, least privilege
-5. **Observability**: Structured JSON logging, execution timing, audit trails
-
-## CI/CD Pipeline
-
-The GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push/PR:
-
-1. **Lint** — ruff check + format
-2. **Type Check** — mypy strict
-3. **Test** — pytest with PostgreSQL service, coverage ≥90%
-4. **Build** — hatch build + twine verify
-5. **Publish** — PyPI on release (trusted publishing)
-6. **Docker** — Multi-platform image on release
 
 ## License
 
-MIT License — see LICENSE file for details.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make changes with tests
-4. Ensure CI passes (lint, typecheck, test, coverage)
-5. Submit a pull request
-
-## Support
-
-- Issues: GitHub Issues
-- Documentation: This README + inline docstrings
-- MCP Specification: https://modelcontextprotocol.io
+MIT
