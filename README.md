@@ -1,8 +1,10 @@
 # DB Bridge
 
-Local-first PostgreSQL MCP bridge for Private Desk. Query, inspect, and manage a database you already run — without sending that data to a cloud sidecar.
+Local-first PostgreSQL MCP bridge for Private Desk. Query, inspect, and manage a database you already run â€” without sending that data to a cloud sidecar.
 
-**Build class: UNSIGNED INTERNAL.** This tree is not Authenticode-signed. Thumbprint: `(none — unsigned)`.
+**Client / COLP install guide (plain English):** `CLIENT-README.md`.
+
+**Build class: UNSIGNED INTERNAL.** This tree is not Authenticode-signed. Thumbprint: `(none â€” unsigned)`.
 
 Setup (installer, pip, uv) may use the network for wheels. **The running bridge does not phone home.**
 
@@ -31,7 +33,7 @@ See [installer/README.md](installer/README.md).
 .\scripts\self_test.ps1 -ProtocolOnly
 ```
 
-**Caveat:** protocol-only PASS means MCP `initialize` and `tools/list` succeeded. It is **not** full tool coverage and does **not** prove a live PostgreSQL connection. The pool is lazy — those calls do not open the database.
+**Caveat:** protocol-only PASS means MCP `initialize` and `tools/list` succeeded. It is **not** full tool coverage and does **not** prove a live PostgreSQL connection. The pool is lazy â€” those calls do not open the database.
 
 A full check **needs Postgres** and a DSN. Without a DSN it fails on purpose:
 
@@ -94,7 +96,7 @@ Canonical prefix: **`DB_BRIDGE_*`**. Legacy `POSTGRES_*` and `POSTGRESQL_MCP_*` 
 | Environment variable | Default | Description |
 |----------------------|---------|-------------|
 | `DB_BRIDGE_DSN` | required for DB tools | PostgreSQL connection string |
-| `DB_BRIDGE_POOL_SIZE` | 10 | Connection pool size (1–100) |
+| `DB_BRIDGE_POOL_SIZE` | 10 | Connection pool size (1â€“100) |
 | `DB_BRIDGE_READ_ONLY` | false | Recorded on the config object |
 | `DB_BRIDGE_QUERY_TIMEOUT` | 30 | Query timeout in seconds |
 | `DB_BRIDGE_LOG_LEVEL` | INFO | Structured logs (stderr only) |
