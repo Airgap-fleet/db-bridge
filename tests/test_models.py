@@ -37,8 +37,25 @@ def _parse_dsn_password(dsn) -> str:
 class TestPostgreSQLConfig:
     """Tests for PostgreSQLConfig model."""
 
-    def test_default_config(self):
-        """Test default configuration values."""
+    def test_default_config(self, monkeypatch):
+        for name in (
+            "DB_BRIDGE_DSN",
+            "DB_BRIDGE_POOL_SIZE",
+            "DB_BRIDGE_READ_ONLY",
+            "DB_BRIDGE_QUERY_TIMEOUT",
+            "DB_BRIDGE_LOG_LEVEL",
+            "POSTGRES_DSN",
+            "POSTGRES_POOL_SIZE",
+            "POSTGRES_READ_ONLY",
+            "POSTGRES_QUERY_TIMEOUT",
+            "POSTGRES_LOG_LEVEL",
+            "POSTGRESQL_MCP_DSN",
+            "POSTGRESQL_MCP_POOL_SIZE",
+            "POSTGRESQL_MCP_READ_ONLY",
+            "POSTGRESQL_MCP_QUERY_TIMEOUT",
+            "POSTGRESQL_MCP_LOG_LEVEL",
+        ):
+            monkeypatch.delenv(name, raising=False)
         config = PostgreSQLConfig()
         # str(dsn) masks password for security, so we check the host/port/db
         dsn_str = str(config.dsn)
@@ -312,12 +329,12 @@ class TestModelSerialization:
             assert restored.columns[0].name == "id"
 
     def test_config_env_parsing(self, monkeypatch):
-            """Test PostgreSQLConfig parsing from environment variables."""
-            monkeypatch.setenv("POSTGRES_DSN", "postgresql://env:***@env:5432/env")
-            monkeypatch.setenv("POSTGRES_POOL_SIZE", "25")
-            monkeypatch.setenv("POSTGRES_READ_ONLY", "true")
-            monkeypatch.setenv("POSTGRES_QUERY_TIMEOUT", "45.5")
-            monkeypatch.setenv("POSTGRES_LOG_LEVEL", "WARNING")
+            """Test PostgreSQLConfig parsing from canonical DB_BRIDGE_* variables."""
+            monkeypatch.setenv("DB_BRIDGE_DSN", "postgresql://env:***@env:5432/env")
+            monkeypatch.setenv("DB_BRIDGE_POOL_SIZE", "25")
+            monkeypatch.setenv("DB_BRIDGE_READ_ONLY", "true")
+            monkeypatch.setenv("DB_BRIDGE_QUERY_TIMEOUT", "45.5")
+            monkeypatch.setenv("DB_BRIDGE_LOG_LEVEL", "WARNING")
 
             config = PostgreSQLConfig()
             assert _parse_dsn_password(config.dsn) == "***"

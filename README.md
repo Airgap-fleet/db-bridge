@@ -1,117 +1,135 @@
 # DB Bridge
 
-Bridge your AI assistant to local PostgreSQL databases — query, inspect, and manage data without cloud dependencies.
+Local-first PostgreSQL MCP bridge for Private Desk. Query, inspect, and manage a database you already run — without sending that data to a cloud sidecar.
 
-## Quick Start (uvx — no install needed)
+**Build class: UNSIGNED INTERNAL.** This tree is not Authenticode-signed. Thumbprint: `(none — unsigned)`.
 
-```bash
-uvx airgap-db-bridge
+Setup (installer, pip, uv) may use the network for wheels. **The running bridge does not phone home.**
+
+## Recommended: Windows one-command installer
+
+From a clone of this repository, in PowerShell:
+
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass
+.\installer\Install-DbBridge.ps1 -Dsn "postgresql://user:pass@localhost:5432/dbname"
 ```
 
-## Installation
+Silent / unattended (the UNSIGNED INTERNAL label is still printed):
+
+```powershell
+.\installer\Install-DbBridge.ps1 -Dsn "postgresql://user:pass@localhost:5432/dbname" -Quiet
+```
+
+Default location: `%LOCALAPPDATA%\AirgapFleet\db-bridge`. Dependencies are pinned from `uv.lock` when `uv` is on `PATH`.
+
+See [installer/README.md](installer/README.md).
+
+### Verify
+
+```powershell
+.\scripts\self_test.ps1 -ProtocolOnly
+```
+
+**Caveat:** protocol-only PASS means MCP `initialize` and `tools/list` succeeded. It is **not** full tool coverage and does **not** prove a live PostgreSQL connection. The pool is lazy — those calls do not open the database.
+
+A full check **needs Postgres** and a DSN. Without a DSN it fails on purpose:
+
+```powershell
+.\scripts\self_test.ps1 -Full -Dsn "postgresql://user:pass@localhost:5432/dbname"
+```
+
+### Uninstall
+
+```powershell
+.\installer\Uninstall-DbBridge.ps1
+```
+
+## Advanced: pip / uvx
 
 ```bash
 pip install airgap-db-bridge
+# or, no persistent install:
+uvx airgap-db-bridge
 ```
 
-## Usage
+Then point your MCP client at the `airgap-db-bridge` executable and set `DB_BRIDGE_DSN`.
 
-### CLI (Direct)
-```bash
-airgap-db-bridge
-```
+### MCP client config
 
-### MCP Client Config (Claude Desktop, Cursor, VS Code)
+**Windows (use the full path to the executable):**
 
-**Windows (requires full path to executable):**
 ```json
 {
   "mcpServers": {
     "database": {
-      "command": "C:\Users\<user>\AppData\Local\hermes\hermes-agent\venv\Scripts\airgap-db-bridge.exe",
+      "command": "C:\\Users\\<user>\\AppData\\Local\\AirgapFleet\\db-bridge\\venv\\Scripts\\airgap-db-bridge.exe",
       "env": {
-        "POSTGRES_DSN": "postgresql://user:pass@localhost:5432/db"
+        "DB_BRIDGE_DSN": "postgresql://user:pass@localhost:5432/db"
       }
     }
   }
 }
 ```
 
-**macOS/Linux (if on PATH):**
+**macOS / Linux (if the script is on PATH):**
+
 ```json
 {
   "mcpServers": {
     "database": {
       "command": "airgap-db-bridge",
       "env": {
-        "POSTGRES_DSN": "postgresql://user:pass@localhost:5432/db"
+        "DB_BRIDGE_DSN": "postgresql://user:pass@localhost:5432/db"
       }
     }
   }
 }
 ```
 
-### DXT (Claude Desktop 1-Click)
-Download `airgap-db-bridge-1.0.0.dxt` from [Releases](https://github.com/airgap-fleet/db-bridge/releases) → drag into Claude Desktop.
-
 ## Configuration
 
-| Environment Variable | Default | Description |
-|---------------------|---------|-------------|
-| `POSTGRES_DSN` | Required | PostgreSQL connection string (e.g., `postgresql://user:pass@host:5432/db`) |
-| `DB_BRIDGE_MAX_ROWS` | 1000 | Max rows returned per query |
-| `DB_BRIDGE_STATEMENT_TIMEOUT` | 30000 | Query timeout in ms |
-| `DB_BRIDGE_ALLOW_DDL` | false | Allow CREATE/ALTER/DROP statements |
-| `DB_BRIDGE_ALLOW_WRITE` | false | Allow INSERT/UPDATE/DELETE |
+Canonical prefix: **`DB_BRIDGE_*`**. Legacy `POSTGRES_*` and `POSTGRESQL_MCP_*` names are read only when the canonical variable is unset.
 
-## Available Tools
+| Environment variable | Default | Description |
+|----------------------|---------|-------------|
+| `DB_BRIDGE_DSN` | required for DB tools | PostgreSQL connection string |
+| `DB_BRIDGE_POOL_SIZE` | 10 | Connection pool size (1–100) |
+| `DB_BRIDGE_READ_ONLY` | false | Recorded on the config object |
+| `DB_BRIDGE_QUERY_TIMEOUT` | 30 | Query timeout in seconds |
+| `DB_BRIDGE_LOG_LEVEL` | INFO | Structured logs (stderr only) |
+
+Copy [.env.example](.env.example) to `.env` for local development. See [AUDIT-NOTES.md](AUDIT-NOTES.md).
+
+## Available tools
 
 | Tool | Description |
 |------|-------------|
-| `query` | Execute a read-only SELECT query |
-| `execute` | Execute a write query (requires `DB_BRIDGE_ALLOW_WRITE=true`) |
-| `list_tables` | List all tables in the database |
-| `describe_table` | Show columns, types, constraints for a table |
-| `list_schemas` | List all schemas in the database |
+| `query` | Parameterised SELECT |
+| `execute` | Parameterised INSERT / UPDATE / DELETE |
+| `list_tables` | Tables in a schema |
+| `describe_table` | Columns, indexes, constraints |
+| `run_migration` | DDL statements in a transaction |
+| `explain_analyze` | `EXPLAIN ANALYZE` plan |
 
-## Transport Modes
+stdio is the supported local MCP transport. Structured logs go to **stderr only** so stdout stays JSON-RPC clean.
 
-- **stdio** (default) — For local MCP clients (Claude Desktop, etc.)
-- **sse** — Server-Sent Events for HTTP clients
-- **http** — Streamable HTTP for modern clients
+## Proof pack
 
-Set via `DB_BRIDGE_TRANSPORT` environment variable.
+[proof-pack/](proof-pack/) has the demo checklist, UNSIGNED INTERNAL signing note, egress observation notes, and hash helpers. A full database demo needs Postgres.
 
-## Windows-Specific Notes
-
-- The executable is installed to `C:\Users\<user>\AppData\Local\hermes\hermes-agent\venv\Scripts\airgap-db-bridge.exe` when using Hermes
-- **Always use the full `.exe` path in MCP client configs on Windows** — bare commands like `airgap-db-bridge` will fail with `ENOENT` because the venv Scripts folder is not on system PATH
-- Use standard PostgreSQL DSN format in environment variables
-- Escape backslashes in JSON command paths (`C:\Users\...`)
-
-## Why DB Bridge?
-
-- **Local-first** — Your data never leaves your machine
-- **Air-gapped ready** — No cloud dependencies, works offline
-- **Security hardened** — Read-only by default, optional write/DDL gates, row limits, statement timeouts
-- **Multiple transports** — stdio, SSE, Streamable HTTP
-- **PostgreSQL native** — Full protocol support, prepared statements, connection pooling
-- **uvx compatible** — Zero-install usage like the competition
+This project does **not** claim Cyber Essentials, ISO 27001, or any other certification.
 
 ## Development
 
 ```bash
-# Install with dev dependencies
 pip install -e ".[dev]"
-
-# Run tests
 uv run pytest -v
-
-# Check code quality
-uv run ruff check .
-uv run mypy .
+uv run ruff check src/postgresql_mcp
+uv run mypy src/postgresql_mcp
+python scripts/self_test.py --protocol-only
 ```
 
-## License
+## Licence
 
 MIT

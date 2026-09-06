@@ -73,7 +73,7 @@ jobs:
           --health-timeout 5s
           --health-retries 10
     env:
-      DB_BRIDGE_TEST_DSN: postgresql://postgres:***@localhost:5432/postgres
+      DB_BRIDGE_TEST_DSN: postgresql://postgres:postgres@localhost:5432/postgres
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -101,6 +101,9 @@ jobs:
 
       - name: Run tests
         run: pytest tests --cov=postgresql_mcp --cov-report=xml --cov-report=term-missing
+
+      - name: Protocol-only self-test
+        run: python scripts/self_test.py --protocol-only
 
       - name: Upload coverage
         uses: codecov/codecov-action@v4

@@ -8,10 +8,19 @@ __pycache__/
 venv/
 env/
 
-# Distribution / packaging
+# Distribution / packaging — do not commit wheels/sdists
 dist/
 build/
 *.egg-info/
+*.whl
+*.tar.gz
+
+# Stale historical artefact names (not airgap-db-bridge 1.0.3)
+db-bridge-*.dxt
+db_bridge-*
+postgresql-mcp-*.dxt
+postgresql_mcp-*.whl
+postgresql_mcp-*.tar.gz
 
 # Test artifacts
 .coverage
@@ -35,15 +44,23 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
-# Build artifacts
+# Built DXT bundles (source lives under dxt/)
 *.dxt
+
+# Lockfiles — keep uv.lock (installer pin source)
 *.lock
+!uv.lock
 
 # Environment
 .env
 .env.*
+!.env.example
 
-# Obsidian Vault - NEVER COMMIT PERSONAL DATA
+# Generated proof-pack hashes (template is the committed layout)
+proof-pack/SHA256SUMS
+proof-pack/egress-observation/
+
+# Nested vault / personal trees — NEVER ship in this repo
 .obsidian/
 00_Master/
 01_Obi-Wan/
@@ -54,21 +71,14 @@ Thumbs.db
 05_Studies/
 Anakin/
 July 2026/
+masters-profile/
+projects/
+Chat Logs/
 AFaaS_MASTER_PACKAGE.md
 BUSINESS_MODEL.md
 AgentComms.md
 INDEX.md
 Skill Map.md
-Chat Logs/
 Decisions Log.md
-"C:\Users\brook\reindex.py"
 *.sqlite
 *.db
-check_db.py
-fix_*.py
-reindex_*.py
-run_*.py
-seed_*.py
-temp.txt
-test_verification.py
-to-patch.md
