@@ -312,12 +312,12 @@ class TestModelSerialization:
             assert restored.columns[0].name == "id"
 
     def test_config_env_parsing(self, monkeypatch):
-            """Test PostgreSQLConfig parsing from environment variables."""
-            monkeypatch.setenv("POSTGRES_DSN", "postgresql://env:***@env:5432/env")
-            monkeypatch.setenv("POSTGRES_POOL_SIZE", "25")
-            monkeypatch.setenv("POSTGRES_READ_ONLY", "true")
-            monkeypatch.setenv("POSTGRES_QUERY_TIMEOUT", "45.5")
-            monkeypatch.setenv("POSTGRES_LOG_LEVEL", "WARNING")
+            """Test PostgreSQLConfig parsing from canonical DB_BRIDGE_* variables."""
+            monkeypatch.setenv("DB_BRIDGE_DSN", "postgresql://env:***@env:5432/env")
+            monkeypatch.setenv("DB_BRIDGE_POOL_SIZE", "25")
+            monkeypatch.setenv("DB_BRIDGE_READ_ONLY", "true")
+            monkeypatch.setenv("DB_BRIDGE_QUERY_TIMEOUT", "45.5")
+            monkeypatch.setenv("DB_BRIDGE_LOG_LEVEL", "WARNING")
 
             config = PostgreSQLConfig()
             assert _parse_dsn_password(config.dsn) == "***"

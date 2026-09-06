@@ -38,12 +38,12 @@ python -m server_module 2>&1 | head -20
 echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"test","version":"1.0"}}}' | python -m server_module 2>&1
 
 # 4. Check environment variables
-env | grep -E "OBSIDIAN_MCP|FILESYSTEM_MCP|POSTGRESQL_MCP"
+env | grep -E "OBSIDIAN_MCP|FILESYSTEM_MCP|DB_BRIDGE_|POSTGRESQL_MCP|POSTGRES_"
 
 # 5. Verify required paths/DSN exist
 ls -la "$OBSIDIAN_MCP_VAULT_PATH"
 ls -la "$FILESYSTEM_MCP_ROOT_PATH"
-psql "$POSTGRESQL_MCP_DSN" -c "SELECT 1"
+psql "${DB_BRIDGE_DSN:-$POSTGRESQL_MCP_DSN}" -c "SELECT 1"
 ```
 
 ---
@@ -166,7 +166,7 @@ net use Z: \\server\share
 # Then use Z:\ as root_path
 ```
 
-### `POSTGRESQL_MCP_DSN` connection refused
+### `DB_BRIDGE_DSN` / `POSTGRESQL_MCP_DSN` connection refused
 
 **Error:** `asyncpg.exceptions.InvalidCatalogNameError` / `Connection refused`
 
@@ -203,7 +203,10 @@ cat .env
 # Or export explicitly
 export OBSIDIAN_MCP_VAULT_PATH="/absolute/path"
 export FILESYSTEM_MCP_ROOT_PATH="/absolute/path"
-export POSTGRESQL_MCP_DSN="postgresql://..."
+export DB_BRIDGE_DSN="postgresql://..."
+# Legacy aliases (used only when DB_BRIDGE_* is unset):
+# export POSTGRES_DSN="postgresql://..."
+# export POSTGRESQL_MCP_DSN="postgresql://..."
 
 # Check server reads them (add debug logging)
 export OBSIDIAN_MCP_LOG_LEVEL=DEBUG
@@ -542,8 +545,8 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 | `Prepared statement already exists` | Reusing statement name in pool | Use unique query each time; asyncpg handles this |
 | `Transaction aborted` | Previous error in transaction | Check `read_only` mode; ensure explicit COMMIT/ROLLBACK |
 | `Parameter $1 not found` | Mismatched param count | Count `$1,$2...` in SQL matches `params` array length |
-| `Read-only mode blocks write` | `POSTGRESQL_MCP_READ_ONLY=true` | Set to `false` for write operations |
-| `Query timeout` | `QUERY_TIMEOUT` exceeded | Increase `POSTGRESQL_MCP_QUERY_TIMEOUT` or optimize query |
+| `Read-only mode blocks write` | `DB_BRIDGE_READ_ONLY=true` (legacy `POSTGRESQL_MCP_READ_ONLY`) | Set to `false` for write operations |
+| `Query timeout` | `QUERY_TIMEOUT` exceeded | Increase `DB_BRIDGE_QUERY_TIMEOUT` or optimize query |
 | `SSL connection required` | Server requires SSL | Add `?sslmode=require` to DSN |
 
 ---
@@ -673,18 +676,15 @@ FILESYSTEM_MCP_LOG_LEVEL=INFO
 FILESYSTEM_MCP_LOG_JSON=true
 ```
 
-### PostgreSQL MCP
+### PostgreSQL / DB Bridge
 ```bash
-POSTGRESQL_MCP_DSN=                   # REQUIRED
-POSTGRESQL_MCP_POOL_SIZE=10
-POSTGRESQL_MCP_READ_ONLY=false
-POSTGRESQL_MCP_QUERY_TIMEOUT=30.0
-POSTGRESQL_MCP_TRANSPORT=stdio
-POSTGRESQL_MCP_HOST=127.0.0.1
-POSTGRESQL_MCP_PORT=8423
-POSTGRESQL_MCP_API_KEY=
-POSTGRESQL_MCP_LOG_LEVEL=INFO
-POSTGRESQL_MCP_LOG_JSON=true
+DB_BRIDGE_DSN=                        # REQUIRED for database tools (canonical)
+DB_BRIDGE_POOL_SIZE=10
+DB_BRIDGE_READ_ONLY=false
+DB_BRIDGE_QUERY_TIMEOUT=30.0
+DB_BRIDGE_LOG_LEVEL=INFO
+# Legacy (used only when the matching DB_BRIDGE_* variable is unset):
+# POSTGRES_DSN=  POSTGRESQL_MCP_DSN=
 ```
 
 ---

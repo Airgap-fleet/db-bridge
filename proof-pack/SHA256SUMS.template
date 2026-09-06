@@ -1,0 +1,19 @@
+# SHA256SUMS.template — layout only, not live hashes.
+# Build class: UNSIGNED INTERNAL
+# Authenticode: not signed
+# Thumbprint: (none — unsigned)
+#
+# Generate a real listing with:
+#   .\proof-pack\Compute-Hashes.ps1
+# or:
+#   sha256sum pyproject.toml uv.lock installer/*.ps1 scripts/* src/postgresql_mcp/*.py
+#
+<sha256>  pyproject.toml
+<sha256>  uv.lock
+<sha256>  installer/Install-DbBridge.ps1
+<sha256>  installer/Uninstall-DbBridge.ps1
+<sha256>  scripts/self_test.py
+<sha256>  scripts/self_test.ps1
+<sha256>  src/postgresql_mcp/server.py
+<sha256>  src/postgresql_mcp/env.py
+<sha256>  src/postgresql_mcp/logging.py

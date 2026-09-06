@@ -12,9 +12,20 @@ from postgresql_mcp.models import PostgreSQLConfig
 
 # Use environment variable for test database DSN, fallback to default
 
-TEST_DSN = os.getenv(
+def _first_env(*names: str, default: str) -> str:
+    for name in names:
+        value = os.getenv(name)
+        if value:
+            return value
+    return default
+
+
+TEST_DSN = _first_env(
+    "DB_BRIDGE_TEST_DSN",
+    "DB_BRIDGE_DSN",
     "POSTGRESQL_MCP_TEST_DSN",
-    "postgresql://postgres:***@localhost:5432/postgres"
+    "POSTGRES_DSN",
+    default="postgresql://postgres:postgres@localhost:5432/postgres",
 )
 
 @pytest.fixture
