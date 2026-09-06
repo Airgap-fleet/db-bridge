@@ -8,7 +8,12 @@ from __future__ import annotations
 from typing import Any
 
 from pydantic import BaseModel, Field
-from pydantic_settings import BaseSettings, PydanticBaseSettingsSource, SettingsConfigDict
+from pydantic_settings import (
+    BaseSettings,
+    EnvSettingsSource,
+    PydanticBaseSettingsSource,
+    SettingsConfigDict,
+)
 
 from postgresql_mcp.env import apply_legacy_env
 
@@ -46,8 +51,12 @@ class PostgreSQLConfig(BaseSettings):
         dotenv_settings: PydanticBaseSettingsSource,
         file_secret_settings: PydanticBaseSettingsSource,
     ) -> tuple[PydanticBaseSettingsSource, ...]:
+        # Rebuild env sources after mapping so a snapshot taken at
+        # construction time cannot miss newly copied DB_BRIDGE_* values.
+        del env_settings
         apply_legacy_env()
-        return (init_settings, env_settings, dotenv_settings, file_secret_settings)
+        mapped_env = EnvSettingsSource(settings_cls)
+        return (init_settings, mapped_env, dotenv_settings, file_secret_settings)
 
 
 class QueryRequest(BaseModel):

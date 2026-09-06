@@ -63,60 +63,45 @@ def resolve_command(python: str | None) -> list[str]:
 
 
 def _write_message(stream: BinaryIO, message: Mapping[str, Any]) -> None:
-    body = json.dumps(message, separators=(",", ":")).encode("utf-8")
-    header = f"Content-Length: {len(body)}\r\n\r\n".encode("ascii")
-    stream.write(header + body)
+    # FastMCP 3 stdio is newline-delimited JSON, not LSP Content-Length.
+    stream.write(json.dumps(message, separators=(",", ":")).encode("utf-8") + b"\n")
     stream.flush()
 
 
-def _read_headers(stream: BinaryIO, timeout_s: float) -> dict[str, str]:
+def _readline(stream: BinaryIO, timeout_s: float) -> bytes:
     deadline = time.monotonic() + timeout_s
     raw = b""
     while time.monotonic() < deadline:
         chunk = stream.read(1)
         if not chunk:
+            if raw:
+                break
             time.sleep(0.01)
             continue
         raw += chunk
-        if raw.endswith(b"\r\n\r\n") or raw.endswith(b"\n\n"):
+        if raw.endswith(b"\n"):
             break
-        # NDJSON fallback: a bare JSON object with no LSP headers.
-        if raw.startswith(b"{") and raw.endswith(b"\n") and raw.count(b"{") == raw.count(b"}"):
-            return {"x-raw-json": raw.decode("utf-8")}
-    else:
-        raise TimeoutError("timed out waiting for MCP headers on stdout")
-
-    text = raw.decode("ascii", errors="replace")
-    if text.lstrip().startswith("{"):
-        return {"x-raw-json": text}
-    headers: dict[str, str] = {}
-    for line in text.splitlines():
-        if not line.strip():
-            continue
-        key, _, value = line.partition(":")
-        headers[key.strip().lower()] = value.strip()
-    return headers
+    if not raw:
+        raise TimeoutError("timed out waiting for MCP JSON on stdout")
+    return raw
 
 
 def _read_message(stream: BinaryIO, timeout_s: float = 15.0) -> dict[str, Any]:
-    headers = _read_headers(stream, timeout_s)
-    if "x-raw-json" in headers:
-        return json.loads(headers["x-raw-json"])
-    length_s = headers.get("content-length")
-    if not length_s:
-        raise RuntimeError(f"MCP response missing Content-Length: {headers!r}")
-    length = int(length_s)
+    """Read the next JSON-RPC object, skipping server notifications."""
     deadline = time.monotonic() + timeout_s
-    body = b""
-    while len(body) < length and time.monotonic() < deadline:
-        chunk = stream.read(length - len(body))
-        if not chunk:
-            time.sleep(0.01)
+    while time.monotonic() < deadline:
+        remaining = max(0.1, deadline - time.monotonic())
+        raw = _readline(stream, remaining)
+        text = raw.decode("utf-8", errors="replace").strip()
+        if not text:
             continue
-        body += chunk
-    if len(body) < length:
-        raise TimeoutError("timed out waiting for MCP body")
-    return json.loads(body.decode("utf-8"))
+        message = json.loads(text)
+        if message.get("method", "").startswith("notifications/"):
+            continue
+        if "id" not in message and "result" not in message and "error" not in message:
+            continue
+        return message
+    raise TimeoutError("timed out waiting for MCP response (not a notification)")
 
 
 class McpStdioClient:
@@ -152,18 +137,20 @@ class McpStdioClient:
         assert self.proc.stdin is not None
         _write_message(self.proc.stdin, message)
 
-    def close(self) -> tuple[bytes, bytes]:
-        if self.proc.stdin:
-            try:
-                self.proc.stdin.close()
-            except OSError:
-                pass
+    def close(self) -> None:
+        if self.proc.poll() is not None:
+            return
         try:
-            stdout, stderr = self.proc.communicate(timeout=5)
+            if self.proc.stdin is not None and not self.proc.stdin.closed:
+                self.proc.stdin.close()
+        except OSError:
+            pass
+        self.proc.terminate()
+        try:
+            self.proc.wait(timeout=5)
         except subprocess.TimeoutExpired:
             self.proc.kill()
-            stdout, stderr = self.proc.communicate()
-        return stdout, stderr
+            self.proc.wait(timeout=5)
 
 
 def _fail(message: str, extra: str | None = None) -> int:
@@ -197,6 +184,7 @@ def run_self_test(
     if dsn:
         env["DB_BRIDGE_DSN"] = dsn
     env.setdefault("DB_BRIDGE_LOG_LEVEL", "WARNING")
+    env.setdefault("FASTMCP_CHECK_FOR_UPDATES", "off")
 
     command = resolve_command(python)
     print(f"command: {' '.join(command)}", flush=True)
@@ -262,7 +250,10 @@ def run_self_test(
         extra = stderr.decode("utf-8", errors="replace")
         return _fail(str(exc), extra)
     finally:
-        client.close()
+        try:
+            client.close()
+        except Exception:
+            pass
 
 
 def build_parser() -> argparse.ArgumentParser:

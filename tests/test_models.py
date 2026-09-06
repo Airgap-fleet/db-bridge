@@ -37,8 +37,25 @@ def _parse_dsn_password(dsn) -> str:
 class TestPostgreSQLConfig:
     """Tests for PostgreSQLConfig model."""
 
-    def test_default_config(self):
-        """Test default configuration values."""
+    def test_default_config(self, monkeypatch):
+        for name in (
+            "DB_BRIDGE_DSN",
+            "DB_BRIDGE_POOL_SIZE",
+            "DB_BRIDGE_READ_ONLY",
+            "DB_BRIDGE_QUERY_TIMEOUT",
+            "DB_BRIDGE_LOG_LEVEL",
+            "POSTGRES_DSN",
+            "POSTGRES_POOL_SIZE",
+            "POSTGRES_READ_ONLY",
+            "POSTGRES_QUERY_TIMEOUT",
+            "POSTGRES_LOG_LEVEL",
+            "POSTGRESQL_MCP_DSN",
+            "POSTGRESQL_MCP_POOL_SIZE",
+            "POSTGRESQL_MCP_READ_ONLY",
+            "POSTGRESQL_MCP_QUERY_TIMEOUT",
+            "POSTGRESQL_MCP_LOG_LEVEL",
+        ):
+            monkeypatch.delenv(name, raising=False)
         config = PostgreSQLConfig()
         # str(dsn) masks password for security, so we check the host/port/db
         dsn_str = str(config.dsn)

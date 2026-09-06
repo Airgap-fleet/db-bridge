@@ -16,6 +16,9 @@ from __future__ import annotations
 import os
 from collections.abc import MutableMapping
 
+# FastMCP reads this at import time. "off" disables its update check (egress).
+os.environ.setdefault("FASTMCP_CHECK_FOR_UPDATES", "off")
+
 CANONICAL_PREFIX = "DB_BRIDGE_"
 LEGACY_PREFIXES: tuple[str, ...] = ("POSTGRES_", "POSTGRESQL_MCP_")
 
