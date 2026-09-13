@@ -8,7 +8,7 @@
     not phone home.
 
     Build class: UNSIGNED INTERNAL
-    This installer is not Authenticode-signed. Thumbprint: (none — unsigned).
+    This installer is not Authenticode-signed. Thumbprint: (none - unsigned).
 
 .PARAMETER Dsn
     PostgreSQL connection string. Also accepted from DB_BRIDGE_DSN,
@@ -53,10 +53,10 @@ function Write-Info {
 function Write-UnsignedLabel {
     Write-Host ""
     Write-Host "============================================================"
-    Write-Host "  Airgap Fleet — DB Bridge installer"
+    Write-Host "  Airgap Fleet - DB Bridge installer"
     Write-Host "  Build class : UNSIGNED INTERNAL"
     Write-Host "  Authenticode: not signed"
-    Write-Host "  Thumbprint  : (none — unsigned)"
+    Write-Host "  Thumbprint  : (none - unsigned)"
     Write-Host "============================================================"
     Write-Host ""
 }
@@ -122,7 +122,7 @@ Write-Info "Install dir: $InstallDir"
 if ($ResolvedDsn) {
     Write-Info "DSN        : (provided; stored as DB_BRIDGE_DSN for this user)"
 } else {
-    Write-Info "DSN        : not provided — protocol-only self-test still works; full DB tools need a DSN"
+    Write-Info "DSN        : not provided - protocol-only self-test still works; full DB tools need a DSN"
 }
 
 New-Item -ItemType Directory -Force -Path $InstallDir | Out-Null
@@ -181,7 +181,7 @@ Copy-Item -Force (Join-Path $RepoRoot "scripts\self_test.ps1") (Join-Path $Scrip
 $Launcher = Join-Path $InstallDir "airgap-db-bridge.cmd"
 @"
 @echo off
-REM UNSIGNED INTERNAL — not Authenticode-signed
+REM UNSIGNED INTERNAL - not Authenticode-signed
 "$VenvPython" -m postgresql_mcp %*
 "@ | Set-Content -Encoding ASCII -Path $Launcher
 
@@ -220,7 +220,7 @@ $info = [ordered]@{
     telemetry          = "none"
 }
 $info | ConvertTo-Json | Set-Content -Encoding UTF8 -Path (Join-Path $InstallDir "INSTALL-INFO.json")
-"UNSIGNED INTERNAL`r`nAuthenticode: not signed`r`nThumbprint: (none — unsigned)`r`n" |
+"UNSIGNED INTERNAL`r`nAuthenticode: not signed`r`nThumbprint: (none - unsigned)`r`n" |
     Set-Content -Encoding ASCII -Path (Join-Path $InstallDir "UNSIGNED-INTERNAL.txt")
 
 Write-Host "Installed airgap-db-bridge (UNSIGNED INTERNAL). Pin source: $PinSource"
