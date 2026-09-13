@@ -15,6 +15,10 @@ DB Bridge lets your AI desk (Claude Desktop, Cursor, and similar) run **controll
 
 The bridge is a small local program: it talks to the AI desk on the same machine and to the DSN you configure.
 
+**Why firms use this**
+
+Staff sometimes paste client matter into consumer ChatGPT or similar tools. Private Desk installs DB Bridge on the firm PC so the **bridge itself** does not send query results to a DB Bridge vendor cloud. Your AI desk (Claude Desktop, Cursor, and similar) is a **separate product** with its own network rules — choose and configure that carefully for your firm. Traffic goes only to the PostgreSQL DSN you supply.
+
 **For:** UK solicitors / small firms evaluating Private Desk / Airgap Fleet; COLP / practice managers needing a clear data-boundary story; firm IT needing install, verify, and uninstall steps.
 
 **Not yet for:** package-manager or Docker-first developer workflows (see `README.md`); signed MSI / Intune rollouts (PowerShell one-command install is the supported Windows path today).
@@ -37,6 +41,14 @@ In default local mode:
 We do **not** claim ISO 27001, SOC 2, Cyber Essentials, Lexcel, or similar. Use the proof pack as evidence for *your* auditor. Live demo: `proof-pack\DEMO-CHECKLIST.md` (prefer local Postgres when proving DB tools).
 
 ---
+
+**What we never claim**
+
+- We do **not** claim ISO 27001, SOC 2, Cyber Essentials, Lexcel, NCSC approval, or similar certifications for this product.
+- This build is **UNSIGNED INTERNAL** — it is not Authenticode-signed and must not be presented as a signed release.
+- The proof pack is **evidence for your auditor and firm controls**, not a certificate or accreditation mark.
+- We do **not** certify the network behaviour of Claude Desktop, Cursor, or other AI desks.
+- Setup may use the internet **once** for prerequisites; day-to-day bridge use does not phone home with matter content.
 
 ## 3. System requirements
 

@@ -1,4 +1,6 @@
-# Proof pack — airgap-db-bridge
+﻿# Proof pack â€” airgap-db-bridge
+
+**For COLP / practice manager / firm IT:** use this pack to run a live, repeatable demo that the **bridge process** does not open vendor outbound connections while handling local work. It is evidence for your controls — **not** a certification mark.
 
 Evidence notes for an **UNSIGNED INTERNAL** Private Desk build of DB Bridge.
 

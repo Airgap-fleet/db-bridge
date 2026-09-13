@@ -1,4 +1,6 @@
-# Demo checklist
+﻿# Demo checklist
+
+**Audience:** COLP / practice manager / firm IT. Run this live demo twice. It shows the **DB Bridge** process does not open vendor outbound connections during local work. This is evidence for your controls, not a certification.
 
 Build class: **UNSIGNED INTERNAL**.
 
@@ -13,15 +15,15 @@ A full database demo **needs Postgres**. Protocol-only success is not enough to 
 ## 2. Windows install (recommended)
 
 - [ ] `Set-ExecutionPolicy -Scope Process Bypass`
-- [ ] `.\installer\Install-DbBridge.ps1 -Dsn "postgresql://…"`
-- [ ] Console shows **UNSIGNED INTERNAL** and thumbprint `(none — unsigned)`.
+- [ ] `.\installer\Install-DbBridge.ps1 -Dsn "postgresql://â€¦"`
+- [ ] Console shows **UNSIGNED INTERNAL** and thumbprint `(none â€” unsigned)`.
 - [ ] Post-install protocol-only self-test runs (unless `-SkipSelfTest`).
 
 ## 3. Self-test honesty
 
-- [ ] `.\scripts\self_test.ps1 -ProtocolOnly` — expect PASS plus the caveat that this is **not** full tool coverage.
+- [ ] `.\scripts\self_test.ps1 -ProtocolOnly` â€” expect PASS plus the caveat that this is **not** full tool coverage.
 - [ ] Without a DSN, `.\scripts\self_test.ps1 -Full` **fails loudly**.
-- [ ] With Postgres up and a real DSN, `.\scripts\self_test.ps1 -Full -Dsn "…"` calls `list_tables`.
+- [ ] With Postgres up and a real DSN, `.\scripts\self_test.ps1 -Full -Dsn "â€¦"` calls `list_tables`.
 
 ## 4. Verify / uninstall
 
@@ -31,7 +33,7 @@ A full database demo **needs Postgres**. Protocol-only success is not enough to 
 ## 5. Hashes and egress (optional observation)
 
 - [ ] `.\proof-pack\Compute-Hashes.ps1` writes `SHA256SUMS` (do not treat the template as live hashes).
-- [ ] `.\proof-pack\observe-egress.ps1` around a protocol-only run — observation only, not a certification.
+- [ ] `.\proof-pack\observe-egress.ps1` around a protocol-only run â€” observation only, not a certification.
 
 ## 6. Advanced (pip / uvx)
 
