@@ -31,7 +31,7 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-Write-Host "airgap-db-bridge self-test — UNSIGNED INTERNAL (not Authenticode-signed)"
+Write-Host "airgap-db-bridge self-test - UNSIGNED INTERNAL (not Authenticode-signed)"
 
 if ($Full -and $ProtocolOnly) {
     throw "Specify only one of -ProtocolOnly or -Full."
